@@ -1,0 +1,688 @@
+{
+  "Name": "Headliner Tester Template",
+  "Description": "Headliner Tester Template",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 5,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "TerminationScriptFileNameConsecutiveFail": "",
+  "TerminationScriptConsecutiveFails": 0,
+  "GmReporting": {
+    "MersTestName": "test",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "A001",
+    "MersEngineType": "TPAS",
+    "MersDeviceId": "",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Set Outputs to OFF ",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 1 CAN",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "RESET BOARD 1 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "RESET CAN BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": true
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 turn power supply off / set output to 0",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Set IO Board ( ) Current Limits",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SetCurrentLimits - Board ( ) Set Limits 15 A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board ( )Set Limits 15 A",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 1,
+              "SourceLimitMamp": 15000,
+              "SinkLimitMamp": 15000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Power Up Vehicle ",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Turn Power Supply On Board ( )",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": " IOBoardControlDigitalIO Board ( ) Power Supply On",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply On",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Connect Test Connectors",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT ",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT ",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Draw Down Dual Action Connector",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Latch Dual Action Connector",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "delay 500ms",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 500,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Turn On Relay to Disable PIP + Power Supply On",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "IOBoardControlDigitalIO Board ( )",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DISABLE PIP",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Draw Down Dual Action Connector",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Voltage/Continuity Test",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Board ( ) Channel ( ) Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Board ( ) Channel ( ) Read Voltage ",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": []
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Board ( ) Channel ( ) No Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 16,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Power off",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "Board ( ) Power off",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Board ( ) Power off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "02102025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "hj",
+      "Change": "ini test"
+    },
+    {
+      "Date": "02172025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "Hj",
+      "Change": "save"
+    },
+    {
+      "Date": "02182025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "HJ",
+      "Change": "Remake this file, clear the log"
+    },
+    {
+      "Date": "02182025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "HJ",
+      "Change": "Save minor name change"
+    },
+    {
+      "Date": "02202025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "HJ",
+      "Change": "Add tests"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\Headliner Template.json",
+  "DateLastModified": "2025-02-18T15:43:31.4254804-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
