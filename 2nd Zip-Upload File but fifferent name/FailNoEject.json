@@ -1,0 +1,306 @@
+{
+  "Name": "FailNoEject.json",
+  "Description": "GM Bowling Green IP Power Down Fail Script With No Eject",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 8,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "WRES",
+    "MersDeviceId": "0x0100",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "PS OFF",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 turn power supply off / set output to 0",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 100,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "OmitFromTestResultls": false
+      }
+    ],
+    [
+      {
+        "GroupName": "IO Board Reset",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 200,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B2",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 200,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SetNoBiasAllChannels B2",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 2 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 2
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 1 CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 100,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 1 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 2 CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 100,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 2 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardCanReset": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "OmitFromTestResultls": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "12282021",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "B. Sullivan",
+      "Change": "Initial release"
+    },
+    {
+      "Date": "08102022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "zp",
+      "Change": "added control byte to enable PIP relay"
+    },
+    {
+      "Date": "08112022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "SL",
+      "Change": "UPDATED LOGIC"
+    },
+    {
+      "Date": "08262022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "SL",
+      "Change": "Added in a prompt that states the test has passed when asking the operator to disconnect the connectors"
+    },
+    {
+      "Date": "11162022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 4,
+      "ChangeBy": "ph",
+      "Change": "added air eject SDM and VKM to modbus control and validate"
+    },
+    {
+      "Date": "02082023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 5,
+      "ChangeBy": "SL",
+      "Change": "changed logic for when air eject is on for disconnecting the VKM"
+    },
+    {
+      "Date": "05242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 6,
+      "ChangeBy": "sl",
+      "Change": "updated timing for fail script"
+    },
+    {
+      "Date": "06072023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 7,
+      "ChangeBy": "SL",
+      "Change": "extended timeout for diconnect of the connectors to 60 seconds"
+    },
+    {
+      "Date": "07112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 8,
+      "ChangeBy": "nh",
+      "Change": "Removed Eject Logic"
+    }
+  ],
+  "FileName": "C:\\Users\\nhampshire\\Documents\\Projects\\GM Spring Hill\\FailNoEject.json",
+  "DateLastModified": "2023-07-11T10:01:24.478185-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
