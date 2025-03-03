@@ -1,0 +1,1091 @@
+{
+	"Main Layout": 
+	{
+		"Headers": 
+		{
+			"User ID": "$USER_ID",
+			"Assembly Version": "$VERSION",
+			"Product Version": "$PRODUCT_VERSION",
+			"Computer Name": "$COMPUTER_NAME",
+			"OS Version": "$OS_VERSION",
+			"Product Name": "$PRODUCT_NAME",
+			"Startup Path": "$STARTUP_PATH",
+			"Test App Script": "$TEST_APP",
+			"Start Script": "$START_SCRIPT",
+			"Request Script": "$REQUEST_SCRIPT",
+			"Parser Script": "$PARSER_SCRIPT",
+			"Result Script": "$RESULT_SCRIPT"
+		}
+	},
+	"Product Identification": 
+	{
+		"Description": "Product Identification Settings",
+		"Incoming File Entry": false,
+		"Incoming File Name": "C:\\TPass\\Data Incoming\\",
+		"Start Test Cycle Script File Name": "StartTestCycle-Rod_Template.py"
+	},
+	"Product Attributes": 
+	{
+		"Description": "Product Attribute Settings",
+		"Override Option Code File Name": "",
+		"Force Operator to Review Options":false,
+		"Build Request Timeout": "3000",
+		"Product Attribute Retrieval Script File Name": "ProductAttributeRetrieval-Rod_Template.py",
+		"Product Attribute Parsing Script File Name": "ProductAttributeParsing-Rod_Template.py",
+		"DPC":""
+	},
+	"Partner Interfaces": 
+	{
+		"Description": "Partner Interface Settings",
+		"GM EDI Interface": true,
+		"Create Mers Reporting Record": true,
+		"Create Gepics Ship Record": true,
+		"Create Gsip Quality Record": true
+	},
+	"Scanners":
+	{
+		"Description": "Scanner Settings",
+		"USB":
+		{
+			"Enabled": false,
+			"Prefix Character Decimal": 35,
+			"Suffix Character Decimal": 33
+		}			
+	},
+	"DigitalIO": 
+		{
+			"Description": "Digital IO Settings",
+			"IOBoardEnabled": true,
+			"Log Messages": true,
+			"Echo Timeout": 200,
+			"Retry Count": 4,
+			"Devices": [
+				{
+					"Device": 1,
+					"IP1": 192,
+					"IP2": 168,
+					"IP3": 0,
+					"IP4": 51,
+					"RemotePort": 10000,
+					"LocalPort": 10000,
+					"BufferMode": 1,
+					"Calibration": {
+						"Voltages": [
+							{
+								"Channel": 1,
+								"ScaleFactor": 0.003727,
+								"Offset": 188,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 2,
+								"ScaleFactor": 0.003727,
+								"Offset": 189,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 3,
+								"ScaleFactor": 0.00373,
+								"Offset": 188,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 4,
+								"ScaleFactor": 0.00373,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 5,
+								"ScaleFactor": 0.00373,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 6,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 7,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 8,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 9,
+								"ScaleFactor": 0.003671471,
+								"Offset": 245,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 10,
+								"ScaleFactor": 0.003674469,
+								"Offset": 248,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 11,
+								"ScaleFactor": 0.003728,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 12,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 13,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 14,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 15,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 16,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 17,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 18,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 19,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 20,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 21,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 22,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 23,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 24,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 25,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 26,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 27,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 28,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 29,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 30,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 31,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 32,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							}
+						],
+						"ScaleFactors": {
+							"SinkCurrent": {
+								"Units": "mAmp",
+								"Scale": 0.5806,
+								"Offset": 0
+							},
+							"SourceCurrent": {
+								"Units": "mAmp",
+								"Scale": 0.6469,
+								"Offset": 58
+							},
+							"Ref33V": {
+								"Units": "Volt",
+								"Scale": 0.000991
+							},
+							"Ref5Av": {
+								"Units": "Volt",
+								"Scale": 0.001966
+							},
+							"Ref5Dc": {
+								"Units": "Volt",
+								"Scale": 0.001977
+							},
+							"Ref9V": {
+								"Units": "Volt",
+								"Scale": 0.002965
+							},
+							"Ref65V": {
+								"Units": "Volt",
+								"Scale": 0.001738
+							},
+							"AGnd": {
+								"Units": "Volt",
+								"Scale": 0.0001
+							},
+							"Io12V": {
+								"Units": "Volt",
+								"Scale": 0.006486
+							},
+							"Veh": {
+								"Units": "Volt",
+								"Scale": 0.006212
+							}
+						}
+					}
+				},
+				{
+					"Device": 2,
+					"IP1": 192,
+					"IP2": 168,
+					"IP3": 0,
+					"IP4": 52,
+					"RemotePort": 10000,
+					"LocalPort": 10000,
+					"BufferMode": 1,
+					"Calibration": {
+						"Voltages": [
+							{
+								"Channel": 1,
+								"ScaleFactor": 0.003727,
+								"Offset": 188,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 2,
+								"ScaleFactor": 0.003727,
+								"Offset": 189,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 3,
+								"ScaleFactor": 0.00373,
+								"Offset": 188,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 4,
+								"ScaleFactor": 0.00373,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 5,
+								"ScaleFactor": 0.00373,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 6,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 7,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 8,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 9,
+								"ScaleFactor": 0.003671471,
+								"Offset": 245,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 10,
+								"ScaleFactor": 0.003674469,
+								"Offset": 248,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 11,
+								"ScaleFactor": 0.003728,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 12,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 13,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 14,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 15,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 16,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 17,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 18,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 19,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 20,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 21,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 22,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 23,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 24,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 25,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 26,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 27,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 28,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 29,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 30,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 31,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 32,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							}
+						],
+						"ScaleFactors": {
+							"SinkCurrent": {
+								"Units": "mAmp",
+								"Scale": 0.5806,
+								"Offset": 0
+							},
+							"SourceCurrent": {
+								"Units": "mAmp",
+								"Scale": 0.6469,
+								"Offset": 58
+							},
+							"Ref33V": {
+								"Units": "Volt",
+								"Scale": 0.000991
+							},
+							"Ref5Av": {
+								"Units": "Volt",
+								"Scale": 0.001966
+							},
+							"Ref5Dc": {
+								"Units": "Volt",
+								"Scale": 0.001977
+							},
+							"Ref9V": {
+								"Units": "Volt",
+								"Scale": 0.002965
+							},
+							"Ref65V": {
+								"Units": "Volt",
+								"Scale": 0.001738
+							},
+							"AGnd": {
+								"Units": "Volt",
+								"Scale": 0.0001
+							},
+							"Io12V": {
+								"Units": "Volt",
+								"Scale": 0.006486
+							},
+							"Veh": {
+								"Units": "Volt",
+								"Scale": 0.006212
+							}
+						}
+					}
+				},
+				{
+					"Device": 3,
+					"IP1": 192,
+					"IP2": 168,
+					"IP3": 0,
+					"IP4": 52,
+					"RemotePort": 10000,
+					"LocalPort": 10000,
+					"BufferMode": 1,
+					"Calibration": {
+						"Voltages": [
+							{
+								"Channel": 1,
+								"ScaleFactor": 0.003727,
+								"Offset": 188,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 2,
+								"ScaleFactor": 0.003727,
+								"Offset": 189,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 3,
+								"ScaleFactor": 0.00373,
+								"Offset": 188,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 4,
+								"ScaleFactor": 0.00373,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 5,
+								"ScaleFactor": 0.00373,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 6,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 7,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 8,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 9,
+								"ScaleFactor": 0.003671471,
+								"Offset": 245,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 10,
+								"ScaleFactor": 0.003674469,
+								"Offset": 248,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 11,
+								"ScaleFactor": 0.003728,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 12,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 13,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 14,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 15,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 16,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 17,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 18,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 19,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 20,
+								"ScaleFactor": 0.003725,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 21,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 22,
+								"ScaleFactor": 0.003745,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 23,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 24,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 25,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 26,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 27,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 28,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 29,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 30,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 31,
+								"ScaleFactor": 0.00374,
+								"Offset": 365,
+								"Units": "Volts"
+							},
+							{
+								"Channel": 32,
+								"ScaleFactor": 0.003735,
+								"Offset": 365,
+								"Units": "Volts"
+							}
+						],
+						"ScaleFactors": {
+							"SinkCurrent": {
+								"Units": "mAmp",
+								"Scale": 0.5806,
+								"Offset": 0
+							},
+							"SourceCurrent": {
+								"Units": "mAmp",
+								"Scale": 0.6469,
+								"Offset": 58
+							},
+							"Ref33V": {
+								"Units": "Volt",
+								"Scale": 0.000991
+							},
+							"Ref5Av": {
+								"Units": "Volt",
+								"Scale": 0.001966
+							},
+							"Ref5Dc": {
+								"Units": "Volt",
+								"Scale": 0.001977
+							},
+							"Ref9V": {
+								"Units": "Volt",
+								"Scale": 0.002965
+							},
+							"Ref65V": {
+								"Units": "Volt",
+								"Scale": 0.001738
+							},
+							"AGnd": {
+								"Units": "Volt",
+								"Scale": 0.0001
+							},
+							"Io12V": {
+								"Units": "Volt",
+								"Scale": 0.006486
+							},
+							"Veh": {
+								"Units": "Volt",
+								"Scale": 0.006212
+							}
+						}
+					}
+				}
+			]
+		},
+	"Meter":
+		{
+			"Description": "Meter Settings",
+			"MeterEnabled": true,
+			"Log Messages": true,
+			"Connect Timeout": 2000,
+			"Command Timeout": 300,
+			"Set Voltage Range Command Timeout": 2000,
+			"Retry Count": 4,
+			"Devices": [
+				{
+					"Device": 1,
+					"IP1": 192,
+					"IP2": 168,
+					"IP3": 0,
+					"IP4": 11,
+					"Port": 8100,
+					"TypeList": [
+						"KeysightDAQ970A"
+					],
+					"Type": "KeysightDAQ970A"
+				}
+			]
+		},
+	"ModBus":
+		{
+			"Description": "Mod Bus Settings",
+			"ModbusEnabled": true,
+			"Log Messages": true,
+			"Connect Timeout": 2000,
+			"Command Timeout": 300,
+			"Set Voltage Range Command Timeout": 2000,
+			"Retry Count": 4,
+			"Devices": [
+				{
+					"Device": 1,
+					"IP1": 192,
+					"IP2": 168,
+					"IP3": 0,
+					"IP4": 11,
+					"Port": 8100,
+					"TypeList": [
+						"962EN-4006",
+						"989EN-4C16",
+						"XT-1221"
+					],
+					"Type": "989EN-4C16"
+				},
+				{
+					"Device": 2,
+					"IP1": 192,
+					"IP2": 168,
+					"IP3": 0,
+					"IP4": 12,
+					"Port": 502,
+					"TypeList": [
+						"962EN-4006",
+						"989EN-4C16",
+						"XT-1221"
+					],
+					"Type": "962EN-4006",
+					"962EN-4006Channels": {
+						"VoltageRangeMvoltList": [
+							10000,
+							5000,
+							2500,
+							1250,
+							625,
+							313,
+							156,
+							78
+						],
+						"VoltageRangeMvoltCh1Thru3": 78,
+						"VoltageRangeMvoltCh4Thru6": 5000
+					}
+				},
+				{
+					"Device": 3,
+					"IP1": 192,
+					"IP2": 168,
+					"IP3": 0,
+					"IP4": 13,
+					"Port": 502,
+					"TypeList": [
+						"962EN-4006",
+						"989EN-4C16",
+						"XT-1221"
+					],
+					"Type": "XT-1221",
+					"XT-1221Channels": [
+						{
+							"Channel": 1,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						},
+						{
+							"Channel": 2,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						},
+						{
+							"Channel": 3,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						},
+						{
+							"Channel": 4,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						},
+						{
+							"Channel": 5,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						},
+						{
+							"Channel": 6,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						},
+						{
+							"Channel": 7,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						},
+						{
+							"Channel": 8,
+							"TypeXT-1221LegacySupport": false,
+							"VoltageRangeMvoltList": [
+								10000,
+								5000
+							],
+							"VoltageRangeMvolt": 10000
+						}
+					]
+				}
+			]
+		},
+	"Results Output": 
+	{
+		"Description": "Results Output Settings",
+		"Send Test Results": true,
+		"Test Results Processing Script File Name": "TestResultsProcessing-Rod_Template.py",
+		"fdsafTest Results Processing Script File Name": "pyjsonexample.py",
+		"Printer Enable": true,
+		"Form Feed": true,
+		"Save Test Results To Tpi Database":true
+	},
+	"Main Screen":
+	{
+		"Description": "Main Screen Settings",
+		"Title": "Tesla Cali",
+		"Primary Id":
+		{
+			"Enabled":true,
+			"Label":"Primary ID"
+		},
+		"Secondary Id":
+		{
+			"Enabled":true,
+			"Label":"Secondary ID"
+		},
+		"Tertiary Id":
+		{
+			"Enabled":true,
+			"Label":"Tertiary ID"
+		},
+		"Quaternary Id":
+		{
+			"Enabled":true,
+			"Label":"Quaternary ID"
+		},
+		"Quinary Id":
+		{
+			"Enabled":true,
+			"Label":"Quinary ID"
+		},
+		"Buttons":
+		[{
+			"Name": "Start",
+			"Script": "PassOrFail.py",
+			"Back Color": "OliveDrab",
+			"Foreground Color": "Yellow"
+		},
+		{
+		"Name": "End",
+			"Script": "PassOrFail.py",
+			"Back Color": "OliveDrab",
+			"Foreground Color": "Green"
+		}]
+	},
+	"Results Screen":
+		{
+			"Description": "Results Screen Settings",
+			"Display": true,
+			"Display Time Sec": 5,
+			"Display Failed Items": true,
+			"Display Fault Items": true,
+			"Display Passed Items": true,
+			"Display Not Tested Items": true,
+			"Button Display Retest": false,
+			"Button Display Exit": false,
+			"User Button1": 
+			{
+				"Enabled":false,
+				"Name":"Partial",
+				"Test Application Script": "User1PassOrFail.json",
+				"SendResults":true,
+				"Back Color": "OliveDrab",
+				"Foreground Color": "Yellow"
+			},
+			"User Button2": 
+			{
+				"Enabled":false,
+				"Name":"Release",
+				"Test Application Script": "User2PassOrFail.json",
+				"SendResults":false,
+				"Back Color": "Orange",
+				"Foreground Color": "Black"
+			},
+			"User Button3": 
+			{
+				"Enabled":false,
+				"Name":"B3",
+				"Test Application Script": "User3PassOrFail.json",
+				"SendResults":true,
+				"Back Color": "Red",
+				"Foreground Color": "Black"
+			}
+		},
+	"Test Screen": 
+		{
+			"Description": "Test Screen Settings",
+			"TestApp Display Test Groups": true,
+			"TestApp Display Test Steps": true,
+			"TestAppRunContinuously": false,
+			"TestAppRunContinuouslyStopUponTestFailure": false,
+			"TestAppRunContinuouslyTimeSec": 5,
+			"TestAppRunContinuouslyProductId": "111111"
+		},
+	"Logging": 
+		{
+			"Description": "Logging Settings",
+			"TPass Log Level": "Info",
+			"TestApp Log Level": "Info",
+			"TestApp Summary Log Only Tests That Ran": false
+		}
+
+}
