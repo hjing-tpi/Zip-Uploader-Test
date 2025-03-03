@@ -1,0 +1,1004 @@
+{
+  "Name": "Abort",
+  "Description": "Abort Script for EV Charger",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 34,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "TerminationScriptFileNameConsecutiveFail": "",
+  "TerminationScriptConsecutiveFails": 0,
+  "GmReporting": {
+    "MersTestName": "XXXX",
+    "MersTestType": "XX",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "XXXX",
+    "MersEngineType": "XXXX",
+    "MersDeviceId": "0x0",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Abort",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Stop",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "",
+              "ModbusLabel": "Stop",
+              "ModbusAddress": 2,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Start in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Start",
+              "ModbusAddress": 1,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusReadCoils",
+            "Description": "Read Done From PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusReadCoils": {
+              "DeviceId": 3,
+              "StopActiveRunningModbusReadCoilsTestStep": false,
+              "MonitorOverTime": false,
+              "ModbusLabel": "Done",
+              "ModbusAddress": 14,
+              "ModbusValue": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Stop in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Stop",
+              "ModbusAddress": 2,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC",
+              "ModbusLabel": "US-AC",
+              "ModbusAddress": 5,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "EUAC",
+              "ModbusLabel": "EU-AC",
+              "ModbusAddress": 7,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "JPAC",
+              "ModbusLabel": "JPN-AC",
+              "ModbusAddress": 9,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "GBTAC",
+              "ModbusLabel": "CHN-AC",
+              "ModbusAddress": 11,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USDC",
+              "ModbusLabel": "US-DC",
+              "ModbusAddress": 6,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "EUDC",
+              "ModbusLabel": "EU-DC",
+              "ModbusAddress": 8,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "ChademoDC",
+              "ModbusLabel": "JPN-DC",
+              "ModbusAddress": 10,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "GBTDC",
+              "ModbusLabel": "CHN-DC",
+              "ModbusAddress": 12,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Stop Charging DC CHaDeMo/GBT",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StopCharging",
+              "DeviceId": 2,
+              "ConnectorId": 2,
+              "StatusNotification": "Available",
+              "MonitorConnectorStatusFaultText": "",
+              "TestDataDisplay": {
+                "Samples": "",
+                "OCPPAvailabilityStatus": "",
+                "OCPPStatus": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Stop Charging DC US/EU",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StopCharging",
+              "DeviceId": 2,
+              "ConnectorId": 1,
+              "StatusNotification": "Available",
+              "MonitorConnectorStatusFaultText": "",
+              "TestDataDisplay": {
+                "Samples": "",
+                "OCPPAvailabilityStatus": "",
+                "OCPPStatus": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Stop Charging AC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StopCharging",
+              "DeviceId": 1,
+              "ConnectorId": 1,
+              "StatusNotification": "Available",
+              "MonitorConnectorStatusFaultText": "",
+              "TestDataDisplay": {
+                "Samples": "",
+                "OCPPAvailabilityStatus": "",
+                "OCPPStatus": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 7,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 16,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 17,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 18,
+      "ChangeBy": "nh",
+      "Change": "hn"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 19,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 20,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "11102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 21,
+      "ChangeBy": "lm",
+      "Change": "Added Option Codes to only Stop Charging Devices for only when they were started."
+    },
+    {
+      "Date": "11102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 22,
+      "ChangeBy": "LM",
+      "Change": "Added more option codes to stop charging appropriately."
+    },
+    {
+      "Date": "11102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 23,
+      "ChangeBy": "LM",
+      "Change": "Corrected Option Codes for DC Stop Charging"
+    },
+    {
+      "Date": "11102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 24,
+      "ChangeBy": "LM",
+      "Change": "Corrected Option Codes for DC Stop Charging"
+    },
+    {
+      "Date": "11102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 25,
+      "ChangeBy": "LM",
+      "Change": "Added timeout to Stop Charging"
+    },
+    {
+      "Date": "11152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 26,
+      "ChangeBy": "lm",
+      "Change": "Removed RPO Codes for Stop Charging OCCP, test step will pass regardless of response from OCPP webserver."
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 27,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 28,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 29,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 30,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 31,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 32,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 33,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 34,
+      "ChangeBy": "aa",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\Abort.json",
+  "DateLastModified": "2024-09-25T09:57:55.1165084-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
