@@ -1,0 +1,58 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can Configure Com Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"CanConfigureCom",
+					"Description": "Can Configure Com",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"BoardId": 0,
+					"CanConfigureCom":
+						{
+							"CanModeList":["HighSpeed500k","GmLanLow","GmLanHigh","GmLanWakeUp","LinBus","FaultTolerant","GmLanDualWire","DualWireMed125k","FaultTolerant50k","MediumSpeed250k","HighSpeed2","GmLanWakeUpLow"],
+							"CanMode":"",
+							"FlowControl":false,
+							"CanId":[
+								{
+									"ReceiveId":"",
+									"BitId29":false
+								}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
