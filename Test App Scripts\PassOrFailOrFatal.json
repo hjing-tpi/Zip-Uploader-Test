@@ -1,0 +1,256 @@
+{
+  "Name": "Pass/Fail/Fatal Fail",
+  "Description": "Termination Script - Pass",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 16,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "Abort.json",
+  "TerminationScriptFileNameConsecutiveFail": "Release.json",
+  "TerminationScriptConsecutiveFails": 2,
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "WRES",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Pass or Fail",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "PromptOperator",
+            "Description": "Hit P or F",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "manual move.JPG",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Fault - Movie",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "sample-mp4-file.mp4",
+                "ImageFileName": "",
+                "PdfFileName": "TPI_TPass_TestConfiguration_v2.pdf",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": " P or F",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperator",
+            "Description": "Hit P or F will Fatal Fault",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Fault - Picture",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "Seat SW 1.jpg",
+                "PdfFileName": "TPI_TPass_TestConfiguration_v2.pdf",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "03112019",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "06212022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07072022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "RMM",
+      "Change": "removed delay"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "d",
+      "Change": "d"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09052024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 16,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\PassOrFailOrFatal.json",
+  "DateLastModified": "2024-09-05T15:51:10.0002038-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
