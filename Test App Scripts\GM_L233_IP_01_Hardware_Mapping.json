@@ -1,0 +1,232 @@
+{
+    "Name": "GM_L233_IP_01 Hardware Mapping",
+    "IOBoards": 
+    [
+        {
+            "BoardId": 1,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "Power Up Vehicle #1",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "RF Antenna Coax",
+                    "ChannelNumber": 5
+                },
+                {
+                    "ChannelName": "Column Shifter",
+                    "ChannelNumber": 7
+                },
+                {
+                    "ChannelName": "Glove Box Door Release Control",
+                    "ChannelNumber": 8
+                },
+                {
+                    "ChannelName": "LAMP - Ambient Color Footwell/LIGHTING ENABLE",
+                    "ChannelNumber": 9
+                },
+                {
+                    "ChannelName": "TCP Speaker Voltage Range",
+                    "ChannelNumber": 18
+                },
+                {
+                    "ChannelName": "TCP Speaker Feed",
+                    "ChannelNumber": 19
+                },
+                {
+                    "ChannelName": "LF Speaker Set PWM",
+                    "ChannelNumber": 21
+                },
+                {
+                    "ChannelName": "LF Midrange Speaker Voltage Range",
+                    "ChannelNumber": 22
+                },
+                {
+                    "ChannelName": "Steering Column Lock E600",
+                    "ChannelNumber": 31
+                },
+                {
+                    "ChannelName": "Center Front Speaker Voltage Range",
+                    "ChannelNumber": 32
+                }
+
+            ]
+        },        
+        {
+            "BoardId": 2,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "LIN Testing/Power Up Vehicle #3",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "Power Up Vehicle #3",
+                    "ChannelNumber": 3
+                },
+                {
+                    "ChannelName": "Power Up Vehicle Ground",
+                    "ChannelNumber": 4
+                },
+                {
+                    "ChannelName": "Center Front Speaker Set PWM",
+                    "ChannelNumber": 9
+                },
+                {
+                    "ChannelName": "RF Speaker Voltage Range",
+                    "ChannelNumber": 11
+                },
+                {
+                    "ChannelName": "RF Speaker Set PWM",
+                    "ChannelNumber": 12
+                },
+                {
+                    "ChannelName": "HVAC BLOWER",
+                    "ChannelNumber": 14
+                },
+                {
+                    "ChannelName": "Blower Motor Control Rear",
+                    "ChannelNumber": 15
+                },
+                {
+                    "ChannelName": "Clock Spring - E602 Voltage Range",
+                    "ChannelNumber": 22
+                },
+                {
+                    "ChannelName": "B34 Upper Duck Air Temp Sensor Voltage Range",
+                    "ChannelNumber": 23
+                },
+                {
+                    "ChannelName": "BLACK USB CONNECTOR",
+                    "ChannelNumber": 25
+                },
+                {
+                    "ChannelName": "B34 Upper Duck Air Temp Sensor",
+                    "ChannelNumber": 27
+                },
+                {
+                    "ChannelName": "Rear Vision Camera Blue Coax",
+                    "ChannelNumber": 30
+                },
+                {
+                    "ChannelName": "Power Up Vehicle #4/XM Antenna",
+                    "ChannelNumber": 32
+                }
+            ]
+        },
+        {
+            "BoardId": 3,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "Power Up Vehicle #5",
+                    "ChannelNumber": 1
+                }
+            ]
+        }
+    ],
+
+    "Modbus Devices":
+    [
+        {
+            "DeviceId": 1,
+            "Modbus Output Masks":
+            [                
+            ],
+
+            "Modbus Input Masks":
+            [                
+                {
+                "Mask Name": "CONNECT 76 WAY LEFT ORANGE",
+                "Bit Mask": "???????????????1"
+                },
+                {
+                    "Mask Name": "CONNECT 30 WAY CGM BLACK",
+                    "Bit Mask": "?????????1??????"
+                    },
+                {
+                    "Mask Name": "CONNECT 16 WAY ALDL BLUE",
+                    "Bit Mask": "???????????1????"
+                },
+                {
+                    "Mask Name": "CONNECT 29 WAY BCM LT BLUE",
+                    "Bit Mask": "??????????1?????"
+                },
+                {
+                    "Mask Name": "CONNECT 4 WAY IEC RED",
+                    "Bit Mask": "?????????????1??"
+                },
+                {
+                    "Mask Name": "CONNECT LEFT GREEN GROUND",
+                    "Bit Mask": "??????1?????????"
+                },
+                {
+                    "Mask Name": "CONNECT 16/16 WAY GREY/BLACK",
+                    "Bit Mask": "????11??????????"
+                },
+                {
+                    "Mask Name": "CONNECT QUAD/QUAD COAX",
+                    "Bit Mask": "??11????????????"
+                },
+                {
+                    "Mask Name": "CONNECT RIGHT GREEN DUAL GROUND",
+                    "Bit Mask": "???????11???????"
+                },
+                {
+                    "Mask Name": "CONNECT 76 WAY RIGHT YELLOW",
+                    "Bit Mask": "??????????????1?"
+                },
+                {
+                    "Mask Name": "CONNECT 21 WAY CLOCKSPRING BLUE",
+                    "Bit Mask": "????????????1???"
+                },
+                {
+                    "Mask Name": "DISCONNECT 21 WAY CLOCKSPRING BLUE",
+                    "Bit Mask": "????????????0???"
+                }
+            ]
+
+        },
+        {
+
+            "DeviceId" : 2,
+            "Modbus Output Masks":
+            [
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        },
+        {
+
+            "DeviceId" : 3,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Output Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Enable CGM light",
+                    "Bit Mask": "1000000000000000"
+                },
+                {
+                    "Mask Name": "Latch Dual Actions",
+                    "Bit Mask": "0100000001110011"
+                },
+                {
+                    "Mask Name": "Draw Down Dual Actions",
+                    "Bit Mask": "0100000001111111"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        }
+
+    ]
+
+}
