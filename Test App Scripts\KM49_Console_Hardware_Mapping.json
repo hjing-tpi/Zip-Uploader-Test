@@ -1,0 +1,193 @@
+{
+    "Name": "KM49 Console Hardware Mapping",
+    "IOBoards": 
+    [
+        {
+            "BoardId": 1,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "KIN H-Bias and Measure",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "SW Terrian Select H-Bias and Measure",
+                    "ChannelNumber": 2
+                },
+                {
+                    "ChannelName": "SW Bank H-Bias and Measure",
+                    "ChannelNumber": 3
+                },
+                {
+                    "ChannelName": "Port Media Hub FPDM H-Bias and Measure",
+                    "ChannelNumber": 4
+                },
+                {
+                    "ChannelName": "Power Feed",
+                    "ChannelNumber": 5
+                },
+                {
+                    "ChannelName": "General Ground #1 and Half-Bias",
+                    "ChannelNumber": 6
+                },
+                {
+                    "ChannelName": "General Ground #2",
+                    "ChannelNumber": 7
+                },
+                {
+                    "ChannelName": "USB AUDIO CABLE (GY)",
+                    "ChannelNumber": 8
+                },
+                {
+                    "ChannelName": "Console Rear Port UCI P-Bias",
+                    "ChannelNumber": 11
+                },
+                {
+                    "ChannelName": "Port Power Outlet Feed-Control",
+                    "ChannelNumber": 12
+                },
+                {
+                    "ChannelName": "IP Cubby Bin Lamp Cubby Bin D H-Bias",
+                    "ChannelNumber": 13
+                },
+                {
+                    "ChannelName": "Center Console Ant PEM 4 H-Bias",
+                    "ChannelNumber": 14
+                },
+                {
+                    "ChannelName": "ANT PASSIVE ENTRY 4 RTN",
+                    "ChannelNumber": 15
+                },
+                {
+                    "ChannelName": "USB AUDIO CABLE (GY) #2",
+                    "ChannelNumber": 16
+                },
+                {
+                    "ChannelName": "Arm Rest Bin Lamp Center Console Power",
+                    "ChannelNumber": 17
+                },
+                {
+                    "ChannelName": "Vent Sw Seat Heater RR LT Power",
+                    "ChannelNumber": 18
+                },
+                {
+                    "ChannelName": "PWR - OUTLET FEED",
+                    "ChannelNumber": 19
+                },
+                {
+                    "ChannelName": "110/220 VAC INVERTER CABIN AC 1B",
+                    "ChannelNumber": 20
+                },
+                {
+                    "ChannelName": "Port Power Outlet Measure",
+                    "ChannelNumber": 21
+                },
+                {
+                    "ChannelName": "D3274A Front Port UCI Dual Measurement",
+                    "ChannelNumber": 23
+                },
+                {
+                    "ChannelName": "+5 V Power (50 mA max)",
+                    "ChannelNumber": 24
+                },
+                {
+                    "ChannelName": "Cigar Plug",
+                    "ChannelNumber": 25
+                },
+                {
+                    "ChannelName": "IOChannelNameThirty",
+                    "ChannelNumber": 30
+                },
+                {
+                    "ChannelName": "D2649A Ft Console Rear Port UCI",
+                    "ChannelNumber": 31
+                },
+                {
+                    "ChannelName": "D3274B Front Port UCI Dual Measurement",
+                    "ChannelNumber": 32
+                }
+
+            ]
+        }
+    ],
+
+    "Modbus Devices":
+    [
+        {
+            "DeviceId": 1,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Relay3",
+                    "Bit Mask": "??1??"
+                },
+                {
+                    "Mask Name": "Relay4",
+                    "Bit Mask": "0000001000000000"
+                },
+                {
+                    "Mask Name": "Relay5",
+                    "Bit Mask": "0000010000000000"
+                },
+                {
+                    "Mask Name": "Relay6",
+                    "Bit Mask": "0000100000000000"
+                },
+                {
+                    "Mask Name": "Relay7",
+                    "Bit Mask": "0001000000000000"
+                },
+                {
+                    "Mask Name": "Relay8",
+                    "Bit Mask": "0010000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+
+        },
+        {
+
+            "DeviceId" : 2,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Relay9",
+                    "Bit Mask": "0001000000000000"
+                },
+                {
+                    "Mask Name": "Relay10",
+                    "Bit Mask": "0010000000000000"
+                },
+                {
+                    "Mask Name": "Relay11",
+                    "Bit Mask": "0100000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+                {
+                    "Mask Name": "CONNECT 30 WAY Y354A CONNECTOR",
+                    "Bit Mask": "???????????????1"
+                },
+                {
+                    "Mask Name": "CONNECT 24 WAY Y352A CONNECTOR",
+                    "Bit Mask": "??????????????1?"
+                },
+                {
+                    "Mask Name": "24 WAY Y307A CONNECTOR",
+                    "Bit Mask": "?????????????1??"
+                },
+                {
+                    "Mask Name": "24 WAY Y306A CONNECTOR",
+                    "Bit Mask": "????????????1???"
+                }
+            ]
+        }
+
+    ]
+
+}
