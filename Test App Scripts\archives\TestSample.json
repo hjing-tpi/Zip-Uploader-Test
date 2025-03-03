@@ -1,0 +1,218 @@
+{
+	"Name":"Sample Test",
+	"Description":"Sample Test Application",
+	"Version":1.1,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Set Bias B1 and B2",
+			"Background":false,
+			"TestSteps":[
+				{
+					"Name":"SetBias",
+					"Description": "SetBias B1 C1 Bias H",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 500,
+					"SetBias":
+						{
+							"BoardId": 1,
+							"Channel":1,
+							"BiasState":"H"		
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetBias B1 C1 Bias H"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 - Channel 1 - Bias H",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetBias",
+					"Description": "SetBias B1 C32 Bias P",
+					"Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 500,
+					"SetBias":
+						{
+							"BoardId": 1,
+							"Channel":32,
+							"BiasState":"P"			
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetBias B1 C32 Bias P"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 - Channel 32 - Bias P",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetNoBiasAllChannels",
+					"Description": "SetBias B2 ALL Bias NO",
+					"Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 500,
+					"SetNoBiasAllChannels":
+						{
+							"BoardId": 2
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetBias B2 ALL Bias NO"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 2 - Channel ALL - Bias NO",
+							"OptionCodesMask":""
+						}]
+				}]
+		}],
+		[{
+			"GroupName":"B1 - Schedule Voltage and Display over time",
+			"Background":false,
+			"TestSteps":[
+				{
+					"Name":"RequestVoltageSchedule",
+					"Description": "Display B1 voltages over time",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 25000,
+					"RequestVoltageSchedule":
+						{
+							"TimeIntervalMsec": 100,
+							"BoardId": 1
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"Display B1 voltages over time"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 - Voltages being displayed for 25 seconds",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"StopVoltageSchedule",
+					"Description": "Stop B1 voltages",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 500,
+					"StopVoltageSchedule":
+						{
+							"BoardId": 1
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"Stop B1 voltages"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 - Stop Voltage Schedule",
+							"OptionCodesMask":""
+						}]
+				}]
+		},
+		{
+			"GroupName":"B2 - Schedule Voltage and Display over time",
+			"Background":false,
+			"TestSteps":[
+				{
+					"Name":"RequestVoltageSchedule",
+					"Description": "Display B2 voltages over time",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 20000,
+					"RequestVoltageSchedule":
+						{
+							"TimeIntervalMsec": 100,
+							"BoardId": 2
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"Display B2 voltages over time"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 2 - Voltages being displayed for 20 seconds",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"StopVoltageSchedule",
+					"Description": "Stop B2 voltages",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 500,
+					"StopVoltageSchedule":
+						{
+							"BoardId": 2
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"Stop B2 voltages"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 2 - Stop Voltage Schedule",
+							"OptionCodesMask":""
+						}]
+				}]
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"01012019",
+			"Version":1.1,
+			"Change":"Fix issue where the air bag deployed when powering the Glass Roof"
+		},
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
