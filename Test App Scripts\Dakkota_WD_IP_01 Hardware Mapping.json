@@ -1,0 +1,346 @@
+{
+    "Name": "Dakkota_WD_IP_01 Hardware Mapping",
+    "IOBoards": 
+    [
+        {
+            "BoardId": 1,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "Power Up DCSM/CMCM",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "Power Up ITBM",
+                    "ChannelNumber": 2
+                },
+                {
+                    "ChannelName": "HVAC Blower",
+                    "ChannelNumber": 3
+                },
+                {
+                    "ChannelName": "STEERING MTR FORE/AFT",
+                    "ChannelNumber": 4
+                },
+                {
+                    "ChannelName": "STEERING MTR UP/DN",
+                    "ChannelNumber": 5
+                },
+                {
+                    "ChannelName": "STEERING MTR UP/DN RTN",
+                    "ChannelNumber": 6
+                },
+                {
+                    "ChannelName": "Right & left footwell lamp feed",
+                    "ChannelNumber": 7
+                },
+                {
+                    "ChannelName": "Passive Entry Antenna Feed",
+                    "ChannelNumber": 16
+                },
+                {
+                    "ChannelName": "Passive Entry Antenna Read",
+                    "ChannelNumber": 17
+                },
+                {
+                    "ChannelName": "2 Way Speaker Feed",
+                    "ChannelNumber": 18
+                },
+                {
+                    "ChannelName": "2 Way Speaker Read",
+                    "ChannelNumber": 19
+                } ,
+                {
+                    "ChannelName": "Ignition feed cluster, trailer tow, and gateway",
+                    "ChannelNumber": 20
+                },
+                {
+                    "ChannelName": "Power Up ICS/HVAC",
+                    "ChannelNumber": 22
+                },
+                {
+                    "ChannelName": "Power Up HVAC",
+                    "ChannelNumber": 23
+                },
+                {
+                    "ChannelName": "Battery feed KIN module",
+                    "ChannelNumber": 25
+                },
+                {
+                    "ChannelName": "Power Up SCCM",
+                    "ChannelNumber": 27
+                },
+                {
+                    "ChannelName": "Power Up ESM",
+                    "ChannelNumber": 29
+                },
+                {
+                    "ChannelName": "Battery feed gateway",
+                    "ChannelNumber": 30
+                },
+                {
+                    "ChannelName": "Glove Box Test",
+                    "ChannelNumber": 31
+                }
+            ]
+        },        
+        {
+            "BoardId": 2,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "Power Up SHIFTER",
+                    "ChannelNumber": 2
+                },
+                {
+                    "ChannelName": "Courtesy lamp feed(5.11k Resistor to Channel 17)",
+                    "ChannelNumber": 8
+                },
+                {
+                    "ChannelName": "GPS Coax X7103A",
+                    "ChannelNumber": 9
+                },
+                {
+                    "ChannelName": "GPS/SDAR Dual Coax",
+                    "ChannelNumber": 10
+                },
+                {
+                    "ChannelName": "Dual Coax Position 2 Cellphone Antenna",
+                    "ChannelNumber": 11
+                },
+                {
+                    "ChannelName": "AM/FM Antenna Coax",
+                    "ChannelNumber": 12
+                },
+                {
+                    "ChannelName": "Gray USB Connector",
+                    "ChannelNumber": 13
+                },
+                {
+                    "ChannelName": "ELT Headlamp Select Read",
+                    "ChannelNumber": 15
+                },
+                {
+                    "ChannelName": "ELT Headlamp Select Feed",
+                    "ChannelNumber": 16
+                },
+                {
+                    "ChannelName": "Right & left courtesy lamp feed",
+                    "ChannelNumber": 17
+                },
+                {
+                    "ChannelName": "Cigar Connector",
+                    "ChannelNumber": 19
+                }
+            ]
+        }
+    ],
+
+    "Modbus Devices":
+    [
+        {
+            "DeviceId": 1,
+            "Modbus Output Masks":
+            [                
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [                
+                {
+                    "Mask Name": "Connect AM/FM Coax",
+                    "Bit Mask": "????1???????????"
+                },
+                {
+                    "Mask Name": "Eject AM/FM Coax",
+                    "Bit Mask": "????0???????????"
+                }
+            ]
+
+        },
+        {
+
+            "DeviceId" : 2,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+                {
+                    "Mask Name": "Connect 30 Way ORC",
+                    "Bit Mask": "1???????????????"
+                },
+                {
+                    "Mask Name": "Disconnect Connect 30 Way ORC",
+                    "Bit Mask": "0???????????????"
+                },
+                {
+                    "Mask Name": "Connect Left 59 Way Yellow",
+                    "Bit Mask": "?????1??????????"
+                },
+                {
+                    "Mask Name": "Connect Right 59 Way Red",
+                    "Bit Mask": "????1???????????"
+                },
+                {
+                    "Mask Name": "Connect Single GPS Coax",
+                    "Bit Mask": "???1????????????"
+                },
+                {
+                    "Mask Name": "Connect Dual GPS/SDAR CELL",
+                    "Bit Mask": "??1?????????????"
+                },
+                {
+                    "Mask Name": "Connect 24 Way CBC",
+                    "Bit Mask": "?1??????????????"
+                },
+                {
+                    "Mask Name": "Disconnect Left 59 Way Yellow",
+                    "Bit Mask": "?????0??????????"
+                },
+                {
+                    "Mask Name": "Disconnect Right 59 Way Red",
+                    "Bit Mask": "????0???????????"
+                },
+                {
+                    "Mask Name": "Disconnect GPS Coax",
+                    "Bit Mask": "???0????????????"
+                },
+                {
+                    "Mask Name": "Eject Dual Coax GPS/SDAR Cell",
+                    "Bit Mask": "??0?????????????"
+                },
+                {
+                    "Mask Name": "Disconnect 24 Way CBC",
+                    "Bit Mask": "?0??????????????"
+                }
+            ]
+        },
+        {
+
+            "DeviceId" : 3,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        },
+        {
+
+            "DeviceId" : 4,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Latch Dual Action",
+                    "Bit Mask": "0000110000000000"
+                },
+                {
+                    "Mask Name": "Draw Down Dual Actions",
+                    "Bit Mask": "0011110000000000"
+                },
+                {
+                    "Mask Name": "Push Up Dual Action Connectors #1",
+                    "Bit Mask": "0000110000000000"
+                },
+                {
+                    "Mask Name": "Eject Dual Action Connector #1",
+                    "Bit Mask": "1100000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        },
+        {
+
+            "DeviceId" : 5,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+                {
+                    "Mask Name": "Connect Left Ground",
+                    "Bit Mask": "???????????????1"
+                },
+                {
+                    "Mask Name": "Connect Right Ground",
+                    "Bit Mask": "??????????????1?"
+                },
+                {
+                    "Mask Name": "Connect OBD2",
+                    "Bit Mask": "?????????????1??"
+                },
+                {
+                    "Mask Name": "Disconnect OBD2",
+                    "Bit Mask": "?????????????0??"
+                },
+                {
+                    "Mask Name": "Disconnect Left Ground",
+                    "Bit Mask": "???????????????0"
+                },
+                {
+                    "Mask Name": "Disconnect Right Ground",
+                    "Bit Mask": "??????????????0?"
+                }
+            ]
+        },
+        {
+
+            "DeviceId" : 6,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Eject 30 Way ORC Connector",
+                    "Bit Mask": "0000000000000010"
+                },
+                {
+                    "Mask Name": "Latch Dual Actions",
+                    "Bit Mask": "0000000000001110"
+                },
+                {
+                    "Mask Name": "Push Up Dual Action Connectors #2",
+                    "Bit Mask": "0000000000001100"
+                },
+                {
+                    "Mask Name": "Eject Dual Action Connector #2",
+                    "Bit Mask": "0000000000000011"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        }
+
+    ]
+
+}
