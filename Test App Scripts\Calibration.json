@@ -1,0 +1,717 @@
+{
+  "Name": "New Test Application",
+  "Description": "Calibration",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 24,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "CALI",
+    "MersTestType": "CA",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "CALI",
+    "MersEngineType": "CALI",
+    "MersDeviceId": "0x0",
+    "GepicsShipCode": "CALI"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "New Test Group 0",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Move Home",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 500,
+                "Velocity": 30000,
+                "Position": 0,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Move Home",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 2,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 500,
+                "Velocity": 30000,
+                "Position": 116900,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Move Home",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 500,
+                "Velocity": 30000,
+                "Position": 200000,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorAutoCalibrate",
+            "Description": "Validate",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "RECAL",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorAutoCalibrate": {
+              "DeviceId": 1,
+              "CIPDeviceId": 3,
+              "SerialDeviceId": 1,
+              "CalibrationWeight": 53,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": ""
+              },
+              "TestDataDisplay": {
+                "Samples": "Samples",
+                "Position": "Position",
+                "KistlerPressure": "Pressure lbf",
+                "KistlerPressureSecondary": "Pressure lbf",
+                "ScalePressure": "ScalePressure"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Move To Calibration Position",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 500,
+                "Velocity": 30000,
+                "Position": 200000,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "wait",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "RECAL",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "FAMReCalibrate",
+            "Description": "Re Calibrate",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "RECAL",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "FAMReCalibrate": {
+              "DeviceId": 1,
+              "CIPDeviceId": 3,
+              "SerialDeviceId": 1,
+              "CalibrationWeightLower": 918,
+              "CalibrationWeightUpper": 1560,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": ""
+              },
+              "TestDataDisplay": {
+                "Samples": "Samples",
+                "Position": "Position",
+                "KistlerPressure": "Main Force lbf",
+                "KistlerPressureSecondary": "Secondary Force lbf",
+                "ScalePressure": "Scale Pressure lbf"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Move To Calibration Position",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 500,
+                "Velocity": 30000,
+                "Position": 200000,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "wait",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "RECAL",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorAutoCalibrate",
+            "Description": "Verify",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "RECAL",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorAutoCalibrate": {
+              "DeviceId": 1,
+              "CIPDeviceId": 3,
+              "SerialDeviceId": 1,
+              "CalibrationWeight": 53,
+              "Fault": {
+                "Id": "",
+                "Description": "",
+                "Detail": ""
+              },
+              "TestDataDisplay": {
+                "Samples": "Samples",
+                "Position": "Position",
+                "KistlerPressure": "Pressure lbf",
+                "KistlerPressureSecondary": "Pressure lbf",
+                "ScalePressure": "ScalePressure"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Move Home",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 500,
+                "Velocity": 30000,
+                "Position": 0,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03222023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04202023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 13,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "05082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 14,
+      "ChangeBy": "nh",
+      "Change": "calibration weight"
+    },
+    {
+      "Date": "05082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 15,
+      "ChangeBy": "nh",
+      "Change": "50 -> 53"
+    },
+    {
+      "Date": "05162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 16,
+      "ChangeBy": "nh",
+      "Change": "Re Calibration Aded"
+    },
+    {
+      "Date": "05162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 17,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "05162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 18,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "05162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 19,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "05162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 20,
+      "ChangeBy": "qw",
+      "Change": "qweqq"
+    },
+    {
+      "Date": "05162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 21,
+      "ChangeBy": "asd",
+      "Change": "asd"
+    },
+    {
+      "Date": "05162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 22,
+      "ChangeBy": "asd",
+      "Change": "asdf"
+    },
+    {
+      "Date": "05172023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 23,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "05172023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 24,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    }
+  ],
+  "FileName": "C:\\Tpass\\Test App Scripts\\Calibration.json",
+  "DateLastModified": "2023-05-16T15:58:06.5799536-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
