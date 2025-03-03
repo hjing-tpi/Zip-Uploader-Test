@@ -1,0 +1,341 @@
+{
+    "Name": "GM_L23X_IP_01 Hardware Mapping",
+    "IOBoards": 
+    [
+        {
+            "BoardId": 1,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "Power Up Vehicle #1",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "RF Antenna Coax",
+                    "ChannelNumber": 5
+                },
+                {
+                    "ChannelName": "DMS X1 Front Vision CAM LVDS",
+                    "ChannelNumber": 6
+                },
+                {
+                    "ChannelName": "COLUMN SHIFTER Voltage Range",
+                    "ChannelNumber": 7
+                },
+                {
+                    "ChannelName": "Glove Box Door Voltage Control",
+                    "ChannelNumber": 8
+                },
+                {
+                    "ChannelName": "LED AMBIENT LIGHTING ENABLE",
+                    "ChannelNumber": 9
+                },
+                {
+                    "ChannelName": "Power Up Vehicle #7",
+                    "ChannelNumber": 14
+                },
+                {
+                    "ChannelName": "TCP Speaker Voltage Range",
+                    "ChannelNumber": 18
+                },
+                {
+                    "ChannelName": "TCP Speaker Feed",
+                    "ChannelNumber": 19
+                },
+                {
+                    "ChannelName": "LF Midrange Speaker Feed",
+                    "ChannelNumber": 21
+                },
+                {
+                    "ChannelName": "LF Midrange Speaker Voltage Range",
+                    "ChannelNumber": 22
+                },
+                {
+                    "ChannelName": "Power Up Vehicle #4/Center Front Speaker Test",
+                    "ChannelNumber": 32
+                }
+
+            ]
+        },        
+        {
+            "BoardId": 2,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "Power Up Vehicle #2",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "Power Up Vehicle #3",
+                    "ChannelNumber": 3
+                },
+                {
+                    "ChannelName": "Power Up Vehicle Ground",
+                    "ChannelNumber": 4
+                },
+                {
+                    "ChannelName": "Center Front Speaker Set PWM",
+                    "ChannelNumber": 9
+                },
+                {
+                    "ChannelName": "RF Midrange Speaker Voltage Range",
+                    "ChannelNumber": 11
+                },
+                {
+                    "ChannelName": "RF Midrange Speaker Set PWM",
+                    "ChannelNumber": 12
+                },
+                {
+                    "ChannelName": "HVAC BLOWER Voltage Range",
+                    "ChannelNumber": 14
+                },
+                {
+                    "ChannelName": "Blower Motor Control Rear Feed",
+                    "ChannelNumber": 15
+                },
+                {
+                    "ChannelName": "Clock Spring - E602",
+                    "ChannelNumber": 22
+                },
+                {
+                    "ChannelName": "B34 UPPER DUCT AIR TEMP SENSOR Voltage Range",
+                    "ChannelNumber": 23
+                },
+                {
+                    "ChannelName": "Black USB Connector Feed",
+                    "ChannelNumber": 25
+                },
+                {
+                    "ChannelName": "B34 UPPER DUCT AIR TEMP SENSOR Feed",
+                    "ChannelNumber": 27
+                },
+                {
+                    "ChannelName": "VCU X8 Interior Vision Cabin CAM LVDS",
+                    "ChannelNumber": 28
+                },
+                {
+                    "ChannelName": "VCU X10 Front Vision CAM LVDS",
+                    "ChannelNumber": 29
+                },
+                {
+                    "ChannelName": "Rear Vision Camera Blue Coax",
+                    "ChannelNumber": 30
+                },
+                {
+                    "ChannelName": "VCU X1 AM/FM LVDS Feed",
+                    "ChannelNumber": 31
+                },
+                {
+                    "ChannelName": "Power Up #5/XM Antenna Black Coax/DMS X1 Front CAM/VCU X10 Front CAM",
+                    "ChannelNumber": 32
+                }
+
+            ]
+        },
+        {
+            "BoardId": 3,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "Power Up Vehicle #6",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "ETRS Shifter Module",
+                    "ChannelNumber": 3
+                },
+                {
+                    "ChannelName": "Blower Motor Control Rear/NVM Night Vision LVDS",
+                    "ChannelNumber": 7
+                },
+                {
+                    "ChannelName": "VCU X6 HVAC Display LVDS",
+                    "ChannelNumber": 9
+                },
+                {
+                    "ChannelName": "Steering Column Module LIN circuit",
+                    "ChannelNumber": 21
+                }
+
+            ]
+        }
+    ],
+
+    "Modbus Devices":
+    [
+        {
+            "DeviceId": 1,
+            "Modbus Output Masks":
+            [                
+            ],
+
+            "Modbus Input Masks":
+            [                
+                {
+                "Mask Name": "CONNECT 76 WAY LEFT ORANGE",
+                "Bit Mask": "???????????????1"
+                },
+                {
+                    "Mask Name": "CONNECT 4 WAY IEC RED",
+                    "Bit Mask": "?????????????1??"
+                },
+                {
+                    "Mask Name": "CONNECT 29 WAY BCM LT BLUE",
+                    "Bit Mask": "??????????1?????"
+                },
+                {
+                    "Mask Name": "CONNECT 30 WAY CGM BLACK",
+                    "Bit Mask": "?????????1??????"
+                },
+                {
+                    "Mask Name": "Connect 16 Way ALDL Blue",
+                    "Bit Mask": "???????????1????"
+                },
+                {
+                    "Mask Name": "CONNECT 16/16/16 WAY GRAY/BLACK",
+                    "Bit Mask": "????11??????????"
+                },
+                {
+                    "Mask Name": "CONNECT RIGHT GREEN GROUND(Top Cavity)",
+                    "Bit Mask": "??????1?????????"
+                },
+                {
+                    "Mask Name": "Connect 76 Way Right Yellow",
+                    "Bit Mask": "??????????????1?"
+                },
+                {
+                    "Mask Name": "CONNECT QUAD/QUAD/QUAD COAX(BLACK/GREEN)",
+                    "Bit Mask": "??11????????????"
+                },
+                {
+                    "Mask Name": "CONNECT 21 WAY CLOCKSPRING BLUE",
+                    "Bit Mask": "????????????1???"
+                },
+                {
+                    "Mask Name": "DISCONNECT 21 WAY CLOCKSPRING BLUE",
+                    "Bit Mask": "????????????0???"
+                },
+                {
+                    "Mask Name": "CONNECT QUAD/QUAD/QUAD COAX(Not Green)",
+                    "Bit Mask": "??01????????????"
+                }
+            ]
+
+        },
+        {
+
+            "DeviceId" : 2,
+            "Modbus Output Masks":
+            [
+            ],
+
+            "Modbus Input Masks":
+            [
+                {
+                    "Mask Name": "CONNECT LEFT GREEN GROUND",
+                    "Bit Mask": "110?????????????"
+                },
+                {
+                    "Mask Name": "CONNECT RIGHT GREEN GROUND(Bottom Cavity)",
+                    "Bit Mask": "???1????????????"
+                }
+            ]
+        },
+        {
+
+            "DeviceId" : 3,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Output Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Enable CGM light",
+                    "Bit Mask": "1000000000000000"
+                },
+                {
+                    "Mask Name": "Latch Dual Actions",
+                    "Bit Mask": "0100000001000011"
+                },
+                {
+                    "Mask Name": "Draw Down Dual Actions",
+                    "Bit Mask": "0100000001001111"
+                }
+
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        },
+        {
+
+            "DeviceId" : 4,
+            "Modbus Output Masks":
+            [
+            ],
+
+            "Modbus Input Masks":
+            [
+                {
+                    "Mask Name": "CONNECT QUAD/QUAD/QUAD COAX(Not White)",
+                    "Bit Mask": "???????????????0"
+                },
+                {
+                    "Mask Name": "CONNECT QUAD/QUAD/QUAD COAX(Black/White)",
+                    "Bit Mask": "???????????????1"
+                },
+                {
+                    "Mask Name": "CONNECT 2 WAY HEADLINER TAN",
+                    "Bit Mask": "??????????1?????"
+                },
+                {
+                    "Mask Name": "CONNECT 40 WAY X251 RED",
+                    "Bit Mask": "???????????1????"
+                },
+                {
+                    "Mask Name": "CONNECT 6 WAY LVDS BROWN",
+                    "Bit Mask": "????????????1???"
+                },
+                {
+                    "Mask Name": "CONNECT 6 WAY LVDS WHITE",
+                    "Bit Mask": "?????????????1??"
+                },
+                {
+                    "Mask Name": "X202 Single Coax",
+                    "Bit Mask": "?????????1??????"
+                },
+                {
+                    "Mask Name": "CONNECT 16/16/16 WAY GRAY/BLACK(Not Blue)",
+                    "Bit Mask": "??????????????0?"
+                }
+            ]
+        },
+        {
+
+            "DeviceId" : 5,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Output Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Latch Dual Actions #2",
+                    "Bit Mask": "0000000000101110"
+                },
+                {
+                    "Mask Name": "Draw Down Dual Actions #2",
+                    "Bit Mask": "0000000001101111"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        }
+
+    ]
+
+}
