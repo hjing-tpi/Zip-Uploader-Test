@@ -1,0 +1,3486 @@
+{
+  "Name": "EV Charge App Code",
+  "Description": "GM EV Charger Testing For AC and DC Charge Ports",
+  "Version": 0.0,
+  "VersionMajor": 2,
+  "VersionMinor": 32,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "Abort.json",
+  "TerminationScriptFileNameOperatorAbort": "Abort.json",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "TCPT",
+    "MersDeviceId": "0x10000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Cable Check",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Reset Modbus outputs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Reset Modbus",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 2,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Reset to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "",
+              "ModbusLabel": "Reset",
+              "ModbusAddress": 4,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send Reset to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Clear Reset to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "",
+              "ModbusLabel": "Reset",
+              "ModbusAddress": 4,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send Clear Reset to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Cable Check JPN-AC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "JPAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16008",
+              "Description": "Japan-AC Cable Not Connected To Tester",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 50,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Cable Check CHN-AC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16008",
+              "Description": "China-AC Cable Not Connected To Tester",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 50,
+              "ByteMask": "",
+              "BitMask": "??????????????1?",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Cable Check",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "USDC|USAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16008",
+              "Description": "CCS1 Cable Not Connected To Tester",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 50,
+              "ByteMask": "",
+              "BitMask": "?????????????1??",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Cable Check",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "EUDC|EUAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16008",
+              "Description": "CCS2 Cable Not Connected To Tester",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 50,
+              "ByteMask": "",
+              "BitMask": "????????????1???",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Cable Check JPN-DC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "JPDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16008",
+              "Description": "Japan-DC Cable Not Connected To Tester",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 50,
+              "ByteMask": "",
+              "BitMask": "???????????1????",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Cable Check CHN-DC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "CHDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16008",
+              "Description": "China-DC Cable Not Connected To Tester",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 50,
+              "ByteMask": "",
+              "BitMask": "??????????1?????",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Start in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC|EUAC|JPAC|CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Start",
+              "ModbusAddress": 1,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset Start in PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Stop in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC|EUAC|JPAC|CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Stop",
+              "ModbusAddress": 2,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset Stop in PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "AC Charge Test",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "USAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC",
+              "ModbusLabel": "US-AC",
+              "ModbusAddress": 5,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send USAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "EUAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "EUAC",
+              "ModbusLabel": "EU-AC",
+              "ModbusAddress": 7,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send EUAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "JPAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "JPAC",
+              "ModbusLabel": "JPN-AC",
+              "ModbusAddress": 9,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send JPAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "GBTAC",
+              "ModbusLabel": "CHN-AC",
+              "ModbusAddress": 11,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send CHAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRange",
+            "Description": "Check CP Line Voltage To know Cable is plugged into vehicle",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USAC|EUAC|JPAC|CHAC)&!BADAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Plug Cable into Vehicle",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRange": {
+              "DeviceId": 4,
+              "Channels": [
+                {
+                  "Description": "Voltage Check CP Line US-AC, EU-AC, JP-AC, CHN-AC",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "16008",
+                    "Description": "Connector Not Connected To Vehicle",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 5,
+                  "PassWindowMsec": 100,
+                  "UpperLimitMVolt": 9500.0,
+                  "LowerLimitMVolt": 4000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Start To PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USAC|EUAC|JPAC|CHAC)&!BADAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Start",
+              "ModbusAddress": 1,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send Start To PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Start Bender AC Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USAC|EUAC|JPAC|CHAC)&!BADAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Start Bender AC Test",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StartCharging",
+              "DeviceId": 1,
+              "ConnectorId": 1,
+              "StatusNotification": "Available",
+              "TestDataDisplay": {
+                "Samples": "Status",
+                "OCPPStatus": "Status"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateReadingRange",
+            "Description": "Check Voltage and Current over Modbus from PLC ",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USAC|EUAC|JPAC|CHAC)&!BADAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 25000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateReadingRange": {
+              "DeviceId": 3,
+              "Readings": [
+                {
+                  "Description": "Check Voltage over Modbus from PLC",
+                  "OptionCodesMask": "",
+                  "ModbusLabel": "Voltage",
+                  "AddressNumber": 30,
+                  "DataType": "Real",
+                  "EnableScaling": false,
+                  "PreScaledMin": "",
+                  "PreScaledMax": "",
+                  "PostScaledMin": "",
+                  "PostScaledMax": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "AC Charge Voltage Out of Range",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "PassWindowMsec": 100,
+                  "UpperLimit": 400.0,
+                  "LowerLimit": 200.0,
+                  "Units": "Volts",
+                  "TestDataDisplay": {
+                    "Samples": "#",
+                    "Reading": "Volts",
+                    "MaxReading": "Upper Limit Volts",
+                    "MinReading": "Lower Limit Volts"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimit": "",
+                    "LowerLimit": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxReading": "",
+                    "MinReading": "",
+                    "AvgReading": "aaa",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "Check Current over Modbus from PLC ",
+                  "OptionCodesMask": "",
+                  "ModbusLabel": "Current",
+                  "AddressNumber": 100,
+                  "DataType": "Real",
+                  "EnableScaling": false,
+                  "PreScaledMin": "",
+                  "PreScaledMax": "",
+                  "PostScaledMin": "",
+                  "PostScaledMax": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "AC Charge Current Out of Range",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "PassWindowMsec": 6000,
+                  "UpperLimit": 30.0,
+                  "LowerLimit": 2.0,
+                  "Units": "Amps",
+                  "TestDataDisplay": {
+                    "Samples": "#",
+                    "Reading": "Amps",
+                    "MaxReading": "Upper Limit Amps",
+                    "MinReading": "Lower Limit Amps"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimit": "",
+                    "LowerLimit": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxReading": "",
+                    "MinReading": "",
+                    "AvgReading": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanReceiveValidate",
+            "Description": "Check Charge Counter",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USAC|EUAC|JPAC|CHAC)&!BADAC&NOOP",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Check Charge Counter",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanReceiveValidate": {
+              "CanDataEntities": [],
+              "TestDataDisplay": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Check Bender AC Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USAC|EUAC|JPAC|CHAC)&!BADAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADAC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Check Bender AC Test",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StopCharging",
+              "DeviceId": 1,
+              "ConnectorId": 1,
+              "StatusNotification": "Available",
+              "TestDataDisplay": {
+                "Samples": "Status",
+                "OCPPStatus": "Status"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Stop To PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC|EUAC|JPAC|CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Stop",
+              "ModbusAddress": 2,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send Stop To PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Start in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC|EUAC|JPAC|CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Start",
+              "ModbusAddress": 1,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset Start in PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRange",
+            "Description": "Check CP Line for 0V to ensure cable is unplugged",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC|EUAC|JPAC|CHAC&!(USDC|EUDC)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Unplug Cable From Vehicle",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRange": {
+              "DeviceId": 4,
+              "Channels": [
+                {
+                  "Description": "CP Line Check",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "16008",
+                    "Description": "Connector Not Disconnected From Vehicle",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 5,
+                  "PassWindowMsec": 100,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": 9500.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "Voltage",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusReadCoils",
+            "Description": "Read Done From PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC|EUAC|JPAC|CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Read Done From PLC",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusReadCoils": {
+              "DeviceId": 3,
+              "ModbusLabel": "Done",
+              "ModbusAddress": 14,
+              "ModbusValue": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Stop in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC|EUAC|JPAC|CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC|EUAC|JPAC|GBTAC",
+              "ModbusLabel": "Stop",
+              "ModbusAddress": 2,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset Stop in PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USAC",
+              "ModbusLabel": "US-AC",
+              "ModbusAddress": 5,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset USAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "EUAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "EUAC",
+              "ModbusLabel": "EU-AC",
+              "ModbusAddress": 7,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset EUAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "JPAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "JPAC",
+              "ModbusLabel": "JPN-AC",
+              "ModbusAddress": 9,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset JPAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CHAC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "GBTAC",
+              "ModbusLabel": "CHN-AC",
+              "ModbusAddress": 11,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset CHAC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "DC Charge Test",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USDC",
+              "ModbusLabel": "US-DC",
+              "ModbusAddress": 6,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send USDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "EUDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "EUDC",
+              "ModbusLabel": "EU-DC",
+              "ModbusAddress": 8,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send EUDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "JPDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "ChademoDC",
+              "ModbusLabel": "JPN-DC",
+              "ModbusAddress": 10,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send JPDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CHDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "GBTDC",
+              "ModbusLabel": "CHN-DC",
+              "ModbusAddress": 12,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send CHDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Start To PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USDC|EUDC|JPDC|CHDC)&!BADDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USDC|EUDC|ChademoDC|GBTDC",
+              "ModbusLabel": "Start",
+              "ModbusAddress": 1,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send Start To PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRange",
+            "Description": "Check CP Line Voltage To know Cable is plugged into vehicle",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USDC|EUDC|JPDC|CHDC)&!BADDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Plug Cable into Vehicle",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRange": {
+              "DeviceId": 4,
+              "Channels": [
+                {
+                  "Description": "Voltage Check CP Line US-DC, EU-DC",
+                  "OptionCodesMask": "USDC|EUDC",
+                  "Fault": {
+                    "Id": "16008",
+                    "Description": "Connector Not Connected To Vehicle",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 6,
+                  "PassWindowMsec": 100,
+                  "UpperLimitMVolt": 9500.0,
+                  "LowerLimitMVolt": 5000.0,
+                  "TestDataDisplay": {
+                    "Samples": "#",
+                    "ChannelVoltageMVolts": "Volts",
+                    "MaxChannelVoltageMVolts": "Max V",
+                    "MinChannelVoltageMVolts": "Min V"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "Voltage Check CP Line JPN-DC and CHN-DC",
+                  "OptionCodesMask": "JPDC|CHDC",
+                  "Fault": {
+                    "Id": "16008",
+                    "Description": "Connector Not Connected To Vehicle",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 7,
+                  "PassWindowMsec": 100,
+                  "UpperLimitMVolt": 9500.0,
+                  "LowerLimitMVolt": 5000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Start In-Charge US-DC and EU-DC Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USDC|EUDC)&!BADDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Start In-Charge US-DC and EU-DC Test",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StartCharging",
+              "DeviceId": 2,
+              "ConnectorId": 1,
+              "StatusNotification": "Available",
+              "TestDataDisplay": {
+                "Samples": "",
+                "OCPPStatus": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Start In-Charge JPN-DC and CHN-DC Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(JPDC|CHDC)&!BADDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Start In-Charge JPN-DC and CHN-DC Test",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StartCharging",
+              "DeviceId": 2,
+              "ConnectorId": 2,
+              "StatusNotification": "Available",
+              "TestDataDisplay": {
+                "Samples": "",
+                "OCPPStatus": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "EVChargerPowerValidation",
+            "Description": "Check data send by InCharge for Power and Current for US-DC and EU-DC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USDC|EUDC)&!BADDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "DC Charge Voltage/Current Out of Range",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "EVChargerPowerValidation": {
+              "BoardId": 2,
+              "ConnectorId": 1,
+              "PassWindowMsec": 750,
+              "UpperLimitVolts": 500.0,
+              "LowerLimitVolts": 200.0,
+              "LowerLimitAmp": 20,
+              "UpperLimitAmp": 90,
+              "FailAtFirstOutOfRangeReading": false,
+              "TestDataDisplay": {
+                "Samples": "#",
+                "ChargerVoltageVolts": "Volts",
+                "MaxChargerVoltageVolts": "Max Volts",
+                "MinChargerVoltageVolts": "Min Volts",
+                "ChargerCurrentAmps": "Amps",
+                "MaxChargerCurrentAmps": "Max Amps",
+                "MinChargerCurrentAmps": "Min Amps"
+              },
+              "TestDataReporting": {
+                "UpperLimitVolts": "",
+                "LowerLimitVolts": "",
+                "UpperLimitCurrent": "",
+                "LowerLimitCurrent": "",
+                "Samples": "",
+                "AvgChargerVoltageInRangeVolts": "",
+                "MaxChargerVoltageVolts": "",
+                "MinChargerVoltageVolts": "",
+                "AvgChargerCurrentInRangeAmps": "",
+                "MaxChargerCurrentAmps": "",
+                "MinChargerCurrentAmps": "",
+                "MaxTimeInPassWindowMsec": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "EVChargerPowerValidation",
+            "Description": "Check data send by InCharge for Power and Current for JPN-DC and CHN-DC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(JPDC|CHDC)&!BADDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 100000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "DC Charge Voltage/Current Out of Range",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "EVChargerPowerValidation": {
+              "BoardId": 2,
+              "ConnectorId": 2,
+              "PassWindowMsec": 100,
+              "UpperLimitVolts": 500.0,
+              "LowerLimitVolts": 200.0,
+              "LowerLimitAmp": 20,
+              "UpperLimitAmp": 80,
+              "FailAtFirstOutOfRangeReading": false,
+              "TestDataDisplay": {
+                "Samples": "#",
+                "ChargerVoltageVolts": "Volts",
+                "MaxChargerVoltageVolts": "Max Volts",
+                "MinChargerVoltageVolts": "Min Volts",
+                "ChargerCurrentAmps": "Amps",
+                "MaxChargerCurrentAmps": "Max Amps",
+                "MinChargerCurrentAmps": "Min Amps"
+              },
+              "TestDataReporting": {
+                "UpperLimitVolts": "",
+                "LowerLimitVolts": "",
+                "UpperLimitCurrent": "",
+                "LowerLimitCurrent": "",
+                "Samples": "",
+                "AvgChargerVoltageInRangeVolts": "",
+                "MaxChargerVoltageVolts": "",
+                "MinChargerVoltageVolts": "",
+                "AvgChargerCurrentInRangeAmps": "",
+                "MaxChargerCurrentAmps": "",
+                "MinChargerCurrentAmps": "",
+                "MaxTimeInPassWindowMsec": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanReceiveValidate",
+            "Description": "Check Charge Counter",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(USDC|EUDC|JPDC|CHDC)&!BADDC&NOOP",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Check Charge Counter",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanReceiveValidate": {
+              "CanDataEntities": [],
+              "TestDataDisplay": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Send In-Charge US-DC and EU-DC STOP Command",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "(USDC|EUDC)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Check In-Charge US-DC and EU-DC Cable Status",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StopCharging",
+              "DeviceId": 2,
+              "ConnectorId": 1,
+              "StatusNotification": "Available",
+              "TestDataDisplay": {
+                "Samples": "",
+                "OCPPStatus": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "OCPPCommunication",
+            "Description": "Send In-Charge JPN-DC and CHN-DC STOP Command",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "(JPDC|CHDC)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "BADDC",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Check In-Charge JPN-DC and CHN-DC Cable Status",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "OCPPCommunication": {
+              "TestMethod": "StopCharging",
+              "DeviceId": 2,
+              "ConnectorId": 2,
+              "StatusNotification": "Available",
+              "TestDataDisplay": {
+                "Samples": "",
+                "OCPPStatus": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Send Stop To PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USDC|EUDC|JPDC|CHDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USDC|EUDC|ChademoDC|GBTDC",
+              "ModbusLabel": "Stop",
+              "ModbusAddress": 2,
+              "ModbusValue": 1,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Send Stop To PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Start in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USDC|EUDC|JPDC|CHDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USDC|EUDC|ChademoDC|GBTDC",
+              "ModbusLabel": "Start",
+              "ModbusAddress": 1,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset Start in PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRange",
+            "Description": "Check CP Line for 0V to ensure cable is unplugged",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USDC|EUDC|JPDC|CHDC&NOOP",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Unplug Cable From Vehicle",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRange": {
+              "DeviceId": 4,
+              "Channels": [
+                {
+                  "Description": "CP Line Check",
+                  "OptionCodesMask": "USDC|EUDC",
+                  "Fault": {
+                    "Id": "16008",
+                    "Description": "Connector Not Disonnected To Vehicle",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 6,
+                  "PassWindowMsec": 100,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": 9500.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "CP Line Check",
+                  "OptionCodesMask": "JPDC|CHDC",
+                  "Fault": {
+                    "Id": "16008",
+                    "Description": "Connector Not Disconnected To Vehicle",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 7,
+                  "PassWindowMsec": 100,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": 9500.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusReadCoils",
+            "Description": "Read Done From PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USDC|EUDC|JPDC|CHDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Read Done From PLC",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusReadCoils": {
+              "DeviceId": 3,
+              "ModbusLabel": "Done",
+              "ModbusAddress": 14,
+              "ModbusValue": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Stop in PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USDC|EUDC|JPDC|CHDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USDC|EUDC|ChademoDC|GBTDC",
+              "ModbusLabel": "Stop",
+              "ModbusAddress": 2,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset Stop in PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "USDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "USDC",
+              "ModbusLabel": "US-DC",
+              "ModbusAddress": 6,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset USDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "EUDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "EUDC",
+              "ModbusLabel": "EU-DC",
+              "ModbusAddress": 8,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset EUDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "JPDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "ChademoDC",
+              "ModbusLabel": "JPN-DC",
+              "ModbusAddress": 10,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset JPDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusWriteSingleCoil",
+            "Description": "Reset Options to PLC",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CHDC",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusWriteSingleCoil": {
+              "DeviceId": 3,
+              "OptionCodesMask": "GBTDC",
+              "ModbusLabel": "CHN-DC",
+              "ModbusAddress": 12,
+              "ModbusValue": 0,
+              "Fault": {
+                "Id": "07801",
+                "Description": "Reset CHDC Option to PLC",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "PromptLabels": []
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "09282022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "Nathan",
+      "Change": "Initial Program"
+    },
+    {
+      "Date": "10072022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10172022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10192022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10192022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 4,
+      "ChangeBy": "Nathan",
+      "Change": "Nathan"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 15,
+      "ChangeBy": "tg",
+      "Change": "fix"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 16,
+      "ChangeBy": "tg",
+      "Change": "fix"
+    },
+    {
+      "Date": "10252022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 17,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "10262022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 18,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 19,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 20,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 21,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 22,
+      "ChangeBy": "a",
+      "Change": "A"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 23,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 24,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12142022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 25,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 26,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 27,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 28,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 29,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 30,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 31,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 32,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 33,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 34,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 35,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 36,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 37,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 38,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 39,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 40,
+      "ChangeBy": "tag",
+      "Change": "tag"
+    },
+    {
+      "Date": "01052023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 41,
+      "ChangeBy": "tag",
+      "Change": "tag"
+    },
+    {
+      "Date": "01062023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 42,
+      "ChangeBy": "PJC",
+      "Change": "Increased Incharge CP line disconnect time"
+    },
+    {
+      "Date": "01062023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 43,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01062023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 44,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 45,
+      "ChangeBy": "TAG",
+      "Change": "increase current limit"
+    },
+    {
+      "Date": "01102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 46,
+      "ChangeBy": "TAG",
+      "Change": "remove disconnect"
+    },
+    {
+      "Date": "01112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 47,
+      "ChangeBy": "tag",
+      "Change": "tag"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 48,
+      "ChangeBy": "bs",
+      "Change": "added fault codes"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 49,
+      "ChangeBy": "BS",
+      "Change": "NOOP DC disconnect"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 50,
+      "ChangeBy": "BS",
+      "Change": "removed AC disconnect when DC is an option. Removed DC connect when AC is an option."
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 51,
+      "ChangeBy": "bs",
+      "Change": "decreased timeout of DC test step from 100sec to 60sec"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 52,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 53,
+      "ChangeBy": "bs",
+      "Change": "add dc availability check"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 54,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 55,
+      "ChangeBy": "nh",
+      "Change": "moved Available status"
+    },
+    {
+      "Date": "01132023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 56,
+      "ChangeBy": "bs",
+      "Change": "removed availability test step. Does not work appropriately with incharge."
+    },
+    {
+      "Date": "01202023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 57,
+      "ChangeBy": "PConnolly",
+      "Change": "Moved PLC Stop with delay before charger stop"
+    },
+    {
+      "Date": "01202023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 58,
+      "ChangeBy": "P connolly",
+      "Change": "remove BADDC from the DC Stop for OCPP comm"
+    },
+    {
+      "Date": "01242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 59,
+      "ChangeBy": "pjc",
+      "Change": "swopped back the stop. Inchar first PLC Second."
+    },
+    {
+      "Date": "03012023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 60,
+      "ChangeBy": "PJC",
+      "Change": "Abort Failed incharge stop command"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 61,
+      "ChangeBy": "pjc",
+      "Change": "change timeout from 20 sec to 25 sec for the Ford"
+    },
+    {
+      "Date": "03212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 62,
+      "ChangeBy": "PJC",
+      "Change": "Increased Pass Window for V,I from the Incharge"
+    },
+    {
+      "Date": "03242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 63,
+      "ChangeBy": "pjc",
+      "Change": "raise cp connection chk from 5v to 6v"
+    },
+    {
+      "Date": "03272023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 64,
+      "ChangeBy": "pjc",
+      "Change": "Lower CP disconnectVoltage to 4v"
+    },
+    {
+      "Date": "03292023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 0,
+      "ChangeBy": "B. Sullivan",
+      "Change": "changed voltagerange tests to modbusvalidatevoltagerange tests per I/O board removal and ADAM modbus addition"
+    },
+    {
+      "Date": "03292023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 1,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    },
+    {
+      "Date": "03292023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 2,
+      "ChangeBy": "nh",
+      "Change": "Brandon mistake\r\n"
+    },
+    {
+      "Date": "03292023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 16,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03302023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 17,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04032023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 18,
+      "ChangeBy": "B. Sullivan",
+      "Change": "added data reporting for voltage range"
+    },
+    {
+      "Date": "04102023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 19,
+      "ChangeBy": "B. Sullivan",
+      "Change": "added MMTs for connect/disconnect"
+    },
+    {
+      "Date": "04102023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 20,
+      "ChangeBy": "B. Sullivan",
+      "Change": "updated GM reporting"
+    },
+    {
+      "Date": "04122023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 21,
+      "ChangeBy": "RMM",
+      "Change": "adjusted AC CP Line limits from 9000 to 9500 and lower 2000 to 4000"
+    },
+    {
+      "Date": "04122023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 22,
+      "ChangeBy": "RMM",
+      "Change": "Fixed option mask for DC CP line, the test step would only run if DC and not AC"
+    },
+    {
+      "Date": "04122023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 23,
+      "ChangeBy": "RMM",
+      "Change": "Moved tags from Test Data Reporting section to Test Data Display"
+    },
+    {
+      "Date": "04122023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 24,
+      "ChangeBy": "B.SORENSON",
+      "Change": "MERS REPORTING ADJUSTMENT"
+    },
+    {
+      "Date": "04122023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 25,
+      "ChangeBy": "BSorenson",
+      "Change": "MERS Test Type Adjusted"
+    },
+    {
+      "Date": "04142023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 26,
+      "ChangeBy": "RMM",
+      "Change": "Changed current low limit to 2 am AC"
+    },
+    {
+      "Date": "04142023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 27,
+      "ChangeBy": "BSorenson",
+      "Change": "AC Timer 2500 -> 5000 ms"
+    },
+    {
+      "Date": "04182023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 28,
+      "ChangeBy": "bs",
+      "Change": "optimize timer"
+    },
+    {
+      "Date": "04192023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 29,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "04242023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 30,
+      "ChangeBy": "BS",
+      "Change": "5000ms to 5500 ms timer.\r\n10% K20 fail @ DVT"
+    },
+    {
+      "Date": "04262023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 31,
+      "ChangeBy": "B. Sullivan",
+      "Change": "increased AC current read pass condition from 5500ms to 6000ms per Brian Sorenson."
+    },
+    {
+      "Date": "05112023",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 32,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\GM_EV_Charger_AC_DC.json",
+  "DateLastModified": "2023-04-26T12:36:36.858707-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
