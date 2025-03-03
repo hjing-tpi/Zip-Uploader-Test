@@ -1,0 +1,500 @@
+{
+  "Name": "AbortMY24.json",
+  "Description": "Android Flint Console MY24 Abort Script",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 2,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "TPAS",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Abort Script Procedure",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Turn Power Supply Off B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 1 CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 1 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "RESET CAN BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Turn Power Supply Off B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "063",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 4
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "PUSH UP Dual Actions",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev 1 -Modbus Output Control",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0100",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay 200 MS For Push UP",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 200,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Delay",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PUSH UP DUAL ACTIONS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Eject Connectors and Release Latched Connectors",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev 1 -Modbus Output Control",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0400",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay 200 MS For EJECT",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 200,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Delay",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "AIR EJECT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "RESET MODBUS",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev 1 -Modbus Output Control",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "DISCONNECT 55 WAY ORANGE HANDLE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "55 WAY ORANGE NOT DISCONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DISCONNECT 55 WAY ORANGE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "AlwaysPass": false,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "???????????????0",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoardControlDigitalIO B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "IOBoardControlDigitalIO B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IOBoard1 reset digital output",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04132022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "SL",
+      "Change": "Initial Release"
+    },
+    {
+      "Date": "06222022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "09222022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\AbortMY24.json",
+  "DateLastModified": "2022-06-22T11:35:39.7511047-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
