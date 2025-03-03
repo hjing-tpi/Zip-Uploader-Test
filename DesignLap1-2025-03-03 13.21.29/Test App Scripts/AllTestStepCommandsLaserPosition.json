@@ -1,0 +1,1220 @@
+{
+  "Name": "TPass Demo",
+  "Description": "All TPass Test Step Commands",
+  "Version": 0.0,
+  "VersionMajor": 3,
+  "VersionMinor": 24,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "Abort.json",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "ROCK",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "DEMO"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Modbus",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateVoltageRange",
+            "Description": "LED Lamps",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "SliderRange",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LED Lamps",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRange": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "D2Ch2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "LED Courtesy Lamp",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Courtesy",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 10000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C2",
+                    "MaxChannelVoltageMVolts": "D2C2Max",
+                    "MinChannelVoltageMVolts": "D2C2Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "LED Map Lamp",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "LED Map Lamp",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Map",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 15000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C4",
+                    "MaxChannelVoltageMVolts": "D2C4Max",
+                    "MinChannelVoltageMVolts": "D2C4Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "D2Ch6",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1231",
+                    "Description": "ModbusValidateVoltageRange D2Ch6",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "ROCKET",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 6,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C6",
+                    "MaxChannelVoltageMVolts": "C6Max",
+                    "MinChannelVoltageMVolts": "C6Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRangeBase",
+            "Description": "Detroit Radio",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "SliderRange",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Detroit Radio",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRangeBase": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "Radio Ch101.1",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch101.1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch101.1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 4000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "#",
+                    "ChannelVoltageMVolts": "RCH101.1 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "Radio Ch94.7",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch94.7",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch94.7",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 7000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "RCH94.7 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRangeDelta",
+            "Description": "Toledo Radio",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "SliderRange",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Toledo Radio",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRangeDelta": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "Radio Ch104.7",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch104.7",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch104.7",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "#",
+                    "ChannelVoltageMVolts": "RCH107.7 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "Radio Ch94.5",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch94.5",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch94.5",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 3000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "RCH94.5 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "ModbusValidateLaserPositionRange",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "laserpass",
+            "AddOptionCodeUponFail": "laserfail",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "cockpit-test-image1.jpg",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "ModbusValidateLaserPositionRange",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Put Laser In My Eye",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 2,
+              "SimultaneousPass": false,
+              "Channels": [
+                {
+                  "Description": "DEV1CH1 ",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "2",
+                    "Description": "CH1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "CH1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 1,
+                  "PassWindowMsec": 5000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "CH1",
+                    "ValueFormatter": "F3",
+                    "FontSize": 64,
+                    "Maximum": 10.0,
+                    "Minimum": -10.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 2.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 1.0,
+                  "LowerLimitMMeter": 0.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "CH6",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "3",
+                    "Description": "CH6",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "CH6",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 6,
+                  "PassWindowMsec": 15000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "CH6",
+                    "ValueFormatter": "F3",
+                    "FontSize": 24,
+                    "Maximum": 10.0,
+                    "Minimum": -10.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 5.0,
+                  "LowerLimitMMeter": 0.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "CH2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "CH2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "CH2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 5000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "CH2",
+                    "ValueFormatter": "F3",
+                    "FontSize": 12,
+                    "Maximum": 10.0,
+                    "Minimum": -5.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 10.0,
+                  "LowerLimitMMeter": -5.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "ModbusValidateLaserPositionRange",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "laserpass",
+            "AddOptionCodeUponFail": "laserfail",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "cockpit-test-image1.jpg",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "ModbusValidateLaserPositionRange",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Put Laser In My Eye",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 2,
+              "SimultaneousPass": false,
+              "Channels": [
+                {
+                  "Description": "DEV1CH1 ",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "2",
+                    "Description": "CH1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "CH1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 1,
+                  "PassWindowMsec": 5000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "CH1",
+                    "ValueFormatter": "F3",
+                    "FontSize": 12,
+                    "Maximum": 10.0,
+                    "Minimum": -10.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 2.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 1.0,
+                  "LowerLimitMMeter": 0.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "CH6",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "3",
+                    "Description": "CH6",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "CH6",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 6,
+                  "PassWindowMsec": 15000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "CH6",
+                    "ValueFormatter": "F3",
+                    "FontSize": 12,
+                    "Maximum": 10.0,
+                    "Minimum": -10.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 5.0,
+                  "LowerLimitMMeter": 0.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "CH2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "CH2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "CH2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 5000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "CH2",
+                    "ValueFormatter": "F3",
+                    "FontSize": 12,
+                    "Maximum": 10.0,
+                    "Minimum": -5.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 10.0,
+                  "LowerLimitMMeter": -5.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "a",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 2,
+              "SimultaneousPass": false,
+              "Channels": [
+                {
+                  "Description": "",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "1`",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 1,
+                  "PassWindowMsec": 5000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "new",
+                    "ValueFormatter": "",
+                    "FontSize": 12,
+                    "Maximum": 0.0,
+                    "Minimum": 111.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 0.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 1.0,
+                  "LowerLimitMMeter": 0.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "08062021",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "03312022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Final Pass Commands All"
+    },
+    {
+      "Date": "07072022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Seat demo"
+    },
+    {
+      "Date": "08192022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "added abort script"
+    },
+    {
+      "Date": "08242022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 2,
+      "ChangeBy": "rmm",
+      "Change": "fjdklsa;"
+    },
+    {
+      "Date": "08242022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10052022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 4,
+      "ChangeBy": "rmm",
+      "Change": "added SliderRange option"
+    },
+    {
+      "Date": "11042022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 5,
+      "ChangeBy": "rmm",
+      "Change": "increased pass time"
+    },
+    {
+      "Date": "11282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 7,
+      "ChangeBy": "b",
+      "Change": "b"
+    },
+    {
+      "Date": "11282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11292022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11292022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11292022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11292022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 13,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "11302022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11302022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11302022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 16,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11302022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 17,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11302022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 18,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11302022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 19,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11302022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 20,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02142023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 21,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02142023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 22,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02152023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 23,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02152023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 24,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\AllTestStepCommandsLaserPosition.json",
+  "DateLastModified": "2023-02-14T09:59:15.301073-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
