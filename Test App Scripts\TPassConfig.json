@@ -1,0 +1,738 @@
+{
+  "MainScreen": {
+    "Title": {
+      "Enabled": true,
+      "FontSize": 28,
+      "Label": "Demo Tool"
+    },
+    "PrimaryId": {
+      "Enabled": true,
+      "FontSize": 48,
+      "Label": "Primary ID"
+    },
+    "SecondaryId": {
+      "Enabled": true,
+      "FontSize": 48,
+      "Label": "Secondary ID"
+    },
+    "TertiaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Tertiary ID"
+    },
+    "QuaternaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Quaternary ID"
+    },
+    "QuinaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Quinary ID"
+    },
+    "MainButtons": [
+      {
+        "Enabled": true,
+        "Label": "Demo",
+        "FontSize": 32,
+        "Script": "Delay.py",
+        "TextColor": "#FFF0F8FF",
+        "BackgroundColor": "#FF8A2BE2",
+        "BitmapImage": null,
+        "Margin": 10
+      },
+      {
+        "Enabled": false,
+        "Label": "PassFail",
+        "FontSize": 32,
+        "Script": "PassOrFail.py",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": true,
+        "Label": "Keypad",
+        "FontSize": 32,
+        "Script": "ManualEntryKeypad.py",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": true,
+        "Label": "Keyboard",
+        "FontSize": 32,
+        "Script": "ManualEntryKeyboard.py",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "TPI Logo.png",
+        "Margin": 10
+      },
+      {
+        "Enabled": false,
+        "Label": "testppoissue",
+        "FontSize": 32,
+        "Script": "Test - Copy.py",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": true,
+        "Label": "Switch Test",
+        "FontSize": 32,
+        "Script": "Test.py",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": false,
+        "Label": "Tesla",
+        "FontSize": 32,
+        "Script": "Test2.py",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": false,
+        "Label": "SW Delay",
+        "FontSize": 0,
+        "Script": "SwitchTestDelay.py",
+        "TextColor": "#FF8A2BE2",
+        "BackgroundColor": "#FFE6E6FA",
+        "BitmapImage": null,
+        "Margin": 0
+      },
+      {
+        "Enabled": false,
+        "Label": "ZipLogsDesktop",
+        "FontSize": 0,
+        "Script": "ZipLogFiles.py",
+        "TextColor": "",
+        "BackgroundColor": "",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": false,
+        "Label": "ZipLogsUSB",
+        "FontSize": 0,
+        "Script": "ZipLogFilesUsb.py",
+        "TextColor": "",
+        "BackgroundColor": "",
+        "BitmapImage": "",
+        "Margin": 0
+      },
+      {
+        "Enabled": true,
+        "Label": "Calibration",
+        "FontSize": 24,
+        "Script": "Calibration.py",
+        "TextColor": "#FF000000",
+        "BackgroundColor": "#FF00FFFF",
+        "BitmapImage": "",
+        "Margin": 0
+      }
+    ],
+    "Description": "Main Screen"
+  },
+  "OptionsScreen": {
+    "OptionTextColor": "Black",
+    "OptionFontSize": 18,
+    "OptionDescriptionFontSize": 18,
+    "ButtonFontSize": 32,
+    "ButtonMargin": 150,
+    "Description": "Option Screen"
+  },
+  "TestScreen": {
+    "DisplayTestData": true,
+    "DisplayTestFaults": true,
+    "DisplayTestGroups": true,
+    "DisplayTestSteps": true,
+    "AbortButtonFontSize": 32,
+    "AbortButtonMargin": 10,
+    "FailButtonFontSize": 32,
+    "FailButtonMargin": 10,
+    "PassButtonFontSize": 32,
+    "PassButtonMargin": 10,
+    "PromptFontSize": 0,
+    "PromptTextColor": null,
+    "BackgroundPromptMaxCount": 0,
+    "BackgroundPromptFontSize": 0,
+    "BackgroundPromptWidth": 0,
+    "Description": "Test Screen"
+  },
+  "ResultsScreen": {
+    "Display": true,
+    "UseCustomTextOnTestResultsScreen": false,
+    "DisplayTimeSec": 1,
+    "DisplayFailedItems": true,
+    "DisplayFaultItems": true,
+    "DisplayPassedItems": true,
+    "DisplayNotTestedItems": true,
+    "ButtonDisplayRetest": true,
+    "RetestButtonFontSize": 32,
+    "RetestButtonMargin": 1,
+    "ButtonDisplayExit": true,
+    "ExitButtonFontSize": 32,
+    "ExitButtonMargin": 100,
+    "FaultTextFontSize": 32,
+    "ResultButtons": [
+      {
+        "Enabled": true,
+        "Label": "Seat Release",
+        "FontSize": 32,
+        "SendResults": true,
+        "Script": "Release Seat.json",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 100
+      },
+      {
+        "Enabled": false,
+        "Label": "Release NR",
+        "FontSize": 32,
+        "SendResults": false,
+        "Script": "User2PassOrFail.json",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 1
+      },
+      {
+        "Enabled": false,
+        "Label": "B3 SR",
+        "FontSize": 32,
+        "SendResults": true,
+        "Script": "User3PassOrFail.json",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 1
+      }
+    ],
+    "Description": "Results Screen"
+  },
+  "ProductIdentification": {
+    "IncomingFileTrigger": false,
+    "IncomingFileName": "c:\\tpass\\data incoming\\asdata.txt",
+    "IncomingFileSearchFrequencyMsec": 0,
+    "IncomingUdpTrigger": false,
+    "IncomingUdpLocalPort": 0,
+    "StartTestCycleScriptFileName": "Test.py",
+    "TestAppRunContinuously": false,
+    "TestAppRunContinuouslyStopUponTestFailure": false,
+    "TestAppRunContinuouslyTimeSec": 7,
+    "TestAppRunContinuouslyProductId": "333333",
+    "Description": "Product Identification"
+  },
+  "ProductAttributes": {
+    "ForceOperatorToReviewOptions": false,
+    "ProductAttributeRetrievalScriptFileName": "OptionRetrieval-GM_v1.py",
+    "ProductAttributeParsingScriptFileName": "OptionParsing-GM_v5.py",
+    "ChangeTestApplicationScriptFileNameAfterOptionsSelected": "",
+    "Description": "Product Attributes"
+  },
+  "TestResults": {
+    "SendTestResults": false,
+    "TestResultsProcessingScriptFileName": "ResultsProcessing-GM_v6.py",
+    "SaveTestResultsToTpiDatabase": false,
+    "PrinterEnable": false,
+    "FormFeed": false,
+    "PrintLeftMargin": 0,
+    "PrintTopMargin": 0,
+    "PrintFontSize": -5,
+    "Description": "Test Results"
+  },
+  "PartnerInterfaces": {
+    "GmEdi": {
+      "Enabled": false,
+      "CreateMersReportingRecord": true,
+      "CreateGepicsShipRecord": true,
+      "CreateGsipQualityRecord": true
+    },
+    "GmTcpHandshake": {
+      "Enabled": false,
+      "LocalIP1": 0,
+      "LocalIP2": 0,
+      "LocalIP3": 0,
+      "LocalIP4": 0,
+      "LocalPort": 0,
+      "RemoteIP1": 0,
+      "RemoteIP2": 0,
+      "RemoteIP3": 0,
+      "RemoteIP4": 0,
+      "RemotePort": 0
+    },
+    "PressureVerificationMonitor": {
+      "Enabled": false,
+      "CommandTimeoutMsec": 1000,
+      "CommandRetryCount": 4,
+      "LocalIP1": 127,
+      "LocalIP2": 0,
+      "LocalIP3": 0,
+      "LocalIP4": 1,
+      "LocalPort": 2000
+    },
+    "Description": "Partner Interfaces"
+  },
+  "Hardware": {
+    "Scanners": {
+      "USB": {
+        "Enabled": false,
+        "PrefixCharacterDecimal": 35,
+        "SuffixCharacterDecimal": 36,
+        "Description": "USB"
+      },
+      "Serial": {
+        "Enabled": false,
+        "PortNumber": 1,
+        "PrefixCharacterDecimal": 0,
+        "SuffixCharacterDecimal": 13,
+        "BaudRateBps": 9600,
+        "Parity": "None",
+        "DataBits": 8,
+        "StopBits": "One",
+        "Handshake": "None",
+        "DataTerminalReadyEnabled": true,
+        "RequestToSendEnabled": true,
+        "ReadTimeoutMsec": 5000,
+        "WriteTimeoutMsec": 5000,
+        "Description": "Serial"
+      },
+      "Description": "Scanner Settings"
+    },
+    "CIP": {
+      "Enabled": true,
+      "CIPDevices": [
+        {
+          "Device": 1,
+          "Type": "Kinetix5100",
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 173,
+          "InputAssembly": 104,
+          "OutputAssembly": 154,
+          "ConfigurationUsed": true,
+          "ConfigurationAssembly": 191,
+          "RPIMsec": 20000,
+          "Kistler": null
+        },
+        {
+          "Device": 2,
+          "Type": "Kinetix5100",
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 174,
+          "InputAssembly": 104,
+          "OutputAssembly": 154,
+          "ConfigurationUsed": true,
+          "ConfigurationAssembly": 191,
+          "RPIMsec": 50000,
+          "Kistler": null
+        },
+        {
+          "Device": 3,
+          "Type": "Kistler5174",
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 175,
+          "InputAssembly": 100,
+          "OutputAssembly": 101,
+          "ConfigurationUsed": true,
+          "ConfigurationAssembly": 102,
+          "RPIMsec": 10000,
+          "Kistler": [
+            {
+              "Range": 150.25,
+              "Divisor": -17.348561862193311,
+              "FilterFreq": 10,
+              "TimeConstant": false,
+              "PeakMode": true
+            },
+            {
+              "Range": 150.25,
+              "Divisor": -17.336997305160363,
+              "FilterFreq": 10,
+              "TimeConstant": false,
+              "PeakMode": true
+            }
+          ]
+        }
+      ],
+      "Description": "CIP"
+    },
+    "DigitalIO": {
+      "IOBoardEnabled": false,
+      "LogMessages": true,
+      "EchoTimeout": 1000,
+      "RetryCount": 4,
+      "IoDevices": [
+        {
+          "Device": 1,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 51,
+          "RemotePort": 10000,
+          "LocalPort": 10000,
+          "SkipVersionCheck": false,
+          "BufferMode": 1,
+          "Calibration": {
+            "Voltages": [
+              {
+                "Channel": 1,
+                "ScaleFactor": 0.003727,
+                "Offset": 188,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 2,
+                "ScaleFactor": 0.003727,
+                "Offset": 189,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 3,
+                "ScaleFactor": 0.00373,
+                "Offset": 188,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 4,
+                "ScaleFactor": 0.00373,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 5,
+                "ScaleFactor": 0.00373,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 6,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 7,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 8,
+                "ScaleFactor": 0.003725,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 9,
+                "ScaleFactor": 0.003671471,
+                "Offset": 245,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 10,
+                "ScaleFactor": 0.003674469,
+                "Offset": 248,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 11,
+                "ScaleFactor": 0.003728,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 12,
+                "ScaleFactor": 0.003745,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 13,
+                "ScaleFactor": 0.003725,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 14,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 15,
+                "ScaleFactor": 0.00374,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 16,
+                "ScaleFactor": 0.003725,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 17,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 18,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 19,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 20,
+                "ScaleFactor": 0.003725,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 21,
+                "ScaleFactor": 0.003745,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 22,
+                "ScaleFactor": 0.003745,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 23,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 24,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 25,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 26,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 27,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 28,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 29,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 30,
+                "ScaleFactor": 0.00374,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 31,
+                "ScaleFactor": 0.00374,
+                "Offset": 365,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 32,
+                "ScaleFactor": 0.003735,
+                "Offset": 365,
+                "Units": "Volts"
+              }
+            ],
+            "ScaleFactors": {
+              "SinkCurrent": {
+                "Units": "mAmp",
+                "Scale": 0.5806,
+                "Offset": 0
+              },
+              "SourceCurrent": {
+                "Units": "mAmp",
+                "Scale": 0.6469,
+                "Offset": 58
+              },
+              "Ref33V": {
+                "Units": "Volt",
+                "Scale": 0.000991
+              },
+              "Ref5Av": {
+                "Units": "Volt",
+                "Scale": 0.001966
+              },
+              "Ref5Dc": {
+                "Units": "Volt",
+                "Scale": 0.001977
+              },
+              "Ref9V": {
+                "Units": "Volt",
+                "Scale": 0.002965
+              },
+              "Ref65V": {
+                "Units": "Volt",
+                "Scale": 0.001738
+              },
+              "AGnd": {
+                "Units": "Volt",
+                "Scale": 0.0001
+              },
+              "Io12V": {
+                "Units": "Volt",
+                "Scale": 0.006486
+              },
+              "Veh": {
+                "Units": "Volt",
+                "Scale": 0.006212
+              }
+            }
+          }
+        }
+      ],
+      "Description": "Digital IO Settings"
+    },
+    "Meter": {
+      "MeterEnabled": false,
+      "LogMessages": true,
+      "ConnectTimeout": 2000,
+      "CommandTimeout": 300,
+      "SetVoltageRangeCommandTimeout": 2000,
+      "RetryCount": 4,
+      "MeterDevices": [
+        {
+          "Device": 1,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 11,
+          "Port": 8100,
+          "Type": "KeysightDAQ970A"
+        }
+      ],
+      "Description": "Meter Settings"
+    },
+    "ModBus": {
+      "ModbusEnabled": false,
+      "LogMessages": true,
+      "ConnectTimeout": 2000,
+      "CommandTimeout": 300,
+      "SetVoltageRangeCommandTimeout": 2000,
+      "RetryCount": 4,
+      "ModBusDevices": [],
+      "Description": "ModBus"
+    },
+    "WebServer": {
+      "WebServerEnabled": false,
+      "LogMessages": true,
+      "IP1": 192,
+      "IP2": 168,
+      "IP3": 0,
+      "IP4": 50,
+      "Port": 8084,
+      "EVChargerDevices": [
+        {
+          "Device": 1,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 55,
+          "Type": "Bender"
+        },
+        {
+          "Device": 2,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 56,
+          "Type": "InCharge"
+        }
+      ],
+      "Description": "EV Charger"
+    },
+    "SerialParent": {
+      "Enabled": true,
+      "Serial": [
+        {
+          "Enabled": false,
+          "PortNumber": 5,
+          "PrefixCharacterDecimal": 0,
+          "SuffixCharacterDecimal": 0,
+          "BaudRateBps": 9600,
+          "Parity": "None",
+          "DataBits": 8,
+          "StopBits": "One",
+          "Handshake": "None",
+          "DataTerminalReadyEnabled": false,
+          "RequestToSendEnabled": false,
+          "ReadTimeoutMsec": 1000,
+          "WriteTimeoutMsec": 1000,
+          "Description": null
+        }
+      ],
+      "Description": "Serial"
+    },
+    "Description": "Tool Hardware"
+  },
+  "Logging": {
+    "SystemLogLevel": "Debug",
+    "TestApplicationLogLevel": "Debug",
+    "InterfaceLogLevel": "Info",
+    "TestApplicationSummaryLogOnlyTestsThatRan": false,
+    "PurgeDisabled": false,
+    "DailyPurgeTime": "10:10",
+    "GeneralLogKeepFileDays": 0,
+    "TestSummaryLogKeepFileDays": 0,
+    "DiskSpaceCheckDisabled": false,
+    "FreeDiskSpacePercentage": 5,
+    "Description": "Logging"
+  },
+  "Validation": {
+    "AddTimeToEachTestStep": false,
+    "AddTimeToEachTestStepSec": 0,
+    "Description": "Validation"
+  },
+  "Description": null
+}
