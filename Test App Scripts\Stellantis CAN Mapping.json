@@ -1,0 +1,319 @@
+{
+    "Name": "Stellantis CAN Mapping File",
+    "CAN Module": 
+    [
+		{
+			"Module": "GLOBAL1",
+			"TransmitId": "18DBFEF1",
+			"ReceiveId": "1"
+		},
+		{
+			"Module": "GLOBAL2",
+			"TransmitId": "18DBFEF2",
+			"ReceiveId": "2"
+		},
+        {
+			"Module": "SGW",
+			"TransmitId": "18DACBF2",
+			"ReceiveId": "18DAF2CB"
+		},
+        {
+			"Module": "DCSD",
+			"TransmitId": "18DA6AF1",
+			"ReceiveId": "18DAF16A"
+		},
+		{
+			"Module": "TBM2",
+			"TransmitId": "18DAC6F2",
+			"ReceiveId": "18DAF2C6"
+		},
+		{
+			"Module": "FPDM",
+			"TransmitId": "18DA6DF1",
+			"ReceiveId": "18DAF16D"
+		},
+		{
+			"Module": "IPC",
+			"TransmitId": "18DA60F2",
+			"ReceiveId": "18DAF260"
+		},
+		{
+			"Module": "SCCM",
+			"TransmitId": "18DA86F1",
+			"ReceiveId": "18DAF186"
+		},
+		{
+			"Module": "ETM",
+			"TransmitId": "18DA87F2",
+			"ReceiveId": "18DAF287"
+		},
+		{
+			"Module": "HVAC",
+			"TransmitId": "18DA98F1",
+			"ReceiveId": "18DAF198"
+		},
+		{
+			"Module": "CVPM",
+			"TransmitId": "18DA66F1",
+			"ReceiveId": "18DAF166"
+		},
+		{
+			"Module": "BCM",
+			"TransmitId": "18DA40F1",
+			"ReceiveId": "18DAF140"
+		},
+		{
+			"Module": "SCL",
+			"TransmitId": "18DAC4F1",
+			"ReceiveId": "18DAF1C4"
+		},
+		{
+			"Module": "IPC - No FD",
+			"TransmitId": "18DA60F1",
+			"ReceiveId": "18DAF160"
+		},
+		{
+			"Module": "SGW - No FD",
+			"TransmitId": "18DACBF1",
+			"ReceiveId": "18DAF1CB"
+		},
+		{
+			"Module": "TBM",
+			"TransmitId": "18DAC6F1",
+			"ReceiveId": "18DAF1C6"
+		},
+		{
+			"Module": "Functional CAN Message (Command Ignition Status - Run)",
+			"TransmitId": "46C",
+			"ReceiveId": "3"
+		},
+		{
+			"Module": "Functional CAN Message (FULL OPERATION)",
+			"TransmitId": "5BE",
+			"ReceiveId": "4"
+		},
+		{
+			"Module": "Functional CAN Message (STAY ACTIVE)",
+			"TransmitId": "1E340000",
+			"ReceiveId": "5"
+		},
+		{
+			"Module": "ICS",
+			"TransmitId": "18DAF18D",
+			"ReceiveId": "18DAF18D"
+		},
+		{
+			"Module": "EMCM",
+			"TransmitId": "18DAD9F1",
+			"ReceiveId": "18DAF1D9"
+		},
+		{
+			"Module": "HCPM",
+			"TransmitId": "18DA85F1",
+			"ReceiveId": "18DAF185"
+		},
+		{
+			"Module": "PAM",
+			"TransmitId": "18DAA0F1",
+			"ReceiveId": "18DAF1A0"
+		},
+		{
+			"Module": "AMP DIAGNOSTIC MODE",
+			"TransmitId": "47E",
+			"ReceiveId": "47F"
+		},
+		{
+			"Module": "AMP Left/Right SPEAKER",
+			"TransmitId": "7BE",
+			"ReceiveId": "53E"
+		},
+		{
+			"Module": "HVAC CONTROLLER PART NUMBER",
+			"TransmitId": "783",
+			"ReceiveId": "503"
+		},
+		{
+			"Module": "DVD PART NUMBER",
+			"TransmitId": "7B6",
+			"ReceiveId": "536"
+		},
+		{
+			"Module": "ESL",
+			"TransmitId": "18DAC4F2",
+			"ReceiveId": "18DAF2C4"
+		},
+		{
+			"Module": "DMS",
+			"TransmitId": "18DA97F2",
+			"ReceiveId": "18DAF297"
+		},
+		{
+			"Module": "NVPM",
+			"TransmitId": "18DA69F1",
+			"ReceiveId": "18DAF169"
+		},
+		{
+			"Module": "RADIO",
+			"TransmitId": "18DA87F1",
+			"ReceiveId": "18DAF187"
+		}
+
+    ],
+
+    "CAN Message": 
+    [
+		{
+			"Message Description": "TESTER PRESENT",
+			"Message": "023E000000000000"
+		},
+		{
+			"Message Description": "EXTENDED DIAGNOSTIC",
+			"Message": "0210030000000000"
+		},
+		{
+			"Message Description": "Part Number Request",
+			"Message": "0322F18700000000"
+		},
+		{
+			"Message Description": "Generic DTC REQUEST",
+			"Message": "0319020F00000000"
+		},
+		{
+			"Message Description": "Command Ignition Status",
+			"Message": "0080FFFFC0140000"
+		},
+		{
+			"Message Description": "BCM IGNITION STATUS RUN SIGNAL",
+			"Message": "0322013100000000"
+		},
+		{
+			"Message Description": "CLUSTER PART NUMBER",
+			"Message": "0322F13200000000"
+		},
+		{
+			"Message Description": "BCM Part Number",
+			"Message": "0531010200FF0000"
+		},
+		{
+			"Message Description": "HEADLAMP SWITCH DIMMER DOWN",
+			"Message": "0322013300000000"
+		},
+		{
+			"Message Description": "HAZARD SWITCH ON/OFF",
+			"Message": "0322013700000000"
+		},
+		{
+			"Message Description": "RADIO SUPPLIER IDENTIFICATION",
+			"Message": "0322F11000000000"
+		},
+		{
+			"Message Description": "RADIO DEFAULT SESSION",
+			"Message": "0210010000000000"
+		},
+		{
+			"Message Description": "RADIO SUPPLIER SPECIFIC MS 87",
+			"Message": "0210600000000000"
+		},
+		{
+			"Message Description": "MITSUBISHI RADIO PART NUMBER",
+			"Message": "0322FF1000000000"
+		},
+		{
+			"Message Description": "START HVAC ACTUATOR CALIBRATION",
+			"Message": "0431010201000000"
+		},
+		{
+			"Message Description": "HVAC ACTUATOR CALIBRATION",
+			"Message": "0431030201000000"
+		},
+		{
+			"Message Description": "CLOSE HVAC MODE2 ACUATOR C1",
+			"Message": "052F56C103000000"
+		},
+		{
+			"Message Description": "CLOSE HVAC RECIRCULATION DOOR C2",
+			"Message": "052F56C203FF0000"
+		},
+		{
+			"Message Description": "CLOSE HVAC FRONT MODE C0",
+			"Message": "052F56C003000000"
+		},
+		{
+			"Message Description": "HVAC LEFT PANEL SENSOR",
+			"Message": "0322026800000000"
+		},
+		{
+			"Message Description": "HVAC RIGHT PANEL SENSOR",
+			"Message": "0322026900000000"
+		},
+		{
+			"Message Description": "HVAC LEFT FLOOR SENSOR",
+			"Message": "0322026A00000000"
+		},
+		{
+			"Message Description": "HVAC RIGHT FLOOR SENSOR",
+			"Message": "0322026B00000000"
+		},
+		{
+			"Message Description": "HVAC EVAP SENSOR",
+			"Message": "0322026F00000000"
+		},
+		{
+			"Message Description": "MAIN/LEFT TEMP. DOOR FINAL POSITION",
+			"Message": "0322027400000000"
+		},
+		{
+			"Message Description": "RIGHT TEMP. DOOR FINAL POSITION",
+			"Message": "0322027500000000"
+		},
+		{
+			"Message Description": "HVAC MODE ACUATOR FINAL POSITION",
+			"Message": "0322027600000000"
+		},
+		{
+			"Message Description": "HVAC MODE2 ACUATOR FINAL POSITION C1",
+			"Message": "0322027700000000"
+		},
+		{
+			"Message Description": "HVAC RECIRCULATION DOOR FINAL POSITION C2",
+			"Message": "0322027800000000"
+		},
+		{
+			"Message Description": "CLEAR DTC",
+			"Message": "0414FFFFFF000000"
+		},
+		{
+			"Message Description": "EMCM STAY ACTIVE",
+			"Message": "000202000000"
+		},
+		{
+			"Message Description": "EMCM FULL OPERATION",
+			"Message": "0010000000000000"
+		},
+		{
+			"Message Description": "HVAC CONTROLLER BLOWER ON",
+			"Message": "052F56C303FF0000"
+		},
+		{
+			"Message Description": "HVAC CONTROLLER BLOWER OFF",
+			"Message": "042F56C300000000"
+		},
+		{
+			"Message Description": "CLUSTER SELF TEST ON",
+			"Message": "052F557B03FF0000"
+		},
+		{
+			"Message Description": "Tester Present - No Response",
+			"Message": "023E805555555555"
+		},
+		{
+			"Message Description": "Tester Present - With Response",
+			"Message": "023E005555555555"
+		},
+		{
+			"Message Description": "RETURN CONTROL TO ECU MODE2 ACTUATOR C1",
+			"Message": "042F56C100000000"
+		}
+	]
+}    
+
