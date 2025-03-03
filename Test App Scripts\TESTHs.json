@@ -1,0 +1,140 @@
+{	
+	"Name":"Product Test",
+	"Description":"TEST",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"TEST",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"WRES",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"XXXX"
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"ETEST",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[
+              {
+                "Name": "PromptOperatorGmHsFlashRetest",
+                "Description": "PromptOperatorGmHsFlashRetest",
+                "Validated": false,
+                "Concurrent": false,
+                "FailureAbortsTestCycle": false,
+                "OptionCodesMask": "",
+                "AddOptionCodeUponPass": "",
+                "AddOptionCodeUponFail": "",
+                "TimeoutMsec": 20000,
+                "Fault": {
+                  "Id": "1",
+                  "Description": "TEST HS BG - Flash Retest Test Step",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+            "PromptLabels": [
+                {
+                    "Background":false,
+                    "Label":"TEST - FLASH Failed",
+                    "OptionCodesMask":""
+                }],
+                "TestGroupPk": 0,
+                "TestStepPk": 0
+              },
+              {
+					"Name":"PromptOperator",
+					"Description": "Hit P or F",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 10000,
+					"Fault":
+						{
+							"Id":"2",
+							"Description":"TEST HS BG",
+                            "RepairInstructions":
+                            {
+                                "Text":"",
+                                "MovieFileName":"",
+                                "ImageFileName":"",
+                                "PdfFileName":"",
+                                "HtmlFileName":"",
+                            }
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"TEST - P or F",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"ETEST",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"PromptOperatorGmHsRetest",
+					"Description": "Allow Operator a retest",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 30000,
+					"Fault":
+						{
+							"Id":"555",
+							"Description":"TEST RETEST",
+                            "RepairInstructions":
+                            {
+                                "Text":"",
+                                "MovieFileName":"",
+                                "ImageFileName":"",
+                                "PdfFileName":"",
+                                "HtmlFileName":"",
+                            }
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Hit Retest or Fail Button",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"ETEST",
+							"OptionCodesMask":""
+						}]
+				}]
+     }]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"ChangeBy":"RMM",
+			"Change":"Initial version"
+		}
+	]
+}
