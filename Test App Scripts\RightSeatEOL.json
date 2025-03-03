@@ -1,0 +1,727 @@
+{
+  "Name": "Left Seat",
+  "Description": "All TPass Test Step Commands",
+  "Version": 0.0,
+  "VersionMajor": 3,
+  "VersionMinor": 50,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "ROCK",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "DEMO"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "General",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "PromptOperator",
+            "Description": "Visual Inspection",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "GENERAL",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "PromptImageFileName": "move seat manual.JPG",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "32765",
+              "Description": "Visual Seat Inspection Failed",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "sample-mp4-file.mp4",
+                "ImageFileName": "cockpit-test-image1.jpg",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Any Visual Seat Defects ? ",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Modbus",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "LaserPositionRange",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "laserpass",
+            "AddOptionCodeUponFail": "laserfail",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "20230207_114226L.jpg",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "ModbusValidateLaserPositionRange",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Put Laser In My Eye",
+                "OptionCodesMask": "fds",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 2,
+              "SimultaneousPass": false,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "2",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "RECLINE SEAT FORWARD",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 1,
+                  "PassWindowMsec": 5000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "Recline MM",
+                    "ValueFormatter": "F3",
+                    "FontSize": 12,
+                    "Maximum": 10.0,
+                    "Minimum": -10.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 2.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 1.0,
+                  "LowerLimitMMeter": 0.0,
+                  "TestDataDisplay": {
+                    "Samples": "# Samples",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "MOVE SEAT BACKWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "3",
+                    "Description": "MOVE SEAT BACKWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MOVE SEAT BACKWARD",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 6,
+                  "PassWindowMsec": 15000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "Forward/Back MM",
+                    "ValueFormatter": "F3",
+                    "FontSize": 12,
+                    "Maximum": 10.0,
+                    "Minimum": -10.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 5.0,
+                  "LowerLimitMMeter": 0.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Forward/Back MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "MOVE SEAT UP",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "MOVE SEAT UP",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MOVE SEAT UP",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 10000,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "Up/Down MM",
+                    "ValueFormatter": "F3",
+                    "FontSize": 12,
+                    "Maximum": 10.0,
+                    "Minimum": -5.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 10.0,
+                  "LowerLimitMMeter": -5.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Up/Down MM",
+                    "MaxChannelLaserPositionMMeters": "Up/Down Max MM",
+                    "MinChannelLaserPositionMMeters": "Up/Down Min MM"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "08062021",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "03312022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Final Pass Commands All"
+    },
+    {
+      "Date": "07072022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Seat demo"
+    },
+    {
+      "Date": "08192022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "added abort script"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 11,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 16,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 17,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 18,
+      "ChangeBy": "z",
+      "Change": "z"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 19,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 20,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 21,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 22,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 23,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 24,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 25,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 26,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 27,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 28,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12282022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 29,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01022023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 30,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01022023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 31,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 32,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 33,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 34,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 35,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 36,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 37,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 38,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 39,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 40,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 41,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 42,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 43,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02072023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 44,
+      "ChangeBy": "fds",
+      "Change": "fsd"
+    },
+    {
+      "Date": "02072023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 45,
+      "ChangeBy": "fdsa",
+      "Change": "fdsa"
+    },
+    {
+      "Date": "02072023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 46,
+      "ChangeBy": "fd",
+      "Change": "fdas"
+    },
+    {
+      "Date": "02072023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 47,
+      "ChangeBy": "fda",
+      "Change": "fdsa"
+    },
+    {
+      "Date": "02072023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 48,
+      "ChangeBy": "f",
+      "Change": "f"
+    },
+    {
+      "Date": "02082023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 49,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02082023",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 50,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\RightSeatEOL.json",
+  "DateLastModified": "2023-02-08T10:40:47.4798422-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
