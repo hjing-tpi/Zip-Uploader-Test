@@ -1,0 +1,4158 @@
+{
+  "Name": "Magna Front Right Seat Testing",
+  "Description": "App Code for Magna Front Right Seat Testing\r\n",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 105,
+  "Production": true,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "TPAS",
+    "MersDeviceId": "0x100",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Set Outputs to OFF",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 turn power supply off / set output to 0",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Set IO Board 1 Current Limits",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetCurrentLimits - B1 Set Limits 25 A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "B1 Set Limits 25 A",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 1,
+              "SourceLimitMamp": 15000,
+              "SinkLimitMamp": 15000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Modbus 1 Outputs Off",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "###",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Modbus 1 Outputs Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Modbus 1 Outputs Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Test Connector",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Connect 34 Way Right\r\nRight Seat",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "###",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "34 Way Not Connected",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 34 WAY RIGHT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "RIGHT SEAT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "?????????????1??",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Airbag Testing",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Airbag Relay ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 4
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MeterValidateResistanceRange",
+            "Description": "SAB Airbag",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Airbag 4Wire Resistance",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "CHECK YELLOW AIRBAG CONNECTOR",
+                "MovieFileName": "",
+                "ImageFileName": "Airbag.jpg",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Airbag 4Wire Resistance",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MeterValidateResistanceRange": {
+              "DeviceId": 1,
+              "FourWire": true,
+              "Range": "",
+              "Resolution": "",
+              "IntegrationTimePlcs": "",
+              "OffsetCompensation": false,
+              "Slot": 1,
+              "Channel": 2,
+              "PassWindowMsec": 100,
+              "UpperLimitOhm": 10.0,
+              "LowerLimitOhm": 1.5,
+              "TestDataDisplay": {
+                "Samples": "",
+                "ChannelResistanceOhms": "",
+                "MaxChannelResistanceOhms": "",
+                "MinChannelResistanceOhms": ""
+              },
+              "TestDataReporting": {
+                "UpperLimitOhm": "",
+                "LowerLimitOhm": "",
+                "Samples": "",
+                "MaxTimeInPassWindowMsec": "",
+                "MaxChannelResistanceOhms": "",
+                "MinChannelResistanceOhms": "",
+                "AvgChannelResistanceInRangeOhms": "",
+                "LastReceivedMessage": "",
+                "PassReceivedMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Airbag Relay OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Power Supply On",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Power Supply ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 2
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Ambient Light LIN Copy",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "LIN Lamp ON Ground",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 22,
+              "BiasState": "N"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "LIN Lamp ON Feed",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 26,
+              "BiasState": "P"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinConfigureCom",
+            "Description": "Configure LIN for LED testing",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "LinConfigureCom": {
+              "BoardId": 1,
+              "BaudRateBps": "bps10417"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinScheduleData",
+            "Description": "Schedule LIN lamps ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "LinScheduleData": [
+              {
+                "BoardId": 1,
+                "SlotId": 2,
+                "Enable": true,
+                "Disable": false,
+                "Master": false,
+                "TransmissionId": "00",
+                "TransmissionMessage": "FFFFFF",
+                "TransmissionRateMsec": 250
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinScheduleData",
+            "Description": "Schedule LIN lamps ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "###",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "LinScheduleData": [
+              {
+                "BoardId": 1,
+                "SlotId": 3,
+                "Enable": true,
+                "Disable": false,
+                "Master": false,
+                "TransmissionId": "37",
+                "TransmissionMessage": "FF00000000000000",
+                "TransmissionRateMsec": 500
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinSendReceiveValidate",
+            "Description": "LIN LED",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 999999,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "LinSendReceiveValidate": {
+              "BoardId": 1,
+              "MasterTransmissionId": "",
+              "MasterTransmissionMessage": "",
+              "SlaveTransmissionId": "37",
+              "SlaveTransmissionMessage": "FF00000000000000",
+              "TransmissionTimeoutMsec": 300,
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "BaseMask": "",
+              "LinDataEntities": [
+                {
+                  "Description": "LIN Response LED\r\n",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "LED LIN",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "LIN LED",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "66"
+                    }
+                  ],
+                  "ByteRange": [],
+                  "BitMask": []
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Footwell Lamp",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "###",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Footwell Lamp",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "Read LIN Voltage",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "LED LIN voltage",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 32,
+                    "UpperLimitVolts": 16.0,
+                    "LowerLimitVolts": 8.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinScheduleData",
+            "Description": "Schedule LIN lamps ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "LinScheduleData": [
+              {
+                "BoardId": 1,
+                "SlotId": 2,
+                "Enable": false,
+                "Disable": true,
+                "Master": false,
+                "TransmissionId": "00",
+                "TransmissionMessage": "FFFFFF",
+                "TransmissionRateMsec": 500
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinScheduleData",
+            "Description": "Schedule LIN lamps ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "LinScheduleData": [
+              {
+                "BoardId": 1,
+                "SlotId": 3,
+                "Enable": false,
+                "Disable": true,
+                "Master": false,
+                "TransmissionId": "37",
+                "TransmissionMessage": "FF00000000000000",
+                "TransmissionRateMsec": 500
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "TPS",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "TPS Continuity Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "TPS",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "Read Half Bias voltage on ground from TPS Feed",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "TPS",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 5,
+                    "UpperLimitVolts": 8.0,
+                    "LowerLimitVolts": 3.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Buckle Switch",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 25,
+              "BiasState": "P"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 5,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Buckle Switch Continuity Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "grewa",
+                "MovieFileName": "",
+                "ImageFileName": "Buckle Sw 2.jpg",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "Buckle Switch",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "Buckle Switch",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "Buckle Sw 2.jpg",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "CONNECT SEAT BUCKLE",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 29,
+                    "UpperLimitVolts": 11.0,
+                    "LowerLimitVolts": 9.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Buckle Switch Continuity Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "Buckle Switch",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "Buckle Switch",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "CHECK 6 WAY BUCKLE SW",
+                        "MovieFileName": "",
+                        "ImageFileName": "Buckle Sw 2.jpg",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "DISCONNECT SEAT BUCKLE",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 29,
+                    "UpperLimitVolts": 13.0,
+                    "LowerLimitVolts": 11.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 25,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 5,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Seat Switch Test",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Servo Half Way",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 200,
+                "Velocity": 5000,
+                "Position": 130000,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              },
+              {
+                "DeviceId": 2,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 200,
+                "Velocity": 10000,
+                "Position": 100000,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 7,
+              "BiasState": "V"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Seat Switch ON Ground",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 8,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "SEAT BACK RECLINE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SEAT BACK RECLINE",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 2,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "RECLINE BACK",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 10000.0,
+                    "Minimum": 3000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 3700.0,
+                  "LowerLimitMMeter": 3300.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "SEAT BACK RECLINE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SEAT BACK RECLINE",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 2,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "RECLINE FORWARD",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 10000.0,
+                    "Minimum": 3000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 5300.0,
+                  "LowerLimitMMeter": 4900.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "SEAT POSITION FRONT/BACK",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SEAT POSITION FRONT/BACK",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 3,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "POSITION REARWARD",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 10000.0,
+                    "Minimum": 3000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 7200.0,
+                  "LowerLimitMMeter": 6800.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "SEAT POSITION FRONT/BACK",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SEAT POSITION FRONT/BACK",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 3,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "POISTION RETURN",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 10000.0,
+                    "Minimum": 3000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 9000.0,
+                  "LowerLimitMMeter": 8600.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "FRONT CUSHION UP/DOWN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "###",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Adjust Seat",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 5,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "FRONT CUSHION UP",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 800.0,
+                    "Minimum": 1200.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 1000.0,
+                  "LowerLimitMMeter": 925.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "FRONT CUSHION UP/DOWN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "###",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "FRONT CUSHION UP/DOWN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 5,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "FRONT CUSHION DOWN",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 1200.0,
+                    "Minimum": 800.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 1120.0,
+                  "LowerLimitMMeter": 1080.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "REAR CUSHION UP/DOWN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "REAR CUSHION UP/DOWN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 6,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "REAR CUSHION UP",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 3000.0,
+                    "Minimum": 1000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 3000.0,
+                  "LowerLimitMMeter": 2600.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "REAR CUSHION UP/DOWN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "REAR CUSHION UP/DOWN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 6,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "REAR CUSHION DOWN",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 3000.0,
+                    "Minimum": 1000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 2200.0,
+                  "LowerLimitMMeter": 1700.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "MOVE TO HOME POSITION",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "MOVE TO HOME POSITION",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "MOVE TO HOME POSITION",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "RECLINE SEAT FORWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "RECLINE SEAT FORWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 2,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "Recline MM",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 9000.0,
+                    "Minimum": 4000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 5300.0,
+                  "LowerLimitMMeter": 4900.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "MOVE SEAT BACKWARD",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "MOVE SEAT BACKWARD",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 3,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "Forward/Back MM",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 9000.0,
+                    "Minimum": 4000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 9000.0,
+                  "LowerLimitMMeter": 8500.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Forward/Back MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 6,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "REAR CUSHION",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 2500.0,
+                    "Minimum": 1500.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 2200.0,
+                  "LowerLimitMMeter": 1800.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Servo Half Way",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 200,
+                "Velocity": 5000,
+                "Position": 240000,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "LUMBAR",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "LUMBAR",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "LUMBAR EXTEND",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "LUMBAR EXTEND",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 4,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "LUMBAR EXTEND",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 4000.0,
+                    "Minimum": 3000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 3675.0,
+                  "LowerLimitMMeter": 3575.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateLaserPositionRange",
+            "Description": "LUMBAR",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 180000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "LUMBAR",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusValidateLaserPositionRange": {
+              "DeviceId": 1,
+              "SimultaneousPass": true,
+              "Channels": [
+                {
+                  "Description": "LUMBAR EXTEND",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "LUMBAR EXTEND",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "Channel": 4,
+                  "PassWindowMsec": 100,
+                  "TestSliderRangeDisplay": {
+                    "Enabled": true,
+                    "Title": "LUMBAR RETURN",
+                    "ValueFormatter": "F3",
+                    "FontSize": 32,
+                    "Maximum": 4000.0,
+                    "Minimum": 3000.0,
+                    "DisplayIndex": 0
+                  },
+                  "ScaleFactor": 1.0,
+                  "Offset": 0.0,
+                  "UpperLimitMMeter": 3450.0,
+                  "LowerLimitMMeter": 3350.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelLaserPositionMMeters": "Recline MM",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMMeter": "",
+                    "LowerLimitMMeter": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelLaserPositionMMeters": "",
+                    "MinChannelLaserPositionMMeters": "",
+                    "AvgChannelLaserPositionInRangeMMeters": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 7,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "Servo Half Way",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 200,
+                "Velocity": 5000,
+                "Position": 0,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              },
+              {
+                "DeviceId": 2,
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 200,
+                "Velocity": 5000,
+                "Position": 0,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "PODS Module On",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Seat Switch ON Ground",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 5,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "PODS Module ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 27,
+              "BiasState": "P"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Power Supply ON / CAN Relay ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "CAN Relay ON",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 3
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "SDPS - INIT",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "CanConfigureCom",
+            "Description": "Initialize HS CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Initalize HS CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Initalize HS CAN",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanConfigureCom": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanMode": "HighSpeed500K",
+              "FlowControl": true,
+              "CanId": [
+                {
+                  "OptionCodesMask": "",
+                  "ReceiveId": "076D",
+                  "BitId29": false,
+                  "Module": ""
+                },
+                {
+                  "OptionCodesMask": "",
+                  "ReceiveId": "0610",
+                  "BitId29": false,
+                  "Module": ""
+                },
+                {
+                  "OptionCodesMask": "",
+                  "ReceiveId": "0675",
+                  "BitId29": false,
+                  "Module": ""
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "Schedule Tester Present",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Schedule Tester Present",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Schedule Tester Present",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanScheduleData": [
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 2,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "0765",
+                "TransmissionMessage": "023E000000000000",
+                "Module": "",
+                "MessageName": "",
+                "TransmissionRateMsec": 3000,
+                "BitId29": false,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveValidate",
+            "Description": "Enter PODS Diagnostics",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Enter PODS Diagnostics",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveValidate": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "0765",
+              "ReceiveId": "076D",
+              "TransmissionMessage": "0210030000000000",
+              "TransmissionTimeoutMsec": 100,
+              "Module": "",
+              "MessageName": "",
+              "BitId29": false,
+              "FunctionalCan": false,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "ApplicationMask": "",
+              "MultiFrameTimeBetweenFramesMsec": 0,
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "Allow7FResponse": false,
+              "BaseMask": "",
+              "ValidateCanMessageScriptFileName": "",
+              "ValidateCanMessageScriptInputs": [],
+              "CanDataEntities": [
+                {
+                  "Description": "PODS Diagnostic Mode",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "PODS Diagnostic Mode",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "",
+                    "Description": "No Response PODS Diagnostics",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "PODS MODULE 6 WAY",
+                      "MovieFileName": "",
+                      "ImageFileName": "PODS.jpg",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "",
+                    "Description": "Only 7F Response PODS Diagnostics",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0650"
+                    }
+                  ],
+                  "ByteRange": [],
+                  "BitMask": []
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "DpidData": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "Schedule Tester Present",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Schedule Tester Present",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Schedule Tester Present",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanScheduleData": [
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 2,
+                "Enable": false,
+                "Disable": true,
+                "TransmissionId": "0765",
+                "TransmissionMessage": "023E000000000000",
+                "Module": "",
+                "MessageName": "",
+                "TransmissionRateMsec": 3000,
+                "BitId29": false,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Set Outputs to OFF Copy",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 turn power supply off / set output to 0",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Set IO Board 1 Current Limits",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetCurrentLimits - B1 Set Limits 25 A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "B1 Set Limits 25 A",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 1,
+              "SourceLimitMamp": 15000,
+              "SinkLimitMamp": 15000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Modbus 1 Outputs Off",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "###",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Modbus 1 Outputs Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Modbus 1 Outputs Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "03032023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "JH",
+      "Change": "Start"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "JH",
+      "Change": "t"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 7,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 8,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 9,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 10,
+      "ChangeBy": "JH",
+      "Change": "Rwa"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 11,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 12,
+      "ChangeBy": "JHT",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 13,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 14,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 15,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 16,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 17,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 18,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 19,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 20,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 21,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 22,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 23,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 24,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 25,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 26,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 27,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03072023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 28,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 29,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 30,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 31,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 32,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 33,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 34,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 35,
+      "ChangeBy": "a",
+      "Change": "aq"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 36,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03092023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 37,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03092023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 38,
+      "ChangeBy": "fda",
+      "Change": "fas"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 39,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 40,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 41,
+      "ChangeBy": "t",
+      "Change": "g"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 42,
+      "ChangeBy": "t",
+      "Change": "g"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 43,
+      "ChangeBy": "t",
+      "Change": "g"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 44,
+      "ChangeBy": "t",
+      "Change": "g"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 45,
+      "ChangeBy": "JH",
+      "Change": "Tets"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 46,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 47,
+      "ChangeBy": "JH",
+      "Change": "Tets"
+    },
+    {
+      "Date": "03102023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 48,
+      "ChangeBy": "j",
+      "Change": "j"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 49,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 50,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 51,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 52,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 53,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 54,
+      "ChangeBy": "JH",
+      "Change": "TEST"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 55,
+      "ChangeBy": "JH",
+      "Change": "TEst"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 56,
+      "ChangeBy": "JH",
+      "Change": "Rar"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 57,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 58,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 59,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 60,
+      "ChangeBy": "JH",
+      "Change": "TEesr"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 61,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 62,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 63,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 64,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 65,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 66,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 67,
+      "ChangeBy": "H",
+      "Change": "Tse"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 68,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 69,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 70,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03132023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 71,
+      "ChangeBy": "JH",
+      "Change": "aery"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 72,
+      "ChangeBy": "JH",
+      "Change": "dd"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 73,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 74,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 75,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 76,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 77,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 78,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 79,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 80,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 81,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 82,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 83,
+      "ChangeBy": "JH",
+      "Change": "sadgf"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 84,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 85,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 86,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 87,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 88,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 89,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 90,
+      "ChangeBy": "jih",
+      "Change": "jk"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 91,
+      "ChangeBy": "kj",
+      "Change": ",jh"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 92,
+      "ChangeBy": "g",
+      "Change": "g"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 93,
+      "ChangeBy": "JH",
+      "Change": "dsgt"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 94,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 95,
+      "ChangeBy": "JH",
+      "Change": "Tets"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 96,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 97,
+      "ChangeBy": "JH",
+      "Change": "Tes"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 98,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 99,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 100,
+      "ChangeBy": "J",
+      "Change": "t"
+    },
+    {
+      "Date": "03242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 101,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 102,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 103,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "03242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 104,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 105,
+      "ChangeBy": "s",
+      "Change": "s"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\Magna_Testing_FR_01.json",
+  "DateLastModified": "2023-03-24T14:41:17.9428953-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
