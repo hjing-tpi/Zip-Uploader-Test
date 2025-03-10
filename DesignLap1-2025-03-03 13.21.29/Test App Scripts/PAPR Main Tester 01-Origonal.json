@@ -1,0 +1,2287 @@
+{
+	"Name":"PAPR Main Tester",
+	"Description":"Test Products",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+	{
+		"MersTestName":"0TSL",
+		"MersTestType":"ME",
+		"MersTestPgmRev":1,
+		"MersTestTableRev":1,
+		"MersTCA":"A001",
+		"MersEngineType":"ROCK",
+		"MersDeviceId":"0x4000",
+		"GepicsShipCode":"CPIT"
+	},
+	"TestCycleGroups":
+	[[{
+		"GroupName":"Modbus Control Discrete Outputs",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Modbus Control Discrete Outputs",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Outputs to Known State",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+	[{
+		"GroupName":"Power Up Unit",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 02",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"0004",
+				"BitMask":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"CONNECT UNIT TO TESTER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "LATCH UNIT TO TESTER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"0400",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Latch Battery to Tester",
+				"OptionCodesMask":""
+			}]	
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 00",
+			"Concurrent":true,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"0005",
+				"BitMask":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"CLOSE TEST COVER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 01",
+			"Concurrent":true,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"0007",
+				"BitMask":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"OPEN BATTERY DOOR COVER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "INSERT BATTERY PROBE",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8400",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Insert Battery Probe",
+				"OptionCodesMask":""
+			}]	
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "INSERT BUTTON PUSHER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"INSERT BUTTON PUSHER",
+				"OptionCodesMask":""
+			}]	
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "PUSH POWER BUTTON",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8403",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PUSH POWER BUTTON",
+				"OptionCodesMask":""
+			}]	
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 0.25 Seconds",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 250,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 0.25 seconds",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "RELEASE POWER BUTTON",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PUSH POWER BUTTON",
+				"OptionCodesMask":""
+			}]	
+		}]
+	}],
+	[{
+		"GroupName":"Check Airflow",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "INSERT ANEMOMEER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8C01",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PUSH POWER BUTTON",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"MeterValidateVoltageRange",
+			"Description": "Verify Voltage of Battery Pack",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"GOODBAT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH14",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Airflow not as expected"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"MeterValidateVoltageRange R2",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":14,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH14 #",
+						"ChannelVoltageVolts":"S1CH14",
+						"MaxChannelVoltageVolts":"S1CH14 Max",
+						"MinChannelVoltageVolts":"S1CH14 Min"
+
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}],
+				"Fault":
+				{
+					"Id":"",
+					"Description":""
+				},
+				"PromptLabels": [
+				{
+					"Background":false,
+					"Label":"",
+					"OptionCodesMask":""
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "REMOVE ANEMOMETER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"REMOVE ANEMOMETER",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+	[{
+		"GroupName":"Check Batery LED's",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "CLOSE CR1 TO VALIDATE LED 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8441",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 1",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"MeterValidateVoltageRange",
+			"Description": "Verify LED1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"GOODBAT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH03",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED 1 NOT ON"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VALIDATE LED 1",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":3,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH3 #",
+						"ChannelVoltageVolts":"S1CH3",
+						"MaxChannelVoltageVolts":"S1CH3 Max",
+						"MinChannelVoltageVolts":"S1CH3 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "OPEN CR1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 1",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "CLOSE CR2 TO VALIDATE LED 2",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8481",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 2",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"MeterValidateVoltageRange",
+			"Description": "Verify LED2",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"GOODBAT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH4",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED 2 NOT ON"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VALIDATE LED 2",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":3,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH4 #",
+						"ChannelVoltageVolts":"S1CH4",
+						"MaxChannelVoltageVolts":"S1CH4 Max",
+						"MinChannelVoltageVolts":"S1CH4 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "OPEN CR2",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 2",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "CLOSE CR3 TO VALIDATE LED 3",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8501",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 3",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"MeterValidateVoltageRange",
+			"Description": "Verify LED3",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"GOODBAT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH5",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED 3 NOT ON"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VALIDATE LED 3",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":5,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH5 #",
+						"ChannelVoltageVolts":"S1CH5",
+						"MaxChannelVoltageVolts":"S1CH5 Max",
+						"MinChannelVoltageVolts":"S1CH5 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "OPEN CR3",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 3",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "CLOSE CR3 TO VALIDATE LED 4",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8601",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 4",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"MeterValidateVoltageRange",
+			"Description": "Verify LED4",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"GOODBAT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH6",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED 4 NOT ON"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VALIDATE LED 4",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":5,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH6 #",
+						"ChannelVoltageVolts":"S1CH6",
+						"MaxChannelVoltageVolts":"S1CH6 Max",
+						"MinChannelVoltageVolts":"S1CH6 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "OPEN CR3",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Validate LED 3",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+	[{
+		"GroupName":"Verify low battery threshold, LED, vibrator, and buzzer",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn on 13.75V",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8441",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn on 13.75V",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"MeterValidateVoltageRange",
+			"Description": "Verify buzzer is not on",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"GOODBAT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH13",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Buzzer not on"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Buzzer not on",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":13,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH13 #",
+						"ChannelVoltageVolts":"S1CH13",
+						"MaxChannelVoltageVolts":"S1CH13 Max",
+						"MinChannelVoltageVolts":"S1CH13 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn off 13.75V",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn off 13.75V",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"MeterValidateVoltageRange",
+			"Description": "Verify buzzer is not on",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"GOODBAT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH6",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Buzzer not on"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Buzzer not on",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":13,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH6 #",
+						"ChannelVoltageVolts":"S1CH6",
+						"MaxChannelVoltageVolts":"S1CH6 Max",
+						"MinChannelVoltageVolts":"S1CH6 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn off 13.75V",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn off 13.75V",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn on 13.4V",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8421",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn off 13.75V",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH6",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED4 On and Blinking"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Buzzer not on",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":6,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH6 #",
+						"ChannelVoltageVolts":"S1CH6",
+						"MaxChannelVoltageVolts":"S1CH6 Max",
+						"MinChannelVoltageVolts":"S1CH6 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH3",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED1 OFF"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Buzzer not on",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":3,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH3 #",
+						"ChannelVoltageVolts":"S1CH3",
+						"MaxChannelVoltageVolts":"S1CH3 Max",
+						"MinChannelVoltageVolts":"S1CH3 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH4",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED2 OFF"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Buzzer not on",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":4,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH4 #",
+						"ChannelVoltageVolts":"S1CH4",
+						"MaxChannelVoltageVolts":"S1CH4 Max",
+						"MinChannelVoltageVolts":"S1CH4 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH5",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"LED3 OFF"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Buzzer not on",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":5,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH5 #",
+						"ChannelVoltageVolts":"S1CH5",
+						"MaxChannelVoltageVolts":"S1CH5 Max",
+						"MinChannelVoltageVolts":"S1CH5 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH13",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"SONALERT ON"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Buzzer not on",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":13,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH13 #",
+						"ChannelVoltageVolts":"S1CH13",
+						"MaxChannelVoltageVolts":"S1CH13 Max",
+						"MinChannelVoltageVolts":"S1CH13 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"MeterValidateFrequencyRange",
+			"Description": "Frequency Range Slot 1 Channel 13 Sonalert Frequency",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 10000,
+			"MeterValidateFrequencyRange": [
+			{
+				"DeviceId":1,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH13",
+					"OptionCodesMask":"S1CH13",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"MeterValidateFrequencyRange S1CH13"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"MeterValidateFrequencyRange S1CH13",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":1,
+					"PassWindowMsec":15000,
+					"UpperLimitHz":10000,
+					"LowerLimitHz":-10000,
+					"TestDataDisplay":
+					{
+						"Samples":"# MSG",
+						"ChannelFrequencyHz":"S1C13",
+						"MaxChannelFrequencyHz":"S1C13 Max",
+						"MinChannelFrequencyHz":"S1C13 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitHz":"100",
+						"LowerLimitHz":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelFrequencyHz":"104",
+						"MinChannelFrequencyHz":"105",
+						"AvgChannelFrequencyInRangeHz":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					},
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Sonalert Frequency"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Validating METER Slot 1 Channel 13 Sonalert Frequency",
+						"OptionCodesMask":""
+					}]
+				}]
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH2",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Vibrator ON"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Vibrator",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":2,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH2 #",
+						"ChannelVoltageVolts":"S1CH2",
+						"MaxChannelVoltageVolts":"S1CH2 Max",
+						"MinChannelVoltageVolts":"S1CH2 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn off 13.4V",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn off 13.4V",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+	[{
+		"GroupName":"Verify Fan Arrows and Fan LED",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn on 13.75",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8441",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn on 13.75V",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Up",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8449",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Up",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 0.25 Seconds",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 250,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 0.25 seconds",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Up",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8441",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Up",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH9",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Fan LED 2"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Vibrator",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":9,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH9 #",
+						"ChannelVoltageVolts":"S1CH9",
+						"MaxChannelVoltageVolts":"S1CH9 Max",
+						"MinChannelVoltageVolts":"S1CH9 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Up",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8449",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Up",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 0.25 Seconds",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 250,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 0.25 seconds",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Up",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8441",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Up",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH10",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Fan LED 3"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Vibrator",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":9,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH10 #",
+						"ChannelVoltageVolts":"S1CH10",
+						"MaxChannelVoltageVolts":"S1CH10 Max",
+						"MinChannelVoltageVolts":"S1CH10 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Up",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8449",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Up",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 0.25 Seconds",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 250,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 0.25 seconds",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Up",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8441",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Up",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH11",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Fan LED 4"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Vibrator",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":9,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH11 #",
+						"ChannelVoltageVolts":"S1CH11",
+						"MaxChannelVoltageVolts":"S1CH11 Max",
+						"MinChannelVoltageVolts":"S1CH11 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Down",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8405",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Down",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 0.25 Seconds",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 250,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 0.25 seconds",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Fan Speed Down",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Down",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"MeterValidateVoltageRange": [
+			{
+				"DeviceId":1,
+				"AC":false,
+				"Range":"",
+				"Resolution":"",
+				"Channels":[
+				{
+					"Description":"S1CH10",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Fan LED 3 On"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"Vibrator",
+						"OptionCodesMask":""
+					}],
+					"Slot":1,
+					"Channel":9,
+					"PassWindowMsec":500,
+					"UpperLimitVolt":15000,
+					"LowerLimitVolt":10000,
+					"TestDataDisplay":
+					{
+						"Samples":"S1CH11 #",
+						"ChannelVoltageVolts":"S1CH10",
+						"MaxChannelVoltageVolts":"S1CH10 Max",
+						"MinChannelVoltageVolts":"S1CH10 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolt":"100",
+						"LowerLimitVolt":"101",
+						"Samples":"102",
+						"MaxTimeInPassWindowMsec":"103",
+						"MaxChannelVoltageVolts":"104",
+						"MinChannelVoltageVolts":"105",
+						"AvgChannelVoltageInRangeVolt":"106",
+						"LastReceivedMessage":"107",
+						"PassReceivedMessage":"108"
+					}
+				}]
+			}]
+		}]
+	}],
+	[{
+		"GroupName":"Turn off and Disconnect",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Power button",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8405",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Down",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 0.25 Seconds",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 250,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 0.25 seconds",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Release Power Button",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Release Power Button",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn all Ouputs off",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn all outputs off",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 02",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"0000",
+				"BitMask":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"DISCONNECT UNIT TO TESTER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 00",
+			"Concurrent":true,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"0000",
+				"BitMask":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"OPEN TEST COVER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 01",
+			"Concurrent":true,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"0000",
+				"BitMask":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"CLOSE BATTERY DOOR COVER",
+				"OptionCodesMask":""
+			}]
+		}]
+	}]],
+	"ChangeHistory":[
+	{
+		"Date":"",
+		"Version":1.0,
+		"Change":"Initial version"
+	}]
+}
