@@ -1,0 +1,503 @@
+{
+    "Name": "Dakkota_WL_IP_01 Hardware Mapping",
+    "IOBoards": 
+    [
+        {
+            "BoardId": 1,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "PDC Battery Feed #1",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "Battery Feed to Cluster",
+                    "ChannelNumber": 2
+                },
+                {
+                    "ChannelName": "IOChannelNameThree",
+                    "ChannelNumber": 3
+                },
+                {
+                    "ChannelName": "Steering wheel telescope fore motor",
+                    "ChannelNumber": 4
+                },
+                {
+                    "ChannelName": "Steering wheel tilt down motor",
+                    "ChannelNumber": 5
+                },
+                {
+                    "ChannelName": "Steering wheel telescope aft motor",
+                    "ChannelNumber": 6
+                },
+                {
+                    "ChannelName": "Glovebox Test",
+                    "ChannelNumber": 8
+                },
+                {
+                    "ChannelName": "Starter relay control",
+                    "ChannelNumber": 9
+                },
+                {
+                    "ChannelName": "BCI Feed",
+                    "ChannelNumber": 10
+                },
+                {
+                    "ChannelName": "Steering Column Controller Ignition feed",
+                    "ChannelNumber": 11
+                },
+                {
+                    "ChannelName": "Run feed from BCM",
+                    "ChannelNumber": 12
+                },
+                {
+                    "ChannelName": "Ignition relay control from PDC",
+                    "ChannelNumber": 13
+                },
+                {
+                    "ChannelName": "Ignition feeed to X300",
+                    "ChannelNumber": 14
+                },
+                {
+                    "ChannelName": "USB Connector Test",
+                    "ChannelNumber": 15
+                },
+                {
+                    "ChannelName": "Passive Entry Antenna 4 Signal",
+                    "ChannelNumber": 18
+                },
+                {
+                    "ChannelName": "FM2 Coax Blue Dual",
+                    "ChannelNumber": 19
+                } ,
+                {
+                    "ChannelName": "Comfort Seat and Wheel Test",
+                    "ChannelNumber": 20
+                },
+                {
+                    "ChannelName": "KIN feed/ETM Rear Camera Coax Red D2784N",
+                    "ChannelNumber": 22
+                },
+                {
+                    "ChannelName": "Keyless Ignition Switch",
+                    "ChannelNumber": 23
+                },
+                {
+                    "ChannelName": "Feed to Lamps",
+                    "ChannelNumber": 27
+                },
+                {
+                    "ChannelName": "Footwell lamp feed",
+                    "ChannelNumber": 29
+                },
+                {
+                    "ChannelName": "Left Speaker Set PWM",
+                    "ChannelNumber": 31
+                },
+                {
+                    "ChannelName": "Right Speaker Set PWM",
+                    "ChannelNumber": 32
+                }
+
+            ]
+        },        
+        {
+            "BoardId": 2,
+            "IOTags": 
+            [
+                {
+                    "ChannelName": "PDC Battery Feed #2",
+                    "ChannelNumber": 1
+                },
+                {
+                    "ChannelName": "Family Camera Coax",
+                    "ChannelNumber": 2
+                },
+                {
+                    "ChannelName": "Steering wheel tilt up motor",
+                    "ChannelNumber": 6
+                },
+                {
+                    "ChannelName": "Center Speaker Set PWM",
+                    "ChannelNumber": 11
+                },
+                {
+                    "ChannelName": "Headlamp switch return",
+                    "ChannelNumber": 13
+                },
+                {
+                    "ChannelName": "Headlamp switch signal",
+                    "ChannelNumber": 14
+                },
+                {
+                    "ChannelName": "Hazard Switch Test",
+                    "ChannelNumber": 16
+                },
+                {
+                    "ChannelName": "D3464B FPDM Module 5 Way",
+                    "ChannelNumber": 17
+                },
+                {
+                    "ChannelName": "Park Brake Switch",
+                    "ChannelNumber": 19
+                } ,
+                {
+                    "ChannelName": "ETM Blue GPS Coax",
+                    "ChannelNumber": 20
+                },
+                {
+                    "ChannelName": "AM/FM Coax Testing",
+                    "ChannelNumber": 21
+                },
+                {
+                    "ChannelName": "ETM Rear Camera Coax Red D2784N",
+                    "ChannelNumber": 22
+                },
+                {
+                    "ChannelName": "TBM GPS Coax/TBM Bracket testing",
+                    "ChannelNumber": 23
+                },
+                {
+                    "ChannelName": "TBM2 Cell Coax Magenta D335B",
+                    "ChannelNumber": 24
+                },
+                {
+                    "ChannelName": "PHEV Switchbank Test",
+                    "ChannelNumber": 25
+                },
+                {
+                    "ChannelName": "DAB Coax Blue Dual",
+                    "ChannelNumber": 28
+                },
+                {
+                    "ChannelName": "White Light Pipe LED Current Draw",
+                    "ChannelNumber": 29
+                }
+            ]
+        }
+    ],
+
+    "Modbus Devices":
+    [
+        {
+            "DeviceId": 1,
+            "Modbus Output Masks":
+            [                
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [                
+                {
+                    "Mask Name": "Connect 30 Way ORC",
+                    "Bit Mask": "??????1?????????"
+                },
+                {
+                    "Mask Name": "Connect 6 Way SCCM",
+                    "Bit Mask": "?????1??????????"
+                },
+                {
+                    "Mask Name": "Disconnect 6 Way SCCM",
+                    "Bit Mask": "?????0??????????"
+                },
+                {
+                    "Mask Name": "Disconnect 30 Way ORC",
+                    "Bit Mask": "??????0?????????"
+                },
+                {
+                    "Mask Name": "Connect Green 59 Way Left Side X301A",
+                    "Bit Mask": "???????????????1"
+                },
+                {
+                    "Mask Name": "Connect Blue 59 Way Right Side X300A",
+                    "Bit Mask": "??????????????1?"
+                },
+                {
+                    "Mask Name": "Connect Blue 52 Way BCM D2762",
+                    "Bit Mask": "????????1???????"
+                },
+                {
+                    "Mask Name": "Connect Orange 59 Way",
+                    "Bit Mask": "???????1????????"
+                },
+                {
+                    "Mask Name": "Connect Purple 24 Way Body Center X302A",
+                    "Bit Mask": "?????????????1??"
+                },
+                {
+                    "Mask Name": "Connect Brown PDC 2 Way Y315A",
+                    "Bit Mask": "???????????1????"
+                },
+                {
+                    "Mask Name": "Connect Dual Cavity Coax Black Cav 1 X1302",
+                    "Bit Mask": "??????????1?????"
+                },
+                {
+                    "Mask Name": "Connect Dual Cavity Coax Black Cav 2 X1302",
+                    "Bit Mask": "?????????1??????"
+                },
+                {
+                    "Mask Name": "Connect Black Single Coax X1300AM/FM",
+                    "Bit Mask": "??1?????????????"
+                },
+                {
+                    "Mask Name": "Connect Violet Single Coax Pink X1310 Rear Camera",
+                    "Bit Mask": "?1??????????????"
+                },
+                {
+                    "Mask Name": "Connect Grey 12 Way Euro Dash Y331A",
+                    "Bit Mask": "1???????????????"
+                },
+                {
+                    "Mask Name": "Connect Blue OBD2 16 Way",
+                    "Bit Mask": "????????????1???"
+                },
+                {
+                    "Mask Name": "Connect 6 Way LVDS Y113",
+                    "Bit Mask": "???1????????????"
+                },
+                {
+                    "Mask Name": "Disconnect Blue OBD2 16 Way",
+                    "Bit Mask": "????????????0???"
+                },
+                {
+                    "Mask Name": "Disconnect Green 59 Way Left Side X301A",
+                    "Bit Mask": "???????????????0"
+                },
+                {
+                    "Mask Name": "Disconnect Blue 59 Way Right Side X300A",
+                    "Bit Mask": "??????????????0?"
+                },
+                {
+                    "Mask Name": "Disconnect Blue 52 BCM D2762",
+                    "Bit Mask": "??????????????0?"
+                },
+                {
+                    "Mask Name": "Disconnect Left Dual Ground Bottom LUG",
+                    "Bit Mask": "?????????????0??"
+                },
+                {
+                    "Mask Name": "Disconnect Left Dual Ground Bottom LUG/24 Way Body Center",
+                    "Bit Mask": "?????????????0??"
+                },
+                {
+                    "Mask Name": "Disconnect Brown PDC 2 Way Y315A",
+                    "Bit Mask": "???????????0????"
+                },
+                {
+                    "Mask Name": "Disconnect Dual Cavity Coax Black Cav 1 X1302",
+                    "Bit Mask": "??????????0?????"
+                },
+                {
+                    "Mask Name": "Disconnect Dual Cavity Coax Black Cav 2 X1302",
+                    "Bit Mask": "?????????0??????"
+                },
+                {
+                    "Mask Name": "Disconnect Black Single Coax X1300AM/FM",
+                    "Bit Mask": "??0?????????????"
+                },
+                {
+                    "Mask Name": "Disconnect Violet Single Coax Pink X1310 Rear Camera",
+                    "Bit Mask": "?0??????????????"
+                },
+                {
+                    "Mask Name": "Disconnect Grey 12 Way Euro Dash Y331A",
+                    "Bit Mask": "0???????????????"
+                },
+                {
+                    "Mask Name": "Disconnect Orange 59 Way",
+                    "Bit Mask": "???????0????????"
+                },
+                {
+                    "Mask Name": "Disconnect 6 Way LVDS Y113",
+                    "Bit Mask": "???0????????????"
+                },
+                {
+                    "Mask Name": "Disconnect Blue 52 Way BCM D2762",
+                    "Bit Mask": "????????0???????"
+                }
+            ]
+
+        },
+        {
+
+            "DeviceId" : 2,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+                {
+                    "Mask Name": "Connect Orange 24 Way X352A Console",
+                    "Bit Mask": "??????1?????????"
+                },
+                {
+                    "Mask Name": "Connect Left Dual Ground Top LUG",
+                    "Bit Mask": "??????????????1?"
+                },
+                {
+                    "Mask Name": "Connect Left Dual Ground Bottom LUG",
+                    "Bit Mask": "?????????????1??"
+                },
+                {
+                    "Mask Name": "Connect Right Single Ground",
+                    "Bit Mask": "????????????1???"
+                },
+                {
+                    "Mask Name": "Connect Right Dual Ground Top LUG",
+                    "Bit Mask": "??????????1?????"
+                },
+                {
+                    "Mask Name": "Connect Left Single Ground",
+                    "Bit Mask": "????????1???????"
+                },
+                {
+                    "Mask Name": "Connect family Camera Connector Red Coax",
+                    "Bit Mask": "???????????1????"
+                },
+                {
+                    "Mask Name": "Connect Blue Dual Coax Teal X1304 SDAR/GPS To TBM",
+                    "Bit Mask": "???????????????1"
+                },
+                {
+                    "Mask Name": "CONNECT RIGHT DUAL GROUND BOTTOM LUG",
+                    "Bit Mask": "?????????1??????"
+                },
+                {
+                    "Mask Name": "Disconnect Orange 24 Way X352A Console",
+                    "Bit Mask": "??????0?????????"
+                },
+                {
+                    "Mask Name": "Disconnect Left Single Ground",
+                    "Bit Mask": "???????????0????"
+                },
+                {
+                    "Mask Name": "Disconnect Right Dual Ground Top LUG",
+                    "Bit Mask": "??????????0?????"
+                },
+                {
+                    "Mask Name": "Disconnect Right Dual Ground Bottom LUG",
+                    "Bit Mask": "?????????0??????"
+                },
+                {
+                    "Mask Name": "Disconnect Right Single Ground",
+                    "Bit Mask": "????????0???????"
+                },
+                {
+                    "Mask Name": "Disconnect Family Camera Disconnect Red Coax",
+                    "Bit Mask": "????????????0???"
+                },
+                {
+                    "Mask Name": "Disconnect Blue Dual Coax Teal X1304 SDAR/GPS To TBM",
+                    "Bit Mask": "???????????????0"
+                }
+            ]
+        },
+        {
+
+            "DeviceId" : 3,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Eject 30 Way ORC",
+                    "Bit Mask": "0000010000000000"
+                },
+                {
+                    "Mask Name": "Latch Dual Actions #1",
+                    "Bit Mask": "1000010000001111"
+                },
+                {
+                    "Mask Name": "Draw Down Dual Action #1",
+                    "Bit Mask": "1000010011111111"
+                },
+                {
+                    "Mask Name": "Release Connectors #1",
+                    "Bit Mask": "1000000000001111"
+                },
+                {
+                    "Mask Name": "Release Connectors #2",
+                    "Bit Mask": "0111111100000000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        },
+        {
+
+            "DeviceId" : 4,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Latch Dual Actions #2",
+                    "Bit Mask": "0000000000011111"
+                },
+                {
+                    "Mask Name": "Draw Down Dual Action #2",
+                    "Bit Mask": "0000000000011111"
+                },
+                {
+                    "Mask Name": "Release Connectors #3",
+                    "Bit Mask": "0000000000011111"
+                },
+                {
+                    "Mask Name": "Release Connectors #4",
+                    "Bit Mask": "0000001001100000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        },
+        {
+
+            "DeviceId" : 5,
+            "Modbus Output Masks":
+            [
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        },
+        {
+
+            "DeviceId" : 6,
+            "Modbus Output Masks":
+            [
+                {
+                    "Mask Name": "Modbus Outputs Off",
+                    "Bit Mask": "0000000000000000"
+                },
+                {
+                    "Mask Name": "Turn on Relay for BCM",
+                    "Bit Mask": "0000000001100000"
+                }
+            ],
+
+            "Modbus Input Masks":
+            [
+            ]
+        }
+
+    ]
+
+}
