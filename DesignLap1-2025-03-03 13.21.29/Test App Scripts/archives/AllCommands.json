@@ -1,0 +1,1365 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"All Commands in Sequence",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"BeginTimer",
+					"Description": "Begin Timer",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"BeginTimer":
+						{
+							"TimerName":"ONSTARCOM"
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"BeginTimer"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Start ONSTARCOM Timer",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"WaitForTimerToExpire",
+					"Description": "Wait for ONSTARCOM Timer to Expire",
+			    	"Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"WaitForTimerToExpire":
+						{
+							"TimerName":"ONSTARCOM",
+							"TimerExpireLimitMsec": 20000
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"WaitForTimerToExpire"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Wait for ONSTARCOM Timer to Expire",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"Delay",
+					"Description": "Delay 10 seconds",
+     				"Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 10000,
+					"Fault":
+						{
+							"Id":"",
+							"Description":"Delay"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Delay 10 Seconds",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"PromptOperator",
+					"Description": "PromptOperator 10 seconds",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 10000,
+					"Fault":
+						{
+							"Id":"",
+							"Description":"PromptOperator"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Do Something",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardControl",
+					"Description": "IOBoard Turn Power Supply Off B1",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"IOBoardControl":
+						{
+							"BoardId": 1,
+							"ControlByte": 0
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardControl B1 Power Supply Off"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"B1 Power Supply Off",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardControl",
+					"Description": "IOBoard Turn Power Supply Off B2",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"IOBoardControl":
+						{
+							"BoardId": 2,
+							"ControlByte": 0
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardControl B2 Power Supply Off"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"B2 Power Supply Off",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardControl",
+					"Description": "IOBoard Turn Power Supply On B1",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"IOBoardControl":
+						{
+							"BoardId": 1,
+							"ControlByte": 2
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardControl B1 Power Supply On"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"B1 Power Supply On",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardControl",
+					"Description": "IOBoard Turn Power Supply On B2",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"IOBoardControl":
+						{
+							"BoardId": 2,
+							"ControlByte": 2
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardControl B2 Power Supply On"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"B2 Power Supply On",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetBias",
+					"Description": "SetBias B1C32 NO",
+	 				"Concurrent":true,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"SetBias":
+						{
+							"BoardId": 1,
+							"Channel":32,
+							"BiasState":"NO"				
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetBias B1C32 NO"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 Channel 32 - Set Bias NO",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetBias",
+					"Description": "SetBias B2C3 H",
+		    	    "Concurrent":true,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"SetBias":
+						{
+							"BoardId": 2,
+							"Channel":3,
+							"BiasState":"H"		
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetBias B2C3 H"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 2 Channel 3 - Set Bias H",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetCurrentLimits",
+					"Description": "Set IO Board 1 Current Limits",
+		    	    "Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"SetCurrentLimits":
+						{
+							"BoardId": 1,
+							"SinkLimitMamp": 15000,
+							"SourceLimitMamp": 15000
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetCurrentLimits - Board 1"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"B1 Set Limits 15 A",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetCurrentLimits",
+					"Description": "Set IO Board 2 Current Limits",
+		    	    "Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"SetCurrentLimits":
+						{
+							"BoardId": 2,
+							"SinkLimitMamp": 10000,
+							"SourceLimitMamp": 10000
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetCurrentLimits - Board 2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"B2 Set Limits 10 A",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetNoBiasAllChannels",
+					"Description": "SetNoBiasAllChannels B1",
+		    	    "Concurrent":true,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"SetNoBiasAllChannels":
+						{
+							"BoardId": 1
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetNoBiasAllChannels B1"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 - Set No Bias All Channels",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SetNoBiasAllChannels",
+					"Description": "SetNoBiasAllChannels B2",
+		    	    "Concurrent":true,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"SetNoBiasAllChannels":
+						{
+							"BoardId": 2
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SetNoBiasAllChannels B2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 2 - Set No Bias All Channels",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SinkCurrentRangeBase",
+					"Description": "Set B1/B2 Base Sink Current",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 60000,
+					"CurrentRangeParameters":[
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":500,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						},
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 2,
+							"PassWindowMsec":5000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SinkCurrentRangeBase"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 Set Base Sink",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"Board 2 Set Base Sink",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SinkCurrentRangeDelta",
+					"Description": "B1/B2 Sink Current Range",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 60000,
+					"CurrentRangeParameters":[
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":15000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-500
+						},
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 2,
+							"PassWindowMsec":25000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-30
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SinkCurrentRangeDelta"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 Sink Range 15 seconds",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"Board 2 Sink Range 25 seconds",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SourceCurrentRangeBase",
+					"Description": "Set B1/B2 Base Source Current",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 60000,
+					"CurrentRangeParameters":[
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 2,
+							"PassWindowMsec":500,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						},
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":500,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SourceCurrentRangeBase"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 2 Set Base Source",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"Board 1 Set Base Source",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"SourceCurrentRangeDelta",
+					"Description": "B1/2 Source Current Range",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 60000,
+					"CurrentRangeParameters":[
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 2,
+							"PassWindowMsec":25000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-30
+						},
+						{
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":55000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-30
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":"SourceCurrentRangeDelta"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 2 Source Range 25 seconds",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"Board 1 Source Range 55 seconds",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"VoltageRange",
+					"Description": "Verify Voltage 2 Boards",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 20000,
+					"VoltageRangeParameters":[
+						{
+							"BoardId": 1,
+							"VoltageRangeLimits":[
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":32,
+									"PassWindowMsec":2000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.47
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":1,
+									"PassWindowMsec":11000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.45
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":2,
+									"PassWindowMsec":12000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.45
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":3,
+									"PassWindowMsec":13000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.45
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":4,
+									"PassWindowMsec":14000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.50
+								}]
+						},
+						{
+							"BoardId": 2,
+							"VoltageRangeLimits":[
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":1,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":2,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":3,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":19,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"FailAtFirstOutOfRangeReading":false,
+									"Channel":32,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								}]
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":"VoltageRange"
+						},
+					"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"Verify Voltage 2 Boards",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "IOBoard Can Reset",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"IOBoardCanReset":
+						{
+							"BoardId": 1,
+							"CanFD": false
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardCanReset B1"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset B1 CAN",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "IOBoard Can Reset",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"IOBoardCanReset":
+						{
+							"BoardId": 1,
+							"CanFD": true
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardCanReset FD B1"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset B1 CAN FD",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "IOBoard Can Reset",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"IOBoardCanReset":
+						{
+							"BoardId": 2,
+							"CanFD": false
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardCanReset B2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset B2 CAN",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "IOBoard Can Reset",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"IOBoardCanReset":
+						{
+							"BoardId": 2,
+							"CanFD": true
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardCanReset FD B2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset B2 CAN FD",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"Delay",
+					"Description": "Wait for CAN boards to reset 10 seconds",
+     				"Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 10000,
+					"Fault":
+						{
+							"Id":"",
+							"Description":"Delay"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Delay 10 Seconds",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanFDConfigureCom",
+					"Description": "Can FD Configure Com",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"CanFDConfigureCom":
+						{
+							"BoardId": 2,
+							"NominalMode":"Kbs500",
+							"DataRate":"Mbs10",
+							"FlowControl":false,
+							"CanId":[
+								{
+									"ReceiveId":"47F",
+									"BitId29":true
+								},
+								{
+									"ReceiveId":"4E3",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"4E9",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"4C2",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"4C8",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"769",
+									"BitId29":false
+								}]
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanFDConfigureCom"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanConfigureCom",
+					"Description": "CONFIGURE B1 HS CAN",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanConfigureCom"
+						},
+					"CanConfigureCom":
+						{
+							"BoardId": 1,
+							"CanModeList":["HighSpeed500K","GmLanLow","GmLanHigh","GmLanWakeUp","LinBus","FaultTolerant","GmLanDualWire","DualWireMed125K","FaultTolerant50K","MediumSpeed250K","HighSpeed2","GmLanWakeUpLow"],
+							"CanMode":"HighSpeed500K",
+							"FlowControl":true,
+							"Comment":"641=BCM, 65F=CGM, 64D=ONSTAR, 64B=FCM, 652=HMI, 655=TCM",
+							"CanId":[
+								{
+									"ReceiveId":"65F",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"64D",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"652",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"641",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"101",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"64B",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"655",
+									"BitId29":false
+								}]
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"CONFIGURE IOBoard COM",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"1 = Board NUMBER",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"0 0 = HS 500K, 1 = GMLAN SW LS, 2 = GMLAN SW HS, 3 = GMLAN Wake up,",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"      4 = LIN, 5 = FT, 6 = GMLAN Dual wire, 7 = MS 125K",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":" ",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"1 = Flow on (Turn off Flow for Functional can)",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"RX ID",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"False (False = 11 bit id / True = 29 bit id)",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"641=BCM, 65F=CGM, 64D=ONSTAR, 64B=FCM, 652=HMI, 655=TCM",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "TESTER PRESENT",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData SLOT3"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 1,
+							"SlotId":3,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"101",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 3",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "HMI EXTENDED DIAG SC MSG",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData - SLOT 4"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 1,
+							"SlotId":4,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"252",
+							"TransmissionMessage":"021003AAAAAAAAAA",
+							"TransmissionRateMsec":3000,
+							"BitId29":false,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 4",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"HMI SC MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "SCHED 2 SLOTS 1 Command",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 1,
+							"SlotId":5,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"101",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 1,
+							"SlotId":6,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"101",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 3",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Flash 2 Pass",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"FLASH2PASSFAILED",
+					"TimeoutMsec": 50000,
+					"CanSendReceiveData":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionTimeoutMsec":60,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"100B620303????02",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"FLASH 2 Pass"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}]
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanSendReceiveData - Flash 2 Pass"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 03 03 to TX 763",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"FLASH 2 PASS",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "BCM READ DTC",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"00073",
+							"Description":"CanSendReceiveSaveDtcData"
+						},
+					"TimeoutMsec": 5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"BoardId": 1,
+							"TransmissionId":"241",
+							"ReceiveId":"541",
+							"TransmissionMessage":"03A98102AAAAAAAA",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan":true,
+							"FunctionalCanLastFrameMask":"",
+							"SingleFrameMask":"81",
+							"MultipleFrameMask":"03",
+							"BitId29":false,
+							"IgnoreStatus":false,
+							"ParseDtcDataScriptFileName":"ParseDtcData-GM.py"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"BCM",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"READ DTC'S",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BCM LEER DTC'S",
+							"OptionCodesMask":"ESP"
+						}]
+				},
+				{
+					"Name":"CanValidateSavedDtcData",
+					"Description": "Can Validate Saved Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanValidateSavedDtcData":
+						{
+							"BoardId": 2,
+							"AllDtcsMustBePresent":false,
+							"Dtcs":[
+								{
+									"Id":"1111",
+									"Fault":
+										{
+											"Id":"23017",
+											"Description":"B387504 FRONT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								},
+								{
+									"Id":"2222",
+									"Fault":
+										{
+											"Id":"23017",
+											"Description":"B387504 FRONT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								},
+								{
+									"Id":"3333",
+									"Fault":
+										{
+											"Id":"23017",
+											"Description":"B387504 FRONT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								}]
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanValidateSavedDtcData"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Validate Saved Dtc Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanValidatePartNumber",
+					"Description": "Part Number Validation",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanValidatePartNumber":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"PartId":"pArt",
+							"ValidatePartNumberScriptFileName":"PartNumberCheck-Ascii-NoRevision.py"
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanValidatePartNumber - Part Number Validation"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"Part Number Validation",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardFullReset",
+					"Description": "IOBoard Full Reset B1",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"IOBoardFullReset":
+						{
+							"BoardId": 1
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardFullReset B1"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"IOBoard Full Reset B1",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardFullReset",
+					"Description": "IOBoard Full Reset B2",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"IOBoardFullReset":
+						{
+							"BoardId": 2
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardFullReset B2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"IOBoard Full Reset B2",
+							"OptionCodesMask":""
+						}]
+				}]
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"01012019",
+			"Version":1.1,
+			"Change":"Fix issue where the air bag deployed when powering the Glass Roof"
+		},
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
