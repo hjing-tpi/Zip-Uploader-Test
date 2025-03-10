@@ -1,0 +1,531 @@
+{
+	"Name":"Pass.json",
+	"Description":"GM CAMI IP Production Script",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"TEST",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"TPASS",
+			"MersDeviceId":"0x0100",
+			"GepicsShipCode":"XXXX"
+		},	
+	"TestCycleGroups":
+	[[{
+		"GroupName":"Disconnect Test Connectors",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT ALDL",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"?????0??????????",
+ 				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16325",
+				"Description":"ALDL NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT ALDL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "PUSH UP Dual Actions",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 200 MS For Push UP",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 200,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PUSH UP DUAL ACTIONS",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Eject Connectors and Release Latched Connectors",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "DIS",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"0C00",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT 55 WAY BEC BLUE",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"???????????????0",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16321",
+				"Description":"55 WAY BEC BLUE NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT 55 WAY BEC BLUE",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT 50 WAY BEC YELLOW",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"??????????????0?",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16322",
+				"Description":"50 WAY BEC YELLOW NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT 55 WAY BEC YELLOW",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT 42 WAY HEADLINER RED",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"?????????????0??",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"11",
+				"Description":"42 WAY HEADLINER RED NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT 42 WAY HEADLINER RED",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT RIGHT DUAL GROUND 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"????????????0???",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16323",
+				"Description":"RIGHT DUAL GROUND 1 NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT RIGHT DUAL GROUND 1",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT RIGHT DUAL GROUND 2",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"???????????0????",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16324",
+				"Description":"RIGHT DUAL GROUND 2 NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT RIGHT DUAL GROUND 2",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT LEFT DUAL GROUND 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"??????????0?????",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16325",
+				"Description":"LEFT DUAL GROUND 1 NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT LEFT DUAL GROUND 1",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT LEFT DUAL GROUND 2",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"?????????0??????",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16325",
+				"Description":"LEFT DUAL GROUND 2 NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT LEFT DUAL GROUND 2",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT 2 WAY POWER FEED",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"TEST_DISABLED",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"????????0???????",
+ 				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16325",
+				"Description":"2 WAY POWER FEED NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT 2 WAY POWER FEED",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "DISCONNECT HEADLINER QUAD COAX",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"TEST_DISABLED",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"???????0????????",
+ 				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16325",
+				"Description":"HEADLINER QUAD COAX NOT DISCONNECTED"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"DISCONNECT HEADLINER QUAD COAX",
+				"OptionCodesMask":""
+			}]
+		},
+
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "IOBoardControlDigitalIO B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 1,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"07801",
+				"Description":"IOBoardControlDigitalIO B1"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"IOBoard reset digital output",
+				"OptionCodesMask":""
+			}]
+		},
+
+
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "RESET MODBUS",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		}]
+	}]],
+		"ChangeHistory":[
+	{
+		"Date":"11/09/2021",
+		"Version":1,
+		"ChangeBy":"D. Ross",
+		"Change":"Initial Release"
+	}]
+}
