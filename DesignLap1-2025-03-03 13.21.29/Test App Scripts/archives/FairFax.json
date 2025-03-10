@@ -1,0 +1,1080 @@
+{	
+	"Name":"Fairfax Switch Test",
+	"Description":"Test the Can Switches",
+	"Version":1.1,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"TerminationNormal.json",
+	"TerminationScriptFileNameFatalFault":"TerminationFatalFault.json",
+	"TerminationScriptFileNameOperatorAbort":"TerminationOperatorAbort.json",
+	"GmReporting":
+		{
+			"MersTestName":"0TSL",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"ROCK",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"CPIT"
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can Testing",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[				
+				{
+					"Name":"CanConfigureCom",
+					"Description": "Can B2 Configure High Speed 500k",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"CanConfigureCom":
+						{
+							"BoardId": 2,
+							"CanModeList":["HighSpeed500K","GmLanLow","GmLanHigh","GmLanWakeUp","LinBus","FaultTolerant","GmLanDualWire","DualWireMed125K","FaultTolerant50K","MediumSpeed250K","HighSpeed2","GmLanWakeUpLow"],
+							"CanMode":"HighSpeed500K",
+							"FlowControl":true,
+							"CanId":[
+								{
+									"ReceiveId":"4E3",
+									"BitId29":false
+								}]
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanConfigureCom - CONFIGURE HS CAN BOARD 2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"CONFIGURE HS CAN BOARD 2",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"031902FF00000000",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan": true,
+							"FunctionalCanLastFrameMask":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"108359",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py"
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanSendReceiveSaveDtcData - Can Send Receive Save Dtc Data"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Get ALL DTC Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanValidateSavedDtcData",
+					"Description": "Can Validate Saved Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanValidateSavedDtcData":
+						{
+							"BoardId": 2,
+							"AllDtcsMustBePresent":false,
+							"Dtcs":[
+								{
+									"Id":"1111",
+									"Fault":
+										{
+											"Id":"23017",
+											"Description":"B387504 FRONT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								},
+								{
+									"Id":"2222",
+									"Fault":
+										{
+											"Id":"23017",
+											"Description":"B387504 FRONT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								},
+								{
+									"Id":"3333",
+									"Fault":
+										{
+											"Id":"23017",
+											"Description":"B387504 FRONT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								}]
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanValidateSavedDtcData - "
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Validate Saved Dtc Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+		 					"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0319020F00000000",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan": true,
+							"FunctionalCanLastFrameMask":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py"
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanSendReceiveSaveDtcData - Can Send Receive Save Dtc Data"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Get Active DTC Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data ALL Messages",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"02190A0000000000",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan": true,
+							"FunctionalCanLastFrameMask":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py"
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanSendReceiveSaveDtcData - Can Send Receive Save Dtc Data ALL Messages"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Get specific DTC Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "Part Number Request",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"Part Number Request"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanSendReceiveValidate - Part Number Request"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Part Number Request",
+							"OptionCodesMask":""
+						},						
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanValidatePartNumber",
+					"Description": "Part Number Validation",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanValidatePartNumber":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"100D62",
+							"PartId":"bcm",
+							"ValidatePartNumberScriptFileName":"PartNumberCheck-Ascii-NoRevision.py",
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":"",
+									"BroadcastedPartNumber":"",
+									"RawPartNumber":"",
+									"ProcessedPartNumber":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":"",
+									"BroadcastedPartNumber":"11,12",
+									"RawPartNumber":"",
+									"ProcessedPartNumber":"13,14"
+								}
+						},
+					"Fault":
+						{
+							"Id":"65535",
+							"Description":"CanValidatePartNumber - Part Number Validation"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Part Number Validation",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "Switch Tests",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"SWITCHFAILED",
+					"TimeoutMsec": 50000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionTimeoutMsec":60,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMaskxxxx":"100B620303????02",
+							"BaseMask":"????620303",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Flash 2 Pass",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00010",
+											"Description":"FLASH 2 Pass"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"??????1?"
+									}]
+
+								},
+								{
+									"Description":"Rear Wiper On",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00011",
+											"Description":"Rear Wiper On"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Rear Wiper On",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"???????1"
+									}]
+
+								},
+								{
+									"Description":"Front Mist",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00012",
+											"Description":"Front Mist"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Mist",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"??????1?"
+									}]
+
+								},
+								{
+									"Description":"Turn Left",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00013",
+											"Description":"Turn Left"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Turn Left",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"?????1??"
+									}]
+
+								},
+								{
+									"Description":"Turn Right",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00014",
+											"Description":"Turn Right"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Turn Right",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????1???"
+									}]
+
+								},
+								{
+									"Description":"Front Washer",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00015",
+											"Description":"Front Washer"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Washer",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"???1????"
+									}]
+
+								},
+								{
+									"Description":"Rear Washer",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00016",
+											"Description":"Rear Washer"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Rear Wiper Washer",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"??1?????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 1",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00017",
+											"Description":"Front Wiper Interval 1"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 1",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"???????1"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 2",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00017",
+											"Description":"Front Wiper Interval 2"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 2",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"??????1?"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 3",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00018",
+											"Description":"Front Wiper Interval 3"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 3",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"?????1??"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 4",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00019",
+											"Description":"Front Wiper Interval 4"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 4",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????1???"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 5",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00020",
+											"Description":"Front Wiper Interval 5"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 5",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"???1????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper Low",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00021",
+											"Description":"Front Wiper Low"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper Low",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"??1?????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper High",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"?1??????"
+									}]
+
+								},
+								{
+									"Description":"Hi Beam",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00023",
+											"Description":"High Beam"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"High Beam",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"???????1"
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":""
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Cycle Switches",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"2",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"3",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"4",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"5",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"6",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"Delay",
+					"Description": "Delay",
+		    	    "Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 10000,
+					"Fault":
+						{
+							"Id":"",
+							"Description":"Delay"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						}]
+				},	
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "Extended Diagnostic",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0210030000000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"????????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"CLEAR DTC - B1"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":1,
+										"Mask":"??"
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"CanSendReceiveValidate - Extended Diagnostic"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Send CAN Message 02 10 03 to TX 763",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"Extended Diagnostic",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B2 CAN Reset",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"IOBoardCanReset":
+						{
+							"BoardId": 2,
+							"CanFD": false
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoardCanReset - B2 CAN Reset"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset CAN B2",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardFullReset",
+					"Description": "IOBoard Full Reset B1",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"IOBoardFullReset":
+						{
+						"BoardId": 1
+						},
+					"Fault":
+						{
+							"Id":"",
+							"Description":"IOBoard Full Reset B1"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"IOBoard Full Reset B1",
+							"OptionCodesMask":""
+						}]
+				}]
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"01012019",
+			"Version":1.1,
+			"Change":"Fix issue where the air bag deployed when powering the Glass Roof"
+		},
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
