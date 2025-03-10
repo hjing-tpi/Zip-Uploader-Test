@@ -1,0 +1,173 @@
+{
+	"Name":"Fail.json",
+	"Description":"GM CAMI IP Production Script",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"TEST",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"TPASS",
+			"MersDeviceId":"0x0100",
+			"GepicsShipCode":"XXXX"
+		},	
+	"TestCycleGroups":
+	[[{
+		"GroupName":"Disconnect Test Connectors",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "PUSH UP Dual Actions",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"03C7",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		},
+
+
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "IOBoardControlDigitalIO B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 1,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"07801",
+				"Description":"IOBoardControlDigitalIO B1"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"IOBoard reset digital output",
+				"OptionCodesMask":""
+			}]
+		},
+
+
+		{
+			"Name":"Delay",
+			"Description": "Delay 200 MS For Push UP",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 200,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PUSH UP DUAL ACTIONS",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Eject Connectors and Release Latched Connectors",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		},
+
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "RESET MODBUS",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		}]
+	}]],
+	"ChangeHistory":[
+	{
+		"Date":"11/09/2021",
+		"Version":1,
+		"ChangeBy":"D. Ross",
+		"Change":"Initial Release"
+	}]
+}
