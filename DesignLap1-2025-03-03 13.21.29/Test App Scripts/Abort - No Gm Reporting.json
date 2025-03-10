@@ -1,0 +1,254 @@
+{
+	"Name":"ABORT",
+	"Description":"Test Products",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"Abort.json",
+	"TestCycleGroups":
+	[[{
+		"GroupName":"Turn off and Disconnect",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Press Power button",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8405",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Press Fan Speed Down",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 0.25 Seconds",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 250,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 0.25 seconds",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Release Power Button",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"8401",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Release Power Button",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Turn all Ouputs off",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":1,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Turn all outputs off",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 00",
+			"Concurrent":true,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"???? ???? ???? ???0",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"OPEN TEST COVER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 01",
+			"Concurrent":true,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"???? ???? ???? ??0?",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"CLOSE BATTERY DOOR COVER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "Read input on modbus 2 channel 02",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":2,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"???? ???? ???? ?0??",
+				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"ModbusValidateDiscreteInputs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"DISCONNECT UNIT TO TESTER",
+				"OptionCodesMask":""
+			}]
+		}]
+	}]],
+	"ChangeHistory":[
+	{
+		"Date":"",
+		"Version":1.0,
+		"ChangeBy":"Pat",
+		"Change":"Initial version"
+	}]
+}
