@@ -1,0 +1,1364 @@
+{
+  "Name": "Product Test",
+  "Description": "Test Wireless",
+  "Version": 5.0,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "ROCK",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Wireless Test Step Commands",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "DetectWirelessTool",
+            "Description": "Prompt operator to connect ALDL and determine if the Tool is using a Wired or Wireless Connection",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "DetectPass",
+            "AddOptionCodeUponFail": "DetectFail",
+            "TimeoutMsec": 5000,
+            "Fault": {
+              "Id": "16325",
+              "Description": "NO ALDL CONNECT",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "-->OPERATOR<--",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "CONNECT WIRELESS ALDL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DetectWirelessTool": {
+              "WirelessBoardId": 2,
+              "AddOptionCodeUponWireless": "DetectWireless",
+              "AddOptionCodeUponWired": "DetectWired",
+              "ModbusDeviceId": 1,
+              "PassWindowMsec": 2000,
+              "ByteMask": "A?4?",
+              "BitMask": "",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask:",
+                "DiscreteInputBits": "Bytes",
+                "ByteMask": "Byte Mask:",
+                "DiscreteInputHex": "Bits"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 1 CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 1 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "RESET CAN BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": true,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanFDConfigureCom",
+            "Description": "Can FD Configure Com",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "22",
+              "Description": "CanFDConfigureCom",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanFDConfigureCom": {
+              "BoardId": 1,
+              "UseWirelessBoardId": true,
+              "NominalMode": "Kbs500",
+              "DataRate": "Mbs10",
+              "FlowControl": false,
+              "CanId": [
+                {
+                  "ReceiveId": "47a",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4E3",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4E9",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4C2",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4C8",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "769",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "47a",
+                  "BitId29": false
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanConfigureCom",
+            "Description": "CONFIGURE B1 HS CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "07801",
+              "Description": "CONFIGURE B1 HS CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONFIGURE IOBoard COM",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "1 = Board NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "0 0 = HS 500K, 1 = GMLAN SW LS, 2 = GMLAN SW HS, 3 = GMLAN Wake up,",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "      4 = LIN, 5 = FT, 6 = GMLAN Dual wire, 7 = MS 125K",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": " ",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "1 = Flow on (Turn off Flow for Functional can)",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "RX ID",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "False (False = 11 bit id / True = 29 bit id)",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "641=BCM, 65F=CGM, 64D=ONSTAR, 64B=FCM, 652=HMI, 655=TCM",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanConfigureCom": {
+              "BoardId": 1,
+              "UseWirelessBoardId": true,
+              "CanMode": "HighSpeed500K",
+              "FlowControl": true,
+              "CanId": [
+                {
+                  "ReceiveId": "65a",
+                  "BitId29": true
+                },
+                {
+                  "ReceiveId": "64D",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "652",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "641",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "101",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "64B",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "655",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "65a",
+                  "BitId29": true
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "Board 1 Schedule CAN Messages",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "07801",
+              "Description": "CanScheduleData",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 Schedule CAN Messages",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanScheduleData": [
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": true,
+                "SlotId": 3,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "10DBFEF1",
+                "TransmissionMessage": "023E805555555555",
+                "TransmissionRateMsec": 1000,
+                "BitId29": true,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              },
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": true,
+                "SlotId": 4,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "10DBFEF1",
+                "TransmissionMessage": "023E805555555555",
+                "TransmissionRateMsec": 1000,
+                "BitId29": true,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              },
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 5,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "10DBFEF1",
+                "TransmissionMessage": "023E805555555555",
+                "TransmissionRateMsec": 1000,
+                "BitId29": true,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveValidate",
+            "Description": "Start Button Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "Fault": {
+              "Id": "08848",
+              "Description": "CanSendReceiveValidate Start Button Test",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveValidate": {
+              "BoardId": 1,
+              "UseWirelessBoardId": true,
+              "TransmissionId": "14DA40F1",
+              "ReceiveId": "149AF140",
+              "TransmissionMessage": "0322F08555555555",
+              "TransmissionTimeoutMsec": 300,
+              "BitId29": true,
+              "FunctionalCan": false,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "ApplicationMask": "",
+              "MultiFrameTimeBetweenFramesMsec": 0,
+              "NoResponseRequired": false,
+              "Allow7FResponse": false,
+              "BaseMask": "",
+              "ValidateCanMessageScriptFileName": "",
+              "ValidateCanMessageScriptInputs": [
+                ""
+              ],
+              "CanDataEntities": [
+                {
+                  "Description": "START BUTTON",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "08848",
+                    "Description": "START BUTTON",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "08848",
+                    "Description": "BCM No Response IGN SW",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "08848",
+                    "Description": "BCM Neg Response IGN SW",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "PRESS AND HOLD START BUTTON",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0462F085"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 4,
+                      "Mask": "??????1?"
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanReceiveValidate",
+            "Description": "CAN Module Communication",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CAN Module Communication",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanReceiveValidate": {
+              "CanDataEntities": [
+                {
+                  "Description": "PAM",
+                  "OptionCodesMask": "",
+                  "BoardId": 1,
+                  "UseWirelessBoardId": false,
+                  "AddOptionCodeUponPass": "PA_COM",
+                  "ReceiveId": "141AF1BF",
+                  "ApplicationMask": "",
+                  "ValidateCanMessageScriptFileName": "",
+                  "ValidateCanMessageScriptInputs": [
+                    ""
+                  ],
+                  "FunctionalCan": false,
+                  "CanFD": false,
+                  "Allow7FResponse": false,
+                  "BaseMask": "",
+                  "Fault": {
+                    "Id": "41106",
+                    "Description": "PA Communication - CAN 1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "41107",
+                    "Description": "PA NO RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "41109",
+                    "Description": "PA 7F RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "PA",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                },
+                {
+                  "Description": "SCL",
+                  "OptionCodesMask": "",
+                  "BoardId": 1,
+                  "UseWirelessBoardId": true,
+                  "AddOptionCodeUponPass": "SCL_COM",
+                  "ReceiveId": "141AF1C2",
+                  "ApplicationMask": "",
+                  "ValidateCanMessageScriptFileName": "",
+                  "ValidateCanMessageScriptInputs": [
+                    ""
+                  ],
+                  "FunctionalCan": false,
+                  "CanFD": false,
+                  "Allow7FResponse": false,
+                  "BaseMask": "",
+                  "Fault": {
+                    "Id": "19967",
+                    "Description": "SCL Communication - CAN 1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "24842",
+                    "Description": "SCL NO RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "24843",
+                    "Description": "SCL 7F RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "SCL",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                },
+                {
+                  "Description": "SDM",
+                  "OptionCodesMask": "",
+                  "BoardId": 1,
+                  "UseWirelessBoardId": true,
+                  "AddOptionCodeUponPass": "SDM_COM",
+                  "ReceiveId": "149AF158",
+                  "ApplicationMask": "",
+                  "ValidateCanMessageScriptFileName": "",
+                  "ValidateCanMessageScriptInputs": [
+                    ""
+                  ],
+                  "FunctionalCan": false,
+                  "CanFD": false,
+                  "Allow7FResponse": false,
+                  "BaseMask": "",
+                  "Fault": {
+                    "Id": "00052",
+                    "Description": "SDM Communication - CAN 9",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "06202",
+                    "Description": "SDM NO RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "06203",
+                    "Description": "SDM 7F RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "SDM",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveSaveDtcData",
+            "Description": "DTC READ CGM",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "Fault": {
+              "Id": "13076",
+              "Description": "CGM READ DTC FAILURE",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Get specific DTC Data",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveSaveDtcData": {
+              "BoardId": 1,
+              "UseWirelessBoardId": true,
+              "TransmissionId": "14DA45F1",
+              "ReceiveId": "14DAF145",
+              "TransmissionMessage": "0319020255555555",
+              "TransmissionTimeoutMsec": 1000,
+              "FunctionalCan": false,
+              "FunctionalCanLastFrameMask": "",
+              "SingleFrameMask": "0?59",
+              "MultipleFrameMask": "",
+              "BitId29": true,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "IgnoreStatus": false,
+              "NoResponseFault": {
+                "Id": "13794",
+                "Description": "CGM NO RESPONSE - CanSendReceiveSaveDtcData",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "13075",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanValidateSavedDtcData",
+            "Description": "Can Validate Saved Dtc Data",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validate Saved Dtc Data",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanValidateSavedDtcData": {
+              "BoardId": 1,
+              "UseWirelessBoardId": true,
+              "AllDtcsMustBePresent": true,
+              "Dtcs": [
+                {
+                  "Id": "959412",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Camera Power Circuits Short to Bat",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6246",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Vision Camera Calibration Parameter Memory Failure",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6254",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Camera Failure Calibration Not Learned",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6292",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Camera Reconnection Failure Diagnostic Status",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "959512",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Camera Power Circuits Short to Bat",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6846",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Vision Camera Calibration Parameter Memory Failure",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6854",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Vision Camera - Failure Calibration Not Learned",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6892",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Vision Camera Reconnection Failure Diagnostic Status",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanValidatePartNumber",
+            "Description": "CGM Part Number",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "Fault": {
+              "Id": "13080",
+              "Description": "CGM Part Number Incorrect",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanValidatePartNumber": {
+              "BoardId": 1,
+              "UseWirelessBoardId": true,
+              "TransmissionId": "14DA45F1",
+              "ReceiveId": "14DAF145",
+              "TransmissionMessage": "0322F1CB55555555",
+              "TransmissionTimeoutMsec": 500,
+              "PartId": "CGM",
+              "BitId29": true,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "NoResponseFault": {
+                "Id": "13794",
+                "Description": "CGM No Response",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "13075",
+                "Description": "CGM 7F Response",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "36307",
+                "Description": "CGM No Part Number From Broadcast",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "0762F1CB",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "B1 CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "B1 FD",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": true
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "B2CAN 2",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardCanReset": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "B2 FD",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardCanReset": {
+              "BoardId": 2,
+              "UseWirelessBoardId": true,
+              "CanFD": true
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "08062021",
+      "Version": 1.0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "01282022",
+      "Version": 1.1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01282022",
+      "Version": 1.2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01282022",
+      "Version": 1.30000007,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01282022",
+      "Version": 1.4000001,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01312022",
+      "Version": 1.50000012,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02072022",
+      "Version": 1.60000014,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03042022",
+      "Version": 2.0,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03042022",
+      "Version": 3.0,
+      "ChangeBy": "b",
+      "Change": "b"
+    },
+    {
+      "Date": "03042022",
+      "Version": 4.0,
+      "ChangeBy": "rmm",
+      "Change": "reset can"
+    },
+    {
+      "Date": "03042022",
+      "Version": 5.0,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\testiswireless.json",
+  "DateLastModified": "2022-03-04T15:12:19.8447654-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
