@@ -1,0 +1,46 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Begin Timer Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"BeginTimer",
+					"Description": "Begin Timer",
+			    	"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"BeginTimer":
+						{
+							"TimerName":"ONSTARCOM"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Start Timer",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}]
+}
