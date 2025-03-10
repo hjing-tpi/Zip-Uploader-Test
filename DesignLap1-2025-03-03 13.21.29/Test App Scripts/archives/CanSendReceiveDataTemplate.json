@@ -1,0 +1,95 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can Send Receive Data Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Can Send Receive Data",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"BoardId": 0,
+					"TimeoutMsec": 0,
+					"CanSendReceiveData":
+						{
+							"TransmissionId":"",
+							"ReceiveId":"",
+							"TransmissionMessage":"",
+							"TransmissionTimeoutMsec":0,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMask":"",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"",
+									"SaleCodesMask":"",
+									"PromptLabels": [
+										{
+											"Label":"",
+											"SaleCodesMask":""
+										}],
+									"BackgroundLabels": [
+										{
+											"Label":"",
+											"SaleCodesMask":""
+										}],
+									"ByteMask":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}],
+									"ByteRange":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}],
+									"BitMask":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}]
+								}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
