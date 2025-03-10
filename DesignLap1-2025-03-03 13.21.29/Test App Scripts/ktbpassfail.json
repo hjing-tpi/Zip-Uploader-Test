@@ -1,0 +1,470 @@
+{
+  "Name": "Product Test",
+  "Description": "Termination Script - Pass",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 13,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "Abort.json",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "WRES",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Pass or Fail",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "PromptOperator",
+            "Description": "Hit P or F",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "manual move.JPG",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Fault - Movie",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "sample-mp4-file.mp4",
+                "ImageFileName": "",
+                "PdfFileName": "TPI_TPass_TestConfiguration_v2.pdf",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": " P or F",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperator",
+            "Description": "Hit P or F",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Fault - Picture",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "Seat SW 1.jpg",
+                "PdfFileName": "TPI_TPass_TestConfiguration_v2.pdf",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperator",
+            "Description": "Hit P or F",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Fault - PDF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "TPI_TPass_TestConfiguration_v2.pdf",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperator",
+            "Description": "Hit P or F",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Fault - Html",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": "Text.html"
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperator",
+            "Description": "Hit P or F",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Fault - Text",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "<b>The reason</b> <fontsize:30>why this failed</fontsize> <fontsize:12><color:green>is because somebody turned</color> the light off... duh!</fontsize>",
+                "MovieFileName": "sample-mp4-file.mp4",
+                "ImageFileName": "",
+                "PdfFileName": "TPI_TPass_TestConfiguration_v2.pdf",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MarquardtKtbSeatBuckleTest",
+            "Description": "a",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "fff",
+            "AddOptionCodeUponPass": "ddd",
+            "AddOptionCodeUponFail": "eee",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "20230207_114226L.jpg",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "f",
+              "Description": "fdas",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "f",
+                "MovieFileName": "d",
+                "ImageFileName": "f",
+                "PdfFileName": "s",
+                "HtmlFileName": "a"
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "fdas",
+                "OptionCodesMask": "ddd",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MarquardtKtbSeatBuckleTest": {
+              "DeviceId": 2,
+              "ParseKtbBuckelDataScriptFileName": "fdsafdasfdasfasd",
+              "KtbSequentialTestSteps": [
+                {
+                  "Description": "fdasfdsafasd",
+                  "OptionCodesMask": "dddfdasfdas",
+                  "LatchSeatBuckles": false,
+                  "Fault": {
+                    "Id": "ddfdsaafsdaf",
+                    "Description": "ddddfdsafdas",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "a",
+                      "MovieFileName": "a",
+                      "ImageFileName": "f",
+                      "PdfFileName": "d",
+                      "HtmlFileName": "s"
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "fdasffff",
+                      "OptionCodesMask": "fdas",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "NumberOfMessagesSent": "fdasfdsa",
+                    "Buckel1Latched": "dfdasfdasfdasf",
+                    "Buckel2Latched": "bfdfdsafdasfdsafasd",
+                    "Buckel3Latched": "dddddd",
+                    "LastReceivedKtbMessage": "bfdsafdsafsdafdsafsdaf"
+                  },
+                  "TestDataReporting": {
+                    "NumberOfMessagesSent": "d",
+                    "Buckel1Latched": "d",
+                    "Buckel2Latched": "d",
+                    "Buckel3Latched": "d",
+                    "LastReceivedKtbMessage": "d"
+                  }
+                },
+                {
+                  "Description": "a",
+                  "OptionCodesMask": "a",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "a",
+                    "Description": "a",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ddd",
+                      "OptionCodesMask": "ddd",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "NumberOfMessagesSent": "a",
+                    "Buckel1Latched": "a",
+                    "Buckel2Latched": "a",
+                    "Buckel3Latched": "a",
+                    "LastReceivedKtbMessage": "a"
+                  },
+                  "TestDataReporting": {
+                    "NumberOfMessagesSent": "e",
+                    "Buckel1Latched": "e",
+                    "Buckel2Latched": "e",
+                    "Buckel3Latched": "e",
+                    "LastReceivedKtbMessage": "e"
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "03112019",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "06212022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07072022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "RMM",
+      "Change": "removed delay"
+    },
+    {
+      "Date": "03152023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "d",
+      "Change": "d"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03262023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\ktbpassfail.json",
+  "DateLastModified": "2023-04-17T17:35:15.3456078-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
