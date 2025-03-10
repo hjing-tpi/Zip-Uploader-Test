@@ -1,0 +1,71 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"",
+			"MersTestType":"",
+			"MersTestPgmRev":0,
+			"MersTestTableRev":0,
+			"MersTCA":"",
+			"MersEngineType":"",
+			"MersDeviceId":"",
+			"GepicsShipCode":""
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can Validate Part Number Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"CanValidatePartNumber",
+					"Description": "Can Validate Part Number",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"BoardId": 0,
+					"TimeoutMsec": 0,
+					"CanValidatePartNumber":
+						{
+							"TransmissionId":"",
+							"ReceiveId":"",
+							"TransmissionMessage":"",
+							"TransmissionTimeoutMsec":0,
+							"PartId":"",
+							"ApplicationMask":"",
+							"BaseMask":"",
+							"BitId29":false,
+							"ValidatePartNumberScriptFileName":""
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"01242019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
