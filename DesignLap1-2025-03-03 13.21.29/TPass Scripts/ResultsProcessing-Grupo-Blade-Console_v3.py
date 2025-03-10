@@ -1,0 +1,489 @@
+﻿#Create a Grupo Test Results Record and format and return the Printed Label Text for TPass to send to a printer.  Will also create a PLC console test results record and send UDP to plc
+#This Script is expected to set the out parameters below
+#
+#TPass Objects Passed In/Returned
+#   in  - object "testAppResults"
+#   in  - object "productIdentification"
+#   in  - object "MainTPassScripting" - Exposed methods and properties for the scripts to use
+#   in  - method "TPassLogger" - This is the logging method to log to the main TPass log file
+#   in  - method "TestAppLogger" - This is the logging method to log to the TPass Test Application Detail log file
+#   in  - object "SystemConfigurationValue" - This is the object to get values set in the System Configuration file
+#   out - string "printedLabelText" - TPass will send this text to the default printer if the string is not blank and if the printer is enabled in the TPass system configuration settings
+#   out - bool "isSuccess" - Set to True if Test Results processing was successful.  Otherwise False
+#   out - bool "production"
+#   out - string "version"
+#
+
+import clr
+clr.AddReferenceToFileAndPath('.\\Tpi.TPass.Common.dll')
+from Tpi.TPass.Common.JsonStore import TestResults
+from System.IO import File
+from System import DateTime, Char, Byte, Array
+from System.Collections.Generic import Dictionary, List
+from System.Text import Encoding
+
+version = "3.0"
+production = False
+TPassLogger.Debug("Test Results Processing Script:  Product Primary Id = {0}", productIdentification.PrimaryId)
+TPassLogger.Debug("Test Results Processing Script:  Product Secondary Id = {0}", productIdentification.SecondaryId)
+isSuccess = True
+
+#########################################################################################################################################
+# Application Engineer:  
+#
+printPassLabel = False
+
+resultsFile = "C:\TPass\Data Outgoing\Results.txt"
+maxNumberFaultsToSave = 10
+#plc specific configuration items
+maxPlcTestResultsDefined = 100
+plcRemoteIpAddress = "10.154.194.227"
+plcLocalPort = 2025
+plcRemotePort = 2025
+plcSendReceiveTimeout = 1000
+plcUdpSendRetries = 3
+#
+#########################################################################################################################################
+
+#Each test step's test results gets put into a dictionary if it's Fault ID is numeric.
+plcFaultTestResults = Dictionary[int, str]()
+plcMaxActualFaultIdDetected = 0
+
+testerId = "0"                                      # Will be read from the \TPass\Support Files\SID.txt file
+testerIdFile = "C:\TPass\Support Files\SID.txt"
+overallTestResultsPass = False
+testResultsText = ""
+processResultsText = ""
+printedFaultText = ""
+numberFaultsAdded = 0
+
+
+# Internal Functions
+def IsTestFailed(testResults):
+
+    if (testResults == str(TestResults.Fail) or testResults == str(TestResults.FatalFail) or
+            testResults == str(TestResults.OperatorFail) or testResults == str(TestResults.OperatorAbort) or testResults == str(TestResults.SystemError)):
+        return True
+    else:
+        return False
+
+def IsTestPass(testResults):
+
+    if (testResults == str(TestResults.Pass) or testResults == str(TestResults.OperatorPass)):
+        return True
+    else:
+        return False
+
+def SetFault(faultId, faultDescription):
+    global testResultsText
+    global printedFaultText
+    global maxNumberFaultsToSave
+    global numberFaultsAdded
+
+    if (numberFaultsAdded < maxNumberFaultsToSave and faultDescription != ""):
+        numberFaultsAdded = numberFaultsAdded + 1
+        testResultsText = testResultsText + faultDescription[0:64] + "\r\n"
+        printedFaultText = printedFaultText + faultDescription[0:64] + "\r\n"
+        
+def SetProcessData(reportId, reportData):
+    global processResultsText
+    if (reportId and reportData):
+        # Saving Process Data is not implemented for Grupo
+        processResultsText = ""
+
+
+def SetPlcTestStepResults(faultId, faultDescription, testResults):
+    global plcMaxActualFaultIdDetected
+    try:
+        if faultId.replace(" ", "") != "":
+            plcFaultIdIndex = int(faultId.replace(" ", ""))
+            #Add test results
+            if IsTestFailed(testResults):
+                plcFaultTestResult = "0"
+            elif IsTestPass(testResults):
+                plcFaultTestResult = "1"
+            else:   #not tested
+                plcFaultTestResult = "2"
+
+            if plcFaultTestResults.ContainsKey(plcFaultIdIndex):
+                if plcFaultIdIndex > plcMaxActualFaultIdDetected:
+                    plcMaxActualFaultIdDetected = plcFaultIdIndex
+                if plcFaultTestResults[plcFaultIdIndex] != "2":
+                    MainTPassScripting.InterfaceUiLogger("PlcInterface", "Results Processing Script - SetPlcTestStepResults:  Fault Id already used once and will be discarded: ID=" + str(plcFaultIdIndex) + ", FaultId=" + faultId.upper() + ", FaultDesc=" + faultDescription, True, True)
+                else:
+                    plcFaultTestResults[plcFaultIdIndex] = plcFaultTestResult
+            else:
+                MainTPassScripting.InterfaceUiLogger("PlcInterface", "Results Processing Script - SetPlcTestStepResults:  Fault Id not defined and won't be saved.  TPI Script change required: " + faultId.upper(), True, True)
+            
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("PlcInterface", "Results Processing Script - SetPlcTestStepResults:  Error adding faultId results: " + faultId + "  Exception Occurred = " + str(inst), True, False)
+        TPassLogger.Error("Results Processing Script - SetPlcTestStepResults:  Error adding faultId results: " + faultId + "  Exception Occurred :{0}", inst)            
+
+# Main Logic
+try:
+
+    # Read testerId from file
+    try:
+        testerIdLines = File.ReadAllLines(testerIdFile)
+        testerId = testerIdLines[0]
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("Blade", "Test Results Processing Script:  Error Reading Test ID File, will default to Tester ID = 0.  Exception Occurred = " + str(inst), True, True)
+        TPassLogger.Error("Results Processing Script:  Error Reading Test ID File, will default to Tester ID = 0.  File.ReadLines Exception Occurred :{0}", inst)            
+    
+    # Remove results file if exist
+    if File.Exists(resultsFile + "TMP"):
+        try:
+            File.Delete(resultsFile + "TMP")
+        except Exception as inst:
+            TPassLogger.Debug("Results Processing Script:  File.Delete Exception Occurred :{0}", inst)            
+    if File.Exists(resultsFile):
+        try:
+            File.Delete(resultsFile)
+        except Exception as inst:
+            TPassLogger.Debug("Results Processing Script:  File.Delete Exception Occurred :{0}", inst)            
+
+    # Initialize the PLC Fault Test Results Dictionary.  We currently have around 50 defined, so below is defined at maxTestStepsDefined and each initialized to "2", which means not tested.  Item Code 0 will not be used
+    testResultsIndex = 1
+    while testResultsIndex <= maxPlcTestResultsDefined: 
+        plcFaultTestResults.Add(testResultsIndex, "2")
+        #TPassLogger.Info("Results Processing Script:  INIT ADD plcFaultTestResults[testResultIndex] = {0}", plcFaultTestResults[testResultsIndex] )
+        testResultsIndex += 1
+        
+    testResultsText = testerId + "\r\n"
+    primaryPrefix = productIdentification.PrimaryId[0]
+    if Char.IsDigit(primaryPrefix) == False:
+        testResultsText = testResultsText + productIdentification.PrimaryId.Remove(0,1) + "\r\n"
+    else:
+        testResultsText = testResultsText + productIdentification.PrimaryId + "\r\n"
+    testResultsText = testResultsText + "" + "\r\n" #CSN Suffix, not used
+
+    printedLabelText = str(DateTime.Now) + "\r\n"
+    printedLabelText = printedLabelText + "CSN:" + productIdentification.PrimaryId + "\r\n"
+    printedLabelText = printedLabelText + "Model:" + productIdentification.SecondaryId + "\r\n"
+    printedLabelText = printedLabelText + "Tester ID:" + testerId + "\r\n"
+        
+
+    if (testAppResults.MainTestApplication.TestCycleResults.Abort):
+        overallTestResultsPass = False
+        testResultsText = testResultsText + "A" + "\r\n"
+        printedLabelText = printedLabelText + "Overall = A" + "\r\n"
+    elif (str(testAppResults.MainTestApplication.TestCycleResults.TestResults) == str(TestResults.Fail)):
+        overallTestResultsPass = False
+        testResultsText = testResultsText + "F" + "\r\n"
+        printedLabelText = printedLabelText + "Overall = F" + "\r\n"
+    else:
+        testResultsText = testResultsText + "P" + "\r\n"
+        printedLabelText = printedLabelText + "Overall = P" + "\r\n"
+        overallTestResultsPass = True
+
+    # Set Results to send to Blade
+    for groupInx in range(len(testAppResults.MainTestApplication.TestCycle)):
+        for subGroupInx in range(len(testAppResults.MainTestApplication.TestCycle[groupInx])):
+            for testInx in range(len(testAppResults.MainTestApplication.TestCycle[groupInx][subGroupInx].TestSteps)):
+                testStep = testAppResults.MainTestApplication.TestCycle[groupInx][subGroupInx].TestSteps[testInx]
+                SetPlcTestStepResults(testStep.Fault.Id, testStep.Fault.Description, str(testStep.TestStepResults.TestResults))
+                if (IsTestFailed(str(testStep.TestStepResults.TestResults))):
+                    SetFault(testStep.Fault.Id, testStep.Fault.Description)
+                # Test Step Specific Faults and Process data
+                if (testStep.Name == "VoltageRange"):
+                    for voltageRange in testStep.VoltageRanges:
+                        for limit in voltageRange.Limits:
+                            SetPlcTestStepResults(limit.Fault.Id, limit.Fault.Description, str(limit.TestStepResults.TestResults))
+                            if (IsTestFailed(str(limit.TestStepResults.TestResults))):
+                                SetFault(limit.Fault.Id, limit.Fault.Description)
+
+                            if (str(limit.TestStepResults.TestResults) != str(TestResults.NotTested) and str(limit.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                                SetProcessData(limit.TestDataReporting.UpperLimitVolts, str(limit.UpperLimitVolts*100))
+                                SetProcessData(limit.TestDataReporting.LowerLimitVolts, str(limit.LowerLimitVolts*100))
+                                SetProcessData(limit.TestDataReporting.Samples, str(limit.TestData.Samples))
+                                SetProcessData(limit.TestDataReporting.AvgChannelVoltageInRangeVolts, str(limit.TestData.AvgChannelVoltageInRangeVolts*100))
+                                SetProcessData(limit.TestDataReporting.MaxChannelVoltageVolts, str(limit.TestData.MaxChannelVoltageVolts*100))
+                                SetProcessData(limit.TestDataReporting.MinChannelVoltageVolts, str(limit.TestData.MinChannelVoltageVolts*100))
+                                SetProcessData(limit.TestDataReporting.MaxTimeInPassWindowMsec, str(limit.TestData.MaxTimeInPassWindowMsec/1000))
+
+                if (testStep.Name == "SinkCurrentRangeBase" or testStep.Name == "SourceCurrentRangeBase" or testStep.Name == "SinkCurrentRangeDelta" or testStep.Name == "SourceCurrentRangeDelta"):
+                    for currentRange in testStep.CurrentRanges:
+                        SetPlcTestStepResults(currentRange.Fault.Id, currentRange.Fault.Description, str(currentRange.TestStepResults.TestResults))
+                        if (IsTestFailed(str(currentRange.TestStepResults.TestResults))):
+                            SetFault(currentRange.Fault.Id, currentRange.Fault.Description)
+
+                        if (str(currentRange.TestStepResults.TestResults) != str(TestResults.NotTested) and str(currentRange.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                            SetProcessData(currentRange.TestDataReporting.UpperLimitMamp, str(currentRange.UpperLimitMamp/100))
+                            SetProcessData(currentRange.TestDataReporting.LowerLimitMamp, str(currentRange.LowerLimitMamp/100))
+                            SetProcessData(currentRange.TestDataReporting.Samples, str(currentRange.TestData.Samples))
+                            SetProcessData(currentRange.TestDataReporting.AvgCurrentInRangeMamp, str(currentRange.TestData.AvgCurrentInRangeMamp/100))
+                            SetProcessData(currentRange.TestDataReporting.BaseCurrentMamp, str(currentRange.TestData.BaseCurrentMamp/100))
+                            SetProcessData(currentRange.TestDataReporting.MaxCurrentMamp, str(currentRange.TestData.MaxCurrentMamp/100))
+                            SetProcessData(currentRange.TestDataReporting.MinCurrentMamp, str(currentRange.TestData.MinCurrentMamp/100))
+                            SetProcessData(currentRange.TestDataReporting.MaxTimeInPassWindowMsec, str(currentRange.TestData.MaxTimeInPassWindowMsec/1000))
+
+                if (testStep.Name == "SetCurrentLimits"):
+                    if (str(testStep.TestStepResults.TestResults) != str(TestResults.NotTested) and str(testStep.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                        SetProcessData(testStep.SetCurrentLimits.TestDataReporting.SourceLimitMamp, str(testStep.SetCurrentLimits.SourceLimitMamp/100))
+                        SetProcessData(testStep.SetCurrentLimits.TestDataReporting.SinkLimitMamp, str(testStep.SetCurrentLimits.SinkLimitMamp/100))
+                        SetProcessData(testStep.SetCurrentLimits.TestDataReporting.SourceLimitCounts, str(testStep.SetCurrentLimits.TestData.SourceLimitCounts/100))
+                        SetProcessData(testStep.SetCurrentLimits.TestDataReporting.SinkLimitCounts, str(testStep.SetCurrentLimits.TestData.SinkLimitCounts/100))
+
+                if (testStep.Name == "CanReceiveValidate"):
+                    for canDataEntity in testStep.CanReceiveValidate.CanDataEntities:
+                        SetPlcTestStepResults(canDataEntity.Fault.Id, canDataEntity.Fault.Description, str(canDataEntity.TestStepResults.TestResults))
+                        if (IsTestFailed(str(canDataEntity.TestStepResults.TestResults))):
+                            SetFault(canDataEntity.Fault.Id, canDataEntity.Fault.Description)
+ 
+                if (testStep.Name == "CanSendReceiveValidate"):
+                    for canDataEntity in testStep.CanSendReceiveValidate.CanDataEntities:
+                        SetPlcTestStepResults(canDataEntity.Fault.Id, canDataEntity.Fault.Description, str(canDataEntity.TestStepResults.TestResults))
+                        if (IsTestFailed(str(canDataEntity.TestStepResults.TestResults))):
+                            SetFault(canDataEntity.Fault.Id, canDataEntity.Fault.Description)
+ 
+                if (testStep.Name == "CanValidateSavedDtcData"):
+                    for dtc in testStep.CanValidateSavedDtcData.Dtcs:
+                        SetPlcTestStepResults(dtc.Fault.Id, dtc.Fault.Description, str(dtc.TestStepResults.TestResults))
+                        if (IsTestFailed(str(dtc.TestStepResults.TestResults))):
+                            SetFault(dtc.Fault.Id, dtc.Fault.Description)
+ 
+                if (testStep.Name == "CanValidatePartNumber"):
+                    if (str(testStep.TestStepResults.TestResults) != str(TestResults.NotTested) and str(testStep.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                        SetProcessData(testStep.CanValidatePartNumber.TestDataReporting.BroadcastedPartNumber, testStep.CanValidatePartNumber.TestData.BroadcastedPartNumber)
+                        SetProcessData(testStep.CanValidatePartNumber.TestDataReporting.ProcessedPartNumber, testStep.CanValidatePartNumber.TestData.ProcessedPartNumber)
+
+                if (testStep.Name == "LinSendReceiveValidate"):
+                    for linDataEntity in testStep.LinSendReceiveValidate.LinDataEntities:
+                        SetPlcTestStepResults(linDataEntity.Fault.Id, linDataEntity.Fault.Description, str(linDataEntity.TestStepResults.TestResults))
+                        if (IsTestFailed(str(linDataEntity.TestStepResults.TestResults))):
+                            SetFault(linDataEntity.Fault.Id, linDataEntity.Fault.Description)
+
+                if (testStep.Name == "ModbusValidateVoltageRange"):
+                    for channel in testStep.ModbusValidateVoltageRange.Channels:
+                        SetPlcTestStepResults(channel.Fault.Id, channel.Fault.Description, str(channel.TestStepResults.TestResults))
+                        if (IsTestFailed(str(channel.TestStepResults.TestResults))):
+                            SetFault(channel.Fault.Id, channel.Fault.Description)
+
+                        if (str(channel.TestStepResults.TestResults) != str(TestResults.NotTested) and str(channel.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                            SetProcessData(channel.TestDataReporting.UpperLimitMVolt, str(channel.UpperLimitMVolt/100))
+                            SetProcessData(channel.TestDataReporting.LowerLimitMVolt, str(channel.LowerLimitMVolt/100))
+                            SetProcessData(channel.TestDataReporting.Samples, str(channel.TestData.Samples))
+                            SetProcessData(channel.TestDataReporting.MaxChannelVoltageMVolts, str(channel.TestData.MaxChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.MinChannelVoltageMVolts, str(channel.TestData.MinChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.AvgChannelVoltageInRangeMVolt, str(channel.TestData.AvgChannelVoltageInRangeMVolt/100))
+                            SetProcessData(channel.TestDataReporting.MaxTimeInPassWindowMsec, str(channel.TestData.MaxTimeInPassWindowMsec/1000))
+
+                if (testStep.Name == "ModbusValidateVoltageRangeBase"):
+                    for channel in testStep.ModbusValidateVoltageRangeBase.Channels:
+                        SetPlcTestStepResults(channel.Fault.Id, channel.Fault.Description, str(channel.TestStepResults.TestResults))
+                        if (IsTestFailed(str(channel.TestStepResults.TestResults))):
+                            SetFault(channel.Fault.Id, channel.Fault.Description)
+
+                        if (str(channel.TestStepResults.TestResults) != str(TestResults.NotTested) and str(channel.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                            SetProcessData(channel.TestDataReporting.UpperLimitMVolt, str(channel.UpperLimitMVolt/100))
+                            SetProcessData(channel.TestDataReporting.LowerLimitMVolt, str(channel.LowerLimitMVolt/100))
+                            SetProcessData(channel.TestDataReporting.Samples, str(channel.TestData.Samples))
+                            SetProcessData(channel.TestDataReporting.MaxChannelVoltageMVolts, str(channel.TestData.MaxChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.MinChannelVoltageMVolts, str(channel.TestData.MinChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.BaseChannelVoltageMVolts, str(channel.TestData.BaseChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.AvgChannelVoltageInRangeMVolt, str(channel.TestData.AvgChannelVoltageInRangeMVolt/100))
+                            SetProcessData(channel.TestDataReporting.MaxTimeInPassWindowMsec, str(channel.TestData.MaxTimeInPassWindowMsec/1000))
+
+                if (testStep.Name == "ModbusValidateVoltageRangeDelta"):
+                    for channel in testStep.ModbusValidateVoltageRangeDelta.Channels:
+                        SetPlcTestStepResults(channel.Fault.Id, channel.Fault.Description, str(channel.TestStepResults.TestResults))
+                        if (IsTestFailed(str(channel.TestStepResults.TestResults))):
+                            SetFault(channel.Fault.Id, channel.Fault.Description)
+
+                        if (str(channel.TestStepResults.TestResults) != str(TestResults.NotTested) and str(channel.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                            SetProcessData(channel.TestDataReporting.UpperLimitMVolt, str(channel.UpperLimitMVolt/100))
+                            SetProcessData(channel.TestDataReporting.LowerLimitMVolt, str(channel.LowerLimitMVolt/100))
+                            SetProcessData(channel.TestDataReporting.Samples, str(channel.TestData.Samples))
+                            SetProcessData(channel.TestDataReporting.MaxChannelVoltageMVolts, str(channel.TestData.MaxChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.MinChannelVoltageMVolts, str(channel.TestData.MinChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.BaseChannelVoltageMVolts, str(channel.TestData.BaseChannelVoltageMVolts/100))
+                            SetProcessData(channel.TestDataReporting.AvgChannelVoltageInRangeMVolt, str(channel.TestData.AvgChannelVoltageInRangeMVolt/100))
+                            SetProcessData(channel.TestDataReporting.MaxTimeInPassWindowMsec, str(channel.TestData.MaxTimeInPassWindowMsec/1000))
+
+                if (testStep.Name == "MeterValidateVoltageRange"):
+                    for channel in testStep.MeterValidateVoltageRange.Channels:
+                        SetPlcTestStepResults(channel.Fault.Id, channel.Fault.Description, str(channel.TestStepResults.TestResults))
+                        if (IsTestFailed(str(channel.TestStepResults.TestResults))):
+                            SetFault(channel.Fault.Id, channel.Fault.Description)
+
+                        if (str(channel.TestStepResults.TestResults) != str(TestResults.NotTested) and str(channel.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                            SetProcessData(channel.TestDataReporting.UpperLimitVolt, str(channel.UpperLimitVolt))
+                            SetProcessData(channel.TestDataReporting.LowerLimitVolt, str(channel.LowerLimitVolt))
+                            SetProcessData(channel.TestDataReporting.Samples, str(channel.TestData.Samples))
+                            SetProcessData(channel.TestDataReporting.MaxChannelVoltageVolts, str(channel.TestData.MaxChannelVoltageVolts))
+                            SetProcessData(channel.TestDataReporting.MinChannelVoltageVolts, str(channel.TestData.MinChannelVoltageVolts))
+                            SetProcessData(channel.TestDataReporting.AvgChannelVoltageInRangeVolt, str(channel.TestData.AvgChannelVoltageInRangeVolt))
+                            SetProcessData(channel.TestDataReporting.MaxTimeInPassWindowMsec, str(channel.TestData.MaxTimeInPassWindowMsec/1000))
+
+                if (testStep.Name == "MeterValidateFrequencyRange"):
+                    for channel in testStep.MeterValidateFrequencyRange.Channels:
+                        SetPlcTestStepResults(channel.Fault.Id, channel.Fault.Description, str(channel.TestStepResults.TestResults))
+                        if (IsTestFailed(str(channel.TestStepResults.TestResults))):
+                            SetFault(channel.Fault.Id, channel.Fault.Description)
+
+                        if (str(channel.TestStepResults.TestResults) != str(TestResults.NotTested) and str(channel.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                            SetProcessData(channel.TestDataReporting.UpperLimitHz, str(channel.UpperLimitHz))
+                            SetProcessData(channel.TestDataReporting.LowerLimitHz, str(channel.LowerLimitHz))
+                            SetProcessData(channel.TestDataReporting.Samples, str(channel.TestData.Samples))
+                            SetProcessData(channel.TestDataReporting.MaxChannelFrequencyHz, str(channel.TestData.MaxChannelFrequencyHz))
+                            SetProcessData(channel.TestDataReporting.MinChannelFrequencyHz, str(channel.TestData.MinChannelFrequencyHz))
+                            SetProcessData(channel.TestDataReporting.AvgChannelFrequencyInRangeHz, str(channel.TestData.AvgChannelFrequencyInRangeHz))
+                            SetProcessData(channel.TestDataReporting.MaxTimeInPassWindowMsec, str(channel.TestData.MaxTimeInPassWindowMsec/1000))
+ 
+                if (testStep.Name == "MeterValidateResistanceRange"):
+                    if (str(testStep.TestStepResults.TestResults) != str(TestResults.NotTested) and str(testStep.TestStepResults.TestResults) != str(TestResults.OptionCodeNotTested)):
+                        SetProcessData(testStep.MeterValidateResistanceRange.TestDataReporting.UpperLimitOhm, str(testStep.MeterValidateResistanceRange.UpperLimitOhm))
+                        SetProcessData(testStep.MeterValidateResistanceRange.TestDataReporting.LowerLimitOhm, str(testStep.MeterValidateResistanceRange.LowerLimitOhm))
+                        SetProcessData(testStep.MeterValidateResistanceRange.TestDataReporting.Samples, str(testStep.MeterValidateResistanceRange.TestData.Samples))
+                        SetProcessData(testStep.MeterValidateResistanceRange.TestDataReporting.MaxChannelResistanceOhms, str(testStep.MeterValidateResistanceRange.TestData.MaxChannelResistanceOhms))
+                        SetProcessData(testStep.MeterValidateResistanceRange.TestDataReporting.MinChannelResistanceOhms, str(testStep.MeterValidateResistanceRange.TestData.MinChannelResistanceOhms))
+                        SetProcessData(testStep.MeterValidateResistanceRange.TestDataReporting.AvgChannelResistanceInRangeOhms, str(testStep.MeterValidateResistanceRange.TestData.AvgChannelResistanceInRangeOhms))
+                        SetProcessData(testStep.MeterValidateResistanceRange.TestDataReporting.MaxTimeInPassWindowMsec, str(testStep.MeterValidateResistanceRange.TestData.MaxTimeInPassWindowMsec/1000))
+
+except Exception as inst:
+    TPassLogger.Warn("Test Results Processing Script:  Error Creating Results Record.  Exception Occurred :{0}", inst)
+    MainTPassScripting.InterfaceUiLogger("Blade", "Error Creating Results Record.  Exception Occurred = " + str(inst), True, True)
+    isSuccess = False
+
+# Create Results file for Blade to process
+try:
+    try:
+        File.WriteAllText(resultsFile + "TMP", testResultsText)
+        File.Move(resultsFile + "TMP", resultsFile)
+        MainTPassScripting.InterfaceUiLogger("Blade", "Results File Written - " + resultsFile, False, False)
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("Blade", "File.WriteAllText Exception Occurred" + str(inst), True, True)
+        TPassLogger.Error("Option Retrieval Script:  File Exception Occurred :{0}", inst)            
+
+    TPassLogger.Debug("Test Results Processing Script:  Product Primary ID = {0}, Blade Results File Text = {1}", productIdentification.PrimaryId, testResultsText )
+
+except Exception as inst:
+    TPassLogger.Warn("Test Results Processing Script:  Error Creating Test Label Text.  Exception Occurred :{0}", inst)
+    isSuccess = False
+
+# Create PLC Test Results and send to Console PLC using UDP connection
+try:
+
+    plcTestResultsRecord = productIdentification.PrimaryId + ";" + productIdentification.SecondaryId + ";"
+    if overallTestResultsPass:
+        plcTestResultsRecord = plcTestResultsRecord + "1" + ";"
+    else:
+        plcTestResultsRecord = plcTestResultsRecord + "0" + ";"
+    
+   # Add test results
+    testResultIndex = 1
+    TPassLogger.Debug("Results Processing Script:  plcMaxActualFaultIdDetected = {0}", plcMaxActualFaultIdDetected )
+    while testResultIndex <= plcMaxActualFaultIdDetected: 
+        TPassLogger.Debug("Results Processing Script:  plcFaultTestResults[testResultIndex] = {0}", plcFaultTestResults[testResultIndex] )
+        plcTestResultsRecord = plcTestResultsRecord + plcFaultTestResults[testResultIndex]
+        testResultIndex += 1
+
+    MainTPassScripting.InterfaceUiLogger("PlcInterface", "Console PLC Test Results - " + plcTestResultsRecord, False, False)
+    TPassLogger.Debug("Results Processing Script:  Product Primary ID = {0}, Console PLC Results Text = {1}", productIdentification.PrimaryId, plcTestResultsRecord )
+    
+    # Send Console PLC Test Results to plc via UDP
+    plcUdpSendRetries = 0
+    udpSendReceiveSuccess = False
+    plcIp = plcRemoteIpAddress.split(".")
+    try:
+        udpClient = MainTPassScripting.CreateUdpClient(plcLocalPort)
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("PlcInterface", "Could not connect to plc local port - " + str(plcLocalPort) + ", Exception:" + str(inst), True, True)
+        TPassLogger.Error("Results Processing Script:  Could not connect to plc - UDP Exception Occurred :{0}", inst)            
+    else:
+        try:
+            while udpSendReceiveSuccess == False and plcUdpSendRetries < plcUdpSendRetries:
+                plcTestResultsBytes = Encoding.ASCII.GetBytes(plcTestResultsRecord)
+                # for i in plcTestResultsBytes:
+                    # MainTPassScripting.InterfaceUiLogger("PlcInterface", "b=" + i.ToString(), True, False)
+                if udpClient.AsyncSend(int(plcIp[0]), int(plcIp[1]), int(plcIp[2]), int(plcIp[3]), plcRemotePort, plcTestResultsBytes) == True:
+                    startDateTime = DateTime.Now
+                    while (DateTime.Now - startDateTime).TotalMilliseconds < plcSendReceiveTimeout and str(udpClient.SendAsyncStage) == str(udpClient.SendAsyncStages.InProgress):
+                        MainTPassScripting.UpdateEvents()
+                    if str(udpClient.SendAsyncStage) == str(udpClient.SendAsyncStages.Success):
+                        MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncSend - Success Sending Console PLC Test Results to " + plcRemoteIpAddress + ":" + str(plcRemotePort), False, False)
+                        # # Receive ACK
+                        # if udpClient.AsyncReceive() == True:
+                            # startDateTime = DateTime.Now
+                            # while (DateTime.Now - startDateTime).TotalMilliseconds < plcSendReceiveTimeout and str(udpClient.ReceiveAsyncStage) == str(udpClient.ReceiveAsyncStages.InProgress):
+                                # MainTPassScripting.UpdateEvents()
+                            # if str(udpClient.ReceiveAsyncStage) == str(udpClient.ReceiveAsyncStages.Success):
+                                # MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncReceive - Received Console PLC Test Results ACK Bytes Hex =  " + udpClient.ReceivedMessage, False, False)
+                                # MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncReceive - Received Console PLC Test Results ACK Bytes Decimal =  " + str(udpClient.ReceivedMessageBytes), False, False)
+                                # udpSendReceiveSuccess = True
+                                # # Process ACK Message
+                            # else:
+                                # if str(udpClient.ReceiveAsyncStage) == str(udpClient.ReceiveAsyncStages.InProgress):
+                                    # MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncReceive - Timeout waiting on receiving Console PLC Test Results ACK", True, False)
+                                    # udpClient.ResetAsyncOperations()
+                                    # udpClient = MainTPassScripting.CreateUdpClient(plcLocalPort)
+                                # else:
+                                    # MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncReceive - Failed receiving Console PLC Test Results ACK", True, False)
+                                # plcUdpSendRetries += 1
+                        # else:
+                            # MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncReceive - Error Receiving Console PLC Test Results ACK", True, False)
+                            # plcUdpSendRetries += 1
+                    else:
+                        if str(udpClient.SendAsyncStage) == str(udpClient.SendAsyncStages.InProgress):
+                            MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncSend - Timeout waiting on sending Console PLC Test Results", True, False)
+                            udpClient.ResetAsyncOperations()
+                            udpClient = MainTPassScripting.CreateUdpClient(plcLocalPort)
+                        else:
+                            MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncSend - Failed sending Console PLC Test Results", True, False)
+                        plcUdpSendRetries += 1
+                else:
+                    MainTPassScripting.InterfaceUiLogger("PlcInterface", "AsyncSend - Error Sending Console PLC Test Results", True, False)
+                    plcUdpSendRetries += 1
+
+        except Exception as inst:
+            MainTPassScripting.InterfaceUiLogger("PlcInterface", "Error sending Console PLC Test Results - " + plcRemoteIpAddress + ":" + str(plcRemotePort) + ", Exception:" + str(inst), True, True)
+            TPassLogger.Error("Results Processing Script:  Could not connect to PLC - UDP Exception Occurred :{0}", inst)            
+
+    finally:
+        MainTPassScripting.InterfaceUiLogger("PlcInterface", "Closing UDP Connection " + plcRemoteIpAddress + ":" + str(plcRemotePort), False, False)
+        try:
+            udpClient.CloseConnection()
+        except Exception as inst:
+            MainTPassScripting.InterfaceUiLogger("PlcInterface", "Exception on Close UDP Connection:  " + str(inst), True, False)
+            TPassLogger.Error("Results Processing Script:  Close UDP Connection Exception Occurred :{0}", inst)            
+        udpClient = None
+        if udpSendReceiveSuccess == True:
+            MainTPassScripting.InterfaceUiLogger("PlcInterface", "Console PLC Test Results Successfully Sent", False, False)
+        else:
+            MainTPassScripting.InterfaceUiLogger("PlcInterface", "Error Sending Console PLC Test Results", True, True)
+
+except Exception as inst:
+    MainTPassScripting.InterfaceUiLogger("PlcInterface", "Console PLC Create Results Exception Occurred: " + str(inst), True, True)
+    TPassLogger.Warn("Results Processing Script:  Error Creating Console PLC Test Results.  Exception Occurred :{0}", inst)
+    isSuccess = False
+    
+# Create Printed Label Text to pass back to TPass for printing.  Do Not Print if Test Cycle Passed!
+try:
+    if (printPassLabel == False and overallTestResultsPass):
+        printedLabelText = ""
+    else:
+        printedLabelText = printedLabelText + printedFaultText
+
+    TPassLogger.Debug("Test Results Processing Script:  Product Primary ID = {0}, Printed Label Text = {1}", productIdentification.PrimaryId, printedLabelText )
+
+except Exception as inst:
+    TPassLogger.Warn("Test Results Processing Script:  Error Creating Test Label Text.  Exception Occurred :{0}", inst)
+    isSuccess = False
+
+TPassLogger.Info("Test Results Processing Script:  Is Success = {0}", isSuccess)
+
+
+############################################################
+# Change History
+############################################################
+#	Date: 05222024
+#	Version: 3.0
+#	Change: Added sending test results to PLC via UDP
+#	Date: 05212024
+#	Version: 2.0
+#	Change: Remove the leading "I" character for primary ID if it exists.  Blade primary ID must be numeric
+#	Date: 09182023
+#	Version: 1.0
+#	Change: Initial Version
+############################################################
+
