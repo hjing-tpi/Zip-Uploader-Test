@@ -1,0 +1,4702 @@
+{
+  "Name": "L246_FasciaREAR_01",
+  "Description": "GM PPO Fascia Rear Production Script",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 86,
+  "Production": false,
+  "TerminationScriptFileNamePass": "PassRear.json",
+  "TerminationScriptFileNameFail": "Fail.json",
+  "TerminationScriptFileNameFatalFault": "Abort.json",
+  "TerminationScriptFileNameOperatorAbort": "Abort.json",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "TPAS",
+    "MersDeviceId": "0x20000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Set Outputs to OFF",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 1 CAN",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 1 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "RESET CAN BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": true
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 2 CAN",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 2 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "RESET CAN BOARD 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 turn power supply off / set output to 0",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 2 turn power supply off / set output to 0",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "IOBoardControlDigitalIO B2 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IO BOARD 2 CONTROL RESET",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 2,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B2",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetNoBiasAllChannels B2",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 2 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 2
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Set IO Board 1 Current Limits",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetCurrentLimits - B1 Set Limits 15 A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "B1 Set Limits 15 A",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 1,
+              "SourceLimitMamp": 15000,
+              "SinkLimitMamp": 15000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Set IO Board 2 Current Limits",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetCurrentLimits - B2 Set Limits 15 A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "B2 Set Limits 15 A",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 2,
+              "SourceLimitMamp": 15000,
+              "SinkLimitMamp": 15000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Connect Test Connectors",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT 16 WAY X950LH GRAY HANDLE",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CONNECT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16321",
+              "Description": "16 WAY X950LH GRAY HANDLE NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 16 WAY X950LH",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "GRAY HANDLE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT 16 WAY X950RH BLACK HANDLE",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CONNECT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16322",
+              "Description": "16 WAY X950RH BLACK HANDLE NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 16 WAY X950RH",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "BLACK HANDLE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "??????????????1?",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT SINGLE X950COAX BLUE HANDLE",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CONNECT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16323",
+              "Description": "SINGLE X950COAX BLUE HANDLE NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT SINGLE X950COAX",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "BLUE HANDLE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "?????????????1??",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT 12 WAY X952 LH ORANGE HANDLE",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CONNECT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16324",
+              "Description": "12-WAY X952 ORANGE HANDLE NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 12-WAY X952",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "ORANGE HANDLE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "?????????1??????",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT 12 WAY X952 RH RED HANDLE",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CONNECT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "16325",
+              "Description": "12 WAY X952 RH RED HANDLE NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 12 WAY X952 RH ",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "RED HANDLE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "????????1???????",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Power Up Vehicle",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Turn Power Supply On B1 CONTROL BYTE 02",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply On",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply On",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 2
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "ANTENNA PEPS REAR CLOSURE (SQ test)",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetPulseWidthModulation",
+            "Description": "SetPulseWidthModulation B1C17",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": " SetPulseWidthModulation B1CH17 H Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetPulseWidthModulation": {
+              "BoardId": 1,
+              "Channel": 17,
+              "BiasState": "P",
+              "DutyCyclePercent": 97,
+              "FrequencyHz": 1933
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH16",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 8000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PEPS ANTENNA REAR CLOSURE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH16",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "14620",
+                      "Description": "PEPS ANTENNA REAR CLOSURE",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 16,
+                    "UpperLimitVolts": 4.0,
+                    "LowerLimitVolts": 0.4,
+                    "PassWindowMsec": 50,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH17",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 17,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "CAMERA REAR VISION",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH24",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 24,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH25",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CAMERA REAR VISION",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH25",
+                    "OptionCodesMask": "MY25",
+                    "Fault": {
+                      "Id": "336",
+                      "Description": "CAMERA REAR VISION",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 25,
+                    "UpperLimitVolts": 9.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH25",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 24,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "RADIO FREQUENCY COAX SIGNAL",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "OAN",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH28",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!U2Q&!MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 28,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH28",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!U2Q&!MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "AM/FM COAX",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH28",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "47708",
+                      "Description": "Radio Frequency Antenna Coax Signal Fault",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 29,
+                    "UpperLimitVolts": 8.0,
+                    "LowerLimitVolts": 2.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH28",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!U2Q&!MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 28,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "DIGITAL AUDIO COAX",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "OAN",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH26",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 26,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH26",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DIGITAL AUDIO COAX",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH26",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "47705",
+                      "Description": "DIGITAL AUDIO COAX FAULT (U2Q)\r\nRadio Frequency Antenna 2 Coax Signal Fault (!U2Q)",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 27,
+                    "UpperLimitVolts": 8.0,
+                    "LowerLimitVolts": 2.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH26",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!MY25",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 26,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "REAR CLOSURE HATCH",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH21",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 21,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH22",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "--->OPERATOR<---",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "OPEN REAR CLOSURE HATCH",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH22",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "46212",
+                      "Description": "REAR CLOSURE HATCH",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 22,
+                    "UpperLimitVolts": 9.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH6",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 21,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "LAMP LICENSE ONE & TWO",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SourceCurrentRangeBase",
+            "Description": "LAMP LICENSE CURRENT BASELINE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SourceCurrentBaseRange",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LAMP LICENSE ONE & TWO",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "23027",
+                  "Description": "",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [
+                  {
+                    "Background": false,
+                    "Label": "",
+                    "OptionCodesMask": "",
+                    "IsDisplayed": false,
+                    "DisplayIndex": 0
+                  }
+                ],
+                "BoardId": 1,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 400.0,
+                "LowerLimitMamp": 0.0,
+                "PassWindowMsec": 200,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH14",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 14,
+              "BiasState": "N"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH15",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 15,
+              "BiasState": "P"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SourceCurrentRangeDelta",
+            "Description": "CURRENT TEST LAMP LICENSE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LAMP LICENSE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "31288",
+                  "Description": "LICENSE LMP BULB",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [],
+                "BoardId": 1,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 200.0,
+                "LowerLimitMamp": 20.0,
+                "PassWindowMsec": 50,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH14",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 14,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH15",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 15,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "LAMP REVERSE ONE & TWO",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SourceCurrentRangeBase",
+            "Description": "LAMP LICENSE CURRENT BASELINE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LAMP REVERSE ONE & TWO",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "07801",
+                  "Description": "LAMP LICENSE CURRENT BASELINE",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [
+                  {
+                    "Background": false,
+                    "Label": "",
+                    "OptionCodesMask": "",
+                    "IsDisplayed": false,
+                    "DisplayIndex": 0
+                  }
+                ],
+                "BoardId": 1,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 400.0,
+                "LowerLimitMamp": 0.0,
+                "PassWindowMsec": 200,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH23",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 23,
+              "BiasState": "N"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH03",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 3,
+              "BiasState": "P"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SourceCurrentRangeDelta",
+            "Description": "CURRENT TEST LAMP REVERSE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LAMP REVERSE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "17390",
+                  "Description": "REVERSE LMP.RELAY MALF.",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [],
+                "BoardId": 1,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 2000.0,
+                "LowerLimitMamp": 100.0,
+                "PassWindowMsec": 50,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH23",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 23,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH03",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 3,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "SENSOR - PARK ASSIST",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH10",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 10,
+              "BiasState": "P"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH01",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 1,
+              "BiasState": "P"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH09",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SENSOR PARK ASSIST LRR CORNER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH09",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "34106",
+                      "Description": "SENSOR PARK ASSIST LRR CORNER",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 9,
+                    "UpperLimitVolts": 15.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH11",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SENSOR PARK ASSIST LRR MIDDLE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH11",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "34109",
+                      "Description": "SENSOR PARK ASSIST LRR MIDDLE",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 11,
+                    "UpperLimitVolts": 15.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH12",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SENSOR PARK ASSIST RRR CORNER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH12",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "34121",
+                      "Description": "SENSOR PARK ASSIST RRR CORNER",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 12,
+                    "UpperLimitVolts": 15.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH13",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SENSOR PARK ASSIST RRR MIDDLE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH13",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "34118",
+                      "Description": "SENSOR PARK ASSIST RRR MIDDLE",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 13,
+                    "UpperLimitVolts": 15.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH10",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 10,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH01",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 1,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "ETHERNET BUS 204 - Not Present at time of test",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard 2 (UKR) OPTION RELAY CONTROL",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "IOBoardControlDigitalIO B2 (UKR) OPTION RELAY CONTROL",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "(UKR) OPTION RELAY CONTROL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 2,
+              "ControlByte": 3
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B2CH21",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 2,
+              "Channel": 21,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B2CH22",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "ETHERNET BUS 204",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 2,
+                "Limits": [
+                  {
+                    "Description": "B1CH22",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "46716",
+                      "Description": "ETHERNET BUS 204 Fault",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 22,
+                    "UpperLimitVolts": 7.0,
+                    "LowerLimitVolts": 2.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B2CH21",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 2,
+              "Channel": 21,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard 2 (UKR) OPTION RELAY CONTROL",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "IOBoardControlDigitalIO B2 (UKR) OPTION RELAY CONTROL",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "(UKR) OPTION RELAY CONTROL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 2,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "ETHERNET BUS 203 - Not Present at time of test",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard 2 (UKR) OPTION RELAY CONTROL",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "IOBoardControlDigitalIO B2 (UKR) OPTION RELAY CONTROL",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "(UKR) OPTION RELAY CONTROL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 2,
+              "ControlByte": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B2CH23",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 2,
+              "Channel": 23,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B2CH24",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "ETHERNET BUS 203",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 2,
+                "Limits": [
+                  {
+                    "Description": "B1CH24",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "46716",
+                      "Description": "ETHERNET BUS 203 Fault",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 24,
+                    "UpperLimitVolts": 7.0,
+                    "LowerLimitVolts": 2.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B2CH23",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 2,
+              "Channel": 23,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard 2 (UKR) OPTION RELAY CONTROL",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "UKR#",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "IOBoardControlDigitalIO B2 (UKR) OPTION RELAY CONTROL",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "(UKR) OPTION RELAY CONTROL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 2,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Virtual Key Sensors",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH21",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 2,
+              "Channel": 29,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH22",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Virtual Key Sensors",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 2,
+                "Limits": [
+                  {
+                    "Description": "B1CH22",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "40954,40958",
+                      "Description": "VKM B253B 39 VKS2 FAILURE",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 28,
+                    "UpperLimitVolts": 10.0,
+                    "LowerLimitVolts": 7.0,
+                    "PassWindowMsec": 100,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH6",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 29,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "CAN CONFIGURE BOARD 2",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "CanFDConfigureCom",
+            "Description": "Configure Board 2 CAN FD",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!(UKR)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanFDConfigureCom": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "NominalMode": "Kbs500",
+              "DataRate": "Mbs2",
+              "FlowControl": false,
+              "CanId": [
+                {
+                  "OptionCodesMask": "",
+                  "ReceiveId": "14DAF1D9",
+                  "BitId29": true
+                },
+                {
+                  "OptionCodesMask": "",
+                  "ReceiveId": "14DAF1DA",
+                  "BitId29": true
+                },
+                {
+                  "OptionCodesMask": "",
+                  "ReceiveId": "14DAF1D8",
+                  "BitId29": true
+                },
+                {
+                  "OptionCodesMask": "",
+                  "ReceiveId": "14DAF1D7",
+                  "BitId29": true
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Reset Relay",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!UKR",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 2,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Power On SRR LR&RR",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Board 1 Channel 6\r\nG-bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!(UKR)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetBias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Board 1 Channel 5\r\nV-bias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!(UKR)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetBias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 5,
+              "BiasState": "V"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Schedule CAN",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "CanScheduleData",
+            "Description": "Tester Present Message",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!UKR",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Tester Present Message",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanScheduleData": [
+              {
+                "BoardId": 2,
+                "UseWirelessBoardId": false,
+                "SlotId": 3,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "10DBFEF1",
+                "TransmissionMessage": "023E805555555555",
+                "TransmissionRateMsec": 1000,
+                "BitId29": true,
+                "CanFD": true,
+                "CanFDFlags": 2,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "SRR REAR PART NUMBER CHECK",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "CanSendReceiveValidate",
+            "Description": "SRR LS",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!UKR",
+            "AddOptionCodeUponPass": "SRRLR_COM",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanSendReceiveValidate": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "14DAD7F1",
+              "ReceiveId": "14DAF1D7",
+              "TransmissionMessage": "023E005555555555",
+              "TransmissionTimeoutMsec": 3000,
+              "BitId29": true,
+              "FunctionalCan": false,
+              "CanFD": true,
+              "CanFDFlags": 2,
+              "ApplicationMask": "",
+              "MultiFrameTimeBetweenFramesMsec": 0,
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "Allow7FResponse": false,
+              "BaseMask": "",
+              "ValidateCanMessageScriptFileName": "",
+              "ValidateCanMessageScriptInputs": [],
+              "CanDataEntities": [
+                {
+                  "Description": "SRR LS",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "33256",
+                    "Description": "SRRLS ALDL COMMUNICATIONS LOST",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "33255",
+                    "Description": "SRRLS NO ALDL DATA",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "33259",
+                    "Description": "SRRLS SENT NEGATIVE RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [],
+                  "BitMask": []
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveValidate",
+            "Description": "SRR RS",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!UKR",
+            "AddOptionCodeUponPass": "SRRRR_COM",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanSendReceiveValidate": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "14DAD8F1",
+              "ReceiveId": "14DAF1D8",
+              "TransmissionMessage": "023E005555555555",
+              "TransmissionTimeoutMsec": 3000,
+              "BitId29": true,
+              "FunctionalCan": false,
+              "CanFD": true,
+              "CanFDFlags": 2,
+              "ApplicationMask": "",
+              "MultiFrameTimeBetweenFramesMsec": 0,
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "Allow7FResponse": false,
+              "BaseMask": "",
+              "ValidateCanMessageScriptFileName": "",
+              "ValidateCanMessageScriptInputs": [],
+              "CanDataEntities": [
+                {
+                  "Description": "SRR RS",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "34839",
+                    "Description": "SRRRS NO ALDL DATA",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "34839",
+                    "Description": "SRRRS NO ALDL RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "34841",
+                    "Description": "SRRRS COMMUNICATIONS REJECTED",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [],
+                  "BitMask": []
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanValidatePartNumber",
+            "Description": "SENSOR-Radar Short Range LEFT_REAR_SC Part Number",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!UKR&SRRLR_COM&PN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "40654",
+              "Description": "SRRLR PARTNUM INCORRECT",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanValidatePartNumber": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "14DAD7F1",
+              "ReceiveId": "14DAF1D7",
+              "TransmissionMessage": "0322F1CB55555555",
+              "TransmissionTimeoutMsec": 500,
+              "PartId": "SRRLR",
+              "BitId29": true,
+              "CanFD": true,
+              "CanFDFlags": 2,
+              "NoResponseFault": {
+                "Id": "33258",
+                "Description": "SRRLR RESPONSE TIMEOUT",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "33259",
+                "Description": "SRRLR SENT NEGATIVE RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "33256",
+                "Description": "SRRLR PART NUMBER BROADCAST FAULT",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "0762F1CB",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanValidatePartNumber",
+            "Description": "SENSOR-Radar Short Range RIGHT_REAR_SC Part Number",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!UKR&SRRRR_COM&PN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "34833",
+              "Description": "SRRRR PARTNUM INCORRECT",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanValidatePartNumber": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "14DAD8F1",
+              "ReceiveId": "14DAF1D8",
+              "TransmissionMessage": "0322F1CB55555555",
+              "TransmissionTimeoutMsec": 500,
+              "PartId": "SRRRR",
+              "BitId29": true,
+              "CanFD": true,
+              "CanFDFlags": 2,
+              "NoResponseFault": {
+                "Id": "34839",
+                "Description": "SRRRR NO ALDL RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "34841",
+                "Description": "SRRRR COMMUNICATIONS REJECTED",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "34834",
+                "Description": "SRRRR PART NUMBER BROADCAST FAULT",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "0762F1CB",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "Tester Present Message",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "!UKR",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Tester Present Message",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanScheduleData": [
+              {
+                "BoardId": 2,
+                "UseWirelessBoardId": false,
+                "SlotId": 3,
+                "Enable": false,
+                "Disable": true,
+                "TransmissionId": "10DBFEF1",
+                "TransmissionMessage": "023E805555555555",
+                "TransmissionRateMsec": 1000,
+                "BitId29": true,
+                "CanFD": true,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Power off",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "Board 1 Power off",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "7801",
+              "Description": "Board 1 Power off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "Board 2 Power off",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "7801",
+              "Description": "Board 2 Power off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetNoBiasAllChannels": {
+              "BoardId": 2
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "VISUAL INSPECTION",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "PromptOperator",
+            "Description": "operator prompt",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 600000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "30441",
+              "Description": "operator pressed fail for visual inspection",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "OPERATOR CHECK ALL CONNECTIONS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "PRESS PASS IF ALL ARE MADE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "PRESS FAIL IF ONE IS NOT CONNECTED",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04132022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "PH",
+      "Change": "Initial Release"
+    },
+    {
+      "Date": "10112022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 27,
+      "ChangeBy": "JH",
+      "Change": "Test"
+    },
+    {
+      "Date": "10172022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 28,
+      "ChangeBy": "SL",
+      "Change": "Changed hold code to XXXX"
+    },
+    {
+      "Date": "12052022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 29,
+      "ChangeBy": "SL",
+      "Change": "MMT Fault codes"
+    },
+    {
+      "Date": "01112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 30,
+      "ChangeBy": "SL",
+      "Change": "ADDED 12WAY CONNECTORS"
+    },
+    {
+      "Date": "01112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 31,
+      "ChangeBy": "SL",
+      "Change": "12WAY RPO SET TO !UKR"
+    },
+    {
+      "Date": "03142023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 32,
+      "ChangeBy": "SL",
+      "Change": "ADDED VISUAL INSPECTION PROMPT FOR OPERATOR"
+    },
+    {
+      "Date": "04212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 33,
+      "ChangeBy": "PH",
+      "Change": "Changed fault description for VKM sensors, Added CAN configure, comm., power, and part number check for SRRLR and SRRRR"
+    },
+    {
+      "Date": "08242023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 34,
+      "ChangeBy": "JH",
+      "Change": "Rear closure latch 30s to press"
+    },
+    {
+      "Date": "09182023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 35,
+      "ChangeBy": "JB",
+      "Change": "RE-ENABLED 12-WAY Connectors (UKR)"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 36,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 37,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 38,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 39,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 40,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 41,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 42,
+      "ChangeBy": "ph",
+      "Change": "SAVE"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 43,
+      "ChangeBy": "PH",
+      "Change": "SAVE"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 44,
+      "ChangeBy": "PH",
+      "Change": "SAVE"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 45,
+      "ChangeBy": "PH",
+      "Change": "SAVE"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 46,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 47,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 48,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 49,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 50,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 51,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 52,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10102023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 53,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 54,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 55,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 56,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 57,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 58,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 59,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 60,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 61,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 62,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 63,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 64,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 65,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 66,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 67,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 68,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 69,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 70,
+      "ChangeBy": "PH",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 71,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 72,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 73,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 74,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 75,
+      "ChangeBy": "LM",
+      "Change": "Added the MY25 option code for the coax testing on the radio, LVDS, Digital Audio."
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 76,
+      "ChangeBy": "LM",
+      "Change": "Optioned out Single COAX pip signal for now."
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 77,
+      "ChangeBy": "LM",
+      "Change": "Changed verbage on Coax prompt."
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 78,
+      "ChangeBy": "LM",
+      "Change": "Changed Camera Rear Vision to RPO MY25 only"
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 79,
+      "ChangeBy": "LM",
+      "Change": "Removed UKR from 12 way connection option code mask."
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 80,
+      "ChangeBy": "LM",
+      "Change": "Removed UKR from option content and double checked that Camera rear vision option codes are correct."
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 81,
+      "ChangeBy": "LM",
+      "Change": "Changed Camera Rear Vision to Measure to Ground"
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 82,
+      "ChangeBy": "Loye",
+      "Change": "change voltage range"
+    },
+    {
+      "Date": "08062024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 83,
+      "ChangeBy": "LM",
+      "Change": "Reverted Cameras Rear Vision Testing"
+    },
+    {
+      "Date": "08122024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 84,
+      "ChangeBy": "JH",
+      "Change": "Enabled blue single coax test"
+    },
+    {
+      "Date": "08282024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 85,
+      "ChangeBy": "PH",
+      "Change": "Added option codes OAN to Radio Frequency and digital audio coax test groups to accomodate for MY25 updates."
+    },
+    {
+      "Date": "09052024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 86,
+      "ChangeBy": "JH",
+      "Change": "MMT 30441 - GENERIC INSPECTION 1 FAIL."
+    }
+  ],
+  "FileName": "Y:\\GM\\PPO-Tech Center\\L246 Testers\\Fascia Tester\\Software\\TPass\\Test App Scripts\\L246_FasciaREAR_01.json",
+  "DateLastModified": "2024-08-28T12:36:38.8378161-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
