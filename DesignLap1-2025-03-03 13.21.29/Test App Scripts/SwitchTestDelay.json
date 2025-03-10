@@ -1,0 +1,2933 @@
+{
+  "Name": "Test Flow Control",
+  "Description": "Test the Can based Flow Control",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 92,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "KM49_Console_Hardware_Mapping.json",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "TerminationScriptFileNameConsecutiveFail": "",
+  "TerminationScriptConsecutiveFails": 0,
+  "GmReporting": {
+    "MersTestName": "0TSL",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "ROCK",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "CPIT"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "CONNECTOR MONITOR START",
+        "Background": true,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "IO Board Validate Inputs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "IO Board Validate Inputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IO Board Validate Inputs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 0,
+              "ByteMask": "F",
+              "BitMask": "1",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardControlDiscreteOutputs",
+            "Description": "control ",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "IoBoardControlDiscreteOutputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Control IO",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardControlDiscreteOutputs": {
+              "BoardId": 1,
+              "ControlOutputWordHex": "F",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusReadCoils",
+            "Description": "Legacy ModbusReadCoils",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "OUT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "111",
+              "Description": "Legacy ModbusReadCoils",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "CONNECTOR MONITOR",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusReadCoils": {
+              "DeviceId": 1,
+              "StopActiveRunningModbusReadCoilsTestStep": false,
+              "MonitorOverTime": false,
+              "ModbusLabel": "START ",
+              "ModbusAddress": 1,
+              "ModbusValue": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusReadCoils",
+            "Description": "Start PLC Connector Monitor",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "OUT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "999",
+              "Description": "PLC Says Connector has been disconnected",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "CONNECTOR MONITOR",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusReadCoils": {
+              "DeviceId": 1,
+              "StopActiveRunningModbusReadCoilsTestStep": false,
+              "MonitorOverTime": true,
+              "ModbusLabel": "START ",
+              "ModbusAddress": 8,
+              "ModbusValue": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Legacy",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Legacy Discrete",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 2,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 1000,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "Legacy",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "CONNECT 30 WAY Y354A CONNECTOR"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Start Discrete",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "44",
+              "Description": "Monitor Modbus over time ",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Discrete",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 2,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": true,
+              "PassWindowMsec": 1000,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "Legacy",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "CONNECT 30 WAY Y354A CONNECTOR"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Legacy",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Legacy Discrete",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 2,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 1000,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "Legacy",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "CONNECT 30 WAY Y354A CONNECTOR"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "STOP Discrete",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "44",
+              "Description": "Monitor Modbus over time ",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Discrete",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 2,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": true,
+              "MonitorOverTime": true,
+              "PassWindowMsec": 1000,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "Legacy",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "CONNECT 30 WAY Y354A CONNECTOR"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SourceCurrentRangeBase",
+            "Description": "Log Source Current B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Log Source Current B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Log Source Current B1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "Source Current B1",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [],
+                "BoardId": 1,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 30000.0,
+                "LowerLimitMamp": -2000.0,
+                "PassWindowMsec": 0,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SourceCurrentRangeBase",
+            "Description": "Log Source Current B2",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Log Source Current B2",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Log Source Current B2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "Source Current B2",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [],
+                "BoardId": 2,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 30000.0,
+                "LowerLimitMamp": -2000.0,
+                "PassWindowMsec": 0,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Modbus",
+        "Background": true,
+        "Picture": "",
+        "OptionCodesMask": "(FULL&STAGE1)(RDG&RSD)(RDG)",
+        "TestSteps": [
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "PUSH UP Dual Actions",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "PUSH UP Dual Actions",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PUSH UP Dual Actions",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": "??1??",
+              "IOTag": "Relay3"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "fda",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "F",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "FN02 - 1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 50000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "11",
+              "Description": "FN02 - 1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "FN02 - 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 20000,
+              "ByteMask": "",
+              "BitMask": "???????????????0",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "BitMask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "ByteMask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "FN02 - 2",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 50000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "11",
+              "Description": "FN02 - 2",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "FN02 - 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 20000,
+              "ByteMask": "",
+              "BitMask": "??????????????0?",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "BitMask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "ByteMask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "FN02 - 3",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 50000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "11",
+              "Description": "FN02 - 3",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "FN02 - 3",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 20000,
+              "ByteMask": "",
+              "BitMask": "?????????????0??",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "BitMask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "ByteMask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "PUSH UP Dual Actions",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "PUSH UP Dual Actions",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PUSH UP Dual Actions",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": "???1101111111111"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRange",
+            "Description": "LED Lamps",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LED Lamps",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRange": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "D2Ch2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "LED Courtesy Lamp",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Courtesy",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 3000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C2",
+                    "MaxChannelVoltageMVolts": "D2C2Max",
+                    "MinChannelVoltageMVolts": "D2C2Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "LED Map Lamp",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "LED Map Lamp",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Map",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C4",
+                    "MaxChannelVoltageMVolts": "D2C4Max",
+                    "MinChannelVoltageMVolts": "D2C4Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "D2Ch6",
+                  "OptionCodesMask": "COURTESYaa",
+                  "Fault": {
+                    "Id": "1231",
+                    "Description": "ModbusValidateVoltageRange D2Ch6",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRange D2CH6",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 6,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C6",
+                    "MaxChannelVoltageMVolts": "C6Max",
+                    "MinChannelVoltageMVolts": "C6Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRangeBase",
+            "Description": "Detroit Radio",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Detroit Radio",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRangeBase": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "Radio Ch101.1",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch101.1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch101.1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 4000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "#",
+                    "ChannelVoltageMVolts": "RCH101.1 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "Radio Ch94.7",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch94.7",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch94.7",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 7000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "RCH94.7 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRangeDelta",
+            "Description": "Toledo Radio",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Toledo Radio",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRangeDelta": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "Radio Ch104.7",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch104.7",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch104.7",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "#",
+                    "ChannelVoltageMVolts": "RCH107.7 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "Radio Ch94.5",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "Radio Ch94.5",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Radio Ch94.5",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 3000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "RCH94.5 V",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "BaseChannelVoltageMVolts": ""
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      },
+      {
+        "GroupName": "CAN Testing",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 1 10 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 2",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 2 15 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 16000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 3",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 3 16 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 17000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 4",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 4 17 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 18000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 5",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 5 18 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 19000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 6",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 6 19 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 7",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 7 20 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 21000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 8",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 8 21 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 22000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 9",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 9 22 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 23000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 10",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 10 23 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 24000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 11",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 11 24 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 25000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 12",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 12 25 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": true,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4343",
+              "Description": "Delay 13",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Delay 13 20 sec",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusReadCoils",
+            "Description": "STOP PLC Connector Monitor",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "OUT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "999",
+              "Description": "PLC Says Connector has been disconnected",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "STOP CONNECTOR MONITOR",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusReadCoils": {
+              "DeviceId": 1,
+              "StopActiveRunningModbusReadCoilsTestStep": true,
+              "MonitorOverTime": false,
+              "ModbusLabel": "STOP CONNECTION MONITORING",
+              "ModbusAddress": 1,
+              "ModbusValue": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Stop Discrete",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Legacy Discrete",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 2,
+              "StopActiveRunningModbusValidateDiscreteInputsTestStep": true,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 1000,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "Legacy",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "CONNECT 30 WAY Y354A CONNECTOR"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      },
+      {
+        "GroupName": "General",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "PromptOperatorScan",
+            "Description": "Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "OUT",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "SCAN FAULT",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "PromptOperatorScan": {
+              "Retries": 2,
+              "ValidateScanScriptFileName": "ValidateScan-Vuteq_v1.py",
+              "ScanEntities": [
+                {
+                  "Description": "Model",
+                  "ScanId": "MODEL",
+                  "PromptImageFileName": "VuteqDoorPanel.png",
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Scan Model Barcode",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestDataReporting": {
+                    "ScannedData": ""
+                  },
+                  "TestData": {
+                    "ScannedData": ""
+                  }
+                },
+                {
+                  "Description": "Harness",
+                  "ScanId": "HARNESS",
+                  "PromptImageFileName": "VuteqHarness.png",
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Scan Harness Barcode",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestDataReporting": {
+                    "ScannedData": ""
+                  },
+                  "TestData": {
+                    "ScannedData": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Trigger Event",
+        "Background": true,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "pass button setup",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 31,
+              "BiasState": "P",
+              "IOTag": "D2649A Ft Console Rear Port UCI"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "2",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "TriggerEventAction",
+            "Description": "fdas",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "TriggerEventAction": {
+              "IOTag": "D2649A Ft Console Rear Port UCI",
+              "BoardId": 1,
+              "TriggerChannel": 31,
+              "TriggerId": 1,
+              "TriggerEvent": 2,
+              "ActionCommand": "SetBias",
+              "ActionBiasChannel": 1,
+              "ActionBiasState": "NO",
+              "ActionControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "pass button hit",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 31,
+              "BiasState": "N",
+              "IOTag": "D2649A Ft Console Rear Port UCI"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperator",
+            "Description": "Test Pass",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "123",
+              "Description": "Prompt Operator to PASS",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "testing pass button",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04082021",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "04082021",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "04082021",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "08152023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "08152023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "08172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09222023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 16,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11032023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 17,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11032023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 18,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11062023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 19,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12012023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 20,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 21,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 22,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 23,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 24,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 25,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 26,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 27,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 28,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 29,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 30,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 31,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 32,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 33,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 34,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05012024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 35,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05022024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 36,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05022024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 37,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 38,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 39,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 40,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 41,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 42,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 43,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 44,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 45,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 46,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 47,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 48,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 49,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 50,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 51,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 52,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 53,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 54,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 55,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 56,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 57,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 58,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 59,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07182024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 60,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 61,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 62,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 63,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 64,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 65,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 66,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 67,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 68,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 69,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08192024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 70,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08192024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 71,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 72,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 73,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 74,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 75,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 76,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 77,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 78,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 79,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 80,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08272024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 81,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09042024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 82,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 83,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 84,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 85,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 86,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11142024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 87,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11142024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 88,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11142024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 89,
+      "ChangeBy": "RMM",
+      "Change": "Added two source current range test steps B1 and B2 in order to log current readings at the end of the Connect ALDL Test Group and prior to CAN communications"
+    },
+    {
+      "Date": "03032025",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 90,
+      "ChangeBy": "P.Hranchook",
+      "Change": "aa"
+    },
+    {
+      "Date": "03032025",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 91,
+      "ChangeBy": "P.Hranchook",
+      "Change": "a"
+    },
+    {
+      "Date": "03032025",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 92,
+      "ChangeBy": "P.Hranchook",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\SwitchTestDelay.json",
+  "DateLastModified": "2024-11-14T09:17:29.290606-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
