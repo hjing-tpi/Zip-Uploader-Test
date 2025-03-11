@@ -1,0 +1,3536 @@
+{
+  "Name": "DoIP",
+  "Description": "DoIP",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 96,
+  "Production": false,
+  "CANTagMapScriptFileName": "DoIP Mapping.json",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "TerminationScriptFileNameConsecutiveFail": "",
+  "TerminationScriptConsecutiveFails": 0,
+  "GmReporting": {
+    "MersTestName": "DOIP",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "A001",
+    "MersEngineType": "LYRQ",
+    "MersDeviceId": "0x100",
+    "GepicsShipCode": "CPIT"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Initialization",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "DoIPConfigureCom",
+            "Description": "DoIPConfigureCom",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "DoIPConfigureCom",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DoIPConfigureCom",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPConfigureCom": {
+              "ProtocolVersion": 2
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveValidate",
+            "Description": "CGM Tester Present",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "44",
+              "Description": "CGM TEST PRESENT",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "TEST PRESENT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveValidate": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "3E00",
+              "TransmissionTimeoutMsec": 100,
+              "Module": "DoIP CGM",
+              "MessageName": "TESTER PRESENT RESPONSE",
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "BaseMask": "??",
+              "ValidateDoIPMessageScriptFileName": "",
+              "ValidateDoIPMessageScriptInputs": [],
+              "DoIPDataEntities": [
+                {
+                  "Description": "Tester Present",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "222",
+                    "Description": "CGM Tester Present No Response",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "22",
+                    "Description": "CGM Tester Present 7F ONLY",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "??"
+                    }
+                  ],
+                  "ByteRange": [],
+                  "BitMask": []
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "DpidData": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveValidate",
+            "Description": "CGM Central Gateway Module Extended Diagnostic",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4",
+              "Description": "CGM Central Gateway Module Extended Diagnostic",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CGM Central Gateway Module Extended Diagnostic",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveValidate": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "1003",
+              "TransmissionTimeoutMsec": 300,
+              "Module": "DoIP CGM",
+              "MessageName": "EXTENDED DIAGNOSTIC",
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "BaseMask": "??",
+              "ValidateDoIPMessageScriptFileName": "",
+              "ValidateDoIPMessageScriptInputs": [],
+              "DoIPDataEntities": [
+                {
+                  "Description": "Byte 1",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "DoIPSendReceiveValidate",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "50"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "#",
+                "LastReceivedDoIPMessage": "msg"
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "a",
+                "LastReceivedDoIPMessage": " b",
+                "DpidData": "c"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveValidate",
+            "Description": "CGM Wake Up All Networks",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4",
+              "Description": "CGM Wake Up All Networks",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Wake Up All Networks",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveValidate": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "3101020EFF0000",
+              "TransmissionTimeoutMsec": 300,
+              "Module": "DoIP CGM",
+              "MessageName": "CGM Wake Up All Vehicle Networks",
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "BaseMask": "??",
+              "ValidateDoIPMessageScriptFileName": "",
+              "ValidateDoIPMessageScriptInputs": [],
+              "DoIPDataEntities": [
+                {
+                  "Description": "Byte 1",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "DoIPSendReceiveValidate",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "5",
+                    "Description": "CGM Wake Up All NO RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "2",
+                    "Description": "CGM Wake Up All 7F ONLY",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "7101020EFF0000"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "#",
+                "LastReceivedDoIPMessage": "msg"
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "a",
+                "LastReceivedDoIPMessage": " b",
+                "DpidData": "c"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPScheduleData",
+            "Description": "Global Tester Present Enable",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "Global Tester Present",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "DoIPScheduleData": [
+              {
+                "ScheduleId": 1,
+                "Enable": true,
+                "LogicalAddressTransmit": "0CFE",
+                "TransmissionMessage": "3E00",
+                "Module": "DoIP GLOBAL",
+                "MessageName": "TESTER PRESENT RESPONSE",
+                "TransmissionRateMsec": 300
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "6",
+              "Description": "DELAY",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DELAY",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveValidate",
+            "Description": "GET VIN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4",
+              "Description": "GET VIN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "GET VIN",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveValidate": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "22F190",
+              "TransmissionTimeoutMsec": 300,
+              "Module": "DoIP CGM",
+              "MessageName": "GET VIN",
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "BaseMask": "62",
+              "ValidateDoIPMessageScriptFileName": "",
+              "ValidateDoIPMessageScriptInputs": [],
+              "DoIPDataEntities": [
+                {
+                  "Description": "Byte 1",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "DoIPSendReceiveValidate",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "62"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "#",
+                "LastReceivedDoIPMessage": "msg"
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "a",
+                "LastReceivedDoIPMessage": " b",
+                "DpidData": "c"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveValidate",
+            "Description": "GET Diagnostic Address List",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "4",
+              "Description": "GET Diagnostic Address List",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "GET Diagnostic Address List",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveValidate": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "22E011",
+              "TransmissionTimeoutMsec": 2500,
+              "Module": "DoIP CGM",
+              "MessageName": "GET Diagnostic Address List",
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "BaseMask": "62",
+              "ValidateDoIPMessageScriptFileName": "",
+              "ValidateDoIPMessageScriptInputs": [],
+              "DoIPDataEntities": [
+                {
+                  "Description": "Byte 1",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "4",
+                    "Description": "DoIPSendReceiveValidate",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "62"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "#",
+                "LastReceivedDoIPMessage": "msg"
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "a",
+                "LastReceivedDoIPMessage": " b",
+                "DpidData": "c"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Part Checks",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "CGM GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "CGM GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CGM - GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP CGM",
+              "MessageName": "Part Number Request",
+              "PartId": "CGM",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE CGM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F CGM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST CGM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "AOS GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "AOS GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "AOS - GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "2959",
+              "LogicalAddressTransmit": "0A59",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP AOS",
+              "MessageName": "Part Number Request",
+              "PartId": "AOS",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE AOS",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F AOS",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST AOS",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "EBCM GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "EBCM GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "EBCM GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "2928",
+              "LogicalAddressTransmit": "0A28",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP EBCM",
+              "MessageName": "Part Number Request",
+              "PartId": "EBCM",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE EBCM ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F EBCM ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST EBCM ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "EOCM GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "EOCM GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "EOCM GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "2964",
+              "LogicalAddressTransmit": "0A64",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP EOCM",
+              "MessageName": "Part Number Request",
+              "PartId": "EOCM",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE EBCM ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F EBCM ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST EBCM ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "PTM GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "PTM GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PTM GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "29A4",
+              "LogicalAddressTransmit": "0AA4",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP PTM",
+              "MessageName": "Part Number Request",
+              "PartId": "PTM",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE PTM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F PTM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST PTM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "HFP GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "HFP GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "HFP GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "2968",
+              "LogicalAddressTransmit": "0A68",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP HFP",
+              "MessageName": "Part Number Request",
+              "PartId": "HFP",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE HFP",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F HFP",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST HFP",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "VKM GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "VKM GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "VKM GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "2994",
+              "LogicalAddressTransmit": "0A94",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP VKM",
+              "MessageName": "Part Number Request",
+              "PartId": "VKM",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE VKM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F VKM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST VKM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "SRRLF GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "SRRLF GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SRRLF GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "29D3",
+              "LogicalAddressTransmit": "0AD3",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP SRRLF",
+              "MessageName": "Part Number Request",
+              "PartId": "SRRLF",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE SRRLF",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F SRRLF",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST SRRLF",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "SRRLR GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "SRRLR GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SRRLR GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "29D7",
+              "LogicalAddressTransmit": "0AD7",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP SRRLR",
+              "MessageName": "Part Number Request",
+              "PartId": "SRRLR",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE SRRLR ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F SRRLR ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST SRRLR ",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "BCM GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "BCM GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "BCM GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "2940",
+              "LogicalAddressTransmit": "0A40",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP BCM",
+              "MessageName": "Part Number Request",
+              "PartId": "BCM",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE BCM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F BCM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST BCM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPValidatePartNumber",
+            "Description": "VICM GET PART NUMBER",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "VICM GET PART NUMBER",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "VICM GET PART NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPValidatePartNumber": {
+              "LogicalAddressReceive": "29CB",
+              "LogicalAddressTransmit": "0ACB",
+              "TransmissionMessage": "22F1CB",
+              "TransmissionTimeoutMsec": 200,
+              "Module": "DoIP VICM",
+              "MessageName": "Part Number Request",
+              "PartId": "VICM",
+              "NoResponseFault": {
+                "Id": "5",
+                "Description": "NO RESPONSE VICM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "6",
+                "Description": "ONLY 7F VICM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "55",
+                "Description": "NO BROADCAST VICM",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedDoIPMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "DTC Checks",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "CGM DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "CGM DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CGM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "190202",
+              "Module": "DoIP CGM",
+              "MessageName": "Generic DTC REQUEST",
+              "TransmissionTimeoutMsec": 100,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "333",
+                "Description": "CGM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "222",
+                "Description": "CGM 7F ONLY",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "CGM ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "CGM ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CGM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "0045",
+              "LogicalAddressTransmit": "0C45",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP CGM",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "333",
+                "Description": "CGM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "222",
+                "Description": "CGM 7F ONLY",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "AOS ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "AOS ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "AOS DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "2959",
+              "LogicalAddressTransmit": "0A59",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP AOS",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "333",
+                "Description": "AOS NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "444",
+                "Description": "AOS ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "EBCM ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "EBCM ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "EBCM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "2928",
+              "LogicalAddressTransmit": "0A28",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP EBCM",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "EBCM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "EBCM ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "EOCM ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "EOCM ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "EOCM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "2964",
+              "LogicalAddressTransmit": "0A64",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP EOCM",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "EOCM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "EOCM ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "PTM ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "PTM ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PTM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "29A4",
+              "LogicalAddressTransmit": "0AA4",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP PTM",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "PTM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "PTM ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "HFP ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "HFP ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "HFP DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "2968",
+              "LogicalAddressTransmit": "0A68",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP HFP",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "HFP NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "HFP ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "VKM ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "VKM ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "VKM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "2994",
+              "LogicalAddressTransmit": "0A94",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP VKM",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "VKM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "VKM ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "SRRLF ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "SRRLF ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SRRLF DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "29D3",
+              "LogicalAddressTransmit": "0AD3",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP SRRLF",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "SRRLF NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "SRRLF ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "SRRLR ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "SRRLR ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SRRLR DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "29D7",
+              "LogicalAddressTransmit": "0AD7",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP SRRLR",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "SRRLR NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "SRRLR ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "BCM ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "BCM ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "BCM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "2940",
+              "LogicalAddressTransmit": "0A40",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP BCM",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "BCM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "BCM ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DoIPSendReceiveSaveDtcData",
+            "Description": "VICM ALL DTCs",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "543",
+              "Description": "VICM ALL DTCs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "VICM DTCs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DoIPSendReceiveSaveDtcData": {
+              "LogicalAddressReceive": "29CB",
+              "LogicalAddressTransmit": "0ACB",
+              "TransmissionMessage": "1902FF",
+              "Module": "DoIP VICM",
+              "MessageName": "ALL DTC REQUEST",
+              "TransmissionTimeoutMsec": 200,
+              "BaseMask": "59",
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "222",
+                "Description": "VICM NO RESPONSE",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "111",
+                "Description": "VICM ONLY 7F",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-DoIP-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Finalize",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "DoIPScheduleData",
+            "Description": "Global Tester Present Disable",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "Global Tester Present",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "DoIPScheduleData": [
+              {
+                "ScheduleId": 1,
+                "Enable": false,
+                "LogicalAddressTransmit": "0CFE",
+                "TransmissionMessage": "3E80",
+                "Module": "DoIP GLOBAL",
+                "MessageName": "TESTER PRESENT NO RESPONSE",
+                "TransmissionRateMsec": 300
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "10102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "10112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 13,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 16,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 17,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 18,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 19,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 20,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 21,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 22,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 23,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 24,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 25,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "10292024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 26,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11012024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 27,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11052024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 28,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "11072024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 29,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11152024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 30,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "11152024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 31,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 32,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 33,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 34,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 35,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 36,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 37,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 38,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 39,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 40,
+      "ChangeBy": "aaa",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 41,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 42,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 43,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 44,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 45,
+      "ChangeBy": "qq",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 46,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 47,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 48,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 49,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 50,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 51,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 52,
+      "ChangeBy": "111",
+      "Change": "111"
+    },
+    {
+      "Date": "11222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 53,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11252024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 54,
+      "ChangeBy": "1",
+      "Change": "1"
+    },
+    {
+      "Date": "11262024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 55,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11262024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 56,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "11262024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 57,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11262024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 58,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11262024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 59,
+      "ChangeBy": "aaa",
+      "Change": "a"
+    },
+    {
+      "Date": "12032024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 60,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12032024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 61,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12032024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 62,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12032024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 63,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12032024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 64,
+      "ChangeBy": "z",
+      "Change": "z"
+    },
+    {
+      "Date": "12032024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 65,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12042024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 66,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12042024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 67,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12042024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 68,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12042024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 69,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "12042024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 70,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "12102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 71,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 72,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 73,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 74,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 75,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 76,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12102024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 77,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 78,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 79,
+      "ChangeBy": "A",
+      "Change": "A"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 80,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 81,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 82,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 83,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 84,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 85,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 86,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12112024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 87,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12122024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 88,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12162024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 89,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12162024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 90,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12162024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 91,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12162024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 92,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12162024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 93,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 94,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12182024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 95,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02122025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 96,
+      "ChangeBy": "R.Mueller",
+      "Change": "fds"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\DoIP.json",
+  "DateLastModified": "2024-12-18T09:55:52.144045-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
