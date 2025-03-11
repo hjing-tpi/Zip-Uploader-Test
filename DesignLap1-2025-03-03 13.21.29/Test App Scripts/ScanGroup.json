@@ -1,0 +1,128 @@
+{
+  "Name": "New Test Application",
+  "Description": "scan",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 1,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "dddd",
+    "MersTestType": "dd",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "dddd",
+    "MersEngineType": "dddd",
+    "MersDeviceId": "",
+    "GepicsShipCode": "dddd"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Verify Harness/Door Part Numbers",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "PromptOperatorScan",
+            "Description": "Verify Harness/Door Part Numbers",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "SCAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Invalid Harness and Door Panel Part numbers scanned by the operator",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "PromptOperatorScan": {
+              "Retries": 1,
+              "ValidateScanScriptFileName": "ValidateScan-Vuteq_v1.py",
+              "ScanEntities": [
+                {
+                  "Description": "Harness Scan",
+                  "ScanId": "HARNESS",
+                  "PromptImageFileName": "HarnessBarCode.JPG",
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Scan Harness Barcode",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestDataReporting": {
+                    "ScannedData": ""
+                  },
+                  "TestData": {
+                    "ScannedData": ""
+                  }
+                },
+                {
+                  "Description": "Door Panel Scan",
+                  "ScanId": "DOOR",
+                  "PromptImageFileName": "DoorPanelBarcode.JPG",
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Scan Door Panel Barcode",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestDataReporting": {
+                    "ScannedData": ""
+                  },
+                  "TestData": {
+                    "ScannedData": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "06132024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\ScanGroup.json",
+  "DateLastModified": "2024-06-13T15:16:11.2401648-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
