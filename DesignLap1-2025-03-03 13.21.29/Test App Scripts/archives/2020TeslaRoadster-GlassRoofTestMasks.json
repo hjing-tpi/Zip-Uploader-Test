@@ -1,0 +1,479 @@
+{	
+	"Name":"2020 Tesla Roadster Glass Roof Test",
+	"Description":"Test the Can based Tesla Roadster Glass Roof and Electrical wiring",
+	"Version":1.1,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"TerminationNormal.json",
+	"TerminationScriptFileNameFatalFault":"TerminationFatalFault.json",
+	"TerminationScriptFileNameOperatorAbort":"TerminationOperatorAbort.json",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can Testing",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[				
+				{
+					"Name":"CanConfigureCom",
+					"Description": "Can B2 Configure High Speed 500k",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"CanConfigureCom":
+						{
+							"CanModeList":["HighSpeed500k","GmLanLow","GmLanHigh","GmLanWakeUp","LinBus","FaultTolerant","GmLanDualWire","DualWireMed125k","FaultTolerant50k","MediumSpeed250k","HighSpeed2","GmLanWakeUpLow"],
+							"CanMode":"HighSpeed500k",
+							"FlowControl":true,
+							"CanId":[
+								{
+									"ReceiveId":"4E3",
+									"BitId29":false
+								}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"CONFIGURE HS CAN BOARD 2",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanValidateSavedDtcData",
+					"Description": "Can Validate Saved Dtc Data",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanValidateSavedDtcData":
+						{
+							"AllDtcsMustBePresent":false,
+							"AllDtcsMustBeAbsent":true,
+							"Dtcs":["1111","2222","3333"]
+						},
+					"PromptLabels": [
+						{
+							"Label":"Validate Saved Dtc Data",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"031902FF00000000",
+							"TransmissionTimeoutMsec":1000,
+							"ReceiveFrameId":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"108359",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py"
+						},
+					"PromptLabels": [
+						{
+							"Label":"Get ALL DTC Data",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanValidateSavedDtcData",
+					"Description": "Can Validate Saved Dtc Data",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanValidateSavedDtcData":
+						{
+							"AllDtcsMustBePresent":false,
+							"AllDtcsMustBeAbsent":true,
+							"Dtcs":["1111","2222","3333"]
+						},
+					"PromptLabels": [
+						{
+							"Label":"Validate Saved Dtc Data",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0319020F00000000",
+							"TransmissionTimeoutMsec":1000,
+							"ReceiveFrameId":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py"
+						},
+					"PromptLabels": [
+						{
+							"Label":"Get DTC Data",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data ALL Messages",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"02190A0000000000",
+							"TransmissionTimeoutMsec":1000,
+							"ReceiveFrameId":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py"
+						},
+					"PromptLabels": [
+						{
+							"Label":"Get ALL DTC Data",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Switch Test 1",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanSendReceiveData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Switch 1",
+									"SaleCodesMask":"",
+									"PromptLabels": [
+										{
+											"Label":"",
+											"SaleCodesMask":""
+										}],
+									"BackgroundLabels": [
+										{
+											"Label":"Switch 1",
+											"SaleCodesMask":""
+										}],
+									"ByteMask":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}],
+									"ByteRange":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}],
+									"BitMask":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}]
+								}]							
+						}
+				},
+				{
+					"Name":"CanValidatePartNumber",
+					"Description": "Part Number Validation",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanValidatePartNumber":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"PartId":"pArt",
+							"ValidatePartNumberScriptFileName":"PartNumberCheck-Ascii-NoRevision.py"
+						},
+					"PromptLabels": [
+						{
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"Part Number Validation",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Flash 2 Pass",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":true,
+					"SaleCodesMask":"xxx",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"FLASH2PASSFAILED",
+					"BoardId": 2,
+					"TimeoutMsec": 50000,
+					"CanSendReceiveData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionTimeoutMsec":60,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"100B620303????02",
+							"ValidateCanMessageScriptFileName":"ValidateCanMessage.py",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Flash 2 Pass Switch 1",
+									"SaleCodesMask":"",
+									"PromptLabels": [
+										{
+											"Label":"",
+											"SaleCodesMask":""
+										}],
+									"BackgroundLabels": [
+										{
+											"Label":"Flash 2 Pass Switch 1",
+											"SaleCodesMask":""
+										}],
+									"ByteMask":[
+										{
+											"BytePosition":1,
+											"Mask":"FF?"
+										}],
+									"ByteRange":[
+										{
+											"BytePosition":2,
+											"Mask":"F0-F1"
+										}],
+									"BitMask":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}]
+								},
+								{
+									"Description":"Flash 2 Pass Switch 2",
+									"SaleCodesMask":"xxx",
+									"PromptLabels": [
+										{
+											"Label":"",
+											"SaleCodesMask":""
+										}],
+									"BackgroundLabels": [
+										{
+											"Label":"Flash 2 Pass Switch 2",
+											"SaleCodesMask":""
+										}],
+									"ByteMask":[
+										{
+											"BytePosition":1,
+											"Mask":"FF?,"
+										},
+										{
+											"BytePosition":2,
+											"Mask":"F0"
+										}],
+									"ByteRange":[
+										{
+											"BytePosition":0,
+											"Mask":"00-FF"
+										},
+										{
+											"BytePosition":1,
+											"Mask":"00ABFFFF-FF67FFF"
+										}],
+									"BitMask":[
+										{
+											"BytePosition":7,
+											"Mask":"01011101"
+										}]												
+								}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"Send CAN Message 03 22 03 03 to TX 763",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"FLASH 2 PASS",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Extended Diagnostic",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanSendReceiveData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0210030000000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"????????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Switch 3",
+									"SaleCodesMask":"",
+									"PromptLabels": [
+										{
+											"Label":"",
+											"SaleCodesMask":""
+										}],
+									"BackgroundLabels": [
+										{
+											"Label":"Switch 3",
+											"SaleCodesMask":""
+										}],
+										"ByteMask":[
+										{
+											"BytePosition":1,
+											"Mask":"??"
+										}],
+									"ByteRange":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}],
+									"BitMask":[
+										{
+											"BytePosition":0,
+											"Mask":""
+										}]
+								}]
+
+						},
+					"PromptLabels": [
+						{
+							"Label":"Send CAN Message 02 10 03 to TX 763",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"Extended Diagnostic",
+							"SaleCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B2 CAN Reset",
+			    	"Concurrent":false,
+					"BoardId": 2,
+					"SaleCodesMask":"",
+					"PromptLabels": [
+						{
+							"Label":"Reset CAN B2",
+							"SaleCodesMask":""
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"01012019",
+			"Version":1.1,
+			"Change":"Fix issue where the air bag deployed when powering the Glass Roof"
+		},
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
