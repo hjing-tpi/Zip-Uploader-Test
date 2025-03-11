@@ -1,0 +1,1571 @@
+{	
+	"Name":"2020 Tesla Roadster Glass Roof Test",
+	"Description":"Test the Can based Tesla Roadster Glass Roof and Electrical wiring",
+	"Version":1.3,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"TerminationFatalFault.json",
+	"TerminationScriptFileNameOperatorAbort":"TerminationOperatorAbort.json",
+	"GmReporting":
+		{
+			"MersTestName":"0TSL",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"ROCK",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"CPIT"
+		},
+	"TestCycleGroups":  [ 
+		[{
+			"GroupName":"CAN Testing",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[				
+				{
+					"Name":"CanConfigureCom",
+					"Description": "Can B2 Configure High Speed 500k",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"CanConfigureCom":
+						{
+							"BoardId": 2,
+							"CanModeList":["HighSpeed500K","GmLanLow","GmLanHigh","GmLanWakeUp","LinBus","FaultTolerant","GmLanDualWire","DualWireMed125K","FaultTolerant50K","MediumSpeed250K","HighSpeed2","GmLanWakeUpLow"],
+							"CanMode":"HighSpeed500K",
+							"FlowControl":true,
+							"CanId":[
+								{
+									"ReceiveId":"4E3",
+									"BitId29":false
+								}]
+						},
+					"Fault":
+						{
+							"Id":"aaa",
+							"Description":"CanConfigureCom - CONFIGURE HS CAN BOARD 2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"CONFIGURE HS CAN BOARD 2",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "SCHED 2 SLOTS B2 Command ON",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 2,
+							"SlotId":5,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":5000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"4E3",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 5,6",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanReceiveValidate",
+					"Description": "Switch Tests",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"TESTING",
+					"AddOptionCodeUponFail":"SWITCHFAILED",
+					"TimeoutMsec": 15000,
+					"CanReceiveValidate":
+						{
+							"CanDataEntities":[
+								{
+									"Description":"Flash 2 Pass",
+									"OptionCodesMask":"RRRR",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FLASH2PASS",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"100B62",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00010",
+											"Description":"FLASH 2 Pass"
+										},
+									"NoResponseFault":
+										{
+											"Id":"55",
+											"Description":"CanReceiveValidate FLASH 2 Pass - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"54",
+											"Description":"CanReceiveValidate FLASH 2 Pass - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Flash 2 Pass 2",
+									"OptionCodesMask":"RRRR",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FLASH2PASS",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"100B62",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00010",
+											"Description":"FLASH 2 Pass"
+										},
+									"NoResponseFault":
+										{
+											"Id":"55",
+											"Description":"CanReceiveValidate FLASH 2 Pass - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"54",
+											"Description":"CanReceiveValidate FLASH 2 Pass - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Rear Wiper On",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"100B62",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00011",
+											"Description":"Rear Wiper On"
+										},
+									"NoResponseFault":
+										{
+											"Id":"443",
+											"Description":"CanReceiveValidate Rear Wiper On - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"545",
+											"Description":"CanReceiveValidate Rear Wiper On - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Rear Wiper On",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Mist",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00012",
+											"Description":"Front Mist"
+										},
+									"NoResponseFault":
+										{
+											"Id":"767",
+											"Description":"CanReceiveValidate Front Mist - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6667",
+											"Description":"CanReceiveValidate Front Mist - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Mist",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Turn Left",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00013",
+											"Description":"Turn Left"
+										},
+									"NoResponseFault":
+										{
+											"Id":"9898",
+											"Description":"CanReceiveValidate Turn Left - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"999",
+											"Description":"CanReceiveValidate Turn Left - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Turn Left",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Turn Right",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00014",
+											"Description":"Turn Right"
+										},
+									"NoResponseFault":
+										{
+											"Id":"23",
+											"Description":"CanReceiveValidate Turn Right - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"222",
+											"Description":"CanReceiveValidate Turn Right - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Turn Right",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Washer",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00015",
+											"Description":"Front Washer"
+										},
+									"NoResponseFault":
+										{
+											"Id":"343",
+											"Description":"CanReceiveValidate Front Washer - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"3333",
+											"Description":"CanReceiveValidate Front Washer - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Washer",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Flash 2 Pass 3",
+									"OptionCodesMask":"RRRR",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FLASH2PASS",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"100B62",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00010",
+											"Description":"FLASH 2 Pass"
+										},
+									"NoResponseFault":
+										{
+											"Id":"55",
+											"Description":"CanReceiveValidate FLASH 2 Pass - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"54",
+											"Description":"CanReceiveValidate FLASH 2 Pass - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Flash 2 Pass 4",
+									"OptionCodesMask":"RRRR",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FLASH2PASS",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"100B62",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00010",
+											"Description":"FLASH 2 Pass"
+										},
+									"NoResponseFault":
+										{
+											"Id":"55",
+											"Description":"CanReceiveValidate FLASH 2 Pass - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"54",
+											"Description":"CanReceiveValidate FLASH 2 Pass - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Flash 2 Pass 5",
+									"OptionCodesMask":"RRRR",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FLASH2PASS",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"100B62",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00010",
+											"Description":"FLASH 2 Pass"
+										},
+									"NoResponseFault":
+										{
+											"Id":"55",
+											"Description":"CanReceiveValidate FLASH 2 Pass - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"54",
+											"Description":"CanReceiveValidate FLASH 2 Pass - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Rear Washer",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00016",
+											"Description":"Rear Washer"
+										},
+									"NoResponseFault":
+										{
+											"Id":"454",
+											"Description":"CanReceiveValidate Rear Washer - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"4444",
+											"Description":"CanReceiveValidate Rear Washer - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Rear Wiper Washer",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 1",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00017",
+											"Description":"Front Wiper Interval 1"
+										},
+									"NoResponseFault":
+										{
+											"Id":"767",
+											"Description":"CanReceiveValidate Front Wiper INT 1 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"66",
+											"Description":"CanReceiveValidate Front Wiper INT 1 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 1",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 2",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00017",
+											"Description":"Front Wiper Interval 2"
+										},
+									"NoResponseFault":
+										{
+											"Id":"787",
+											"Description":"CanReceiveValidate Front Wiper INT 2 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"7",
+											"Description":"CanReceiveValidate Front Wiper INT 2 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 2",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 3",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00018",
+											"Description":"Front Wiper Interval 3"
+										},
+									"NoResponseFault":
+										{
+											"Id":"787",
+											"Description":"CanReceiveValidate Front Wiper INT 3 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"7",
+											"Description":"CanReceiveValidate Front Wiper INT 3 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 3",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 4",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00019",
+											"Description":"Front Wiper Interval 4"
+										},
+									"NoResponseFault":
+										{
+											"Id":"898",
+											"Description":"CanReceiveValidate Front Wiper INT 4 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"8",
+											"Description":"CanReceiveValidate Front Wiper INT 4 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 4",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 5",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00020",
+											"Description":"Front Wiper Interval 5"
+										},
+									"NoResponseFault":
+										{
+											"Id":"999",
+											"Description":"CanReceiveValidate Front Wiper INT 5 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"98",
+											"Description":"CanReceiveValidate Front Wiper INT 5 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 5",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper Low",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00021",
+											"Description":"Front Wiper Low"
+										},
+									"NoResponseFault":
+										{
+											"Id":"4",
+											"Description":"CanReceiveValidate Front Wiper Low - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"4",
+											"Description":"CanReceiveValidate Front Wiper Low - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper Low",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper High",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper High F",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"3E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"???111??"
+									}]
+
+								},
+								{
+									"Description":"Hi Beam",
+									"OptionCodesMask":"WIRED",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"3E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00023",
+											"Description":"High Beam"
+										},
+									"NoResponseFault":
+										{
+											"Id":"7",
+											"Description":"CanReceiveValidate Hi Beam - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"8",
+											"Description":"CanReceiveValidate Hi Beam - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"High Beam",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"???????1"
+									}]
+
+								},
+								{
+									"Description":"Pass 1",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},                                
+								{
+									"Description":"Pass 2",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},                                
+								{
+									"Description":"Pass 3",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},                                
+								{
+									"Description":"Pass 4",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},                                
+								{
+									"Description":"Pass 5",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								},                                
+								{
+									"Description":"Pass 6",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"5",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"6",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????????"
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesReceived":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesReceived":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"222",
+							"Description":"CanReceiveValidate - SWITCH TEST"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Cycle Switches",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"2",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"3",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"4",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"5",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"6",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B2 CAN Reset",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"IOBoardCanReset":
+						{
+							"BoardId": 2,
+							"CanFD": false
+						},
+					"Fault":
+						{
+							"Id":"33",
+							"Description":"IOBoardCanReset - B2 CAN Reset"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset CAN B2",
+							"OptionCodesMask":""
+						}]
+				}]
+   }] ],
+	"ChangeHistory":[
+		{
+			"Date":"01012019",
+			"Version":1.1,
+			"ChangeBy":"RMM",
+			"Change":"Fix issue where the air bag deployed when powering the Glass Roof"
+		},
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"ChangeBy":"RMM",
+			"Change":"Initial version"
+		}
+	]
+}
