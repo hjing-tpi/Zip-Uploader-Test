@@ -1,0 +1,51 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"CurrentRange",
+					"Description": "",
+					"Concurrent":false,
+					"SaleCodesMask":[""],
+					"WaveFile": "",
+					"TimeoutMsec": 0,
+					"FailAtFirstOutOfRangeReading":false,
+					"CurrentRangeParameters":[
+						{
+							"BoardId": 0,
+							"ReadSource":false,
+							"ReadSink":true,
+							"DeltaTest":true,
+							"BaseTest":false,
+							"PassWindowMsec":0,
+							"UpperLimit":0,
+							"LowerLimit":0
+						}],
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":[""]
+						}]
+				}]
+		}]
+	]
+}
+				
