@@ -1,0 +1,2621 @@
+{	
+	"Name":"Test Flow Control",
+	"Description":"Test the Can based Flow Control",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"0TSL",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"ROCK",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"CPIT"
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"CAN Testing",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[				
+				{
+					"Name":"CanFDConfigureCom",
+					"Description": "Can FD Configure Com",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"CanFDConfigureCom":
+						{
+							"BoardId": 2,
+							"NominalMode":"Kbs500",
+							"DataRate":"Mbs10",
+							"FlowControl":false,
+							"CanId":[
+								{
+									"ReceiveId":"47F",
+									"BitId29":true
+								},
+								{
+									"ReceiveId":"4E3",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"4E9",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"4C2",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"4C8",
+									"BitId29":false
+								},
+								{
+									"ReceiveId":"769",
+									"BitId29":false
+								}]
+						},
+					"Fault":
+						{
+							"Id":"44343",
+							"Description":"CanFDConfigureCom"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "FD SCHED 2 SLOTS B2 Command ON",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData FD SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 2,
+							"SlotId":5,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":1,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":6,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":2,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+				 		{
+							"BoardId": 2,
+							"SlotId":7,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"863",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":3,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":8,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"963",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":9,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"964",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 5,6",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "FD SCHED 2 SLOTS B2 Command ON",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData FD SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 2,
+							"SlotId":10,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":1,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":11,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":2,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+				 		{
+							"BoardId": 2,
+							"SlotId":12,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"863",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":3,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":13,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"963",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":14,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"964",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":true,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 5,6",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanConfigureCom",
+					"Description": "Can B2 Configure High Speed 500k",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"CanConfigureCom":
+						{
+							"BoardId": 2,
+							"CanModeList":["HighSpeed500K","GmLanLow","GmLanHigh","GmLanWakeUp","LinBus","FaultTolerant","GmLanDualWire","DualWireMed125K","FaultTolerant50K","MediumSpeed250K","HighSpeed2","GmLanWakeUpLow"],
+							"CanMode":"HighSpeed500K",
+							"FlowControl":true,
+							"CanId":[
+								{
+									"ReceiveId":"4E3",
+									"BitId29":false
+								}]
+						},
+					"Fault":
+						{
+							"Id":"aaa",
+							"Description":"CanConfigureCom - CONFIGURE HS CAN BOARD 2"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"CONFIGURE HS CAN BOARD 2",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "CAN SND RCV Request",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":true,
+							"Allow7FResponse":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Part Number Request",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"CanSendReceiveValidate CAN SND RCV Request"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"111",
+							"Description":"CanSendReceiveValidate Part Number Request Fault"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Part Number Request",
+							"OptionCodesMask":""
+						},						
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "CAN FD SND RCV Request",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"761",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":true,
+							"CanFDFlags":0,
+							"NoResponseRequired":true,
+							"Allow7FResponse":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Part Number Request",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"CanSendReceiveValidate CAN FD SND RCV Request"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"111",
+							"Description":"CanSendReceiveValidate Part Number Request Fault"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Part Number Request",
+							"OptionCodesMask":""
+						},						
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "CAN MF SND RCV Request",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"760",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F132000000000322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":true,
+							"Allow7FResponse":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Part Number Request",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"CanSendReceiveValidate CAN MF SND RCV Request"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"111",
+							"Description":"CanSendReceiveValidate Part Number Request Fault"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Part Number Request",
+							"OptionCodesMask":""
+						},						
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "SCHED 2 SLOTS B2 Command ON",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 2,
+							"SlotId":5,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"03220303000000000322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":1,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":6,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"FE013E0000000000FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":2,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+				 		{
+							"BoardId": 2,
+							"SlotId":7,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"863",
+							"TransmissionMessage":"0322030300000000FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":3,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":8,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"963",
+							"TransmissionMessage":"FE013E0000000000FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":9,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"964",
+							"TransmissionMessage":"FE013E0000000000FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"235",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 5,6",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B2 CAN FD Reset",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"fdsa",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"IOBoardCanReset":
+						{
+							"BoardId": 2,
+							"CanFD": false
+						},
+					"Fault":
+						{
+							"Id":"33",
+							"Description":"IOBoardCanReset - B2 CAN FD Reset"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset CAN FD B2",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "SCHED 2 SLOTS B2 Command ON",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 2,
+							"SlotId":10,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":1,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":11,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":2,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+				 		{
+							"BoardId": 2,
+							"SlotId":12,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"863",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":3,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":13,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"963",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"234",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 2,
+							"SlotId":14,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"964",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":true,
+							"MultiFrameReceiveId":"235",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 5,6",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"031902FF00000000",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan": false,
+							"FunctionalCanLastFrameMask":"",
+							"CanFD":false,
+							"CanFDFlags":0,
+							"SingleFrameMask":"10",
+							"MultipleFrameMask":"108359",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcData-GGDS-WithFailByte_v1.py",
+							"NoResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 031902FF - No Response Fault"
+								},
+							"Only7FResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 031902FF - Only 7F Response Fault"
+								}
+						},
+					"Fault":
+						{
+							"Id":"222",
+							"Description":"CanSendReceiveSaveDtcData 031902FF - Can Send Receive Save Dtc Data"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Get ALL DTC Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"031902FF00000000",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan": false,
+							"FunctionalCanLastFrameMask":"",
+							"CanFD":false,
+							"CanFDFlags":0,
+							"SingleFrameMask":"10",
+							"MultipleFrameMask":"108359",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcData-GGDS-WithFailByte_v1.py",
+							"NoResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 031902FF - No Response Fault"
+								},
+							"Only7FResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 031902FF - Only 7F Response Fault"
+								}
+						},
+					"Fault":
+						{
+							"Id":"222",
+							"Description":"CanSendReceiveSaveDtcData 031902FF - Can Send Receive Save Dtc Data"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Get ALL DTC Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanValidateSavedDtcData",
+					"Description": "Can Validate Saved Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanValidateSavedDtcData":
+						{
+							"BoardId": 2,
+							"AllDtcsMustBePresent":true,
+							"Dtcs":[
+								{
+									"Id":"1111",
+									"Fault":
+										{
+											"Id":"23017",
+											"Description":"B387504 FRONT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								},
+								{
+									"Id":"2222",
+									"Fault":
+										{
+											"Id":"23018",
+											"Description":"B387505 RIGHT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								},
+								{
+									"Id":"3333",
+									"Fault":
+										{
+											"Id":"23019",
+											"Description":"B387506 LEFT WIPER HIGH OUTPUT OPEN CIRCUIT"
+										}
+								}]
+						},
+					"Fault":
+						{
+							"Id":"33",
+							"Description":"CanValidateSavedDtcData Fault"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Validate Saved Dtc Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+		 					"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0319020F00000000",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan": false,
+							"FunctionalCanLastFrameMask":"",
+							"CanFD":false,
+							"CanFDFlags":0,
+							"SingleFrameMask":"10",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcData-GGDS-WithFailByte_v1.py",
+							"NoResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 0319020F - No Response Fault"
+								},
+							"Only7FResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 0319020F - Only 7F Response Fault"
+								}
+						},
+					"Fault":
+						{
+							"Id":"999",
+							"Description":"CanSendReceiveSaveDtcData 0319020F - Can Send Receive Save Dtc Data"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Get Active DTC Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data ALL Messages",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"02190A0000000000",
+							"TransmissionTimeoutMsec":1000,
+							"FunctionalCan": false,
+							"FunctionalCanLastFrameMask":"",
+							"CanFD":false,
+							"CanFDFlags":0,
+							"SingleFrameMask":"10",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ParseDtcDataScriptFileName":"ParseDtcData-GGDS-WithFailByte_v1.py",
+							"NoResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 02190A00 - No Response Fault"
+								},
+							"Only7FResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanSendReceiveSaveDtcData 02190A00 - Only 7F Response Fault"
+								}
+						},
+					"Fault":
+						{
+							"Id":"888",
+							"Description":"CanSendReceiveSaveDtcData 02190A00 - Can Send Receive Save Dtc Data ALL Messages"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Get specific DTC Data",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "Part Number Request",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"Allow7FResponse":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Part Number Request",
+									"OptionCodesMask":"ROD",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"CanSendReceiveValidate Part Number Request"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Part Number Request - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"111",
+							"Description":"CanSendReceiveValidate Part Number Request Fault"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Part Number Request",
+							"OptionCodesMask":""
+						},						
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanValidatePartNumber",
+					"Description": "Part Number Validation",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanValidatePartNumber":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"100D62",
+							"PartId":"bcm",
+							"ValidatePartNumberScriptFileName":"PartNumberCheck-Ascii-NoRevision_v1.py",
+							"NoResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanValidatePartNumber - No Response Fault"
+								},
+							"Only7FResponseFault":
+								{
+									"Id":"bbb",
+									"Description":"CanValidatePartNumber - Only 7F Response Fault"
+								},
+							"NoPartNumberBroadcastFault":
+								{
+									"Id":"bbb",
+									"Description":"CanValidatePartNumber - No Part Number Broadcast Fault"
+								},
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":"",
+									"BroadcastedPartNumber":"",
+									"RawPartNumber":"",
+									"ProcessedPartNumber":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":"",
+									"BroadcastedPartNumber":"11,12",
+									"RawPartNumber":"",
+									"ProcessedPartNumber":"13,14"
+								}
+						},
+					"Fault":
+						{
+							"Id":"65535",
+							"Description":"CanValidatePartNumber - Part Number Validation"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"Part Number Validation",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "Flash 2 Pass",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"RRRR",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"FLASH2PASSFAILED",
+					"TimeoutMsec": 10000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionTimeoutMsec":300,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"Allow7FResponse":false,
+							"BaseMaskxxxx":"100B620303????02",
+							"BaseMask":"????620303",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Flash 2 Pass",
+									"OptionCodesMask":"FLASHPASS",
+									"Fault":
+										{
+											"Id":"65534",
+											"Description":"FLASH 2 Pass"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate FLASH 2 Pass - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate FLASH 2 Pass - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"??????1?"
+									}]
+
+								},
+								{
+									"Description":"Hi Beam",
+									"OptionCodesMask":"",
+									"Fault":
+										{
+											"Id":"65535",
+											"Description":"High Beam"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Hi Beam - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Hi Beam - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"High Beam",
+											"OptionCodesMask":"HIGHBEAM"
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"???????1"
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"1212",
+							"Description":"CanSendReceiveValidate Flash 2 Pass Fault"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Cycle Switches",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanSendReceiveValidate",
+					"Description": "Extended Diagnostic",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"CanSendReceiveValidate":
+						{
+							"BoardId": 2,
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0210030000000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"FunctionalCan":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"NoResponseRequired":false,
+							"Allow7FResponse":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"????????",
+							"ValidateCanMessageScriptFileName":"",
+							"ValidateCanMessageScriptInputs":[""],
+							"CanDataEntities":[
+								{
+									"Description":"Clear DTCs",
+									"OptionCodesMask":"ROD",
+									"Fault":
+										{
+											"Id":"00002",
+											"Description":"CLEAR DTC - B1"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Extended Diagnostic - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanSendReceiveValidate Extended Diagnostic - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":false,
+											"Label":"",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":1,
+										"Mask":"??"
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesSent":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"323232",
+							"Description":"CanSendReceiveValidate Extended Diag Fault"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Send CAN Message 02 10 03 to TX 763",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"Extended Diagnostic",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "SCHED 2 SLOTS B2 Command ON",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 2,
+							"SlotId":5,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"763",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 1,
+							"SlotId":6,
+							"Enable":true,
+							"Disable":false,
+							"TransmissionId":"101",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 5,6",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanReceiveValidate",
+					"Description": "Switch Tests",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"TESTING",
+					"AddOptionCodeUponFail":"SWITCHFAILED",
+					"TimeoutMsec": 25000,
+					"CanReceiveValidate":
+						{
+							"CanDataEntities":[
+								{
+									"Description":"Flash 2 Pass",
+									"OptionCodesMask":"RRRR",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FLASH2PASS",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00010",
+											"Description":"FLASH 2 Pass"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate FLASH 2 Pass - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate FLASH 2 Pass - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Flash 2 Pass",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"??????1?"
+									}]
+
+								},
+								{
+									"Description":"Rear Wiper On",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00011",
+											"Description":"Rear Wiper On"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Rear Wiper On - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Rear Wiper On - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Rear Wiper On",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"???????1"
+									}]
+
+								},
+								{
+									"Description":"Front Mist",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00012",
+											"Description":"Front Mist"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Mist - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Mist - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Mist",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"??????1?"
+									}]
+
+								},
+								{
+									"Description":"Turn Left",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00013",
+											"Description":"Turn Left"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Turn Left - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Turn Left - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Turn Left",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"?????1??"
+									}]
+
+								},
+								{
+									"Description":"Turn Right",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00014",
+											"Description":"Turn Right"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Turn Right - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Turn Right - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Turn Right",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"????1???"
+									}]
+
+								},
+								{
+									"Description":"Front Washer",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00015",
+											"Description":"Front Washer"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Washer - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Washer - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Washer",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"???1????"
+									}]
+
+								},
+								{
+									"Description":"Rear Washer",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00016",
+											"Description":"Rear Washer"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Rear Washer - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Rear Washer - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Rear Wiper Washer",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":6,
+										"Mask":"??1?????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 1",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00017",
+											"Description":"Front Wiper Interval 1"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 1 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 1 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 1",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"???????1"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 2",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00017",
+											"Description":"Front Wiper Interval 2"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 2 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 2 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 2",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"??????1?"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 3",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00018",
+											"Description":"Front Wiper Interval 3"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 3 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 3 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 3",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"?????1??"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 4",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00019",
+											"Description":"Front Wiper Interval 4"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 4 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 4 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 4",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"????1???"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper INT 5",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00020",
+											"Description":"Front Wiper Interval 5"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 5 - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper INT 5 - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper INT 5",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"???1????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper Low",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00021",
+											"Description":"Front Wiper Low"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper Low - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper Low - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper Low",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"??1?????"
+									}]
+
+								},
+								{
+									"Description":"Front Wiper High",
+									"OptionCodesMask":"",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"FRONTWIPERHIGH",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00022",
+											"Description":"Front Wiper High"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper High - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Front Wiper High - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"Front Wiper High",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":5,
+										"Mask":"?1??????"
+									}]
+
+								},
+								{
+									"Description":"Hi Beam",
+									"OptionCodesMask":"WIRED",
+									"BoardId": 2,
+									"AddOptionCodeUponPass":"",
+									"ReceiveId":"4E3",
+									"ApplicationMask":"",
+									"BitId29":false,
+									"FunctionalCan":false,
+									"CanFD":false,
+									"Allow7FResponse":false,
+									"BaseMask":"????620303",
+									"ValidateCanMessageScriptFileName":"",
+									"ValidateCanMessageScriptInputs":[""],
+									"Fault":
+										{
+											"Id":"00023",
+											"Description":"High Beam"
+										},
+									"NoResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Hi Beam - No Response Fault"
+										},
+									"Only7FResponseFault":
+										{
+											"Id":"bbb",
+											"Description":"CanReceiveValidate Hi Beam - Only 7F Response Fault"
+										},
+									"PromptLabels": [
+										{
+											"Background":true,
+											"Label":"High Beam",
+											"OptionCodesMask":""
+										}],
+									"ByteMask":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"ByteRange":[
+									{
+										"BytePosition":0,
+										"Mask":""
+									}],
+									"BitMask":[
+									{
+										"BytePosition":7,
+										"Mask":"???????1"
+									}]
+
+								}],
+							"TestDataDisplay":
+								{
+									"NumberOfMessagesReceived":"",
+									"LastReceivedCanMessage":""
+								},
+							"TestDataReporting":
+								{
+									"NumberOfMessagesReceived":"",
+									"LastReceivedCanMessage":""
+								}
+						},
+					"Fault":
+						{
+							"Id":"222",
+							"Description":"CanReceiveValidate - SWITCH TEST"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Cycle Switches",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"2",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"3",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"4",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"5",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"6",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"CanScheduleData",
+					"Description": "SCHED 2 SLOTS B2 Command OFF",
+					"Concurrent":false,
+					"TimeoutMsec": 0,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"CanScheduleData SLOT5,6"
+						},
+					"CanScheduleData":[
+						{
+							"BoardId": 2,
+							"SlotId":5,
+							"Enable":false,
+							"Disable":true,
+							"TransmissionId":"763",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						},
+						{
+							"BoardId": 1,
+							"SlotId":6,
+							"Enable":false,
+							"Disable":true,
+							"TransmissionId":"101",
+							"TransmissionMessage":"FE013E0000000000",
+							"TransmissionRateMsec":1000,
+							"BitId29":false,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"SCHEDULE OFF",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"BOARD 1",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"SLOT 5,6",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"TESTER PRESENT MESSAGE",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B1 CAN Reset",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"IOBoardCanReset":
+						{
+							"BoardId": 1,
+							"CanFD": false
+						},
+					"Fault":
+						{
+							"Id":"33",
+							"Description":"IOBoardCanReset - B1 CAN Reset"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset CAN B1",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B1 CAN FD Reset",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"IOBoardCanReset":
+						{
+							"BoardId": 1,
+							"CanFD": true
+						},
+					"Fault":
+						{
+							"Id":"33",
+							"Description":"IOBoardCanReset - B1 CAN FD Reset"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset CAN FD B1",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B2 CAN Reset",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"IOBoardCanReset":
+						{
+							"BoardId": 2,
+							"CanFD": false
+						},
+					"Fault":
+						{
+							"Id":"33",
+							"Description":"IOBoardCanReset - B2 CAN Reset"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset CAN B2",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B2 CAN FD Reset",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"IOBoardCanReset":
+						{
+							"BoardId": 2,
+							"CanFD": true
+						},
+					"Fault":
+						{
+							"Id":"33",
+							"Description":"IOBoardCanReset - B2 CAN FD Reset"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Reset CAN FD B2",
+							"OptionCodesMask":""
+						}]
+				}]
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"04082021",
+			"Version":1.0,
+			"ChangeBy":"RMM",
+			"Change":"Initial version"
+		}
+	]
+}
