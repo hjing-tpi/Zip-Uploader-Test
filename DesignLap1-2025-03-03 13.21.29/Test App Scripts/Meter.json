@@ -1,0 +1,386 @@
+{	
+	"Name":"Product Test",
+	"Description":"Meter",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"TEST",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"WRES",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"XXXX"
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Meter",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"MeterValidateVoltageRange",
+					"Description": "Voltage Range Slot 1 Channels 1 - 3",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"METERFAILED",
+					"TimeoutMsec": 10000,
+					"MeterValidateVoltageRange":
+						{
+							"DeviceId":1,
+							"AC":false,
+							"Range":"AUTO",
+							"Resolution":"MAX",
+							"Channels":[
+							{
+								"Description":"S1CH1",
+								"OptionCodesMask":"S1CH1",
+								"Fault":
+									{
+										"Id":"1",
+										"Description":"MeterValidateVoltageRange S1CH1"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateVoltageRange S1CH1",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":1,
+								"PassWindowMsec":15000,
+								"UpperLimitVolt":10000,
+								"LowerLimitVolt":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"# MSG",
+										"ChannelVoltageVolts":"S1C1",
+										"MaxChannelVoltageVolts":"S1C1 Max",
+										"MinChannelVoltageVolts":"S1C1 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitVolt":"100",
+										"LowerLimitVolt":"101",
+										"Samples":"102",
+										"MaxTimeInPassWindowMsec":"103",
+										"MaxChannelVoltageVolts":"104",
+										"MinChannelVoltageVolts":"105",
+										"AvgChannelVoltageInRangeVolt":"106",
+										"LastReceivedMessage":"107",
+										"PassReceivedMessage":"108"
+									}
+							},
+							{
+								"Description":"S1CH2",
+								"OptionCodesMask":"S1CH2",
+								"Fault":
+									{
+										"Id":"2",
+										"Description":"MeterValidateVoltageRange S1CH2"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateVoltageRange S1CH2",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":2,
+								"PassWindowMsec":25000,
+								"UpperLimitVolt":10000,
+								"LowerLimitVolt":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"",
+										"ChannelVoltageVolts":"S1C2",
+										"MaxChannelVoltageVolts":"S1C2 Max",
+										"MinChannelVoltageVolts":"S1C2 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitVolt":"200",
+										"LowerLimitVolt":"201",
+										"Samples":"202",
+										"MaxTimeInPassWindowMsec":"203",
+										"MaxChannelVoltageVolts":"204",
+										"MinChannelVoltageVolts":"205",
+										"AvgChannelVoltageInRangeVolt":"206",
+										"LastReceivedMessage":"207",
+										"PassReceivedMessage":"208"
+									}
+							},
+							{
+								"Description":"S1CH3",
+								"OptionCodesMask":"S1CH3",
+								"Fault":
+									{
+										"Id":"3",
+										"Description":"MeterValidateVoltageRange S1CH3"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateVoltageRange S1CH3",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":3,
+								"PassWindowMsec":15000,
+								"UpperLimitVolt":10000,
+								"LowerLimitVolt":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"",
+										"ChannelVoltageVolts":"S1C3",
+										"MaxChannelVoltageVolts":"S1C3 Max",
+										"MinChannelVoltageVolts":"S1C3 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitVolt":"300",
+										"LowerLimitVolt":"301",
+										"Samples":"302",
+										"MaxTimeInPassWindowMsec":"303",
+										"MaxChannelVoltageVolts":"304",
+										"MinChannelVoltageVolts":"305",
+										"AvgChannelVoltageInRangeVolt":"306",
+										"LastReceivedMessage":"307",
+										"PassReceivedMessage":"308"
+									}
+							}]
+						},
+					"Fault":
+						{
+							"Id":"32777",
+							"Description":"MeterValidateVoltageRange Failed"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Validating METER Slot 1 Channels 1-3",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"MeterValidateResistanceRange",
+					"Description": "Resistance Range Slot 1 Channels 1 - 3",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"METERFAILED",
+					"TimeoutMsec": 10000,
+					"MeterValidateResistanceRange":
+						{
+							"DeviceId":1,
+							"FourWire":true,
+							"Range":"1 G",
+							"Resolution":"MAX",
+							"IntegrationTimePlcs":"1000",
+							"OffsetCompensation":false,
+							"Slot":1,
+							"Channel":1,
+							"PassWindowMsec":15000,
+							"UpperLimitOhm":10000,
+							"LowerLimitOhm":-10000,
+							"TestDataDisplay":
+								{
+									"Samples":"# MSG",
+									"ChannelResistanceOhms":"S1C1",
+									"MaxChannelResistanceOhms":"S1C1 Max",
+									"MinChannelResistanceOhms":"S1C1 Min"
+								},
+							"TestDataReporting":
+								{
+									"UpperLimitOhm":"100",
+									"LowerLimitOhm":"101",
+									"Samples":"102",
+									"MaxTimeInPassWindowMsec":"103",
+									"MaxChannelResistanceOhms":"104",
+									"MinChannelResistanceOhms":"105",
+									"AvgChannelResistanceInRangeOhms":"106",
+									"LastReceivedMessage":"107",
+									"PassReceivedMessage":"108"
+								}
+						},
+					"Fault":
+						{
+							"Id":"32777",
+							"Description":"MeterValidateResistanceRange Failed"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Validating Resistance METER Slot 1 Channels 1",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"MeterValidateFrequencyRange",
+					"Description": "Frequency Range Slot 1 Channels 1 - 3",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"METERFAILED",
+					"TimeoutMsec": 10000,
+					"MeterValidateFrequencyRange":
+						{
+							"DeviceId":1,
+							"Range":"",
+							"Resolution":"",
+							"Channels":[
+							{
+								"Description":"S1CH1",
+								"OptionCodesMask":"S1CH1",
+								"Fault":
+									{
+										"Id":"1",
+										"Description":"MeterValidateFrequencyRange S1CH1"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateFrequencyRange S1CH1",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":1,
+								"PassWindowMsec":15000,
+								"UpperLimitHz":10000,
+								"LowerLimitHz":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"# MSG",
+										"ChannelFrequencyHz":"S1C1",
+										"MaxChannelFrequencyHz":"S1C1 Max",
+										"MinChannelFrequencyHz":"S1C1 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitHz":"100",
+										"LowerLimitHz":"101",
+										"Samples":"102",
+										"MaxTimeInPassWindowMsec":"103",
+										"MaxChannelFrequencyHz":"104",
+										"MinChannelFrequencyHz":"105",
+										"AvgChannelFrequencyInRangeHz":"106",
+										"LastReceivedMessage":"107",
+										"PassReceivedMessage":"108"
+									}
+							},
+							{
+								"Description":"S1CH2",
+								"OptionCodesMask":"S1CH2",
+								"Fault":
+									{
+										"Id":"2",
+										"Description":"MeterValidateFrequencyRange S1CH2"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateFrequencyRange S1CH2",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":2,
+								"PassWindowMsec":25000,
+								"UpperLimitHz":10000,
+								"LowerLimitHz":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"",
+										"ChannelFrequencyHz":"S1C2",
+										"MaxChannelFrequencyHz":"S1C2 Max",
+										"MinChannelFrequencyHz":"S1C2 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitHz":"200",
+										"LowerLimitHz":"201",
+										"Samples":"202",
+										"MaxTimeInPassWindowMsec":"203",
+										"MaxChannelFrequencyHz":"204",
+										"MinChannelFrequencyHz":"205",
+										"AvgChannelFrequencyInRangeHz":"206",
+										"LastReceivedMessage":"207",
+										"PassReceivedMessage":"208"
+									}
+							},
+							{
+								"Description":"S1CH3",
+								"OptionCodesMask":"S1CH3",
+								"Fault":
+									{
+										"Id":"3",
+										"Description":"MeterValidateFrequencyRange S1CH3"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateFrequencyRange S1CH3",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":3,
+								"PassWindowMsec":15000,
+								"UpperLimitHz":10000,
+								"LowerLimitHz":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"",
+										"ChannelFrequencyHz":"S1C3",
+										"MaxChannelFrequencyHz":"S1C3 Max",
+										"MinChannelFrequencyHz":"S1C3 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitHz":"300",
+										"LowerLimitHz":"301",
+										"Samples":"302",
+										"MaxTimeInPassWindowMsec":"303",
+										"MaxChannelFrequencyHz":"304",
+										"MinChannelFrequencyHz":"305",
+										"AvgChannelFrequencyInRangeHz":"306",
+										"LastReceivedMessage":"307",
+										"PassReceivedMessage":"308"
+									}
+							}]
+						},
+					"Fault":
+						{
+							"Id":"32777",
+							"Description":"MeterValidateFrequencyRange Failed"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Validating METER Slot 1 Channels 1-3",
+							"OptionCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"ChangeBy":"RMM",
+			"Change":"Initial version"
+		}
+	]
+}
