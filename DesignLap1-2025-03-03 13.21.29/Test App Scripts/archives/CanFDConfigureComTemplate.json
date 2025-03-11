@@ -1,0 +1,59 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can FD Configure Com Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"CanFDConfigureCom",
+					"Description": "Can FD Configure Com",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"BoardId": 0,
+					"CanFDConfigureCom":
+						{
+							"NominalModeList":["Kbs125","Kbs250","Kbs500","Mbs1"],
+							"NominalMode":"",
+							"DataRateList":["Kbs500","Kbs833","Mbs1","Mbs15","Mbs2","Mbs3","Mbs4","Mbs5","Mbs67","Mbs8","Mbs10"],
+							"DataRate":"",
+							"FlowControl":false,
+							"CanId":[
+								{
+									"ReceiveId":"",
+									"BitId29":false
+								}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}]
+}
