@@ -1,0 +1,1018 @@
+{
+	"Name": "PAPR Battery Pack Tester",
+	"Description": "Test Products Inc.",
+	"Version":1.0,
+	"Production": false,
+	"TerminationScriptFileNamePass": "PatrickReleaseScriptBATT_PASS.json",
+	"TerminationScriptFileNameFail": "PatrickReleaseScriptBATT_FAIL.json",
+	"TerminationScriptFileNameFatalFault": "PatrickReleaseScriptBATT_FAIL.json",
+	"TerminationScriptFileNameOperatorAbort": "",
+	"GmReporting":
+	{
+		"MersTestName": "0TSL",
+		"MersTestType": "ME",
+		"MersTestPgmRev": 1,
+		"MersTestTableRev": 1,
+		"MersTCA": "A001",
+		"MersEngineType": "ROCK",
+		"MersDeviceId": "0x4000",
+		"GepicsShipCode": "CPIT"
+	},
+	"TestCycleGroups": 
+	[[{
+		"GroupName": "Modbus Control Discrete Outputs",
+		"Background": false,
+		"Picture": "",
+		"RepairPictures":[
+		{
+			"Fault": "",
+			"Picture": ""
+		}],
+		"TestSteps":[
+		{
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Modbus Control Discrete Outputs",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Set Outputs to Known State",
+                "OptionCodesMask": ""
+              }]
+          }]
+      }],
+    [
+      {
+        "GroupName": "Plug in Battery to Tester",
+        "Background": false,
+        "Picture": "",
+        "RepairPictures": [
+          {
+            "Fault": "",
+            "Picture": ""
+          }
+        ],
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Read input from battery plugged in to fixture on modbus 1 channel 0",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 100,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+			  "TestDataDisplay":
+			  {
+				"Samples":"S#",
+				"BitMask":"D1 BitMask",
+				"DiscreteInputBits":"D1 Bits",
+				"ByteMask":"",
+				"DiscreteInputHex":""
+			  }
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusValidateDiscreteInputs"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "--> OPERATOR <--",
+                "OptionCodesMask": ""
+              },
+              {
+                "Background": false,
+                "Label": "CONNECT BATTERY TO TESTER",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "LATCH BATTERY TO TESTER",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1000",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LATCH BATTERY TO TESTER",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "CONTROL LATCHING RELAY",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1800",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Open Latching Relay",
+                "OptionCodesMask": ""
+              }]
+          }]
+      }],
+    [
+      {
+        "GroupName": "Check Battery Voltage",
+        "Background": false,
+        "Picture": "",
+        "RepairPictures": [
+          {
+            "Fault": "",
+            "Picture": ""
+          }
+        ],
+        "TestSteps": [
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Voltage of Battery Pack",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "100",
+              "Resolution": "",
+              "Channels": [
+                {
+                  "Description": "S1CH4",
+                  "OptionCodesMask": "",
+                  "Fault": 
+                  {
+                    "Id": "",
+                    "Description": "Battery Output Voltage Bad"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Check Output Voltage of Battery",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 4,
+                  "PassWindowMsec": 500,
+                  "UpperLimitVolt": 14.4,
+                  "LowerLimitVolt": 13.9,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH4#",
+                    "ChannelVoltageVolts": "S1CH4",
+                    "MaxChannelVoltageVolts": "S1CH4 Max",
+                    "MinChannelVoltageVolts": "S1CH4 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                }]
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": ""
+              }]
+          }]
+      }],
+    [
+      {
+        "GroupName": "Check Over-Current Battery Condition",
+        "Background": false,
+        "Picture": "",
+        "RepairPictures": [
+          {
+            "Fault": "",
+            "Picture": ""
+          }
+        ],
+        "TestSteps": [
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Close relays to load resistors",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": 
+            {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1E00",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Close Relays to Load Resistors",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay 500 ms",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 500,
+            "Fault": 
+            {
+              "Id": "",
+              "Description": "Delay"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Delay 500 ms",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Over-Current of Battery Pack",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 25000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "100",
+              "Resolution": "",
+              "Channels": [
+                {
+                  "Description": "S1CH2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "Measure Current Flow of Battery on R2"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Measure Current Flow of Battery on R2",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 2,
+                  "PassWindowMsec": 1000,
+                  "UpperLimitVolt": 0.75,
+                  "LowerLimitVolt": -0.75,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH2 #",
+                    "ChannelVoltageVolts": "S1CH2",
+                    "MaxChannelVoltageVolts": "S1CH2 Max",
+                    "MinChannelVoltageVolts": "S1CH2 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                },
+                {
+                  "Description": "S1CH3",
+                  "OptionCodesMask": "",
+                  "Fault": 
+                  {
+                    "Id": "",
+                    "Description": "Measure Current Flow of Battery on R3"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Measure Current Flow of Battery on R3",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 3,
+                  "PassWindowMsec": 1000,
+                  "UpperLimitVolt": 0.75,
+                  "LowerLimitVolt": -0.75,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH3 #",
+                    "ChannelVoltageVolts": "S1CH3",
+                    "MaxChannelVoltageVolts": "S1CH3 Max",
+                    "MinChannelVoltageVolts": "S1CH3 Min"
+                  },
+                  "TestDataReporting":
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                }]
+            },
+            "Fault":
+            {
+              "Id": "",
+              "Description": "Battery Did Not Reset"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validating METER Slot 1 Channels 2 and 3",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Open relays to End Battery Current",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": 
+            {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1800",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Open relays to End Battery Current",
+                "OptionCodesMask": ""
+              }]
+          }]
+      }],
+    [
+      {
+        "GroupName": "Check Battery Voltage",
+        "Background": false,
+        "Picture": "",
+        "RepairPictures": [
+          {
+            "Fault": "",
+            "Picture": ""
+          }
+        ],
+        "TestSteps": [
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Battery Pack Voltage Resets",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "100",
+              "Resolution": "",
+              "Channels": [
+                {
+                  "Description": "S1CH4",
+                  "OptionCodesMask": "",
+                  "Fault": 
+                  {
+                    "Id": "",
+                    "Description": "Battery Output Voltage Should Be On From Reset"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Check Output Voltage of Battery",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 4,
+                  "PassWindowMsec": 500,
+                  "UpperLimitVolt": 14.4,
+                  "LowerLimitVolt": 13.9,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH4#",
+                    "ChannelVoltageVolts": "S1CH4",
+                    "MaxChannelVoltageVolts": "S1CH4 Max",
+                    "MinChannelVoltageVolts": "S1CH4 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                }]
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": ""
+              }]
+          }]
+      }],
+	  [
+      {
+        "GroupName": "Check Charge Current",
+        "Background": false,
+        "Picture": "",
+        "RepairPictures": [
+          {
+            "Fault": "",
+            "Picture": ""
+          }
+        ],
+        "TestSteps": [
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Battery Plug Charge Current",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "0.1",
+              "Resolution": "",
+              "Channels": [
+              {
+                "Description": "S1CH1",
+                "OptionCodesMask": "",
+                "Fault": 
+                {
+                  "Id": "",
+                  "Description": "Charge Current Off"
+                },
+                "PromptLabels": [
+                {
+                    "Background": false,
+                    "Label": "Charge Current Off",
+                    "OptionCodesMask": ""
+                }
+                ],
+                  "Slot": 1,
+                  "Channel": 1,
+                  "PassWindowMsec": 500,
+                  "UpperLimitVolt": 0.002,
+                  "LowerLimitVolt": -0.002,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH1 #",
+                    "ChannelVoltageVolts": "S1CH1",
+                    "MaxChannelVoltageVolts": "S1CH1 Max",
+                    "MinChannelVoltageVolts": "S1CH1 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+              }]
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "RELAY 1 ON - CHARGE CURRENT",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": 
+            {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1900",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Close Circuit to Charge Battery",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Battery Plug Charge Current",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "0.1",
+              "Resolution": "",
+              "Channels": [
+               {
+                  "Description": "S1CH1",
+                  "OptionCodesMask": "",
+                 "Fault": 
+                  {
+                    "Id": "",
+                    "Description": "Operator did not plug in charge cable OR Battery is at full charge"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "--> OPERATOR <--",
+                      "OptionCodesMask": ""
+                    },
+                    {
+                      "Background": false,
+                      "Label": "PLUG IN CHARGE CABLE",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 1,
+                  "PassWindowMsec": 500,
+                  "UpperLimitVolt": 0.056,
+                  "LowerLimitVolt": 0.052,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH1#",
+                    "ChannelVoltageVolts": "S1CH1",
+                    "MaxChannelVoltageVolts": "S1CH1 Max",
+                    "MinChannelVoltageVolts": "S1CH1 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                }]
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": ""
+              }]
+          },
+		  {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Battery Pack Voltage Off",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "100",
+              "Resolution": "",
+              "Channels": [
+                {
+                  "Description": "S1CH4",
+                  "OptionCodesMask": "",
+                  "Fault": 
+                  {
+                    "Id": "",
+                    "Description": "Battery Output Voltage Should Be Off From Charging"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Check Output Voltage of Battery",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 4,
+                  "PassWindowMsec": 200,
+                  "UpperLimitVolt": 2.5,
+                  "LowerLimitVolt": -2.5,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH4#",
+                    "ChannelVoltageVolts": "S1CH4",
+                    "MaxChannelVoltageVolts": "S1CH4 Max",
+                    "MinChannelVoltageVolts": "S1CH4 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                }]
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Operator Unplug The Battery Charger",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "0.1",
+              "Resolution": "",
+              "Channels": [
+                {
+                  "Description": "S1CH1",
+                  "OptionCodesMask": "",
+                  "Fault":
+                  {
+                    "Id": "",
+                    "Description": "Operator did not unplug charge cable from battery"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "--> OPERATOR <--",
+                      "OptionCodesMask": ""
+                    },
+                    {
+                      "Background": false,
+                      "Label": "UNPLUG CHARGE CABLE",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 1,
+                  "PassWindowMsec": 500,
+                  "UpperLimitVolt": 0.002,
+                  "LowerLimitVolt": -0.002,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH1#",
+                    "ChannelVoltageVolts": "S1CH1",
+                    "MaxChannelVoltageVolts": "S1CH1 Max",
+                    "MinChannelVoltageVolts": "S1CH1 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                }]
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "RELAY 1 OFF - CHARGE CURRENT",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": 
+            {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1800",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": "Stop Charging Battery"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Open Circuit to End Charge to Battery",
+                "OptionCodesMask": ""
+              }]
+          }]
+      }],	  
+    [
+      {
+        "GroupName": "Check Current Draw of Battery Pack",
+        "Background": false,
+        "Picture": "",
+        "RepairPictures": [
+          {
+            "Fault": "",
+            "Picture": ""
+          }
+        ],
+        "TestSteps": [
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Open R2 to Test Normal Current Condition of Battery",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": 
+            {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1A00",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": "Relay "
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Close relay to Test Normal Current Condition of Battery",
+                "OptionCodesMask": ""
+              }]
+          },
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Verify Normal Current Condition of Battery",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "MeterValidateVoltageRange": 
+            {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "100",
+              "Resolution": "",
+              "Channels": [
+                {
+                  "Description": "S1CH2",
+                  "OptionCodesMask": "",
+                  "Fault": 
+                  {
+                    "Id": "",
+                    "Description": "Normal Current Condition of Battery"
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Testing Normal Current Condition of Battery",
+                      "OptionCodesMask": ""
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 4,
+                  "PassWindowMsec": 1500,
+                  "UpperLimitVolt": 14.25,
+                  "LowerLimitVolt": 12.75,
+                  "TestDataDisplay": 
+                  {
+                    "Samples": "S1CH2 #",
+                    "ChannelVoltageVolts": "S1CH2",
+                    "MaxChannelVoltageVolts": "S1CH2 Max",
+                    "MinChannelVoltageVolts": "S1CH2 Min"
+                  },
+                  "TestDataReporting": 
+                  {
+                    "UpperLimitVolt": "100",
+                    "LowerLimitVolt": "101",
+                    "Samples": "102",
+                    "MaxTimeInPassWindowMsec": "103",
+                    "MaxChannelVoltageVolts": "104",
+                    "MinChannelVoltageVolts": "105",
+                    "AvgChannelVoltageInRangeVolt": "106",
+                    "LastReceivedMessage": "107",
+                    "PassReceivedMessage": "108"
+                  }
+                }]
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": ""
+              }]
+          },
+		  {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Close R2 to End all Current Draw of Battery",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "ModbusControlDiscreteOutputs": 
+            {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "1800",
+              "ControlOutputWordBit": ""
+            },
+            "Fault": 
+            {
+              "Id": "",
+              "Description": "Relay "
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Close relay to Test Normal Current Condition of Battery",
+                "OptionCodesMask": ""
+              }]
+          }]
+      }],
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04302021",
+      "Version": 1,
+	  "ChangeBy": "Patrick_Connolly",
+      "Change": "Initial version"
+    }
+  ]
+}
