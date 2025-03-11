@@ -1,0 +1,2082 @@
+{
+  "Name": "Vuteq SLP D2Ux-2 Door Pad - RF",
+  "Description": "Vuteq SLP D2Ux-2 Door Pad - RF",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 85,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "TPAS",
+    "MersDeviceId": "0x20000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Verify Harness/Door Part Numbers",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "PromptOperatorScan",
+            "Description": "Verify Harness/Door Part Numbers",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "SCAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Invalid Harness and Door Panel Part numbers scanned by the operator",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "PromptOperatorScan": {
+              "Retries": 1,
+              "ValidateScanScriptFileName": "ValidateScan-Vuteq_v1.py",
+              "ScanEntities": [
+                {
+                  "Description": "Harness Scan",
+                  "ScanId": "HARNESS",
+                  "PromptImageFileName": "HarnessBarCode.JPG",
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Scan Harness Barcode",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestDataReporting": {
+                    "ScannedData": ""
+                  },
+                  "TestData": {
+                    "ScannedData": ""
+                  }
+                },
+                {
+                  "Description": "Door Panel Scan",
+                  "ScanId": "DOOR",
+                  "PromptImageFileName": "DoorPanelBarcode.JPG",
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Scan Door Panel Barcode",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestDataReporting": {
+                    "ScannedData": ""
+                  },
+                  "TestData": {
+                    "ScannedData": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Reset All Outputs",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 Outputs Off",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Board 1 Outputs Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 Outputs Off",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "ENCIENDA TODAS LAS ENTRADAS ",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "Board 1 No Bias All Channels",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Board 1 No Bias All Channels",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 No Bias All Channels",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "Tablero 1 Sin sesgo Todos los canales",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Board 1 Set Current Limits",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Board 1 Set Current Limits",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "B1 Set Limits 25 A",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "B1 Establecer límites 25 A",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 1,
+              "SourceLimitMamp": 25000,
+              "SinkLimitMamp": 25000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Power Up Vehicle / Configure LIN",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Turn Power Supply On B1 ",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "IOBoardControlDigitalIO B1 Power Supply On",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply On",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "Fuente de alimentación encendida",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 2
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Relay Control",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "6WAY",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "IOBoardControlDigitalIO Relay Control",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LIN Relay Control",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "Control de relé LIN",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 3
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinConfigureCom",
+            "Description": "LinConfigureCom",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Configure LIN Bd 1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "LinConfigureCom": {
+              "BoardId": 1,
+              "BaudRateBps": "bps19200"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "S321 Door Panel Switch X1",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 7,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 1,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "S321 Door Panel Switch X1",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "DOOR_POW",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "S321 Door Panel Switch X1",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "S321 Door Panel Switch X1",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "S321 Door Panel Switch X1",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 1,
+                    "UpperLimitVolts": 6.7,
+                    "LowerLimitVolts": -1.0,
+                    "PassWindowMsec": 0,
+                    "TestSliderRangeDisplay": {
+                      "Enabled": false,
+                      "Title": "",
+                      "ValueFormatter": "",
+                      "FontSize": 12,
+                      "Maximum": 0.0,
+                      "Minimum": 0.0,
+                      "DisplayIndex": 0
+                    },
+                    "TestDataDisplay": {
+                      "Samples": "samp",
+                      "ChannelVoltageVolts": "chan",
+                      "MaxChannelVoltageVolts": "max",
+                      "MinChannelVoltageVolts": "min"
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "up",
+                      "LowerLimitVolts": "low",
+                      "Samples": "samp",
+                      "AvgChannelVoltageInRangeVolts": "avg",
+                      "MaxChannelVoltageVolts": "max",
+                      "MinChannelVoltageVolts": "min",
+                      "MaxTimeInPassWindowMsec": "max"
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 1,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 7,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Power Up Door Switch",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DOOR_POW",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 7,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DOOR_POW",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 8,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DOOR_POW",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 1,
+              "BiasState": "V"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "S321 Door Panel Switch X2",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "LinSendReceiveValidate",
+            "Description": "S321 Door Panel Switch X2",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DOOR_POW",
+            "AddOptionCodeUponPass": "DOOR_COM",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "S321 Door Panel Switch X2",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "Interruptor de panel de puerta S321 X2",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "LinSendReceiveValidate": {
+              "BoardId": 1,
+              "MasterTransmissionId": "",
+              "MasterTransmissionMessage": "",
+              "SlaveTransmissionId": "09",
+              "SlaveTransmissionMessage": "0000000000000000",
+              "TransmissionTimeoutMsec": 100,
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "BaseMask": "",
+              "LinDataEntities": [
+                {
+                  "Description": "S321 Door Panel Switch X2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "S321 Door Panel Switch X2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "08"
+                    }
+                  ],
+                  "ByteRange": [],
+                  "BitMask": []
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "S63 Door Lock Switch",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "LinSendReceiveValidate",
+            "Description": "S63 Door Lock Switch",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DOOR_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "--> OPERATOR <--",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "PRESS UNLOCK",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "--> OPERADOR <--",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "PULSA DESBLOQUEAR",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "LinSendReceiveValidate": {
+              "BoardId": 1,
+              "MasterTransmissionId": "",
+              "MasterTransmissionMessage": "",
+              "SlaveTransmissionId": "09",
+              "SlaveTransmissionMessage": "0000000000000000",
+              "TransmissionTimeoutMsec": 100,
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "BaseMask": "",
+              "LinDataEntities": [
+                {
+                  "Description": "S63 Door Unlock Switch",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "S63 Door Unlock Switch",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "ByteMask": [],
+                  "ByteRange": [],
+                  "BitMask": [
+                    {
+                      "BytePosition": 1,
+                      "Mask": "??1?????"
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinSendReceiveValidate",
+            "Description": "S63 Door Lock Switch",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DOOR_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "\r\n-->OPERADOR<--",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "--> OPERATOR <--",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "LOCK",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "-->OPERADOR<--",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "LIBERAR BLOQUEAR",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "LinSendReceiveValidate": {
+              "BoardId": 1,
+              "MasterTransmissionId": "",
+              "MasterTransmissionMessage": "",
+              "SlaveTransmissionId": "09",
+              "SlaveTransmissionMessage": "0000000000000000",
+              "TransmissionTimeoutMsec": 100,
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "BaseMask": "",
+              "LinDataEntities": [
+                {
+                  "Description": "S63 Door Lock Switch",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "S63 Door Lock Switch",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "ByteMask": [],
+                  "ByteRange": [],
+                  "BitMask": [
+                    {
+                      "BytePosition": 1,
+                      "Mask": "???1????"
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "S321_X2 Window Switches ",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "LinSendReceiveValidate",
+            "Description": "S321_X2 RF Window Switch",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DOOR_COM&TC2",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "--> OPERATOR <--",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "LinSendReceiveValidate": {
+              "BoardId": 1,
+              "MasterTransmissionId": "",
+              "MasterTransmissionMessage": "",
+              "SlaveTransmissionId": "09",
+              "SlaveTransmissionMessage": "0000000000000000",
+              "TransmissionTimeoutMsec": 100,
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "BaseMask": "",
+              "LinDataEntities": [
+                {
+                  "Description": "S321_X2 RF Window Switch",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "S321_X2 RF Window Switch",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "HALF UP",
+                      "OptionCodesMask": "ENG",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [],
+                  "ByteRange": [],
+                  "BitMask": [
+                    {
+                      "BytePosition": 1,
+                      "Mask": "????1011"
+                    }
+                  ]
+                },
+                {
+                  "Description": "S321_X2 RF Window Switch EXPRESS",
+                  "OptionCodesMask": "RF_PASS_EXP_UP",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "S321_X2 RF Window Switch EXPRESS",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "EXPRESS UP",
+                      "OptionCodesMask": "ENG",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [],
+                  "ByteRange": [],
+                  "BitMask": [
+                    {
+                      "BytePosition": 1,
+                      "Mask": "????1100"
+                    }
+                  ]
+                },
+                {
+                  "Description": "S321_X2 RF Window Switch",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "S321_X2 RF Window Switch",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "HALF DOWN",
+                      "OptionCodesMask": "ENG",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [],
+                  "ByteRange": [],
+                  "BitMask": [
+                    {
+                      "BytePosition": 1,
+                      "Mask": "????1001"
+                    }
+                  ]
+                },
+                {
+                  "Description": "S321_X2 RF Window Switch EXPRESS",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "S321_X2 RF Window Switch EXPRESS",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "EXPRESS DOWN",
+                      "OptionCodesMask": "ENG",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [],
+                  "ByteRange": [],
+                  "BitMask": [
+                    {
+                      "BytePosition": 1,
+                      "Mask": "????1010"
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Reset All Outputs",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 Outputs Off",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Board 1 Outputs Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 Outputs Off",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "Tablero 1 Salidas Off",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "Board 1 No Bias All Channels",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Board 1 No Bias All Channels",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 No Bias All Channels",
+                "OptionCodesMask": "ENG",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "Tablero 1 Sin sesgo Todos los canales",
+                "OptionCodesMask": "ESP",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "10182022",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "B. Sullivan",
+      "Change": "Original Release"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "sl",
+      "Change": "changed voltage from 3 to 6 for x1"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "sl",
+      "Change": "reporting for x1"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "sl",
+      "Change": "display"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "sl",
+      "Change": "x1 voltage"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "sl",
+      "Change": "lin message tx rate from 200 to 100ms"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 7,
+      "ChangeBy": "sl",
+      "Change": "changed id from 9 to 1"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 8,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 9,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 10,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 11,
+      "ChangeBy": ".",
+      "Change": "\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 12,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 13,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 14,
+      "ChangeBy": "sl",
+      "Change": "changed id from 9 to 1"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 15,
+      "ChangeBy": "sl",
+      "Change": "changed id from 9 to 1"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 16,
+      "ChangeBy": "sl",
+      "Change": "chagned id to 00"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 17,
+      "ChangeBy": "sl",
+      "Change": "id to 00\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 18,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 19,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 20,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 21,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 22,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 23,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 24,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 25,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 26,
+      "ChangeBy": ".",
+      "Change": "."
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 27,
+      "ChangeBy": "sl",
+      "Change": "channel 8 g bias"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 28,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 29,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 30,
+      "ChangeBy": "sl",
+      "Change": "sl\r\n"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 31,
+      "ChangeBy": "sl",
+      "Change": "sl"
+    },
+    {
+      "Date": "01162023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 32,
+      "ChangeBy": "sl",
+      "Change": "sl"
+    },
+    {
+      "Date": "01192023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 33,
+      "ChangeBy": "BS",
+      "Change": "added timeouts"
+    },
+    {
+      "Date": "01192023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 34,
+      "ChangeBy": "BS",
+      "Change": "added release unlock switch"
+    },
+    {
+      "Date": "01192023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 35,
+      "ChangeBy": "BS",
+      "Change": "updated unlock test"
+    },
+    {
+      "Date": "01192023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 36,
+      "ChangeBy": "BS",
+      "Change": "fixed release unlock test"
+    },
+    {
+      "Date": "01192023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 37,
+      "ChangeBy": "BS",
+      "Change": "reduced LED timeout to 3secs"
+    },
+    {
+      "Date": "01232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 38,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 39,
+      "ChangeBy": "bs",
+      "Change": "bs"
+    },
+    {
+      "Date": "01312023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 40,
+      "ChangeBy": "JB",
+      "Change": "Added ENG and ESP options so operator prompts in both languages"
+    },
+    {
+      "Date": "09272023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 41,
+      "ChangeBy": "PH",
+      "Change": "Added 5 second delay E618 LED light on."
+    },
+    {
+      "Date": "11062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 42,
+      "ChangeBy": "ph",
+      "Change": "Added prompt operator for E618 LED"
+    },
+    {
+      "Date": "11152023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 43,
+      "ChangeBy": "PH",
+      "Change": "Changed ID and message of E638 LED"
+    },
+    {
+      "Date": "04122024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 44,
+      "ChangeBy": "PH",
+      "Change": "Added Fail Script."
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 45,
+      "ChangeBy": "qdwq",
+      "Change": "qwdq"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 46,
+      "ChangeBy": "sdfas",
+      "Change": "afqaa"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 47,
+      "ChangeBy": "qwd",
+      "Change": "qwd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 48,
+      "ChangeBy": "ewf",
+      "Change": "wefww"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 49,
+      "ChangeBy": "dasf",
+      "Change": "awdqa"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 50,
+      "ChangeBy": "wefw",
+      "Change": "wefwe"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 51,
+      "ChangeBy": "dsfd",
+      "Change": "dsfs"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 52,
+      "ChangeBy": "dsfsd",
+      "Change": "dsfsd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 53,
+      "ChangeBy": "efwe",
+      "Change": "efwe"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 54,
+      "ChangeBy": "asc",
+      "Change": "sca"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 55,
+      "ChangeBy": "qwdq",
+      "Change": "qwdq"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 56,
+      "ChangeBy": "scs",
+      "Change": "scs"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 57,
+      "ChangeBy": "dsf",
+      "Change": "sfd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 58,
+      "ChangeBy": "rg",
+      "Change": "eg"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 59,
+      "ChangeBy": "sad",
+      "Change": "asd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 60,
+      "ChangeBy": "ef",
+      "Change": "sd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 61,
+      "ChangeBy": "zsc",
+      "Change": "asc"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 62,
+      "ChangeBy": "wqdw",
+      "Change": "qwdq"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 63,
+      "ChangeBy": "qd",
+      "Change": "qd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 64,
+      "ChangeBy": "sdf",
+      "Change": "sdf"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 65,
+      "ChangeBy": "sfs",
+      "Change": "dsf"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 66,
+      "ChangeBy": "sdv",
+      "Change": "sdv"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 67,
+      "ChangeBy": "sad",
+      "Change": "asd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 68,
+      "ChangeBy": "dsf",
+      "Change": "sdf"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 69,
+      "ChangeBy": "ASDA",
+      "Change": "ASDA"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 70,
+      "ChangeBy": "asda",
+      "Change": "sada"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 71,
+      "ChangeBy": "zxdc",
+      "Change": "zxcz"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 72,
+      "ChangeBy": "asd",
+      "Change": "ads"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 73,
+      "ChangeBy": "sd",
+      "Change": "asda"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 74,
+      "ChangeBy": "asc",
+      "Change": "asc"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 75,
+      "ChangeBy": "as",
+      "Change": "as"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 76,
+      "ChangeBy": "asd",
+      "Change": "asd"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 77,
+      "ChangeBy": "asd",
+      "Change": "sad"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 78,
+      "ChangeBy": "asd",
+      "Change": "sad"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 79,
+      "ChangeBy": "asd",
+      "Change": "sad"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 80,
+      "ChangeBy": "ASD",
+      "Change": "ADS"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 81,
+      "ChangeBy": "ERTE",
+      "Change": "ERTE"
+    },
+    {
+      "Date": "05232024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 82,
+      "ChangeBy": "we",
+      "Change": "we"
+    },
+    {
+      "Date": "06132024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 83,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "06132024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 84,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "06132024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 85,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\Vuteq SLP D2Ux-2 Door Pad RF.json",
+  "DateLastModified": "2024-06-13T13:33:25.1592232-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
