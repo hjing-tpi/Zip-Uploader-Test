@@ -1,0 +1,948 @@
+{	
+	"Name":"2020 Tesla Roadster Glass Roof Test",
+	"Description":"Test the Can based Tesla Roadster Glass Roof and Electrical wiring",
+	"Version":1.1,
+	"Production":false,
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Begin/Wait Timer",
+			"Background":true,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"BeginTimer",
+					"Description": "Begin Timer",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"TimerName":"TESLA",
+					"TimeoutMsec": 0,
+					"PromptLabels": [
+						{
+							"Label":"Start TELSA Timer",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"WaitForTimerToExpire",
+					"Description": "Wait for Timer to Expire",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"TimerName":"TESLA",
+					"TimerExpireLimitMsec": 30000,
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"TESLA TIMER",
+							"SalesCodeMask":[""]
+						}]
+				}]
+		},
+		{
+			"GroupName":"Modbus Background Steps",
+			"Background":true,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"ModbusControlDiscreteOutputs",
+					"Description": "Dev 1 - Modbus Control Discrete Outputs",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"ModbusControlDiscreteOutputs":
+						{
+							"DeviceId":1,
+							"ControlOutputWordHex":"",
+							"ControlOutputWordBit":"1010101001011111"
+						},
+					"PromptLabels": [
+						{
+							"Label":"Dev 1 - Modbus Control Discrete Outputs",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"ModbusValidateDiscreteInputs",
+					"Description": "Modbus Validate Discrete Inputs Dev1",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 60000,
+					"ModbusValidateDiscreteInputs":
+						{
+							"DeviceId":1,
+							"PassWindowMsec":15000,
+							"ByteMask":"A?5?",
+							"BitMask":"?"
+						},
+					"PromptLabels": [
+						{
+							"Label":"Dev1 Modbus Validation Descrete Inputs",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"ModbusValidateVoltageRange",
+					"Description": "Modbus Validate Voltage Range Dev2",
+					"Concurrent":true,
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 30000,
+					"ModbusValidateVoltageRange":
+						{
+							"DeviceId":2,
+							"Channels":[
+							{
+								"Channel":1,
+								"PassWindowMsec":5000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":2,
+								"PassWindowMsec":5000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":3,
+								"PassWindowMsec":5000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":4,
+								"PassWindowMsec":5000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":5,
+								"PassWindowMsec":5000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":6,
+								"PassWindowMsec":5000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"Dev2 Modbus Validate Voltage Ranges",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"ModbusValidateVoltageRange",
+					"Description": "Modbus Validate Voltage Range Dev3",
+					"Concurrent":true,
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 20000,
+					"ModbusValidateVoltageRange":
+						{
+							"DeviceId":3,
+							"Channels":[
+							{
+								"Channel":1,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":2,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":3,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":4,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":5,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":6,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":7,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							},
+							{
+								"Channel":8,
+								"PassWindowMsec":15000,
+								"UpperLimitMVolt":10000,
+								"LowerLimitMVolt":-10000
+							}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"Dev3 Modbus Validate Voltage Range",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				}]
+		},
+		{
+			"GroupName":"B1 - Test Packet",
+			"Background":true,
+			"TestSteps":[
+				{
+					"Name":"StartTestPacket",
+					"Description": "Display B1 Test Packets over time",
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 15000,
+					"TimeIntervalMsec": 50,
+					"BoardId": 1,
+					"PromptLabels": [
+						{
+							"Label":"Board 1 - Test Packets being displayed for 15 seconds",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"TESTPCK1",
+							"SalesCodeMask":[""]
+						}]
+				},				
+				{
+					"Name":"StopTestPacket",
+					"Description": "Stop Test Packet B1",
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 500,
+					"BoardId": 1,
+					"PromptLabels": [
+						{
+							"Label":"Board 1 - Stop Test Packet",
+							"SalesCodeMask":[""]
+						}]
+				}]
+		},
+		{
+			"GroupName":"B2 - Test Packet",
+			"Background":true,
+			"TestSteps":[
+				{
+					"Name":"StartTestPacket",
+					"Description": "Display B2 Test Packets over time",
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 10000,
+					"TimeIntervalMsec": 50,
+					"BoardId": 2,
+					"PromptLabels": [
+						{
+							"Label":"Board 2 - Test Packets being displayed for 10 seconds",
+							"SalesCodeMask":[""]
+						}],
+						"BackgroundLabels": [
+						{
+							"Label":"TESTPCK2",
+							"SalesCodeMask":[""]
+						}]
+				},				
+				{
+					"Name":"StopTestPacket",
+					"Description": "Stop Test Packet B2",
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 500,
+					"BoardId": 2,
+					"PromptLabels": [
+						{
+							"Label":"Board 2 - Stop Test Packet",
+							"SalesCodeMask":[""]
+						}]
+				}]
+		},
+		{
+			"GroupName":"Voltage/Current Testing",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"Delay",
+					"Description": "Delay",
+			    	    "Concurrent":true,
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 1000,
+					"PromptLabels": [
+						{
+							"Label":"Delay 1 seconds",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},	
+				{
+					"Name":"PromptOperator",
+					"Description": "PromptOperator 25 seconds",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"TimeoutMsec":25000,
+					"PromptLabels": [
+						{
+							"Label":"Hit Pass or Fail",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"SetBias",
+					"Description": "SetBias B1C32 NO",
+			        "Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 1,
+					"Channel":32,
+					"BiasState":"NO",					
+					"PromptLabels": [
+						{
+							"Label":"Board 1 Channel 32 - Set Bias NO",
+							"SalesCodeMask":[""]
+						}]
+				},				
+				{
+					"Name":"SetNoBiasAllChannels",
+					"Description": "SetNoBiasAllChannels B1",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 1,
+					"PromptLabels": [
+						{
+							"Label":"Board 1 - Set No Bias All Channels",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"SetCurrentLimits",
+					"Description": "Set IO Board 1 Current Limits",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 1,
+					"SinkLimitMamp": 15000,
+					"SourceLimitMamp": 15000,
+					"PromptLabels": [
+						{
+							"Label":"B1 Set Limits 15 A",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"SinkCurrentRangeBase",
+					"Description": "Set B1/B2 Base Sink Current",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"WaveFile": "",
+					"TimeoutMsec": 20000,
+					"FailAtFirstOutOfRangeReading":false,
+					"CurrentRangeParameters":[
+						{
+							"BoardId": 1,
+							"PassWindowMsec":500,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						},
+						{
+							"BoardId": 2,
+							"PassWindowMsec":5000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						}],
+					"PromptLabels": [
+						{
+							"Label":"Board 1 Set Base Sink",
+							"SalesCodeMask":[""]
+						},			
+						{
+							"Label":"Board 2 Set Base Sink",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"SinkCurrentRangeDelta",
+					"Description": "B1/B2 Sink Current Range",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"WaveFile": "",
+					"TimeoutMsec": 30000,
+					"FailAtFirstOutOfRangeReading":false,
+					"CurrentRangeParameters":[
+						{
+							"BoardId": 1,
+							"PassWindowMsec":15000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-500
+						},
+						{
+							"BoardId": 2,
+							"PassWindowMsec":25000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-30
+						}],
+					"PromptLabels": [
+						{
+							"Label":"Board 1 Sink Range 15 seconds",
+							"SalesCodeMask":[""]
+						},			
+						{
+							"Label":"Board 2 Sink Range 25 seconds",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"SourceCurrentRangeBase",
+					"Description": "Set B1/B2 Base Source Current",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"WaveFile": "",
+					"TimeoutMsec": 10000,
+					"FailAtFirstOutOfRangeReading":false,
+					"CurrentRangeParameters":[
+						{
+							"BoardId": 2,
+							"PassWindowMsec":500,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						},
+						{
+							"BoardId": 1,
+							"PassWindowMsec":500,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":0
+						}],
+					"PromptLabels": [
+						{
+							"Label":"Board 2 Set Base Source",
+							"SalesCodeMask":[""]
+						},			
+						{
+							"Label":"Board 1 Set Base Source",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"SourceCurrentRangeDelta",
+					"Description": "B1/2 Source Current Range",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"WaveFile": "",
+					"TimeoutMsec": 60000,
+					"FailAtFirstOutOfRangeReading":false,
+					"CurrentRangeParameters":[
+						{
+							"BoardId": 2,
+							"PassWindowMsec":5000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-30
+						},
+						{
+							"BoardId": 1,
+							"PassWindowMsec":15000,
+							"UpperLimitMamp":500,
+							"LowerLimitMamp":-30
+						}],
+					"PromptLabels": [
+						{
+							"Label":"Board 2 Source Range 5 seconds",
+							"SalesCodeMask":[""]
+						},			
+						{
+							"Label":"Board 1 Source Range 15 seconds",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"VoltageRange",
+					"Description": "Verify Voltage Both Boards",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"WaveFile": "",
+					"TimeoutMsec": 10000,
+					"FailAtFirstOutOfRangeReading":false,
+					"VoltageRangeParameters":[
+						{
+							"BoardId": 1,
+							"VoltageRangeLimits":[
+								{
+									"Channel":32,
+									"PassWindowMsec":2000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.55
+								},
+								{
+									"Channel":1,
+									"PassWindowMsec":1000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.45
+								},
+								{
+									"Channel":2,
+									"PassWindowMsec":2000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.45
+								},
+								{
+									"Channel":3,
+									"PassWindowMsec":3000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.45
+								},
+								{
+									"Channel":4,
+									"PassWindowMsec":4000,
+									"UpperLimitVolts":5.00090,
+									"LowerLimitVolts":-0.65
+								}]
+						},
+						{
+							"BoardId": 2,
+							"VoltageRangeLimits":[
+								{
+									"Channel":1,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"Channel":2,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"Channel":3,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"Channel":19,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								},
+								{
+									"Channel":32,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":15.00090,
+									"LowerLimitVolts":-25.00876
+								}]
+						}],
+					"PromptLabels": [
+						{
+							"Label":"Verify Voltage",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				}]
+		}],
+		[{
+			"GroupName":"Can Testing",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[				
+				{
+					"Name":"CanConfigureCom",
+					"Description": "Can B2 Configure High Speed 500k",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"CanConfigureCom":
+						{
+							"CanModeList":["HighSpeed500k","GmLanLow","GmLanHigh","GmLanWakeUp","LinBus","FaultTolerant","GmLanDualWire","DualWireMed125k","FaultTolerant50k","MediumSpeed250k","HighSpeed2","GmLanWakeUpLow"],
+							"CanMode":"HighSpeed500k",
+							"FlowControl":true,
+							"CanId":[
+								{
+									"ReceiveId":"4E3",
+									"BitId29":false
+								}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"CONFIGURE HS CAN BOARD 2",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanValidateSavedDtcData",
+					"Description": "Can Validate Saved Dtc Data",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanValidateSavedDtcData":
+						{
+							"AllDtcsMustBePresent":false,
+							"AllDtcsMustBeAbsent":true,
+							"Dtcs":["1111","2222","3333"],
+						},
+					"PromptLabels": [
+						{
+							"Label":"Validate Saved Dtc Data",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"031902FF00000000",
+							"TransmissionTimeoutMsec":1000,
+							"ReceiveFrameId":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"108359",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ValidateDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py",
+						},
+					"PromptLabels": [
+						{
+							"Label":"Get ALL DTC Data",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanValidateSavedDtcData",
+					"Description": "Can Validate Saved Dtc Data",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanValidateSavedDtcData":
+						{
+							"AllDtcsMustBePresent":false,
+							"AllDtcsMustBeAbsent":true,
+							"Dtcs":["1111","2222","3333"],
+						},
+					"PromptLabels": [
+						{
+							"Label":"Validate Saved Dtc Data",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec":5000,
+					"CanSendReceiveSaveDtcData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0319020F00000000",
+							"TransmissionTimeoutMsec":1000,
+							"ReceiveFrameId":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":true,
+							"ValidateDtcDataScriptFileName":"ParseDtcDataGDDSWithFailByte.py",
+						},
+					"PromptLabels": [
+						{
+							"Label":"Get DTC Data",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Part Number Request",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanSendReceiveData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"IgnoreReceiveMessage":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+						},
+					"PromptLabels": [
+						{
+							"Label":"Part Number Request",
+							"SalesCodeMask":[""]
+						},						
+						{
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanValidatePartNumber",
+					"Description": "Part Number Validation",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanValidatePartNumber":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322F13200000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"??????",
+							"PartId":"pArt",
+							"ValidatePartNumberScriptFileName":"PartNumberCheck-Ascii-NoRevision.py",
+						},
+					"PromptLabels": [
+						{
+							"Label":"Send CAN Message 03 22 F1 32 to TX 763",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"Part Number Validation",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Flash 2 Pass",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec": 50000,
+					"CanSendReceiveData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0322030300000000",
+							"TransmissionTimeoutMsec":60,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"IgnoreReceiveMessage":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"100B620303????02",
+						},
+					"PromptLabels": [
+						{
+							"Label":"Send CAN Message 03 22 03 03 to TX 763",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"FLASH 2 PASS",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"CanSendReceiveData",
+					"Description": "Extended Diagnostic",
+					"Concurrent":false,
+					"SalesCodeMask":[""],
+					"BoardId": 2,
+					"TimeoutMsec": 5000,
+					"CanSendReceiveData":
+						{
+							"TransmissionId":"763",
+							"ReceiveId":"4E3",
+							"TransmissionMessage":"0210030000000000",
+							"TransmissionTimeoutMsec":500,
+							"ApplicationMask":"",
+							"BitId29":false,
+							"MultiFrameTimeBetweenFramesMsec":0,
+							"CanFD":false,
+							"CanFDFlags":0,
+							"IgnoreReceiveMessage":false,
+							"BaseMaskxxxx":"065003003201F400",
+							"BaseMask":"????????",
+							"ByteMask":[
+							{
+								"BytePosition":1,
+								"Mask":"??"
+							}],
+						},
+					"PromptLabels": [
+						{
+							"Label":"Send CAN Message 02 10 03 to TX 763",
+							"SalesCodeMask":[""]
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"Extended Diagnostic",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"IOBoardCanReset",
+					"Description": "B2 CAN Reset",
+			    	"Concurrent":false,
+					"BoardId": 2,
+					"SalesCodeMask":[""],
+					"PromptLabels": [
+						{
+							"Label":"Reset CAN B2",
+							"SalesCodeMask":[""]
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SalesCodeMask":[""]
+						}]
+				}]
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"01012019",
+			"Version":1.1,
+			"Change":"Fix issue where the air bag deployed when powering the Glass Roof"
+		},
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
