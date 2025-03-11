@@ -1,0 +1,57 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"SinkCurrentRangeBase",
+					"Description": "Sink Current Range Base Template",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 0,
+					"FailAtFirstOutOfRangeReading":false,
+					"CurrentRangeParameters":[
+						{
+							"BoardId": 0,
+							"PassWindowMsec":0,
+							"UpperLimitMamp":0,
+							"LowerLimitMamp":0
+						}],
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
+				
