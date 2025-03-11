@@ -1,0 +1,623 @@
+{
+  "Name": "Magna Force Apply Machine Cleanup",
+  "Description": "Cleanup Routine",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 17,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "PODS",
+    "MersTestType": "ST",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "PODS",
+    "MersEngineType": "PODS",
+    "MersDeviceId": "0x0",
+    "GepicsShipCode": "PODS"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Pressure Schedule OFF",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "FamStopSendPvmCanPressure",
+            "Description": "Stop Sending PVM CAN Pressure",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN&PVM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Stop Sending PVM CAN Pressure",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Stop Sending PVM CAN Pressure",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveValidate",
+            "Description": "Schedule Off CAN Pressure",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 1000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Schedule Off CAN Pressure",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Schedule Off CAN Pressure",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveValidate": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "0765",
+              "ReceiveId": "076D",
+              "TransmissionMessage": "032A04E300000000",
+              "TransmissionTimeoutMsec": 100,
+              "BitId29": false,
+              "FunctionalCan": false,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "ApplicationMask": "",
+              "MultiFrameTimeBetweenFramesMsec": 0,
+              "NoResponseRequired": false,
+              "OnlyOnePassRequired": false,
+              "Allow7FResponse": false,
+              "BaseMask": "016A",
+              "ValidateCanMessageScriptFileName": "",
+              "ValidateCanMessageScriptInputs": [],
+              "CanDataEntities": [
+                {
+                  "Description": "Response",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "",
+                    "Description": "",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [],
+                  "AddOptionCodeUponPass": "",
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "??"
+                    }
+                  ],
+                  "ByteRange": [],
+                  "BitMask": []
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "Turn Off Schedule Tester Present",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Turn Off Schedule Tester Present",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": true,
+                "Label": "Turn Off Schedule Tester Present",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanScheduleData": [
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 2,
+                "Enable": false,
+                "Disable": true,
+                "TransmissionId": "0765",
+                "TransmissionMessage": "023E000000000000",
+                "TransmissionRateMsec": 3000,
+                "BitId29": false,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Power Down",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Power supply CAN Replay - OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "POWER",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Power supply CAN Replay - OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power supply CAN Replay - OFF",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Can pin - OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "POWER",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Can pin - OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 27,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Can pin - OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "POWER",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Can pin - OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 5,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "CAN",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "Reset Can",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Reset Can",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Reset Can",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "FAM",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ServoMotorParameters",
+            "Description": "FAM Home",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "FAM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "FAM Home",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "FAM Home",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ServoMotorParameters": [
+              {
+                "DeviceId": 1,
+                "Description": "",
+                "OptionCodesMask": "FAM",
+                "Fault": {
+                  "Id": "",
+                  "Description": "",
+                  "Detail": ""
+                },
+                "AcceleractionTimeMsec": 500,
+                "DecelerationTimeMsec": 500,
+                "Velocity": 5000,
+                "Position": 50000,
+                "TestDataDisplay": {
+                  "Samples": "Samples",
+                  "Position": "Position"
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "02232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "Initial"
+    },
+    {
+      "Date": "02232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "RMM",
+      "Change": "Initial"
+    },
+    {
+      "Date": "02232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "RMM",
+      "Change": "Demo"
+    },
+    {
+      "Date": "02232023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "RMM",
+      "Change": "updated options"
+    },
+    {
+      "Date": "02242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "RMM",
+      "Change": "Initial"
+    },
+    {
+      "Date": "02242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "RMM",
+      "Change": "description change"
+    },
+    {
+      "Date": "02242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 7,
+      "ChangeBy": "RMM",
+      "Change": "remove term script"
+    },
+    {
+      "Date": "02242023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 8,
+      "ChangeBy": "RMM",
+      "Change": "added end demo delay"
+    },
+    {
+      "Date": "02282023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 9,
+      "ChangeBy": "RMM",
+      "Change": "Added FamStopSendPvmCanPressure"
+    },
+    {
+      "Date": "03022023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 10,
+      "ChangeBy": "RMM",
+      "Change": "added power down"
+    },
+    {
+      "Date": "03022023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 11,
+      "ChangeBy": "NATHAN",
+      "Change": "GOOD"
+    },
+    {
+      "Date": "03022023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03022023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 13,
+      "ChangeBy": "r",
+      "Change": "r"
+    },
+    {
+      "Date": "03082023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 14,
+      "ChangeBy": "RMM",
+      "Change": "added FAM option to FAM Home"
+    },
+    {
+      "Date": "04062023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 15,
+      "ChangeBy": "RMM",
+      "Change": "removed prompt oper"
+    },
+    {
+      "Date": "04262023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 16,
+      "ChangeBy": "RMM",
+      "Change": "turned off CAN pressure schedule"
+    },
+    {
+      "Date": "04272023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 17,
+      "ChangeBy": "nh",
+      "Change": "nh"
+    }
+  ],
+  "FileName": "C:\\Tpass\\Test App Scripts\\MagnaFamCleanup.json",
+  "DateLastModified": "2023-04-26T13:55:33.1488688-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
