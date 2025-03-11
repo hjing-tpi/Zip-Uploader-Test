@@ -1,0 +1,61 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can Send Receive Save Dtc Data Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"CanSendReceiveSaveDtcData",
+					"Description": "Can Send Receive Save Dtc Data",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"BoardId": 0,
+					"TimeoutMsec": 0,
+					"CanSendReceiveSaveDtcData":
+						{
+							"TransmissionId":"",
+							"ReceiveId":"",
+							"TransmissionMessage":"",
+							"TransmissionTimeoutMsec":0,
+							"ReceiveFrameId":"",
+							"SingleFrameMask":"",
+							"MultipleFrameMask":"",
+							"BitId29":false,
+							"IgnoreStatus":false,
+							"ParseDtcDataScriptFileName":""
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"01242019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
