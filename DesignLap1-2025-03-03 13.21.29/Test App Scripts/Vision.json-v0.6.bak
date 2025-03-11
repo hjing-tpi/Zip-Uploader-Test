@@ -1,0 +1,140 @@
+{
+  "Name": "Vision",
+  "Description": "Validate Part via Camera",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 6,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "TerminationScriptFileNameConsecutiveFail": "",
+  "TerminationScriptConsecutiveFails": 0,
+  "GmReporting": {
+    "MersTestName": "aaaa",
+    "MersTestType": "aa",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "aaaa",
+    "MersEngineType": "aaaa",
+    "MersDeviceId": "0x01",
+    "GepicsShipCode": "CPIT"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Vision",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "RunGenericValidationScript",
+            "Description": "Vision Test Step",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "Validate Part",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validate Part",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "RunGenericValidationScript": {
+              "Retries": 1,
+              "ValidationScriptFileName": "ValidateVision_v1.py",
+              "ValidationScriptInputs": [
+                "FIRST",
+                ""
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "01022025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01032025",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\Vision.json",
+  "DateLastModified": "2025-01-03T11:40:06.0174692-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
