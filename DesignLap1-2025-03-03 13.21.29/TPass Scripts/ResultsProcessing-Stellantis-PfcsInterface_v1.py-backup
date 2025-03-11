@@ -1,0 +1,574 @@
+﻿#Create a Stellantis PFCS and WCC ICF Test Results Record.  Format and return the Printed Label Text for TPass to send to a printer
+#This Script is expected to set the out parameters below
+#
+#TPass Objects Passed In/Returned
+#   in  - object "testAppResults"
+#   in  - object "productIdentification"
+#   in  - object "MainTPassScripting" - Exposed methods and properties for the scripts to use
+#   in  - method "TPassLogger" - This is the logging method to log to the main TPass log file
+#   in  - method "TestAppLogger" - This is the logging method to log to the TPass Test Application Detail log file
+#   in  - object "SystemConfigurationValue" - This is the object to get values set in the System Configuration file
+#   out - string "printedLabelText" - TPass will send this text to the default printer if the string is not blank and if the printer is enabled in the TPass system configuration settings
+#   out - bool "isSuccess" - Set to True if Test Results processing was successful.  Otherwise False
+#   out - bool "production"
+#   out - string "version"
+#
+
+import clr
+clr.AddReferenceToFileAndPath('.\\Tpi.TPass.Common.dll')
+from Tpi.TPass.Common.JsonStore import TestResults
+#from Tpi.TPass.Common.JsonStore import TestResults, SystemConfiguration
+#from Tpi.TPass.Common.UdpIp import Client
+#from Tpi.TPass.Common.LogSupport import *
+from System.IO import File
+from System.Text import Encoding
+from System import DateTime, TimeSpan, Byte, Array
+#from System import DateTime, TimeSpan, Byte, Array, Type, String
+from System.Collections.Generic import Dictionary, List
+
+version = "1.0"
+production = False
+TPassLogger.Debug("Results Processing Script:  Product Primary Id = {0}", productIdentification.PrimaryId)
+TPassLogger.Debug("Results Processing Script:  Product Secondary Id = {0}", productIdentification.SecondaryId)
+isSuccess = True
+
+#########################################################################################################################################
+# Application Engineer:  
+#
+#Printer Label specific configuration items
+printPassLabel = False
+maxNumberFaultsToSave = 10
+testerIdFile = "C:\TPass\Support Files\SID.txt"
+testerId = "0"                                      # Will be read from the \TPass\Support Files\SID.txt file
+
+#PFCS specific configuration items
+resultsFile = "C:\TPass\Data Outgoing\Results.txt"
+
+#WCC specific configuration items
+wccZone = "I"
+wccTesterId = "C"
+wccRemoteIpAddress = "10.0.0.189"#"192.168.0.55"
+#wccRemoteIpAddress = "10.154.194.227"
+wccRemotePort = 2025
+wccSendReceiveTimeout = 1000
+wccUdpSendRetries = 3
+wccSerialNumber = "000"
+
+#Shouldn't need to change unless the number of item codes fault ids increase past 200 per test application (ELIP######)
+maxItemCodesDefined = 200
+#
+#########################################################################################################################################
+
+#WCC specific Constants
+wccTransactionId = "PT"
+wccFormatId = "02"
+wccStationType = "T"
+wccSerialNum = "000"
+wccVcmId = "000000000000"
+wccCpId = "000000000000"
+wccVinInfoMethods = "S"
+wccTestMethod = "C"
+wccTsn = "000000"
+wccVon = "    "
+wccCRLF = "\x0D\x0A"
+wccFS = "\x1C"
+wccGS = "\x1D"
+wccLF = "\x0A"
+wccCR = "\x0D"
+
+
+#WCC calculated Items
+wccVinInputMethod = ""
+wccOverallStatus = ""
+wccStartDate = ""
+wccStartTime = ""
+wccDuration = ""
+wccVin = ""
+wccTsn = ""
+wccTestAppInfo = ""
+
+#PFCS specific Constants
+pfcsTesterId = "ELIP"
+aviStyle = "0000"
+internalProgramNumber = "0000"
+
+overallTestResultsPass = False
+pfcsTestResultsRecord = ""
+wccTestResultsRecord = ""
+processResultsText = ""
+printedFaultText = ""
+printedLabelText = ""
+numberFaultsAdded = 0
+
+#Each test step's test results gets put into a dictionary if it's Fault ID begins with "ELIP".  Following "ELIP" will be a 6 digit number that indicates where the P/F results go into the Item Code dictionary key below
+pvcsItemCodes = Dictionary[int, str]()
+wccItemCodes = Dictionary[int, str]()
+pfcsMaxActualItemCodeDetected = 0
+
+# PFCS Specification 
+#NE100072
+#F
+#00000000060FELIPPPPPPFPPPPPPFFZZFZZPPFPPFPPPZZZZPPPFPFPFPZZPZPPPPPPPFPPPPPFZZZZZZZZZZZ
+
+#Sample WCC ICF fail record
+
+def FloatString3dot2(floatValue):
+    wccFloat = "{:3.2f}"
+    return wccFloat.format(floatValue)
+
+# Internal Functions
+def IsTestFailed(testResults):
+
+    if (testResults == str(TestResults.Fail) or testResults == str(TestResults.FatalFail) or
+            testResults == str(TestResults.OperatorFail) or testResults == str(TestResults.OperatorAbort) or testResults == str(TestResults.SystemError)):
+        return True
+    else:
+        return False
+
+def IsTestPass(testResults):
+
+    if (testResults == str(TestResults.Pass) or testResults == str(TestResults.OperatorPass)):
+        return True
+    else:
+        return False
+
+def SetPfcsItemCodes(faultId, faultDescription, testResults):
+    global printedFaultText
+    global maxNumberFaultsToSave
+    global numberFaultsAdded
+    global pvcsItemCodes
+    global pfcsMaxActualItemCodeDetected
+    
+    try:
+        if (IsTestFailed(str(testResults))):
+            pfcsTestResult = "F"
+        elif (IsTestPass(str(testResults))):
+            pfcsTestResult = "P"
+        else:
+            pfcsTestResult = "Z"
+       
+        if "ELIP" in faultId.upper():
+            elipNumberIndex = int(faultId.upper().replace("ELIP", ""))
+            if elipNumberIndex > pfcsMaxActualItemCodeDetected:
+                pfcsMaxActualItemCodeDetected = elipNumberIndex
+#            MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Results Processing Script - SetPfcsItemCodes:  elipNumberIndex: " + str(elipNumberIndex) + ",elipNumberIndex: " + str(elipNumberIndex) + ",pfcsMaxActualItemCodeDetected: " + str(pfcsMaxActualItemCodeDetected) + ",testResult: " + testResult + ",pvcsItemCodes[elipNumberIndex]: " + pvcsItemCodes[elipNumberIndex], False, False)
+            if pvcsItemCodes.ContainsKey(elipNumberIndex):
+                if pvcsItemCodes[elipNumberIndex] != "Z":
+                    MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Results Processing Script - SetPfcsItemCodes:  Item Code already used once and will be discarded: ID=" + str(elipNumberIndex) + ", FaultId=" + faultId.upper() + ", FaultDesc=" + faultDescription, True, True)
+                else:
+                    pvcsItemCodes[elipNumberIndex] = pfcsTestResult
+            else:
+                MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Results Processing Script - SetPfcsItemCodes:  Item Code not defined and won't be saved.  TPI Script change required: " + faultId.upper(), True, True)
+            
+        if (numberFaultsAdded < maxNumberFaultsToSave):
+            numberFaultsAdded = numberFaultsAdded + 1
+            printedFaultText = printedFaultText + faultId + "," + faultDescription[0:64] + "," + pfcsTestResult + "\r\n"
+            
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Results Processing Script - SetPfcsItemCodes:  Error adding faultId results: " + faultId + "  Exception Occurred = " + str(inst), True, False)
+        TPassLogger.Error("Results Processing Script - SetPfcsItemCodes:  Error adding faultId results: " + faultId + "  Exception Occurred :{0}", inst)            
+
+def SetWccItemCodes(faultId, faultDescription, testResults, beginDateTime, durationMsec, processDataType, processData):
+    global wccItemCodes
+    #WCC Test Step specific Constants
+    wccStartItemCodeId = "!"
+    wccThreadNumber = "001"
+    wccStatusCommunicationError = "11"    #*****************************************8
+    wccReportType = "A"
+    wccRetries = "00"    
+    wccItemCode = ""
+    try:
+        if "ELIP" in faultId.upper():
+            elipNumberIndex = int(faultId.upper().replace("ELIP", ""))
+            wccItemCode = wccStartItemCodeId + wccThreadNumber + "ELIP" + str(elipNumberIndex).zfill(6)
+            #Add test results
+            if str(testResults) == str(TestResults.Pass):
+                wccItemCode = wccItemCode + "00"
+            elif str(testResults) == str(TestResults.OperatorAbort):
+                wccItemCode = wccItemCode + "01"
+            elif str(testResults) == str(TestResults.NotTested):
+                wccItemCode = wccItemCode + "02"
+            elif str(testResults) == str(TestResults.OperatorPass):
+                wccItemCode = wccItemCode + "03"
+            elif str(testResults) == str(TestResults.OptionCodeNotTested):
+                wccItemCode = wccItemCode + "04"
+            elif str(testResults) == str(TestResults.OperatorFail):
+                wccItemCode = wccItemCode + "10"
+            else:   #Fail
+                wccItemCode = wccItemCode + "FE"
+            # Calculate relative start time and duration
+            if str(testResults) == str(TestResults.NotTested) or str(testResults) == str(TestResults.OptionCodeNotTested):
+                wccRelativeStartTimeDeciSeconds = 0
+            else:
+                wccRelativeStartTimeDeciSeconds = long((beginDateTime - testAppResults.TotalTestCycleResults.BeginDateTime).TotalMilliseconds/100)
+                if wccRelativeStartTimeDeciSeconds > 999999:
+                    wccRelativeStartTimeDeciSeconds = 999999
+            wccDurationDeciSeconds = durationMsec/100
+            if wccDurationDeciSeconds > 9999:
+                wccDurationDeciSeconds = 9999
+            wccItemCode = wccItemCode + wccReportType + str(wccRelativeStartTimeDeciSeconds).zfill(6) + str(wccDurationDeciSeconds).zfill(4) + wccRetries
+            #Add process data
+            if processDataType == "F" or processDataType == "T":
+                wccItemCode = wccItemCode + processDataType + processData
+
+            wccItemCode = wccItemCode + wccFS + faultDescription[:40] + wccGS + wccCR
+            #MainTPassScripting.InterfaceUiLogger("WccInterface", "Results Processing Script - SetWccItemCodes:  wccItemCode=" + wccItemCode, False, False)
+
+            if not wccItemCodes.ContainsKey(elipNumberIndex):
+                wccItemCodes.Add(elipNumberIndex, wccItemCode)
+                #MainTPassScripting.InterfaceUiLogger("WccInterface", "Results Processing Script - SetWccItemCodes:  Added Item Code ID=" + str(elipNumberIndex) + ", FaultId=" + faultId.upper() + ", FaultDesc=" + faultDescription, False, False)
+            else:
+                MainTPassScripting.InterfaceUiLogger("WccInterface", "Results Processing Script - SetWccItemCodes:  Item Code already used once and will be discarded: ID=" + str(elipNumberIndex) + ", FaultId=" + faultId.upper() + ", FaultDesc=" + faultDescription, True, True)
+            
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("WccInterface", "Results Processing Script - SetWccItemCodes:  Error adding faultId results: " + faultId + "  Exception Occurred = " + str(inst), True, False)
+        TPassLogger.Error("Results Processing Script - SetWccItemCodes:  Error adding faultId results: " + faultId + "  Exception Occurred :{0}", inst)            
+
+        
+# def ProcessWccUdpNack(errorCode)
+
+    # if errorCode == "1":
+        # "Invalid Message Size "
+# 2 "Invalid Message ID" 
+# 3 "Invalid Number of Items"
+# 4 "Invalid Terminator" 
+# 5 "Invalid Option" 
+# 6 "Invalid Results" 
+# 7 "Out of Memory" 
+# 8 "Invalid Version Number"
+# 9 "Invalid Response ID" 
+# A "Invalid Failures" 
+# B "String too Small" 
+# C "NAK Packet" 
+# D "Network Down" 
+# E "Vin Not Found" 
+# F "Invalid Zone" 
+# 10 "Unknown Error" 
+
+# Main Logic
+try:
+
+    # Read testerId from file
+    try:
+        testerIdLines = File.ReadAllLines(testerIdFile)
+        testerId = testerIdLines[0]
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Results Processing Script:  Error Reading Test ID File, will default to Tester ID = 0.  Exception Occurred = " + str(inst), True, False)
+        TPassLogger.Error("Results Processing Script:  Error Reading Test ID File, will default to Tester ID = 0.  File.ReadLines Exception Occurred :{0}", inst)            
+    
+    # Remove results file if exist
+    if File.Exists(resultsFile + "TMP"):
+        try:
+            File.Delete(resultsFile + "TMP")
+        except Exception as inst:
+            TPassLogger.Debug("Results Processing Script:  File.Delete Exception Occurred :{0}", inst)            
+    if File.Exists(resultsFile):
+        try:
+            File.Delete(resultsFile)
+        except Exception as inst:
+            TPassLogger.Debug("Results Processing Script:  File.Delete Exception Occurred :{0}", inst)            
+
+    # Initialize the Item Codes Dictionary.  We currently have around 80 Item Codes defined, so below is defined at maxItemCodesDefined and each initialized to "Z", which means not tested.  Item Code 0 will not be used
+    itemCodesIndex = 1
+    while itemCodesIndex <= maxItemCodesDefined: 
+        pvcsItemCodes.Add(itemCodesIndex, "Z")
+        itemCodesIndex += 1
+        
+        
+    pfcsTestResultsRecord = productIdentification.PrimaryId + "\r\n"
+    wccVin = str(productIdentification.PrimaryId).rjust(17, "*")
+    wccTsn = str(productIdentification.SecondaryId)[:6].zfill(6)
+
+    ## Test Cycle P/F flag
+    if (str(testAppResults.MainTestApplication.TestCycleResults.TestResults) == str(TestResults.Fail)):
+        pfcsTestResultsRecord = pfcsTestResultsRecord + "F" + "\r\n"
+        printedLabelText = printedLabelText + "Overall = FAIL" + "\r\n"
+        wccOverallStatus = "F"
+        overallTestResultsPass = False
+    else:
+        pfcsTestResultsRecord = pfcsTestResultsRecord + "P" + "\r\n"
+        printedLabelText = printedLabelText + "Overall = PASS" + "\r\n"
+        wccOverallStatus = "P"
+        overallTestResultsPass = True
+
+    if (testAppResults.MainTestApplication.TestCycleResults.Abort):
+        wccOverallStatus = "A"
+
+    # PFCS Hard coded fields
+    pfcsTestResultsRecord = pfcsTestResultsRecord + aviStyle + internalProgramNumber
+
+    # WCC Test Application Info 
+    wccTestAppInfo = testAppResults.MainTestApplication.FileName
+
+    # WCC Start Date and Time
+    wccStartDate = testAppResults.TotalTestCycleResults.BeginDateTime.ToString("MMddyy")
+    wccStartTime = testAppResults.TotalTestCycleResults.BeginDateTime.ToString("HHmmss")
+
+    # Cycle time
+    pfcsTestResultsRecord = pfcsTestResultsRecord + str( testAppResults.TotalTestCycleResults.DurationMsec / 1000).zfill(3)  # in seconds
+    wccDuration = str( testAppResults.TotalTestCycleResults.DurationMsec / 1000).zfill(5)  # in seconds
+
+    # VinSource:  (F)ixed Scanner, (H)and Scanner,(Q)as,(O)n Board Computer, or (M)annual VIN Used 1 (Where did the VIN number come from)
+    vinSource="F"
+    wccVinInputMethod = "S"
+    if str(MainTPassScripting.StartTestCycleTriggerType) == str(MainTPassScripting.TriggerType.ManualEntry):
+        vinSource = "M"    
+        wccVinInputMethod = "M"
+    pfcsTestResultsRecord = pfcsTestResultsRecord + vinSource
+    
+    # Hard coded field
+    pfcsTestResultsRecord = pfcsTestResultsRecord + pfcsTesterId
+
+    printedLabelText = printedLabelText + str(DateTime.Now) + "\r\n"
+    printedLabelText = printedLabelText + "VIN:" + productIdentification.PrimaryId + "\r\n"
+    printedLabelText = printedLabelText + "TSN:" + productIdentification.SecondaryId + "\r\n"
+    printedLabelText = printedLabelText + "Tester ID:" + testerId + "\r\n"
+
+
+    # Set Results to send to PFCS and WCC systems
+    for groupInx in range(len(testAppResults.MainTestApplication.TestCycle)):
+        for subGroupInx in range(len(testAppResults.MainTestApplication.TestCycle[groupInx])):
+            for testInx in range(len(testAppResults.MainTestApplication.TestCycle[groupInx][subGroupInx].TestSteps)):
+                testStep = testAppResults.MainTestApplication.TestCycle[groupInx][subGroupInx].TestSteps[testInx]
+                SetPfcsItemCodes(testStep.Fault.Id, testStep.Fault.Description, testStep.TestStepResults.TestResults)
+                if testStep.Name != "MeterValidateResistanceRange" and testStep.Name != "CanValidatePartNumber" and testStep.Name != "LinValidatePartNumber":
+                    SetWccItemCodes(testStep.Fault.Id, testStep.Fault.Description, testStep.TestStepResults.TestResults, testStep.TestStepResults.BeginDateTime, testStep.TestStepResults.DurationMsec, "N", "")
+                # Test Step Specific Faults and Process data
+                if (testStep.Name == "VoltageRange"):
+                    for voltageRange in testStep.VoltageRanges:
+                        for limit in voltageRange.Limits:
+                            SetPfcsItemCodes(limit.Fault.Id, limit.Fault.Description, limit.TestStepResults.TestResults)
+                            wccProcessData = FloatString3dot2(limit.TestData.AvgChannelVoltageInRangeVolts) + " " + FloatString3dot2(limit.LowerLimitVolts) + " " + FloatString3dot2(limit.UpperLimitVolts)
+                            SetWccItemCodes(limit.Fault.Id, limit.Fault.Description, limit.TestStepResults.TestResults, limit.TestStepResults.BeginDateTime, limit.TestStepResults.DurationMsec, "F", wccProcessData)
+
+                elif (testStep.Name == "SinkCurrentRangeBase" or testStep.Name == "SourceCurrentRangeBase" or testStep.Name == "SinkCurrentRangeDelta" or testStep.Name == "SourceCurrentRangeDelta"):
+                    for currentRange in testStep.CurrentRanges:
+                        SetPfcsItemCodes(currentRange.Fault.Id, currentRange.Fault.Description, currentRange.TestStepResults.TestResults)
+                        wccProcessData = FloatString3dot2(currentRange.TestData.AvgCurrentInRangeMamp) + " " + FloatString3dot2(currentRange.LowerLimitMamp) + " " + FloatString3dot2(currentRange.UpperLimitMamp)
+                        SetWccItemCodes(currentRange.Fault.Id, currentRange.Fault.Description, currentRange.TestStepResults.TestResults, currentRange.TestStepResults.BeginDateTime, currentRange.TestStepResults.DurationMsec, "F", wccProcessData)
+
+                elif (testStep.Name == "CanReceiveValidate"):
+                    for canDataEntity in testStep.CanReceiveValidate.CanDataEntities:
+                        SetPfcsItemCodes(canDataEntity.Fault.Id, canDataEntity.Fault.Description, canDataEntity.TestStepResults.TestResults)
+                        SetWccItemCodes(canDataEntity.Fault.Id, canDataEntity.Fault.Description, canDataEntity.TestStepResults.TestResults, canDataEntity.TestStepResults.BeginDateTime, canDataEntity.TestStepResults.DurationMsec, "N", "")
+                            
+                elif (testStep.Name == "CanSendReceiveValidate"):
+                    for canDataEntity in testStep.CanSendReceiveValidate.CanDataEntities:
+                        SetPfcsItemCodes(canDataEntity.Fault.Id, canDataEntity.Fault.Description, canDataEntity.TestStepResults.TestResults)
+                        SetWccItemCodes(canDataEntity.Fault.Id, canDataEntity.Fault.Description, canDataEntity.TestStepResults.TestResults, canDataEntity.TestStepResults.BeginDateTime, canDataEntity.TestStepResults.DurationMsec, "N", "")
+ 
+                elif (testStep.Name == "CanValidateSavedDtcData"):
+                    for dtc in testStep.CanValidateSavedDtcData.Dtcs:
+                        SetPfcsItemCodes(dtc.Fault.Id, dtc.Fault.Description, dtc.TestStepResults.TestResults)
+                        SetWccItemCodes(dtc.Fault.Id, dtc.Fault.Description, dtc.TestStepResults.TestResults, dtc.TestStepResults.BeginDateTime, dtc.TestStepResults.DurationMsec, "N", "")
+ 
+                elif (testStep.Name == "CanValidatePartNumber"):
+                        wccProcessData = testStep.CanValidatePartNumber.TestData.ProcessedPartNumber
+                        SetWccItemCodes(testStep.Fault.Id, testStep.Fault.Description, testStep.TestStepResults.TestResults, testStep.TestStepResults.BeginDateTime, testStep.TestStepResults.DurationMsec, "T", wccProcessData)
+
+                elif (testStep.Name == "LinValidatePartNumber"):
+                        wccProcessData = testStep.LinValidatePartNumber.TestData.ProcessedPartNumber
+                        SetWccItemCodes(testStep.Fault.Id, testStep.Fault.Description, testStep.TestStepResults.TestResults, testStep.TestStepResults.BeginDateTime, testStep.TestStepResults.DurationMsec, "T", wccProcessData)
+ 
+                elif (testStep.Name == "LinSendReceiveValidate"):
+                    for linDataEntity in testStep.LinSendReceiveValidate.LinDataEntities:
+                        SetPfcsItemCodes(linDataEntity.Fault.Id, linDataEntity.Fault.Description, linDataEntity.TestStepResults.TestResults)
+                        SetWccItemCodes(linDataEntity.Fault.Id, linDataEntity.Fault.Description, linDataEntity.TestStepResults.TestResults, linDataEntity.TestStepResults.BeginDateTime, linDataEntity.TestStepResults.DurationMsec, "N", "")
+                            
+                elif (testStep.Name == "ModbusValidateVoltageRange"):
+                    for channel in testStep.ModbusValidateVoltageRange.Channels:
+                        SetPfcsItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults)
+                        wccProcessData = FloatString3dot2(channel.TestData.AvgChannelVoltageInRangeMVolt) + " " + FloatString3dot2(channel.LowerLimitMVolt) + " " + FloatString3dot2(channel.UpperLimitMVolt)
+                        SetWccItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults, channel.TestStepResults.BeginDateTime, channel.TestStepResults.DurationMsec, "F", wccProcessData)
+
+                elif (testStep.Name == "ModbusValidateVoltageRangeBase"):
+                    for channel in testStep.ModbusValidateVoltageRangeBase.Channels:
+                        SetPfcsItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults)
+                        wccProcessData = FloatString3dot2(channel.TestData.AvgChannelVoltageInRangeMVolt) + " " + FloatString3dot2(channel.LowerLimitMVolt) + " " + FloatString3dot2(channel.UpperLimitMVolt)
+                        SetWccItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults, channel.TestStepResults.BeginDateTime, channel.TestStepResults.DurationMsec, "F", wccProcessData)
+
+                elif (testStep.Name == "ModbusValidateVoltageRangeDelta"):
+                    for channel in testStep.ModbusValidateVoltageRangeDelta.Channels:
+                        SetPfcsItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults)
+                        wccProcessData = FloatString3dot2(channel.TestData.AvgChannelVoltageInRangeMVolt) + " " + FloatString3dot2(channel.LowerLimitMVolt) + " " + FloatString3dot2(channel.UpperLimitMVolt)
+                        SetWccItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults, channel.TestStepResults.BeginDateTime, channel.TestStepResults.DurationMsec, "F", wccProcessData)
+                            
+                elif (testStep.Name == "MeterValidateVoltageRange"):
+                    for channel in testStep.MeterValidateVoltageRange.Channels:
+                        SetPfcsItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults)
+                        wccProcessData = FloatString3dot2(channel.TestData.AvgChannelVoltageInRangeVolt) + " " + FloatString3dot2(channel.LowerLimitVolt) + " " + FloatString3dot2(channel.UpperLimitVolt)
+                        SetWccItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults, channel.TestStepResults.BeginDateTime, channel.TestStepResults.DurationMsec, "F", wccProcessData)
+
+                elif (testStep.Name == "MeterValidateFrequencyRange"):
+                    for channel in testStep.MeterValidateFrequencyRange.Channels:
+                        SetPfcsItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults)
+                        wccProcessData = FloatString3dot2(channel.TestData.AvgChannelFrequencyInRangeHz) + " " + FloatString3dot2(channel.LowerLimitHz) + " " + FloatString3dot2(channel.UpperLimitHz)
+                        SetWccItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults, channel.TestStepResults.BeginDateTime, channel.TestStepResults.DurationMsec, "F", wccProcessData)
+
+                elif (testStep.Name == "MeterValidateResistanceRange"):
+                    wccProcessData = FloatString3dot2(testStep.MeterValidateResistanceRange.TestData.AvgChannelResistanceInRangeOhms) + " " + FloatString3dot2(testStep.MeterValidateResistanceRange.LowerLimitOhm) + " " + FloatString3dot2(testStep.MeterValidateResistanceRange.UpperLimitOhm)
+                    SetWccItemCodes(testStep.Fault.Id, testStep.Fault.Description, testStep.TestStepResults.TestResults, testStep.TestStepResults.BeginDateTime, testStep.TestStepResults.DurationMsec, "F", wccProcessData)
+                        
+                elif(testStep.Name == "ModbusValidateLaserPositionRange"):
+                    
+                    for channel in testStep.ModbusValidateLaserPositionRange.Channels:
+                        SetPfcsItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults)
+                        wccProcessData = FloatString3dot2(channel.TestData.AvgChannelLaserPositionInRangeMMeters) + " " + FloatString3dot2(channel.LowerLimitMMeter) + " " + FloatString3dot2(channel.UpperLimitMMeter)
+                        SetWccItemCodes(channel.Fault.Id, channel.Fault.Description, channel.TestStepResults.TestResults, channel.TestStepResults.BeginDateTime, channel.TestStepResults.DurationMsec, "F", wccProcessData)
+                            
+
+except Exception as inst:
+    TPassLogger.Warn("Results Processing Script:  Error Creating Results Record.  Exception Occurred :{0}", inst)
+    MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Error Creating Results Record.  Exception Occurred = " + str(inst), True, True)
+    isSuccess = False
+
+# Create Printed Label Text to pass back to TPass for printing.  Do Not Print if Test Cycle Passed!
+try:
+    if (printPassLabel == False and overallTestResultsPass):
+        printedLabelText = ""
+    else:
+        printedLabelText = printedLabelText + printedFaultText
+
+    TPassLogger.Debug("Results Processing Script:  Product Primary ID = {0}, Printed Label Text = {1}", productIdentification.PrimaryId, printedLabelText )
+
+except Exception as inst:
+    TPassLogger.Warn("Results Processing Script:  Error Creating Test Label Text.  Exception Occurred :{0}", inst)
+    isSuccess = False
+
+# Create Results file for PfcsInterface to process
+try:
+    itemCodesIndex = 1
+    while itemCodesIndex <= pfcsMaxActualItemCodeDetected: 
+        pfcsTestResultsRecord = pfcsTestResultsRecord + pvcsItemCodes[itemCodesIndex]
+        itemCodesIndex += 1
+    try:
+        File.WriteAllText(resultsFile + "TMP", pfcsTestResultsRecord)
+        File.Move(resultsFile + "TMP", resultsFile)
+        MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Results File Written - " + resultsFile, False, False)
+        MainTPassScripting.InterfaceUiLogger("PfcsInterface", "Results File Content - " + pfcsTestResultsRecord, False, False)
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("PfcsInterface", "File.WriteAllText/Move Exception Occurred" + str(inst), True, True)
+        TPassLogger.Error("Results Processing Script:  File Exception Occurred :{0}", inst)            
+
+    TPassLogger.Debug("Results Processing Script:  Product Primary ID = {0}, PFCS Results File Text = {1}", productIdentification.PrimaryId, pfcsTestResultsRecord )
+
+except Exception as inst:
+    MainTPassScripting.InterfaceUiLogger("PfcsInterface", "PFCS Create Results Exception Occurred" + str(inst), True, True)
+    TPassLogger.Warn("Results Processing Script:  Error Creating PFCS Test Results.  Exception Occurred :{0}", inst)
+    isSuccess = False
+
+# Create WCC Test Results and send to WCC work cell controller using UDP connection
+try:
+    # Set up header in WCC record
+    wccTestResultsRecord = wccTransactionId + wccFormatId + wccZone + wccStationType + wccTesterId + wccSerialNum + wccVcmId + wccCpId + wccVinInputMethod + wccVinInfoMethods + wccTestMethod
+    wccTestResultsRecord = wccTestResultsRecord + wccOverallStatus + wccStartDate + wccStartTime + wccDuration + wccVin + wccTsn + wccVon
+    # Add /P Option
+    wccTestResultsRecord = wccTestResultsRecord + "/P1" + wccFS + wccTestAppInfo + wccGS + "1" + wccGS + "1" + wccGS + "T" + wccGS + "0" + wccGS
+    wccTestResultsRecord = wccTestResultsRecord + str( testAppResults.TotalTestCycleResults.DurationMsec / 100) + wccGS 
+    wccTestResultsRecord = wccTestResultsRecord + str(testAppResults.MainTestApplication.VersionMajor) + "." + str(testAppResults.MainTestApplication.VersionMinor) + wccFS + wccCR
+    # Add item codes
+    for wccItemCodeKey in wccItemCodes.Keys:
+        wccTestResultsRecord = wccTestResultsRecord + wccItemCodes[wccItemCodeKey]
+    wccTestResultsRecord = wccTestResultsRecord + wccLF
+    MainTPassScripting.InterfaceUiLogger("WccInterface", "WCC ICF Test Results - " + wccTestResultsRecord, False, False)
+    TPassLogger.Debug("Results Processing Script:  Product Primary ID = {0}, WCC ICF Results Text = {1}", productIdentification.PrimaryId, wccTestResultsRecord )
+    
+    # Send WCC ICF Test Results to WCC via UDP
+
+    # Need to create an instance of the Logger class for the UDP name space to use
+    # errorDescription = clr.Reference[String]("")
+    # SystemConfiguration.SetupFolderStructure(errorDescription)
+    # logDir = SystemConfiguration.TPassFolderStructure.BaseFolder + SystemConfiguration.LogFolder + "\\"
+    # systemLogDir = logDir + "System\\"
+    # testAppLogDir = logDir + "Test Detail\\"
+    # interfaceLogDir = logDir + "Interface\\"
+    # LogSupport.InitializeLogs(logDir, testAppLogDir, interfaceLogDir, systemLogDir)
+
+    udpRetries = 0
+    udpSendReceiveSuccess = False
+    wccIp = wccRemoteIpAddress.split(".")
+    #udpClient = Client
+    #udpClient = MainTPassScripting.UdpClient
+    try:
+        udpClient = MainTPassScripting.UdpClient(int(wccIp[0]), int(wccIp[1]), int(wccIp[2]), int(wccIp[3]), wccRemotePort)
+    except Exception as inst:
+        MainTPassScripting.InterfaceUiLogger("WccInterface", "Could not connect to WCC - " + wccRemoteIpAddress + ":" + str(wccRemotePort) + ", Exception:" + str(inst), True, True)
+        TPassLogger.Error("Results Processing Script:  Could not connect to WCC - UDP Exception Occurred :{0}", inst)            
+    else:
+        try:
+            while udpSendReceiveSuccess == False and udpRetries < wccUdpSendRetries:
+                wccTestResultsBytes = Encoding.ASCII.GetBytes(wccTestResultsRecord)
+                # for i in wccTestResultsBytes:
+                    # MainTPassScripting.InterfaceUiLogger("WccInterface", "b=" + i.ToString(), True, False)
+                if udpClient.AsyncSend(wccTestResultsBytes) == True:
+                    startDateTime = DateTime.Now
+                    while (DateTime.Now - startDateTime).TotalMilliseconds < wccSendReceiveTimeout and str(udpClient.SendAsyncStage) == str(udpClient.SendAsyncStages.InProgress):
+                        MainTPassScripting.UpdateEvents()
+                    if str(udpClient.SendAsyncStage) == str(udpClient.SendAsyncStages.Success):
+                        MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncSend - Success Sending WCC ICF Test Results to " + wccRemoteIpAddress + ":" + str(wccRemotePort), False, False)
+                        # Receive ACK
+                        if udpClient.AsyncReceive() == True:
+                            startDateTime = DateTime.Now
+                            while (DateTime.Now - startDateTime).TotalMilliseconds < wccSendReceiveTimeout and str(udpClient.ReceiveAsyncStage) == str(udpClient.ReceiveAsyncStages.InProgress):
+                                MainTPassScripting.UpdateEvents()
+                            if str(udpClient.ReceiveAsyncStage) == str(udpClient.ReceiveAsyncStages.Success):
+                                MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncReceive - Received WCC ICF Test Results ACK =  " + udpClient.ReceivedMessage, False, False)
+                                udpSendReceiveSuccess = True
+                                # Process ACK Message
+                            else:
+                                if str(udpClient.ReceiveAsyncStage) == str(udpClient.ReceiveAsyncStages.InProgress):
+                                    MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncReceive - Timeout waiting on receiving WCC ICF Test Results ACK", True, False)
+                                    udpClient.ResetAsyncOperations()
+                                else:
+                                    MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncReceive - Failed receiving WCC ICF Test Results ACK", True, False)
+                                udpRetries += 1
+                        else:
+                            MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncReceive - Error Receiving WCC ICF Test Results ACK", True, False)
+                            udpRetries += 1
+                    else:
+                        if str(udpClient.SendAsyncStage) == str(udpClient.SendAsyncStages.InProgress):
+                            MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncSend - Timeout waiting on sending WCC ICF Test Results", True, False)
+                            udpClient.ResetAsyncOperations()
+                        else:
+                            MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncSend - Failed sending WCC ICF Test Results", True, False)
+                        udpRetries += 1
+                else:
+                    MainTPassScripting.InterfaceUiLogger("WccInterface", "AsyncSend - Error Sending WCC ICF Test Results", True, False)
+                    udpRetries += 1
+
+        except Exception as inst:
+            MainTPassScripting.InterfaceUiLogger("WccInterface", "Error sending WCC ICF Test Results - " + wccRemoteIpAddress + ":" + str(wccRemotePort) + ", Exception:" + str(inst), True, True)
+            TPassLogger.Error("Results Processing Script:  Could not connect to WCC - UDP Exception Occurred :{0}", inst)            
+
+    finally:
+        MainTPassScripting.InterfaceUiLogger("WccInterface", "Closing UDP Connection " + wccRemoteIpAddress + ":" + str(wccRemotePort), False, False)
+        try:
+            udpClient.CloseConnection()
+        except Exception as inst:
+            MainTPassScripting.InterfaceUiLogger("WccInterface", "Exception on Close UDP Connection:  " + str(inst), True, False)
+            TPassLogger.Error("Results Processing Script:  Close UDP Connection Exception Occurred :{0}", inst)            
+        udpClient = None
+        if udpSendReceiveSuccess == True:
+            MainTPassScripting.InterfaceUiLogger("WccInterface", "WCC ICF Test Results Successfully Sent", False, False)
+        else:
+            MainTPassScripting.InterfaceUiLogger("WccInterface", "Error Sending WCC ICF Test Results", True, True)
+
+except Exception as inst:
+    MainTPassScripting.InterfaceUiLogger("WccInterface", "WCC ICF Create Results Exception Occurred: " + str(inst), True, True)
+    TPassLogger.Warn("Results Processing Script:  Error Creating WCC ICF Test Results.  Exception Occurred :{0}", inst)
+    isSuccess = False
+
+TPassLogger.Debug("Results Processing Script:  Product Primary ID = {0}, WCC ICF Results Text = {1}", productIdentification.PrimaryId, wccTestResultsRecord )
+
+TPassLogger.Info("Results Processing Script:  Is Success = {0}", isSuccess)
+
+
+############################################################
+# Change History
+############################################################
+#	Date: 11292023
+#	Version: 1.0
+#   ChangeBy: RMM
+#	Change: Initial Version
+############################################################
+
