@@ -1,0 +1,3598 @@
+{
+  "Name": "Product Test",
+  "Description": "Template for all TPass Test Step Commands",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 10,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "ROCK",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "All TPass Test Step Commands",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "Modbus Validate Discrete Inputs Dev1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 50000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "11",
+              "Description": "ModbusValidateDiscreteInputs - DEV1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev1 Modbus Validation Descrete Inputs",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "AlwaysPass": false,
+              "PassWindowMsec": 25000,
+              "ByteMask": "A?5?",
+              "BitMask": "?",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "D1 BitMask",
+                "DiscreteInputBits": "D1 Bits",
+                "ByteMask": "D1 ByteMask",
+                "DiscreteInputHex": "D1 Hex"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperatorGmHsFlash",
+            "Description": "FLASH in progress",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "FLASH HS BG",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "FLASH in progress ...",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": true,
+                "Label": "FLASH",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay 200 MS For Latch Engagement",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 200,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "Delay",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LATCH ENGAGEMENT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "BeginTimer",
+            "Description": "Begin Timer",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "BeginTimer",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Start Power ON Timer",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "BeginTimer": {
+              "TimerName": "power ON"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "WaitForTimerToExpire",
+            "Description": "Wait for POWER ON Timer to Expire",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 50,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "WaitForTimerToExpire",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Wait for POWER ON Timer to Expire",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "WaitForTimerToExpire": {
+              "TimerName": "POWER oN",
+              "TimerExpireLimitMsec": 10000
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperator",
+            "Description": "PromptOperator 10 seconds",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "8675309",
+              "Description": "PromptOperator",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Do Something",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Turn Power Supply Off B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": " IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardFullReset",
+            "Description": "IOBoard Full Reset B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Board Full Reset",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IOBoard Full Reset B1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardFullReset": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "SetBias",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetBias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Set Bias",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 14,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Set IO Board 1 Current Limits",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "SetCurrentLimits - B1 Set Limits 25 A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "B1 Set Limits 25 A",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 1,
+              "SourceLimitMamp": 25000,
+              "SinkLimitMamp": 25000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetPulseWidthModulation",
+            "Description": "SetPulseWidthModulation B1C32",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SetPulseWidthModulation B1C32 NO",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 Channel 32 – Set Pulse Width Modulation",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetPulseWidthModulation": {
+              "BoardId": 1,
+              "Channel": 32,
+              "BiasState": "NO",
+              "DutyCyclePercent": 99,
+              "FrequencyHz": 2000
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetRootMeanSquared",
+            "Description": "SetRootMeanSquared B1C1 ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "1",
+              "Description": "SetRootMeanSquared",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 Channel 1 - SetRootMeanSquared ON",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetRootMeanSquared": {
+              "BoardId": 1,
+              "Channel": 1,
+              "Enable": true
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SinkCurrentRangeBase",
+            "Description": "REAR WIPER MOTOR - BOARD 2 SINK CURRENT BASE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "Overall Fault BOARD 2 SINK CURRENT",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "1",
+                  "Description": "REAR WIPER MOTOR",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [
+                  {
+                    "Background": false,
+                    "Label": "REAR WIPER MOTOR",
+                    "OptionCodesMask": "",
+                    "IsDisplayed": false,
+                    "DisplayIndex": 0
+                  }
+                ],
+                "BoardId": 2,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 500.0,
+                "LowerLimitMamp": 0.0,
+                "PassWindowMsec": 200,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SinkCurrentRangeDelta",
+            "Description": "REAR WIPER MOTOR - BOARD 2 SINK CURRENT DELTA",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "1",
+                  "Description": "???????? REAR WIPER MOTOR SinkCurrentRangeDelta",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [
+                  {
+                    "Background": false,
+                    "Label": "REAR WIPER MOTOR",
+                    "OptionCodesMask": "",
+                    "IsDisplayed": false,
+                    "DisplayIndex": 0
+                  }
+                ],
+                "BoardId": 2,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 1400.0,
+                "LowerLimitMamp": 500.0,
+                "PassWindowMsec": 200,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SourceCurrentRangeBase",
+            "Description": "REAR WIPER MOTOR - BOARD 2 SOURCE CURRENT BASE",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 2000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "Overall Fault BOARD 2 SOURCE CURRENT",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "1",
+                  "Description": "REAR WIPER MOTOR",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [
+                  {
+                    "Background": false,
+                    "Label": "REAR WIPER MOTOR",
+                    "OptionCodesMask": "",
+                    "IsDisplayed": false,
+                    "DisplayIndex": 0
+                  }
+                ],
+                "BoardId": 2,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 500.0,
+                "LowerLimitMamp": 0.0,
+                "PassWindowMsec": 200,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SourceCurrentRangeDelta",
+            "Description": "REAR WIPER MOTOR - BOARD 2 SOURCE CURRENT DELTA",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "312978",
+              "Description": "Overall Fault BOARD 2 SOURCE CURRENT DELTA",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "1",
+                  "Description": "REAR WIPER MOTOR",
+                  "Detail": "",
+                  "RepairInstructions": {
+                    "Text": "",
+                    "MovieFileName": "",
+                    "ImageFileName": "",
+                    "PdfFileName": "",
+                    "HtmlFileName": ""
+                  }
+                },
+                "PromptLabels": [
+                  {
+                    "Background": false,
+                    "Label": "REAR WIPER MOTOR",
+                    "OptionCodesMask": "",
+                    "IsDisplayed": false,
+                    "DisplayIndex": 0
+                  }
+                ],
+                "BoardId": 2,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 1400.0,
+                "LowerLimitMamp": 500.0,
+                "PassWindowMsec": 200,
+                "TestDataDisplay": {
+                  "Samples": "",
+                  "CurrentMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": ""
+                },
+                "TestDataReporting": {
+                  "UpperLimitMamp": "",
+                  "LowerLimitMamp": "",
+                  "Samples": "",
+                  "AvgCurrentInRangeMamp": "",
+                  "BaseCurrentMamp": "",
+                  "MaxCurrentMamp": "",
+                  "MinCurrentMamp": "",
+                  "MaxTimeInPassWindowMsec": ""
+                }
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "TriggerEventAction",
+            "Description": "TRIGGER 1 BOARD 1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "TriggerEventAction",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SB-01-V - TRIGGERING CHANNEL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TriggerEventAction": {
+              "BoardId": 1,
+              "TriggerChannel": 32,
+              "TriggerId": 1,
+              "TriggerEvent": 1,
+              "ActionCommand": "SetBias",
+              "ActionBiasChannel": 1,
+              "ActionBiasState": "V",
+              "ActionControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Rear Sliding Window Motor",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Rear Sliding Window Motor",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Rear Sliding Window Motor",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "VoltageRange B1CH14",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "1",
+                      "Description": "VoltageRange B1CH14",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "VoltageRange B1CH14",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 14,
+                    "UpperLimitVolts": 2.0,
+                    "LowerLimitVolts": -1.0,
+                    "PassWindowMsec": 100,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 1 CAN FD",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 1 CAN FD",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "RESET CAN BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": true
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardCanReset",
+            "Description": "RESET BOARD 1 CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "RESET BOARD 1 CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "RESET CAN BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardCanReset": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanFD": false
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanConfigureCom",
+            "Description": "CONFIGURE B1 HS CAN",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "CONFIGURE B1 HS CAN",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONFIGURE IOBoard COM",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "1 = Board NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "0 0 = HS 500K, 1 = GMLAN SW LS, 2 = GMLAN SW HS, 3 = GMLAN Wake up,",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "      4 = LIN, 5 = FT, 6 = GMLAN Dual wire, 7 = MS 125K",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": " ",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "1 = Flow on (Turn off Flow for Functional can)",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "RX ID",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "False (False = 11 bit id / True = 29 bit id)",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "641=BCM, 65F=CGM, 64D=ONSTAR, 64B=FCM, 652=HMI, 655=TCM",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanConfigureCom": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "CanMode": "HighSpeed500K",
+              "FlowControl": true,
+              "CanId": [
+                {
+                  "ReceiveId": "65a",
+                  "BitId29": true
+                },
+                {
+                  "ReceiveId": "64D",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "652",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "641",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "101",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "64B",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "655",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "65a",
+                  "BitId29": true
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanFDConfigureCom",
+            "Description": "Can FD Configure Com",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "CanFDConfigureCom",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanFDConfigureCom": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "NominalMode": "Kbs500",
+              "DataRate": "Mbs10",
+              "FlowControl": false,
+              "CanId": [
+                {
+                  "ReceiveId": "47a",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4E3",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4E9",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4C2",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4C8",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "769",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "47a",
+                  "BitId29": false
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "Board 1 Schedule CAN Messages",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "CanScheduleData",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 Schedule CAN Messages",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanScheduleData": [
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 3,
+                "Enable": false,
+                "Disable": true,
+                "TransmissionId": "10DBFEF1",
+                "TransmissionMessage": "023E805555555555",
+                "TransmissionRateMsec": 1000,
+                "BitId29": true,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveValidate",
+            "Description": "Start Button Test",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "08848",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveValidate": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "14DA40F1",
+              "ReceiveId": "149AF140",
+              "TransmissionMessage": "0322F08555555555",
+              "TransmissionTimeoutMsec": 300,
+              "BitId29": true,
+              "FunctionalCan": false,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "ApplicationMask": "",
+              "MultiFrameTimeBetweenFramesMsec": 0,
+              "NoResponseRequired": false,
+              "Allow7FResponse": false,
+              "BaseMask": "",
+              "ValidateCanMessageScriptFileName": "",
+              "ValidateCanMessageScriptInputs": [
+                ""
+              ],
+              "CanDataEntities": [
+                {
+                  "Description": "START BUTTON",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "08848",
+                    "Description": "START BUTTON",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "08848",
+                    "Description": "BCM No Response IGN SW",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "08848",
+                    "Description": "BCM Neg Response IGN SW",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "PRESS AND HOLD START BUTTON",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0462F085"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 4,
+                      "Mask": "??????1?"
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanReceiveValidate",
+            "Description": "CAN Module Communication",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 15000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CAN Module Communication",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanReceiveValidate": {
+              "CanDataEntities": [
+                {
+                  "Description": "PAM",
+                  "OptionCodesMask": "",
+                  "BoardId": 1,
+                  "UseWirelessBoardId": false,
+                  "AddOptionCodeUponPass": "PA_COM",
+                  "ReceiveId": "141AF1BF",
+                  "ApplicationMask": "",
+                  "ValidateCanMessageScriptFileName": "",
+                  "ValidateCanMessageScriptInputs": [
+                    ""
+                  ],
+                  "FunctionalCan": false,
+                  "CanFD": false,
+                  "Allow7FResponse": false,
+                  "BaseMask": "",
+                  "Fault": {
+                    "Id": "41106",
+                    "Description": "PA Communication - CAN 1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "41107",
+                    "Description": "PA NO RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "41109",
+                    "Description": "PA 7F RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "PA",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                },
+                {
+                  "Description": "SCL",
+                  "OptionCodesMask": "",
+                  "BoardId": 1,
+                  "UseWirelessBoardId": false,
+                  "AddOptionCodeUponPass": "SCL_COM",
+                  "ReceiveId": "141AF1C2",
+                  "ApplicationMask": "",
+                  "ValidateCanMessageScriptFileName": "",
+                  "ValidateCanMessageScriptInputs": [
+                    ""
+                  ],
+                  "FunctionalCan": false,
+                  "CanFD": false,
+                  "Allow7FResponse": false,
+                  "BaseMask": "",
+                  "Fault": {
+                    "Id": "19967",
+                    "Description": "SCL Communication - CAN 1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "24842",
+                    "Description": "SCL NO RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "24843",
+                    "Description": "SCL 7F RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "SCL",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                },
+                {
+                  "Description": "SDM",
+                  "OptionCodesMask": "",
+                  "BoardId": 1,
+                  "UseWirelessBoardId": false,
+                  "AddOptionCodeUponPass": "SDM_COM",
+                  "ReceiveId": "149AF158",
+                  "ApplicationMask": "",
+                  "ValidateCanMessageScriptFileName": "",
+                  "ValidateCanMessageScriptInputs": [
+                    ""
+                  ],
+                  "FunctionalCan": false,
+                  "CanFD": false,
+                  "Allow7FResponse": false,
+                  "BaseMask": "",
+                  "Fault": {
+                    "Id": "00052",
+                    "Description": "SDM Communication - CAN 9",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "06202",
+                    "Description": "SDM NO RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "06203",
+                    "Description": "SDM 7F RESPONSE",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "SDM",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": "0?"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesReceived": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveSaveDtcData",
+            "Description": "DTC READ CGM",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "13076",
+              "Description": "CGM READ DTC FAILURE",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Get specific DTC Data",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveSaveDtcData": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "14DA45F1",
+              "ReceiveId": "14DAF145",
+              "TransmissionMessage": "0319020255555555",
+              "TransmissionTimeoutMsec": 1000,
+              "FunctionalCan": false,
+              "FunctionalCanLastFrameMask": "",
+              "SingleFrameMask": "0?59",
+              "MultipleFrameMask": "",
+              "BitId29": true,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "IgnoreStatus": false,
+              "NoResponseFault": {
+                "Id": "13794",
+                "Description": "CGM NO RESPONSE - CanSendReceiveSaveDtcData",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "13075",
+                "Description": "",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-GlobalB_v1.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanValidateSavedDtcData",
+            "Description": "Can Validate Saved Dtc Data",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validate Saved Dtc Data",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanValidateSavedDtcData": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "AllDtcsMustBePresent": true,
+              "Dtcs": [
+                {
+                  "Id": "959412",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Camera Power Circuits Short to Bat",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6246",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Vision Camera Calibration Parameter Memory Failure",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6254",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Camera Failure Calibration Not Learned",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6292",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Beige Coax - Rear Camera Reconnection Failure Diagnostic Status",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "959512",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Camera Power Circuits Short to Bat",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6846",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Vision Camera Calibration Parameter Memory Failure",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6854",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Vision Camera - Failure Calibration Not Learned",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                },
+                {
+                  "Id": "9A6892",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VPM Curry Coax - Front Vision Camera Reconnection Failure Diagnostic Status",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanValidatePartNumber",
+            "Description": "CGM Part Number",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "13080",
+              "Description": "CGM Part Number Incorrect",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanValidatePartNumber": {
+              "BoardId": 1,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "14DA45F1",
+              "ReceiveId": "14DAF145",
+              "TransmissionMessage": "0322F1CB55555555",
+              "TransmissionTimeoutMsec": 500,
+              "PartId": "CGM",
+              "BitId29": true,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "NoResponseFault": {
+                "Id": "13794",
+                "Description": "CGM No Response",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "13075",
+                "Description": "CGM 7F Response",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "36307",
+                "Description": "CGM No Part Number From Broadcast",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "0762F1CB",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-GM-GlobalB_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinConfigureCom",
+            "Description": "Lin B2 Configure 19200",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "19200",
+              "Description": "LinConfigureCom - Lin B2 Configure 19200",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Lin B2 Configure 19200",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "LinConfigureCom": {
+              "BoardId": 2,
+              "BaudRateBps": "bps19200"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinScheduleData",
+            "Description": "SCHED 1 SLOTS B2 Command ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "LinScheduleData SLOT2",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SCHEDULE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "BOARD 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "SLOT 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "LIN",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "LinScheduleData": [
+              {
+                "BoardId": 2,
+                "SlotId": 2,
+                "Enable": true,
+                "Disable": true,
+                "Master": true,
+                "TransmissionId": "39",
+                "TransmissionMessage": "7F107F7F10000000",
+                "TransmissionRateMsec": 300
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "LinSendReceiveValidate",
+            "Description": "LIN DOOR LOCK",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "LINDOORLOCKFAILED",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Cycle LIN Switches",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "LinSendReceiveValidate": {
+              "BoardId": 2,
+              "MasterTransmissionId": "",
+              "MasterTransmissionMessage": "",
+              "SlaveTransmissionId": "02",
+              "SlaveTransmissionMessage": "0000000000000000",
+              "TransmissionTimeoutMsec": 300,
+              "ApplicationMask": "",
+              "NoResponseRequired": false,
+              "BaseMask": "0840",
+              "LinDataEntities": [
+                {
+                  "Description": "Lin Door Lock",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "65534",
+                    "Description": "Door Lock",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Door Lock",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 3,
+                      "Mask": "80"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 7,
+                      "Mask": "??????1?"
+                    }
+                  ]
+                },
+                {
+                  "Description": "Lin Door Unlock",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "65535",
+                    "Description": "Door Unlock",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Door Unlock",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 3,
+                      "Mask": "40"
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 7,
+                      "Mask": "???????1"
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedLinMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MeterValidateResistanceRange",
+            "Description": "Resistance Range Slot 1 Channels 1 - 3",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "METERFAILED",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "32777",
+              "Description": "MeterValidateResistanceRange Failed",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validating Resistance METER Slot 1 Channels 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MeterValidateResistanceRange": {
+              "DeviceId": 1,
+              "FourWire": true,
+              "Range": "1 G",
+              "Resolution": "MAX",
+              "IntegrationTimePlcs": "1000",
+              "OffsetCompensation": false,
+              "Slot": 1,
+              "Channel": 1,
+              "PassWindowMsec": 5000,
+              "UpperLimitOhm": 10000.0,
+              "LowerLimitOhm": -10000.0,
+              "TestDataDisplay": {
+                "Samples": "# MSG",
+                "ChannelResistanceOhms": "S1C1",
+                "MaxChannelResistanceOhms": "S1C1 Max",
+                "MinChannelResistanceOhms": "S1C1 Min"
+              },
+              "TestDataReporting": {
+                "UpperLimitOhm": "",
+                "LowerLimitOhm": "",
+                "Samples": "",
+                "MaxTimeInPassWindowMsec": "",
+                "MaxChannelResistanceOhms": "",
+                "MinChannelResistanceOhms": "",
+                "AvgChannelResistanceInRangeOhms": "",
+                "LastReceivedMessage": "",
+                "PassReceivedMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MeterValidateFrequencyRange",
+            "Description": "Frequency Range Slot 1 Channels 1 - 3",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "METERFAILED",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "32777",
+              "Description": "MeterValidateFrequencyRange Failed",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validating METER Slot 1 Channels 1-3",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MeterValidateFrequencyRange": {
+              "DeviceId": 1,
+              "Range": "",
+              "Resolution": "",
+              "Channels": [
+                {
+                  "Description": "S1CH1",
+                  "OptionCodesMask": "S1CH1",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "MeterValidateFrequencyRange S1CH1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MeterValidateFrequencyRange S1CH1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 1,
+                  "PassWindowMsec": 15000,
+                  "UpperLimitHz": 10000.0,
+                  "LowerLimitHz": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "# MSG",
+                    "ChannelFrequencyHz": "S1C1",
+                    "MaxChannelFrequencyHz": "S1C1 Max",
+                    "MinChannelFrequencyHz": "S1C1 Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitHz": "",
+                    "LowerLimitHz": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelFrequencyHz": "",
+                    "MinChannelFrequencyHz": "",
+                    "AvgChannelFrequencyInRangeHz": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "S1CH2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "2",
+                    "Description": "MeterValidateFrequencyRange S1CH2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MeterValidateFrequencyRange S1CH2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 2,
+                  "PassWindowMsec": 25000,
+                  "UpperLimitHz": 10000.0,
+                  "LowerLimitHz": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelFrequencyHz": "S1C2",
+                    "MaxChannelFrequencyHz": "S1C2 Max",
+                    "MinChannelFrequencyHz": "S1C2 Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitHz": "",
+                    "LowerLimitHz": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelFrequencyHz": "",
+                    "MinChannelFrequencyHz": "",
+                    "AvgChannelFrequencyInRangeHz": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "S1CH3",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "3",
+                    "Description": "MeterValidateFrequencyRange S1CH3",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MeterValidateFrequencyRange S1CH3",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 3,
+                  "PassWindowMsec": 15000,
+                  "UpperLimitHz": 10000.0,
+                  "LowerLimitHz": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelFrequencyHz": "S1C3",
+                    "MaxChannelFrequencyHz": "S1C3 Max",
+                    "MinChannelFrequencyHz": "S1C3 Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitHz": "",
+                    "LowerLimitHz": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelFrequencyHz": "",
+                    "MinChannelFrequencyHz": "",
+                    "AvgChannelFrequencyInRangeHz": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MeterValidateVoltageRange",
+            "Description": "Voltage Range Slot 1 Channels 1 - 3",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "METERFAILED",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "32777",
+              "Description": "MeterValidateVoltageRange Failed",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validating METER Slot 1 Channels 1-3",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MeterValidateVoltageRange": {
+              "DeviceId": 1,
+              "AC": false,
+              "Range": "AUTO",
+              "Resolution": "MAX",
+              "Channels": [
+                {
+                  "Description": "S1CH1",
+                  "OptionCodesMask": "S1CH1",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "MeterValidateVoltageRange S1CH1",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MeterValidateVoltageRange S1CH1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 1,
+                  "PassWindowMsec": 15000,
+                  "UpperLimitVolt": 10000.0,
+                  "LowerLimitVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "# MSG",
+                    "ChannelVoltageVolts": "S1C1",
+                    "MaxChannelVoltageVolts": "S1C1 Max",
+                    "MinChannelVoltageVolts": "S1C1 Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitVolt": "",
+                    "LowerLimitVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageVolts": "",
+                    "MinChannelVoltageVolts": "",
+                    "AvgChannelVoltageInRangeVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "S1CH2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "2",
+                    "Description": "MeterValidateVoltageRange S1CH2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MeterValidateVoltageRange S1CH2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 2,
+                  "PassWindowMsec": 25000,
+                  "UpperLimitVolt": 10000.0,
+                  "LowerLimitVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageVolts": "S1C2",
+                    "MaxChannelVoltageVolts": "S1C2 Max",
+                    "MinChannelVoltageVolts": "S1C2 Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitVolt": "",
+                    "LowerLimitVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageVolts": "",
+                    "MinChannelVoltageVolts": "",
+                    "AvgChannelVoltageInRangeVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "S1CH3",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "3",
+                    "Description": "MeterValidateVoltageRange S1CH3",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MeterValidateVoltageRange S1CH3",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Slot": 1,
+                  "Channel": 3,
+                  "PassWindowMsec": 15000,
+                  "UpperLimitVolt": 10000.0,
+                  "LowerLimitVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageVolts": "S1C3",
+                    "MaxChannelVoltageVolts": "S1C3 Max",
+                    "MinChannelVoltageVolts": "S1C3 Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitVolt": "",
+                    "LowerLimitVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageVolts": "",
+                    "MinChannelVoltageVolts": "",
+                    "AvgChannelVoltageInRangeVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "PUSH UP Dual Actions",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev 2 -Modbus Output Control",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 2,
+              "ControlOutputWordHex": "00E3",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "DISCONNECT 48 WAY BEC BLACK ",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "11",
+              "Description": "48 WAY BEC BLACK NOT DISCONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DISCONNECT 48 WAY BEC BLACK",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "AlwaysPass": false,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "???????????????0",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRange",
+            "Description": "Modbus Validate Voltage Range Dev2",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev2 Modbus Validate Voltage Ranges",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRange": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "D2Ch2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "ModbusValidateVoltageRange D2Ch2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRange D2CH2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C2",
+                    "MaxChannelVoltageMVolts": "D2C2Max",
+                    "MinChannelVoltageMVolts": "D2C2Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "D2Ch4",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "ModbusValidateVoltageRange D2Ch4",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRange D2CH4",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C4",
+                    "MaxChannelVoltageMVolts": "D2C4Max",
+                    "MinChannelVoltageMVolts": "D2C4Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "D2Ch6",
+                  "OptionCodesMask": "COURTESY",
+                  "Fault": {
+                    "Id": "1231",
+                    "Description": "ModbusValidateVoltageRange D2Ch6",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRange D2CH6",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 6,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C6",
+                    "MaxChannelVoltageMVolts": "C6Max",
+                    "MinChannelVoltageMVolts": "C6Min"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRangeBase",
+            "Description": "Modbus Validate Voltage Range Base Dev2",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev2 Modbus Validate Voltage Range Base",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRangeBase": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "D2Ch2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "ModbusValidateVoltageRangeBase D2Ch2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRangeBase D2CH2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 15000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C2",
+                    "MaxChannelVoltageMVolts": "D2C2Max",
+                    "MinChannelVoltageMVolts": "D2C2Min",
+                    "BaseChannelVoltageMVolts": "D2C2Base"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "D2Ch4",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "ModbusValidateVoltageRangeBase D2Ch4",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRangeBase D2CH4",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C4",
+                    "MaxChannelVoltageMVolts": "D2C4Max",
+                    "MinChannelVoltageMVolts": "D2C4Min",
+                    "BaseChannelVoltageMVolts": "D2C4Base"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateVoltageRangeDelta",
+            "Description": "Modbus Validate Voltage Range Delta Dev2",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev2 Modbus Validate Voltage Range Delta",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateVoltageRangeDelta": {
+              "DeviceId": 2,
+              "Channels": [
+                {
+                  "Description": "D2Ch2",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "ModbusValidateVoltageRangeDelta D2Ch2",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRangeDelta D2CH2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 2,
+                  "PassWindowMsec": 15000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C2",
+                    "MaxChannelVoltageMVolts": "D2C2Max",
+                    "MinChannelVoltageMVolts": "D2C2Min",
+                    "BaseChannelVoltageMVolts": "D2C2Base"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                },
+                {
+                  "Description": "D2Ch4",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "1",
+                    "Description": "ModbusValidateVoltageRangeDelta D2Ch4",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "ModbusValidateVoltageRangeDelta D2CH4",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "Channel": 4,
+                  "PassWindowMsec": 5000,
+                  "UpperLimitMVolt": 10000.0,
+                  "LowerLimitMVolt": -10000.0,
+                  "TestDataDisplay": {
+                    "Samples": "",
+                    "ChannelVoltageMVolts": "D2C4",
+                    "MaxChannelVoltageMVolts": "D2C4Max",
+                    "MinChannelVoltageMVolts": "D2C4Min",
+                    "BaseChannelVoltageMVolts": "D2C4Base"
+                  },
+                  "TestDataReporting": {
+                    "UpperLimitMVolt": "",
+                    "LowerLimitMVolt": "",
+                    "Samples": "",
+                    "MaxTimeInPassWindowMsec": "",
+                    "MaxChannelVoltageMVolts": "",
+                    "MinChannelVoltageMVolts": "",
+                    "AvgChannelVoltageInRangeMVolt": "",
+                    "BaseChannelVoltageMVolts": "",
+                    "LastReceivedMessage": "",
+                    "PassReceivedMessage": ""
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperatorGmHsRetest",
+            "Description": "Allow Operator a retest",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "555",
+              "Description": "TEST RETEST",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Hit Retest or Fail Button",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": true,
+                "Label": "ETEST",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "PromptOperatorGmHsFlashRetest",
+            "Description": "PromptOperatorGmHsFlashRetest",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "DetectWirelessTool",
+            "Description": "Detect Wireless",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 30000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ALDL NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT ALDL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "DetectWirelessTool": {
+              "WirelessBoardId": 3,
+              "AddOptionCodeUponWireless": "",
+              "AddOptionCodeUponWired": "",
+              "ModbusDeviceId": 1,
+              "PassWindowMsec": 0,
+              "ByteMask": "A5",
+              "BitMask": "",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "fdas",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "CanScheduleData": [
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 2,
+                "Enable": false,
+                "Disable": false,
+                "TransmissionId": "fda",
+                "TransmissionMessage": "",
+                "TransmissionRateMsec": 0,
+                "BitId29": false,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "08062021",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "01282022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01282022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01282022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01282022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "01312022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "02072022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "03102022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 7,
+      "ChangeBy": "RMM",
+      "Change": "Added DetectWireless"
+    },
+    {
+      "Date": "09162022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 8,
+      "ChangeBy": "rmm",
+      "Change": "set both disable enable flags"
+    },
+    {
+      "Date": "09162022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09162022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 10,
+      "ChangeBy": "fda",
+      "Change": "fda"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\AllTestStepCommandsSchedule.json",
+  "DateLastModified": "2022-09-16T08:30:43.4424799-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
