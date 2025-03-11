@@ -1,0 +1,2424 @@
+{
+  "Name": "T1XX_HD__Headliner_GlobalB",
+  "Description": "Android Flint Headliner MY24 GlobalB Production Script",
+  "Version": 0.0,
+  "VersionMajor": 3,
+  "VersionMinor": 9,
+  "Production": false,
+  "TerminationScriptFileNamePass": "PassMY24.json",
+  "TerminationScriptFileNameFail": "FailMY24.json",
+  "TerminationScriptFileNameFatalFault": "AbortMY24.json",
+  "TerminationScriptFileNameOperatorAbort": "AbortMY24.json",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "TPAS",
+    "MersDeviceId": "0x20000",
+    "GepicsShipCode": "XXXX"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Set Outputs to OFF",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Board 1 turn power supply off / set output to 0",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "IOBoardControlDigitalIO B1 Power Supply Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 0
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "SetNoBiasAllChannels B1",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SetNoBiasAllChannels B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Board 1 - Set No Bias All Channels",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetCurrentLimits",
+            "Description": "Set IO Board 1 Current Limits",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SetCurrentLimits - B1 Set Limits 15 A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "B1 Set Limits 15 A",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "SetCurrentLimits": {
+              "BoardId": 1,
+              "SourceLimitMamp": 15000,
+              "SinkLimitMamp": 15000,
+              "TestDataReporting": {
+                "SourceLimitMamp": "",
+                "SinkLimitMamp": "",
+                "SinkLimitCounts": "",
+                "SourceLimitCounts": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "MB1 set output to 0",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Connect Test Connectors",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT 59 WAY RED HANDLE",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "59W",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "59 WAY RED HANDLE NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 59 WAY RED",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "AlwaysPass": false,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "???????????????1",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT 55 WAY BLUE HANDLE",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "55W",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "55 WAY BLUE HANDLE NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 55 WAY BLUE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "AlwaysPass": false,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "??????????????1?",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "CONNECT 16/16 WAY X1/X2 GREEN HANDLE BLACK/WHITE HEAD",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "16/16 WAY GREEN HANDLE BLACK/WHITE HEAD NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONNECT 16/16 WAY ",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "GREEN HANDLE BLACK/WHITE HEAD",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "AlwaysPass": false,
+              "PassWindowMsec": 0,
+              "ByteMask": "",
+              "BitMask": "????????????11??",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Engage Dual Action Connectors",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Latch Dual Actions",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev 1 -Modbus Output Control",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0300",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "Turn On Relay to Disable PIP",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "IOBoardControlDigitalIO B1",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DISABLE PIP",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 4
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay 200 MS For Latch Engagement",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 200,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Delay",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "LATCH ENGAGEMENT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Draw Down Dual Actions",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ModbusControlDiscreteOutputs",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Dev 1 -Modbus Output Control",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0F00",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "Delay",
+            "Description": "Delay 200 MS For Contact Engagement",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 200,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Delay",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DRAW DOWN CONNTECTORS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Turn on Power Supply",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "IOBoardControlDigitalIO",
+            "Description": "IOBoard Turn Power Supply On B1 ",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "IOBoardControlDigitalIO B1 Power Supply On",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Power Supply On",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IOBoardControlDigitalIO": {
+              "BoardId": 1,
+              "ControlByte": 6
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "CHOILER_CHMSL X371B",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH13",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 13,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH02",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 2,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH13",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "CHOILER_CenterHighMountedStopLamp X371B",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Choiler-CHMSL",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "Center High Mounted Stop Lamp",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH13",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 13,
+                    "UpperLimitVolts": 4.0,
+                    "LowerLimitVolts": -1.0,
+                    "PassWindowMsec": 100,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH13",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 13,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH02",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 2,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "ANCMIC X373",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH14",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "1601",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 14,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH15",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "1601",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Active Noise Cancelling Microphone",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Active Noise Cancelling Microphone",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH15",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 15,
+                    "UpperLimitVolts": 8.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 100,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH14",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "1601",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 14,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "MIC1 X374B",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH10",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 10,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH09",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "MICROPHONE #1 X374B",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Microphone #1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH09",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 9,
+                    "UpperLimitVolts": 8.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 500,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH10",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 10,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "MIC2 X374A",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH11",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "301|302|303",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 11,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH12",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "301|302|303",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 3000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "MICROPHONE #2 X374A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Microphone #2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH12",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 12,
+                    "UpperLimitVolts": 8.0,
+                    "LowerLimitVolts": 5.0,
+                    "PassWindowMsec": 500,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH11",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "301|302|303",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 11,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "SUNSHADE LEFT X372B",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH27",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "801|802|803|804|812",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 27,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "801|802|803|804|812",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH27",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "801|802|803|804|812",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 7000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SUNSHADE LEFT X372B",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SUNSHADE LEFT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH27",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 27,
+                    "UpperLimitVolts": 3.0,
+                    "LowerLimitVolts": -1.0,
+                    "PassWindowMsec": 100,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH27",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "801|802|803|804|812",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 27,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "801|802|803|804|812",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "SUNSHADE RIGHT X372A",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH28",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "901|902|903|904|912",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 28,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "901|902|903|904|912",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH28",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "901|902|903|904|912",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 7000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SUNSHADE RIGHT X372A",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SUNSHADE RIGHT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH28",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "\r\n",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 28,
+                    "UpperLimitVolts": 3.0,
+                    "LowerLimitVolts": -1.0,
+                    "PassWindowMsec": 100,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH28",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "901|902|903|904|912",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 28,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "901|902|903|904|912",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "SUNROOF MOTOR X375",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 1,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Voltage On B1CH1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "801|802|803|804|812",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 7000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "SUNROOF MOTOR X375",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SUNROOF MOTOR X375",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH1",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 1,
+                    "UpperLimitVolts": 3.0,
+                    "LowerLimitVolts": -1.0,
+                    "PassWindowMsec": 100,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH1",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 1,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "LAMP E68ROW2 DOME & READING",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH05",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "504|505|506",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 5,
+              "BiasState": "H"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "504|505|506",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "G"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "Read Volatge On B1CH05",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "504|505|506",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 7000,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "LAMP E68ROW2 DOME & READING",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "INTERIOR DOME READING LAMP",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "B1CH05",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "\r\n",
+                      "Detail": "",
+                      "RepairInstructions": {
+                        "Text": "",
+                        "MovieFileName": "",
+                        "ImageFileName": "",
+                        "PdfFileName": "",
+                        "HtmlFileName": ""
+                      }
+                    },
+                    "PromptLabels": [],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 5,
+                    "UpperLimitVolts": 3.0,
+                    "LowerLimitVolts": -1.0,
+                    "PassWindowMsec": 100,
+                    "TestDataDisplay": {
+                      "Samples": "",
+                      "ChannelVoltageVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": ""
+                    },
+                    "TestDataReporting": {
+                      "UpperLimitVolts": "",
+                      "LowerLimitVolts": "",
+                      "Samples": "",
+                      "AvgChannelVoltageInRangeVolts": "",
+                      "MaxChannelVoltageVolts": "",
+                      "MinChannelVoltageVolts": "",
+                      "MaxTimeInPassWindowMsec": ""
+                    }
+                  }
+                ]
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH05",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "504|505|506",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 5,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "SetBias",
+            "Description": "Set Bias B1CH06",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "504|505|506",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "Set Bias",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetBias": {
+              "BoardId": 1,
+              "Channel": 6,
+              "BiasState": "NO"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ],
+    [
+      {
+        "GroupName": "Power OFF",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "SetNoBiasAllChannels",
+            "Description": "B1 Power OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [],
+            "SetNoBiasAllChannels": {
+              "BoardId": 1
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04132022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "SL",
+      "Change": "Initial Release"
+    },
+    {
+      "Date": "04132022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "SL",
+      "Change": "Bin Lamp"
+    },
+    {
+      "Date": "04282022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "SL",
+      "Change": "turned off cigar disconnect per Steve papav lengthed pwm for peps test"
+    },
+    {
+      "Date": "04292022",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "SL",
+      "Change": "ADD OP PROMPT TO DISCONNECT USBS"
+    },
+    {
+      "Date": "05192022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 0,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "new script write for MY24 T1HD ANdroid"
+    },
+    {
+      "Date": "05192022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 1,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "Updated Tests and Disconnect"
+    },
+    {
+      "Date": "05192022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 2,
+      "ChangeBy": "PH",
+      "Change": "typo"
+    },
+    {
+      "Date": "05192022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 3,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "Changed Power Down Control Byte"
+    },
+    {
+      "Date": "05192022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 4,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "edited disconnects"
+    },
+    {
+      "Date": "05192022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 5,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "Edited voltage limits"
+    },
+    {
+      "Date": "05242022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 6,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "Added option codes to sunshades and dome lamp and anc mic"
+    },
+    {
+      "Date": "05242022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 7,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "extra save"
+    },
+    {
+      "Date": "06082022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 8,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "Moved disconnect to pass script"
+    },
+    {
+      "Date": "06082022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 9,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "moved power down to pass script"
+    },
+    {
+      "Date": "06082022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 10,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "Changed the fault IDs"
+    },
+    {
+      "Date": "06212022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 1,
+      "ChangeBy": "ph",
+      "Change": "rename"
+    },
+    {
+      "Date": "06212022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 2,
+      "ChangeBy": "Paul Hranchook",
+      "Change": "save"
+    },
+    {
+      "Date": "06212022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 3,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "06222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 4,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "06222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 5,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "06222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 6,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "06222022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 7,
+      "ChangeBy": "ph",
+      "Change": "save"
+    },
+    {
+      "Date": "08182022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 8,
+      "ChangeBy": "ZP",
+      "Change": "ADDED SUNROOF MOTOR X375 TEST"
+    },
+    {
+      "Date": "08182022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 9,
+      "ChangeBy": "ZP",
+      "Change": "REMOVED INCORRECTLY COPIED OPTION CODES FOR SUNROOF MOTOR TEST"
+    }
+  ],
+  "FileName": "Y:\\Android\\Flint,MI\\Headliner(MY24+)\\Software\\TPass\\Test App Scripts\\T1XX_HD_Headliner_GlobalB.json",
+  "DateLastModified": "2022-06-22T11:25:48-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
