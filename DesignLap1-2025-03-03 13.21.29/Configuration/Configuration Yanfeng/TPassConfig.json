@@ -1,0 +1,279 @@
+{
+  "MainScreen": {
+    "Title": {
+      "Enabled": true,
+      "FontSize": 12,
+      "Label": "Tool Title"
+    },
+    "PrimaryId": {
+      "Enabled": true,
+      "FontSize": 48,
+      "Label": "Primary Id"
+    },
+    "SecondaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Secondary Id"
+    },
+    "TertiaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Tertiary Id"
+    },
+    "QuaternaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Quaternary Id"
+    },
+    "QuinaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Quinary Id"
+    },
+    "IsFullscreen": false,
+    "DisplayActionButtonsOnBottomOfScreens": false,
+    "BottomActionButtonsHeight": 70,
+    "MainButtons": [],
+    "PartInPlace": {
+      "Enabled": false,
+      "DeviceId": 0,
+      "Script": null,
+      "Indicator": []
+    },
+    "Description": "Main Screen"
+  },
+  "OptionsScreen": {
+    "OptionTextColor": "Black",
+    "OptionFontSize": 32,
+    "OptionDescriptionFontSize": 32,
+    "ButtonFontSize": 32,
+    "ButtonMargin": 0,
+    "Description": "Option Screen"
+  },
+  "TestScreen": {
+    "DisplayTestData": true,
+    "DisplayTestFaults": true,
+    "DisplayTestGroups": true,
+    "DisplayTestSteps": true,
+    "AbortButtonFontSize": 32,
+    "AbortButtonMargin": 0,
+    "FailButtonFontSize": 32,
+    "FailButtonMargin": 0,
+    "PassButtonFontSize": 32,
+    "PassButtonMargin": 0,
+    "PromptFontSize": 40,
+    "PromptTextColor": null,
+    "BackgroundPromptMaxCount": 12,
+    "BackgroundPromptFontSize": 32,
+    "BackgroundPromptWidth": 370,
+    "Description": "Test Screen"
+  },
+  "ResultsScreen": {
+    "Display": true,
+    "UseCustomTextOnTestResultsScreen": false,
+    "DisplayTimeSec": 10,
+    "DisplayFailedItems": true,
+    "DisplayFaultItems": true,
+    "DisplayPassedItems": true,
+    "DisplayNotTestedItems": true,
+    "UseDisplayTimeWhenRetestButtonIsEnabled": false,
+    "ButtonDisplayRetest": false,
+    "RetestButtonFontSize": 32,
+    "RetestButtonMargin": 0,
+    "ButtonDisplayExit": false,
+    "ExitButtonFontSize": 32,
+    "ExitButtonMargin": 0,
+    "FaultTextFontSize": 0,
+    "ResultButtons": [],
+    "Description": "Results Screen"
+  },
+  "ProductIdentification": {
+    "IncomingFileTrigger": false,
+    "IncomingFileName": "",
+    "IncomingFileSearchFrequencyMsec": 500,
+    "IncomingUdpTrigger": false,
+    "IncomingUdpLocalPort": 11000,
+    "IncomingModbusTrigger": false,
+    "IncomingModbusDeviceId": 0,
+    "IncomingModbusTriggerBitMask": "",
+    "StartTestCycleScriptFileName": "",
+    "TestAppRunContinuously": false,
+    "TestAppRunContinuouslyStopUponTestFailure": false,
+    "TestAppRunContinuouslyTimeSec": 10,
+    "TestAppRunContinuouslyProductId": "333333",
+    "Description": "Product Identification"
+  },
+  "ProductAttributes": {
+    "ForceOperatorToReviewOptions": false,
+    "ProductAttributeRetrievalScriptFileName": null,
+    "ProductAttributeParsingScriptFileName": null,
+    "ChangeTestApplicationScriptFileNameAfterOptionsSelected": null,
+    "Description": "Product Attributes"
+  },
+  "TestResults": {
+    "SendTestResults": true,
+    "TestResultsProcessingScriptFileName": "",
+    "SaveTestResultsToTpiDatabase": true,
+    "PrinterEnable": false,
+    "FormFeed": false,
+    "PrintLeftMargin": 0,
+    "PrintTopMargin": 0,
+    "PrintFontSize": 8,
+    "Description": "Test Results"
+  },
+  "PartnerInterfaces": {
+    "GmEdi": {
+      "Enabled": false,
+      "CreateMersReportingRecord": false,
+      "CreateGepicsShipRecord": false,
+      "CreateGsipQualityRecord": false
+    },
+    "GmTcpHandshake": {
+      "Enabled": false,
+      "LocalIP1": 0,
+      "LocalIP2": 0,
+      "LocalIP3": 0,
+      "LocalIP4": 0,
+      "LocalPort": 0,
+      "RemoteIP1": 0,
+      "RemoteIP2": 0,
+      "RemoteIP3": 0,
+      "RemoteIP4": 0,
+      "RemotePort": 0
+    },
+    "PressureVerificationMonitor": {
+      "Enabled": false,
+      "CommandTimeoutMsec": 1000,
+      "CommandRetryCount": 4,
+      "LocalIP1": 127,
+      "LocalIP2": 0,
+      "LocalIP3": 0,
+      "LocalIP4": 1,
+      "LocalPort": 2000
+    },
+    "MagnaMarquardtKtb": {
+      "Enabled": false
+    },
+    "Description": "Partner Interfaces"
+  },
+  "Hardware": {
+    "Scanners": {
+      "USB": {
+        "Enabled": false,
+        "PrefixCharacterDecimal": 35,
+        "SuffixCharacterDecimal": 36,
+        "Description": "USB"
+      },
+      "Serial": {
+        "Device": 1,
+        "Enabled": false,
+        "PortNumber": 0,
+        "PrefixCharacterDecimal": 0,
+        "SuffixCharacterDecimal": 13,
+        "BaudRateBps": 9600,
+        "Parity": "None",
+        "DataBits": 8,
+        "StopBits": "One",
+        "Handshake": "None",
+        "DataTerminalReadyEnabled": true,
+        "RequestToSendEnabled": false,
+        "ReadTimeoutMsec": 5000,
+        "WriteTimeoutMsec": 5000,
+        "Description": "Serial"
+      },
+      "Description": "Scanner Settings"
+    },
+    "CIP": {
+      "Enabled": false,
+      "CIPDevices": [],
+      "Description": "CIP"
+    },
+    "DigitalIO": {
+      "IOBoardEnabled": false,
+      "LogMessages": true,
+      "EchoTimeout": 1000,
+      "RetryCount": 4,
+      "IoDevices": [],
+      "Description": "Digital IO Settings"
+    },
+    "Meter": {
+      "MeterEnabled": false,
+      "LogMessages": true,
+      "ConnectTimeout": 2000,
+      "CommandTimeout": 2000,
+      "SetVoltageRangeCommandTimeout": 2000,
+      "RetryCount": 4,
+      "MeterDevices": [],
+      "Description": "Meter Settings"
+    },
+    "ModBus": {
+      "ModbusEnabled": false,
+      "LogMessages": true,
+      "ThrottleTimeBetweenSendRequestMSec": 50,
+      "EnableBackgroundModbus": false,
+      "ConnectTimeout": 2000,
+      "CommandTimeout": 300,
+      "SetVoltageRangeCommandTimeout": 2000,
+      "RetryCount": 4,
+      "ModBusDevices": [],
+      "Description": "ModBus"
+    },
+    "WebServer": {
+      "WebServerEnabled": false,
+      "ThrottleTimeBetweenSendRequestsMsec": 100,
+      "LogMessages": false,
+      "IP1": 192,
+      "IP2": 168,
+      "IP3": 0,
+      "IP4": 50,
+      "Port": 8084,
+      "EVChargerDevices": [],
+      "Description": "EV Charger"
+    },
+    "SerialParent": {
+      "Enabled": false,
+      "Serial": [],
+      "Description": "Serial"
+    },
+    "RemotePendant": {
+      "RemotePendantEnabled": false,
+      "BoardId": 0,
+      "TriggerIdPass": 0,
+      "TriggerIdFail": 0,
+      "TriggerIdAbort": 0,
+      "TriggerIdRetest": 0,
+      "ChannelPass": 0,
+      "ChannelFail": 0,
+      "ChannelAbort": 0,
+      "ChannelRetest": 0,
+      "Description": "Remote Pendant"
+    },
+    "Description": "Tool Hardware"
+  },
+  "Logging": {
+    "SystemLogLevel": "Info",
+    "TestApplicationLogLevel": "Info",
+    "InterfaceLogLevel": "Info",
+    "TestApplicationSummaryLogOnlyTestsThatRan": false,
+    "PurgeDisabled": false,
+    "DailyPurgeTime": "00:00",
+    "GeneralLogKeepFileDays": 7,
+    "TestSummaryLogKeepFileDays": 180,
+    "DiskSpaceCheckDisabled": false,
+    "FreeDiskSpacePercentage": 5,
+    "SerialLoggingEnabled": false,
+    "SerialLoggingDeviceId": 1,
+    "Description": "Logging"
+  },
+  "Validation": {
+    "AddTimeToEachTestStep": false,
+    "AddTimeToEachTestStepSec": 5,
+    "Description": "Validation"
+  },
+  "ReportScreen": {
+    "ReportButtons": [],
+    "ScriptConfig": "",
+    "Description": "Report Screen"
+  },
+  "Description": null
+}
