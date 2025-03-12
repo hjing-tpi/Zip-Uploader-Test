@@ -1,0 +1,58 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Modbus Validate Voltage Range Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"ModbusValidateVoltageRange",
+					"Description": "Modbus Validate Voltage Range Template",
+					"Concurrent":true,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"ModbusValidateVoltageRange":
+						{
+							"DeviceId":0,
+							"Channels":[
+							{
+								"Channel":0,
+								"PassWindowMsec":0,
+								"UpperLimitMVolt":0,
+								"LowerLimitMVolt":0
+							}]
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}

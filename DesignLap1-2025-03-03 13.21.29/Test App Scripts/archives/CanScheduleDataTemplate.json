@@ -1,0 +1,60 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Can Schedule Data Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"CanScheduleData",
+					"Description": "Can Schedule Data",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"BoardId": 0,
+					"CanScheduleData":[
+						{
+							"SlotId":0,
+							"Enable":false,
+							"Disable":false,
+							"TransmissionId":"",
+							"TransmissionMessage":"",
+							"TransmissionRateMsec":0,
+							"BitId29":false,
+							"MultiFrame":false,
+							"MultiFrameReceiveId":"",
+							"MultiFrameTimeBetweenFramesMsec":0
+						}],
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
