@@ -1,0 +1,509 @@
+{
+  "Name": "TODO",
+  "Description": "TODO",
+  "Version": 1.0,
+  "Production": false,
+  "TerminationScriptFileNamePass":"TerminationPass.json",
+  "TerminationScriptFileNameFail":"TerminationFail.json",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "All Test Steps",
+        "Background": false,
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": " GREEN 26WAY-CONNECTION:",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "407",
+              "Description": " GREEN 26WAY-CONNECTION:"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 0,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "- WAITING -",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "CONNECT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "26-WAY CONNECTOR",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "GREEN",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 1200000,
+              "ByteMask": "0040",
+              "BitMask": "1000000"
+            }
+          },
+          {
+            "Name": "StartTestPacket",
+            "Description": "BD 1 START TEST PACKETS",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "BD 1 START TEST PACKETS"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 0,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "START TEST PACKETS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "StartTestPacket": {
+              "BoardId": 1,
+              "TimeIntervalMsec": 10
+            }
+          },
+          {
+            "Name": "StartTestPacket",
+            "Description": "BD 2 START TEST PACKETS",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "BD 2 START TEST PACKETS"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 0,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "BOARD 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "START TEST PACKETS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "StartTestPacket": {
+              "BoardId": 2,
+              "TimeIntervalMsec": 10
+            }
+          },
+          {
+            "Name": "CanConfigureCom",
+            "Description": "CONFIGURE B2 HS CAN",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "CONFIGURE B2 HS CAN"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 0,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONFIGURE IOBoard COM",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "2 = Board NUMBER",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "0 0 = HS 500K, 1 = GMLAN SW LS, 2 = GMLAN SW HS, 3 = GMLAN Wake up,",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "4 = LIN, 5 = FT, 6 = GMLAN Dual wire, 7 = MS 125K",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "1 = Flow on (Turn off Flow for Functional can)",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "RX ID",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "False (False = 11 bit id / True = 29 bit id)",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanConfigureCom": {
+              "BoardId": 2,
+              "CanMode": "HighSpeed500K",
+              "FlowControl": true,
+              "CanId": [
+                {
+                  "ReceiveId": "4E3",
+                  "BitId29": false
+                }
+              ]
+            }
+          },
+          {
+            "Name": "VoltageRange",
+            "Description": "ELIP000040 VENTILADOR Y CONTROL DE HVAC",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ELIP000040 VENTILADOR Y CONTROL DE HVAC"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 15000,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "VOLTAGE RANGE TEST",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "HVAC BLOWER CURRENT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "VoltageRange": [
+              {
+                "BoardId": 1,
+                "Limits": [
+                  {
+                    "Description": "",
+                    "OptionCodesMask": "",
+                    "Fault": {
+                      "Id": "",
+                      "Description": "ELIP000040 VENTILADOR Y CONTROL DE HVAC",
+                      "Detail": ""
+                    },
+                    "PromptLabels": [
+                      {
+                        "Background": false,
+                        "Label": "",
+                        "OptionCodesMask": "",
+                        "IsDisplayed": false,
+                        "DisplayIndex": 0
+                      }
+                    ],
+                    "FailAtFirstOutOfRangeReading": false,
+                    "Channel": 2,
+                    "UpperLimitVolts": 4.0,
+                    "LowerLimitVolts": 1.0,
+                    "PassWindowMsec": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "SourceCurrentRangeDelta",
+            "Description": "ELIP000040 VENTILADOR Y CONTROL DE HVAC",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "ELIP000040 VENTILADOR Y CONTROL DE HVAC"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 15000,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CURRENT RANGE TEST",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "HVAC BLOWER CURRENT",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CurrentRange": [
+              {
+                "Description": "",
+                "OptionCodesMask": "",
+                "Fault": {
+                  "Id": "",
+                  "Description": "ELIP000040 VENTILADOR Y CONTROL DE HVAC",
+                  "Detail": ""
+                },
+                "PromptLabels": [
+                  {
+                    "Background": false,
+                    "Label": "",
+                    "OptionCodesMask": "",
+                    "IsDisplayed": false,
+                    "DisplayIndex": 0
+                  }
+                ],
+                "BoardId": 1,
+                "FailAtFirstOutOfRangeReading": false,
+                "UpperLimitMamp": 10.0,
+                "LowerLimitMamp": 5.0,
+                "PassWindowMsec": 0
+              }
+            ]
+          },
+          {
+            "Name": "Delay",
+            "Description": "DELAY",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "DELAY"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 5000,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DELAY",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ]
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "SCHEDULE OFF SWITCH PID",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "07801",
+              "Description": "SCHEDULE OFF SWITCH PID"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 0,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SCHEDULE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "BOARD 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "SLOT 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "SWITCH PID",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanScheduleData": [
+              {
+                "BoardId": 2,
+                "SlotId": 2,
+                "Enable": false,
+                "Disable": true,
+                "TransmissionId": "763",
+                "TransmissionMessage": "0322030300000000",
+                "TransmissionRateMsec": 100,
+                "BitId29": false,
+                "MultiFrame": true,
+                "MultiFrameReceiveId": "4E3",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ]
+          },
+          {
+            "Name": "StopTestPacket",
+            "Description": "BD 1 STOP TEST PACKETS",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "BD 1 STOP TEST PACKETS"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 0,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "STOP TEST PACKETS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "StopTestPacket": {
+              "BoardId": 1
+            }
+          },
+          {
+            "Name": "StopTestPacket",
+            "Description": "BD 2 STOP TEST PACKETS",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "BD 2 STOP TEST PACKETS"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 0,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "BOARD 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "STOP TEST PACKETS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "StopTestPacket": {
+              "BoardId": 2
+            }
+          },
+          {
+            "Name": "Delay",
+            "Description": "DELAY",
+            "Concurrent": false,
+            "OptionCodesMask": "",
+            "Fault": {
+              "Id": "",
+              "Description": "DELAY"
+            },
+            "FailureAbortsTestCycle": false,
+            "TimeoutMsec": 5000,
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DELAY AFTER STOP COM",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "02/19/2020 12:36:42",
+      "Version": 1.0,
+      "ChangeBy":"RMM",
+      "Change": "Initial Version, Converted from WinRes Format"
+    }
+  ],
+  "DateLastModified": "0001-01-01T00:00:00"
+}
