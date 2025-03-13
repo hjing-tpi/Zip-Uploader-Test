@@ -1,0 +1,6110 @@
+{
+	"Name":"IP_Tester_MY22_L233_01_PPO VERSION.json",
+	"Description":"MY23_L233",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"TEST",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"WRES",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"XXXX"
+		},
+	"TestCycleGroups":
+	[[{
+		"GroupName":"Set Outputs to 0",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "Board 1 turn power supply off / set output to 0",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 1,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" IOBoardControlDigitalIO B1 Power Supply Off"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Power Supply Off",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "Board 2 set output to 0",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 2,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" IOBoardControlDigitalIO B2 Power Supply Off"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Power Supply Off",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "Board 3 set output to 0",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 3,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" IOBoardControlDigitalIO B3 Power Supply Off"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Power Supply Off",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 1
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B1"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B2",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 2
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B2"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 2 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B3",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 3
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B3"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 3 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetCurrentLimits",
+			"Description": "Set IO Board 1 Current Limits",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"SetCurrentLimits":
+			{
+				"BoardId": 1,
+				"SinkLimitMamp": 25000,
+				"SourceLimitMamp": 25000,
+				"TestDataReporting":
+				{
+					"SourceLimitMamp":"",
+					"SinkLimitMamp":"",
+					"SinkLimitCounts":"",
+					"SourceLimitCounts":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetCurrentLimits - B1 Set Limits 25 A"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"B1 Set Limits 25 A",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetCurrentLimits",
+			"Description": "Set IO Board 2 Current Limits",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 0,
+			"SetCurrentLimits":
+			{
+				"BoardId": 2,
+				"SinkLimitMamp": 25000,
+				"SourceLimitMamp": 25000,
+				"TestDataReporting":
+				{
+					"SourceLimitMamp":"",
+					"SinkLimitMamp":"",
+					"SinkLimitCounts":"",
+					"SourceLimitCounts":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetCurrentLimits - B2 Set Limits 25 A"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"B2 Set Limits 25 A",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+	
+	
+	
+	
+	[{
+		"GroupName":"Connect Test Connectors",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"PromptOperator",
+			"Description": "Connect ground clamps",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 120000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"PromptOperator"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"CONNECT GROUND CLAMPS",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"PRESS [PASS] WHEN COMPLETE",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"PromptOperator",
+			"Description": "Connect kludge conectors",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 120000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"PromptOperator"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"CONNECT ALL TEST CONNECTORS",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"PRESS [PASS] WHEN COMPLETE",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+		
+			
+		
+		
+		
+	[{
+		"GroupName":"Power Up Vehicle",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "IOBoard Turn Power Supply On B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 1,
+				"ControlByte": 2
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" IOBoardControlDigitalIO B1 Power Supply On"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Power Supply On",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 1 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 1,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 1,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"V",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-01-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 1 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 1,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 1,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-01-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 1 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 1,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 1,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-01-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 2 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 2,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 2,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"V",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-02-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 2 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 2,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 2,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-02-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 2 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 2,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 2,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-02-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 3 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 3,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 3,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"V",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-03-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 3 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 3,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 3,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-03-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 3 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 3,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 3,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-03-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 4 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 4,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 4,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"V",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-04-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 4 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 4,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 4,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-04-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 4 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 4,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 4,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-04-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 5 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 5,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 5,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"V",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-05-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 5 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 5,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 5,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-05-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 5 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 5,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 5,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-05-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		
+		
+	
+		
+		
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 6 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 6,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 6,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"V",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-06-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 6 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 6,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 6,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-06-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 6 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 6,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 6,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-06-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 7 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 7,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 7,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"V",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-07-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 7 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 7,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 7,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-07-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 7 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 7,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 7,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-07-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		
+		
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 8 BOARD 1",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 8,
+				"BoardId": 1,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 8,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-08-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 8 BOARD 2_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 8,
+				"BoardId": 2,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 8,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-08-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"TriggerEventAction",
+			"Description": "TRIGGER 8 BOARD 3_NoBias",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"OptionCodesMask":"",
+			"TimeoutMsec": 10000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"TriggerEventAction"
+			},
+			"TriggerEventAction":
+			{
+				"TriggerId": 8,
+				"BoardId": 3,
+				"TriggerChannel": 32,
+				"TriggerEvent":1,
+				"ActionCommand":"SetBias",
+				"ActionBiasChannel": 8,
+				"ActionBiasStateList":["NO","V","G","N","P","H"],
+				"ActionBiasState":"NO",
+				"ActionControlByte":0
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"SB-08-V - TRIGGERING CHANNEL",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 32,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"P"
+			},
+				"Fault":
+			{
+				"Id":"",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 2,
+				"Channel": 32,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 3,
+				"Channel": 32,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"PromptOperator",
+			"Description": "Modules powered on",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 3600000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"PromptOperator"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"MODULES POWERED ON",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"PRESS [PASS] WHEN COMPLETE",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+	
+
+		
+		
+		
+		
+		
+		
+	[{
+		"GroupName":"Glove Box Door Release Control",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+			{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 8,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"P"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "Glove Box Door Release Control",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Glove Box Door Release Control"
+			},
+			"TimeoutMsec": 5000,
+			"VoltageRange": [
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH08",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"VoltageRange B1CH08"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH08",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":8,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":4,
+					"LowerLimitVolts":-1,
+					"TestDataDisplay":
+					{
+						"Samples":"",
+						"ChannelVoltageVolts":"",
+						"MaxChannelVoltageVolts":"",
+						"MinChannelVoltageVolts":""
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Glove Box Door Release Control",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 8,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"V"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"OPEN GLOVE BOX",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		{
+			"Name":"Delay",
+			"Description": "Delay 1.0 Second",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 1000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 1.0 second",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 8,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		{
+			"Name":"PromptOperator",
+			"Description": "Glove Box Motors Powered Off",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 1200000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"PromptOperator"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"CHECK for GLOVE BOX LIGHT ON",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"PRESS [PASS] WHEN ON",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"PRESS [FAIL] IF NOT ON",
+				"OptionCodesMask":""
+			}]
+		}]
+		
+	}],	
+	
+	[{
+		"GroupName":"STEERING COLUMN TILT AND TELESCOPE",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+							{
+					"Name":"SourceCurrentRangeBase",
+					"Description": "Set B1 Base Source Current",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 10000,
+					"CurrentRange":[
+						{
+							"Description":"B1 Source Base",
+							"OptionCodesMask":"",
+							"Fault":
+								{
+									"Id":"115",
+									"Description":"CurrentRange B1 Source Base"
+								},
+							"PromptLabels": [
+								{
+									"Background":false,
+									"Label":"CurrentRange B1 Baseline Source Current",
+									"OptionCodesMask":""
+								}],
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":200,
+							"UpperLimitMamp":3000,
+							"LowerLimitMamp":0,
+							"TestDataDisplay":
+								{
+									"Samples":"#",
+									"CurrentMamp":"B1",
+									"BaseCurrentMamp":"B1Base",
+									"MaxCurrentMamp":"B1Max",
+									"MinCurrentMamp":"B1Min"
+								},
+							"TestDataReporting":
+								{
+									"UpperLimitMamp":"",
+									"LowerLimitMamp":"",
+									"Samples":"",
+									"AvgCurrentInRangeMamp":"",
+									"BaseCurrentMamp":"",
+									"MaxCurrentMamp":"",
+									"MinCurrentMamp":"",
+									"MaxTimeInPassWindowMsec":""
+								}
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":""
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Board 1 Set Source Baseline current",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"Board 1 Set Base Source",
+							"OptionCodesMask":""
+						}]
+				},
+				
+				{
+					"Name":"SourceCurrentRangeDelta",
+					"Description": "B1 Source Current Range",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 15000,
+					"CurrentRange":[
+						{
+							"Description":"B1 Source Delta - TILT FUNCTIONING",
+							"OptionCodesMask":"",
+							"Fault":
+								{
+									"Id":"117",
+									"Description":"CurrentRange B1 Source Delta"
+								},
+							"PromptLabels": [
+								{
+									"Background":false,
+									"Label":"CurrentRange B1 Source Delta",
+									"OptionCodesMask":""
+								}],
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":300,
+							"UpperLimitMamp":2800,
+							"LowerLimitMamp":1500,
+							"TestDataDisplay":
+								{
+									"Samples":"#",
+									"CurrentMamp":"B1",
+									"BaseCurrentMamp":"B1Base",
+									"MaxCurrentMamp":"B1Max",
+									"MinCurrentMamp":"B1Min"
+								},
+							"TestDataReporting":
+								{
+									"UpperLimitMamp":"",
+									"LowerLimitMamp":"",
+									"Samples":"",
+									"AvgCurrentInRangeMamp":"",
+									"BaseCurrentMamp":"",
+									"MaxCurrentMamp":"",
+									"MinCurrentMamp":"",
+									"MaxTimeInPassWindowMsec":""
+								}
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":""
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"MOVE STEERING COLUMN - TILT Up or Down",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"TILT for a Range of 5 seconds THEN Stop",
+							"OptionCodesMask":""
+						}]
+				},
+				
+				{
+					"Name":"SourceCurrentRangeDelta",
+					"Description": "B1 Source Current Range",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 15000,
+					"CurrentRange":[
+						{
+							"Description":"B1 Source Delta - TILT STOP",
+							"OptionCodesMask":"",
+							"Fault":
+								{
+									"Id":"117",
+									"Description":"CurrentRange B1 Source Delta"
+								},
+							"PromptLabels": [
+								{
+									"Background":false,
+									"Label":"CurrentRange B1 Source Delta",
+									"OptionCodesMask":""
+								}],
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":300,
+							"UpperLimitMamp":300,
+							"LowerLimitMamp":-300,
+							"TestDataDisplay":
+								{
+									"Samples":"#",
+									"CurrentMamp":"B1",
+									"BaseCurrentMamp":"B1Base",
+									"MaxCurrentMamp":"B1Max",
+									"MinCurrentMamp":"B1Min"
+								},
+							"TestDataReporting":
+								{
+									"UpperLimitMamp":"",
+									"LowerLimitMamp":"",
+									"Samples":"",
+									"AvgCurrentInRangeMamp":"",
+									"BaseCurrentMamp":"",
+									"MaxCurrentMamp":"",
+									"MinCurrentMamp":"",
+									"MaxTimeInPassWindowMsec":""
+								}
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":""
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"STEERING COLUMN HAS STOP MOVING - TILT Up or Down",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"TILT STEERING COLUMN MOVEMENT SHOULD STOP",
+							"OptionCodesMask":""
+						}]
+				},
+				
+				{
+					"Name":"SourceCurrentRangeDelta",
+					"Description": "B1 Source Current Range",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"OUT_PATRICK",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 15000,
+					"CurrentRange":[
+						{
+							"Description":"B1 Source Delta - TELESCOPE FUNCTIONING",
+							"OptionCodesMask":"",
+							"Fault":
+								{
+									"Id":"117",
+									"Description":"CurrentRange B1 Source Delta"
+								},
+							"PromptLabels": [
+								{
+									"Background":false,
+									"Label":"CurrentRange B1 Source Delta",
+									"OptionCodesMask":""
+								}],
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":300,
+							"UpperLimitMamp":2800,
+							"LowerLimitMamp":1500,
+							"TestDataDisplay":
+								{
+									"Samples":"#",
+									"CurrentMamp":"B1",
+									"BaseCurrentMamp":"B1Base",
+									"MaxCurrentMamp":"B1Max",
+									"MinCurrentMamp":"B1Min"
+								},
+							"TestDataReporting":
+								{
+									"UpperLimitMamp":"",
+									"LowerLimitMamp":"",
+									"Samples":"",
+									"AvgCurrentInRangeMamp":"",
+									"BaseCurrentMamp":"",
+									"MaxCurrentMamp":"",
+									"MinCurrentMamp":"",
+									"MaxTimeInPassWindowMsec":""
+								}
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":""
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"MOVE STEERING COLUMN - TELESCOPE IN or OUT",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"TELESCOPE for a Range of 5 seconds THEN Stop",
+							"OptionCodesMask":""
+						}]
+				},
+				
+				{
+					"Name":"SourceCurrentRangeDelta",
+					"Description": "B1 Source Current Range",
+					"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"OUT_PATRICK",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 15000,
+					"CurrentRange":[
+						{
+							"Description":"B1 Source Delta - TELESCOPE STOP",
+							"OptionCodesMask":"",
+							"Fault":
+								{
+									"Id":"117",
+									"Description":"CurrentRange B1 Source Delta"
+								},
+							"PromptLabels": [
+								{
+									"Background":false,
+									"Label":"CurrentRange B1 Source Delta",
+									"OptionCodesMask":""
+								}],
+							"FailAtFirstOutOfRangeReading":false,
+							"BoardId": 1,
+							"PassWindowMsec":300,
+							"UpperLimitMamp":300,
+							"LowerLimitMamp":-300,
+							"TestDataDisplay":
+								{
+									"Samples":"#",
+									"CurrentMamp":"B1",
+									"BaseCurrentMamp":"B1Base",
+									"MaxCurrentMamp":"B1Max",
+									"MinCurrentMamp":"B1Min"
+								},
+							"TestDataReporting":
+								{
+									"UpperLimitMamp":"",
+									"LowerLimitMamp":"",
+									"Samples":"",
+									"AvgCurrentInRangeMamp":"",
+									"BaseCurrentMamp":"",
+									"MaxCurrentMamp":"",
+									"MinCurrentMamp":"",
+									"MaxTimeInPassWindowMsec":""
+								}
+						}],
+					"Fault":
+						{
+							"Id":"",
+							"Description":""
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"STEERING COLUMN HAS STOP MOVING - TELESCOPE IN or OUT",
+							"OptionCodesMask":""
+						},			
+						{
+							"Background":false,
+							"Label":"TELESCOPE STEERING COLUMN MOVEMENT SHOULD STOP",
+							"OptionCodesMask":""
+						}]
+				}]	
+	
+	}],
+	
+	
+
+	[{
+		"GroupName":"Clock Spring - E602",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+			{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 2,
+				"Channel": 22,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"H"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "Clock Spring - E602",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Clock Spring - E602"
+			},
+			"TimeoutMsec": 5000,
+			"VoltageRange": [
+			{
+				"BoardId": 2,
+				"Limits":[
+				{
+					"Description":"VoltageRange B2CH22",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"2",
+						"Description":"VoltageRange B2CH22"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B2CH22",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":22,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":2,
+					"LowerLimitVolts":-1,
+					"TestDataDisplay":
+					{
+						"Samples":"",
+						"ChannelVoltageVolts":"",
+						"MaxChannelVoltageVolts":"",
+						"MinChannelVoltageVolts":""
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Clock Spring - E602",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 2,
+				"Channel": 22,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],		
+	
+	
+	
+	[{
+		"GroupName":"HVAC BLOWER",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+			{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 2,
+				"Channel": 14,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"H"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "HVAC BLOWER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"HVAC BLOWER"
+			},
+			"TimeoutMsec": 5000,
+			"VoltageRange": [
+			{
+				"BoardId": 2,
+				"Limits":[
+				{
+					"Description":"VoltageRange B2CH14",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"2",
+						"Description":"VoltageRange B2CH14"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B2CH14",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":14,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":5,
+					"LowerLimitVolts":1.5,
+					"TestDataDisplay":
+					{
+						"Samples":"",
+						"ChannelVoltageVolts":"",
+						"MaxChannelVoltageVolts":"",
+						"MinChannelVoltageVolts":""
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"HVAC BLOWER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 2,
+				"Channel": 14,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],		
+	
+			
+
+	
+	[{
+		"GroupName":"COLUMN SHIFTER",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+			{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 13,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "COLUMN SHIFTER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"COLUMN SHIFTER"
+			},
+			"TimeoutMsec": 5000,
+			"VoltageRange": [
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH13",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"VoltageRange B1CH13"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH13",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":13,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":14,
+					"LowerLimitVolts":2,
+					"TestDataDisplay":
+					{
+						"Samples":"",
+						"ChannelVoltageVolts":"",
+						"MaxChannelVoltageVolts":"",
+						"MinChannelVoltageVolts":""
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"COLUMN SHIFTER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 13,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],		
+	
+	
+	[{
+		"GroupName":"INDICATOR LIGHT AND SOLAR SENSOR - B749",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+			{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 14,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "INDICATOR LIGHT AND SOLAR SENSOR - B749",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"INDICATOR LIGHT AND SOLAR SENSOR - B749"
+			},
+			"TimeoutMsec": 5000,
+			"VoltageRange": [
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH14",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"VoltageRange B1CH14"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH14",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":14,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":4,
+					"LowerLimitVolts":.2,
+					"TestDataDisplay":
+					{
+						"Samples":"",
+						"ChannelVoltageVolts":"",
+						"MaxChannelVoltageVolts":"",
+						"MinChannelVoltageVolts":""
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"INDICATOR LIGHT AND SOLAR SENSOR - B749",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 14,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],		
+	
+			
+		
+	
+	[{
+		"GroupName":"Left Speaker Test",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"SetBias",
+			"Description": "SetBias - B1C16",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 16,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"N"
+			},
+				"Fault":
+			{
+				"Id":"",
+				"Description":"SetBias"
+			},
+			"PromptLabels":[
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetPulseWidthModulation",
+			"Description": "SetPulseWidthModulation B1C15",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetPulseWidthModulation":
+			{
+				"BoardId": 1,
+				"Channel":15,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"P",	
+				"DutyCyclePercent":80,
+				"FrequencyHz":1000,
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetPulseWidthModulation B1C15 P Bias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 15 – Set Pulse Width Modulation",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetRootMeanSquared",
+			"Description": "SetRootMeanSquared B1C16",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetRootMeanSquared":
+			{
+				"BoardId": 1,
+				"Channel":16,
+				"Enable":true
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetRootMeanSquared B1C16 Enable"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 16 – Set Root Mean Squared",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "Left Speaker PWM Test",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"2 Way Speaker X301_36, 35 - #201, #118"
+			},
+			"TimeoutMsec": 8000,
+			"VoltageRange":[
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH16",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"2 Way Speaker X301_36, 35"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH16",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":16,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":7,
+					"LowerLimitVolts":3,
+					"TestDataDisplay":
+					{
+						"Samples":"B1CH16 #",
+						"ChannelVoltageVolts":"B1CH16",
+						"MaxChannelVoltageVolts":"B1CH16 Max",
+						"MinChannelVoltageVolts":"B1CH16 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Left Speaker PWM Test",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetRootMeanSquared",
+			"Description": "SetRootMeanSquared B1C1",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetRootMeanSquared":
+			{
+				"BoardId": 1,
+				"Channel":16,
+				"Enable":false
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetRootMeanSquared B1C16 Disable"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 16 – Set Root Mean Squared",
+				"OptionCodesMask":""
+			}]
+		},	
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 15,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},		
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 16,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],		
+	
+	
+	
+	
+	
+	
+	[{
+		"GroupName":"Center Speaker Test",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"SetBias",
+			"Description": "SetBias - B1C18",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 18,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"N"
+			},
+				"Fault":
+			{
+				"Id":"",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetPulseWidthModulation",
+			"Description": "SetPulseWidthModulation B1C17",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetPulseWidthModulation":
+			{
+				"BoardId": 1,
+				"Channel":17,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"P",	
+				"DutyCyclePercent":80,
+				"FrequencyHz":1000
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetPulseWidthModulation B1C17 P Bias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 17 – Set Pulse Width Modulation",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetRootMeanSquared",
+			"Description": "SetRootMeanSquared B1C18",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetRootMeanSquared":
+			{
+				"BoardId": 1,
+				"Channel":18,
+				"Enable":true
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetRootMeanSquared B1C18 Enable"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 18 – Set Root Mean Squared",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "Center Speaker PWM Test",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"2 Way Speaker X406_40, 39 - #1860, #1960"
+			},
+			"TimeoutMsec": 8000,
+			"VoltageRange":[
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH18",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"2 Way Speaker X406_40, 39 - #1860, #1960"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH18",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":18,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":7,
+					"LowerLimitVolts":3,
+					"TestDataDisplay":
+					{
+						"Samples":"B1CH18 #",
+						"ChannelVoltageVolts":"B1CH18",
+						"MaxChannelVoltageVolts":"B1CH18 Max",
+						"MinChannelVoltageVolts":"B1CH18 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Center Speaker PWM Test",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetRootMeanSquared",
+			"Description": "SetRootMeanSquared B1C18",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetRootMeanSquared":
+			{
+				"BoardId": 1,
+				"Channel":18,
+				"Enable":false
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetRootMeanSquared B1C18 Disable"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 18 – Disable Root Mean Squared",
+				"OptionCodesMask":""
+			}]
+		},	
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 17,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},		
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 18,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],		
+	
+	
+	
+
+	
+	[{
+		"GroupName":"Right Speaker Test",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"SetBias",
+			"Description": "SetBias - B1C20",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 20,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"N"
+			},
+				"Fault":
+			{
+				"Id":"",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetPulseWidthModulation",
+			"Description": "SetPulseWidthModulation B1C19",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetPulseWidthModulation":
+			{
+				"BoardId": 1,
+				"Channel":19,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"P",	
+				"DutyCyclePercent":80,
+				"FrequencyHz":1000
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetPulseWidthModulation B1C19 P Bias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 19 – Set Pulse Width Modulation",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetRootMeanSquared",
+			"Description": "SetRootMeanSquared B1C20",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetRootMeanSquared":
+			{
+				"BoardId": 1,
+				"Channel":20,
+				"Enable":true
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetRootMeanSquared B1C20 Enable"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 20 – Set Root Mean Squared",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "Right Speaker PWM Test",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"2 Way Speaker X406_36, 35 - #200, #117"
+			},
+			"TimeoutMsec": 8000,
+			"VoltageRange":[
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH20",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"2 Way Speaker X406_36, 35 - #200, #117"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH20",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":20,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":7,
+					"LowerLimitVolts":3,
+					"TestDataDisplay":
+					{
+						"Samples":"B1CH16 #",
+						"ChannelVoltageVolts":"B1CH20",
+						"MaxChannelVoltageVolts":"B1CH20 Max",
+						"MinChannelVoltageVolts":"B1CH20 Min"
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Right Speaker PWM Test",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetRootMeanSquared",
+			"Description": "SetRootMeanSquared B1C20",
+	 		"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"SPK",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetRootMeanSquared":
+			{
+				"BoardId": 1,
+				"Channel":20,
+				"Enable":false
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" SetRootMeanSquared B1C20 Disable"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Channel 20 – Set Root Mean Squared",
+				"OptionCodesMask":""
+			}]
+		},	
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 19,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},		
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 20,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],		
+	
+	
+	
+	
+	
+	
+
+
+
+	[{
+		"GroupName":"Windshield Wiper Switch High Signal",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+			{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 10,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"H"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "Windshield Wiper Switch High Signal",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Windshield Wiper Switch High Signal"
+			},
+			"TimeoutMsec": 30000,
+			"VoltageRange": [
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH10",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"VoltageRange B1CH10"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH10",
+						"OptionCodesMask":""
+					},
+					{
+						"Background":false,
+						"Label":"--> Operator <--",
+						"OptionCodesMask":""
+					},
+					{
+						"Background":false,
+						"Label":"SWITCH - Windshield Wiper Switch To High",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":10,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":3,
+					"LowerLimitVolts":-1,
+					"TestDataDisplay":
+					{
+						"Samples":"",
+						"ChannelVoltageVolts":"",
+						"MaxChannelVoltageVolts":"",
+						"MinChannelVoltageVolts":""
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Windshield Wiper Switch High Signal",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 10,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],	
+	
+	
+	
+		
+	
+	[{
+		"GroupName":"Set Up CAN Testing",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"CanConfigureCom",
+			"Description": "CONFIGURE B1 HS CAN",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CONFIGURE B1 HS CAN"
+			},
+			"CanConfigureCom":
+			{
+				"BoardId": 1,
+				"CanMode":"HighSpeed500K",
+				"FlowControl":true,
+				"Comment":"CGM=45, VCU=80, BCM=40, HFP=68",
+				"CanId":[
+				{
+					"ReceiveId":"14DAF145",
+					"BitId29":true
+				},								
+				{
+					"ReceiveId":"145AF168",
+					"BitId29":true
+				},
+				{
+					"ReceiveId":"145AF180",
+					"BitId29":true
+				},		
+				{
+					"ReceiveId":"149AF140",
+					"BitId29":true
+				}]
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Configuring Board 1 CAN",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"CanSendReceiveValidate",
+			"Description": "CGM Central Gateway Module Tester Present",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"CGM_COM",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 10000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"14DA45F1",
+				"ReceiveId":"14DAF145",
+				"TransmissionMessage":"023E005555555555",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"Tester Present",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":"CGM No Response"
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":"CGM 7F Response"
+					},
+					"PromptLabels": [
+					{
+						"Background":true,
+						"Label":"Central Gateway Module COM",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":"0?"
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CGM Tester Present"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"CGM Communication",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"CanSendReceiveValidate",
+			"Description": "CGM Central Gateway Module Extended Diagnostic",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"CGM_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 10000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"14DA45F1",
+				"ReceiveId":"14DAF145",
+				"TransmissionMessage":"0210035555555555",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"Extended Diagnostic",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"CGM Extended Diagnostic"
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":"CGM No Response"
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":"CGM 7F Response"
+					},
+					"PromptLabels": [
+					{
+						"Background":true,
+						"Label":"Central Gateway Module Ext Diag",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":"0?"
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CGM Extended Diagnostic"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"CGM Communication",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"CanSendReceiveValidate",
+			"Description": "CGM Wake Up All Vehicle Networks",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"CGM_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 10000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"14DA45F1",
+				"ReceiveId":"14DAF145",
+				"TransmissionMessage":"073101020EFF0000",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"Wake Up All Vehicle Networks",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"Wake Up All Vehicle Networks"
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":"CGM No Response"
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":"CGM 7F Response"
+					},
+					"PromptLabels": [
+					{
+						"Background":true,
+						"Label":"Central Gateway Module Wake Up",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":"077101020EFF0000"
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CGM Wake Up"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"CGM Wake Up",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"CanScheduleData",
+			"Description": "Board 1 Schedule CAN Messages",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CanScheduleData"
+			},
+			"CanScheduleData":[
+			{
+				"BoardId": 1,
+				"SlotId":3,
+				"Enable":true,
+				"Disable":false,
+				"TransmissionId":"10DBFEF1",
+				"TransmissionMessage":"023E805555555555",
+				"TransmissionRateMsec":1000,
+				"BitId29":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"MultiFrame":false,
+				"MultiFrameReceiveId":"",
+				"MultiFrameTimeBetweenFramesMsec":0
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Schedule CAN Messages",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"CanSendReceiveValidate",
+			"Description": "Clear All DTCs",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"CGM_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 2000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"10DBFEF1",
+				"ReceiveId":"14DAF145",
+				"TransmissionMessage":"0414FFFFFFAAAAAA",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Clear DTCs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+
+	
+	
+	
+
+	[{
+		"GroupName":"CAN Module Communication",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"CanScheduleData",
+			"Description": "Board 1 Schedule CAN Messages",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CanScheduleData"
+			},
+			"CanScheduleData":[
+			{
+				"BoardId": 1,
+				"SlotId":4,
+				"Enable":true,
+				"Disable":false,
+				"TransmissionId":"10DBFEF1",
+				"TransmissionMessage":"023E005555555555",
+				"TransmissionRateMsec":250,
+				"BitId29":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"MultiFrame":false,
+				"MultiFrameReceiveId":"",
+				"MultiFrameTimeBetweenFramesMsec":0
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Schedule CAN Messages",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		{
+			"Name":"CanSendReceiveValidate",
+			"Description": "BCM Body Control Module Extended Diagnostic",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 10000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"14DA40F1",
+				"ReceiveId":"149AF140",
+				"TransmissionMessage":"0210035555555555",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"Extended Diagnostic",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"BCM Extended Diagnostic"
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":"BCM No Response"
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":"BCM 7F Response"
+					},
+					"PromptLabels": [
+					{
+						"Background":true,
+						"Label":"Body Control Module Ext Diag",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":"0?"
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"BCM Extended Diagnostic"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"BCM Communication",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		{
+			"Name":"CanSendReceiveValidate",
+			"Description": "Start Button Test",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 20000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"14DA40F1",
+				"ReceiveId":"149AF140",
+				"TransmissionMessage":"0322F08555555555",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":false,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"START BUTTON",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"START BUTTON"
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":"BCM No Response"
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"PRESS AND HOLD START BUTTON",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":"0462F085"
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":4,
+						"Mask":"??????1?"
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":""
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+				"Name":"CanReceiveValidate",
+				"Description": "CAN Module Communication",
+				"Concurrent":false,
+				"FailureAbortsTestCycle":false,
+				"FailureAbortsTestCycle":false,
+				"OptionCodesMask":"",
+				"AddOptionCodeUponPass":"",
+				"AddOptionCodeUponFail":"",
+				"TimeoutMsec": 15000,
+				"CanReceiveValidate":
+				{
+					"CanDataEntities":[
+					{
+						"Description":"HFP",
+						"OptionCodesMask":"HFP",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"HFP_COM",
+						"ReceiveId":"145AF168",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"HFP Communication - CAN 5"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"HFP NO RESPONSE"
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"HFP 7F RESPONSE"
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"HFP",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"0?"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}]
+					},
+					{
+						"Description":"VCU",
+						"OptionCodesMask":"VCU",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"VCU_COM",
+						"ReceiveId":"145AF180",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"VCU Communication - CAN 5"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"VCU NO RESPONSE"
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"VCU 7F RESPONSE"
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"VCU",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"0?"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}]
+					},
+					{
+						"Description":"BCM",
+						"OptionCodesMask":"BCM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"BCM_COM",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"BCM Communication - CAN 9"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"BCM NO RESPONSE"
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"BCM 7F RESPONSE"
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"BCM",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"0?"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}]
+					},
+					{
+						"Description":"CGM",
+						"OptionCodesMask":"CGM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"CGM_COM",
+						"ReceiveId":"14DAF145",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"CGM Communication - CAN 6"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"CGM NO RESPONSE"
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"CGM 7F RESPONSE"
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"CGM",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"0?"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}]
+					}],
+					"TestDataDisplay":
+					{
+						"NumberOfMessagesReceived":"",
+						"LastReceivedCanMessage":""
+					},
+					"TestDataReporting":
+					{
+						"NumberOfMessagesReceived":"",
+						"LastReceivedCanMessage":""
+					}
+				},
+				"Fault":
+				{
+					"Id":"",
+					"Description":""
+				},
+				"PromptLabels": [
+				{
+					"Background":false,
+					"Label":"CAN Module Communication",
+					"OptionCodesMask":""
+				}]
+		},
+		{
+			"Name":"CanScheduleData",
+			"Description": "Board 1 Schedule CAN Messages",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CanScheduleData"
+			},
+			"CanScheduleData":[
+			{
+				"BoardId": 1,
+				"SlotId":4,
+				"Enable":false,
+				"Disable":true,
+				"TransmissionId":"10DBFEF1",
+				"TransmissionMessage":"023E005555555555",
+				"TransmissionRateMsec":250,
+				"BitId29":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"MultiFrame":false,
+				"MultiFrameReceiveId":"",
+				"MultiFrameTimeBetweenFramesMsec":0
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Schedule CAN Messages",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+	
+
+			
+	[{
+		"GroupName":"Part Number Checks",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"CanValidatePartNumber",
+			"Description": "CGM Part Number",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"CGM_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"CanValidatePartNumber":
+				{
+					"BoardId": 1,
+					"TransmissionId":"14DA45F1",
+					"ReceiveId":"14DAF145",
+					"TransmissionMessage":"0322F1CB55555555",
+					"TransmissionTimeoutMsec":500,
+					"ApplicationMask":"",
+					"BitId29":true,
+					"CanFD":false,
+					"CanFDFlags":0,
+					"BaseMask":"0762F1CB",
+					"PartId":"CGM",
+					"ValidatePartNumberScriptFileName":"PartNumberCheck-GM-GlobalB_v1.py",
+					"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"CGM No Response"
+						},
+					"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"CGM 7F Response"
+						},
+					"NoPartNumberBroadcastFault":
+						{
+							"Id":"",
+							"Description":"CGM No Part Number From Broadcast"
+						},
+					"TestDataDisplay":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						},
+					"TestDataReporting":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						}
+				},
+			"Fault":
+				{
+					"Id":"",
+					"Description":"CGM Part Number Incorrect"
+				},
+			"PromptLabels": [
+				{
+					"Background":false,
+					"Label":"",
+					"OptionCodesMask":""
+				}]
+		},
+		{
+			"Name":"CanValidatePartNumber",
+			"Description": "HFP Part Number",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"HFP_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"CanValidatePartNumber":
+				{
+					"BoardId": 1,
+					"TransmissionId":"14DA68F1",
+					"ReceiveId":"145AF168",
+					"TransmissionMessage":"0322F1CB55555555",
+					"TransmissionTimeoutMsec":500,
+					"ApplicationMask":"",
+					"BitId29":true,
+					"CanFD":false,
+					"CanFDFlags":0,
+					"BaseMask":"0762F1CB",
+					"PartId":"HFP",
+					"ValidatePartNumberScriptFileName":"PartNumberCheck-GM-GlobalB_v1.py",
+					"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"HFP No Response"
+						},
+					"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"HFP 7F Response"
+						},
+					"NoPartNumberBroadcastFault":
+						{
+							"Id":"",
+							"Description":"HFP No Part Number From Broadcast"
+						},
+					"TestDataDisplay":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						},
+					"TestDataReporting":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						}
+				},
+			"Fault":
+				{
+					"Id":"",
+					"Description":"HFP Part Number Incorrect"
+				},
+			"PromptLabels": [
+				{
+					"Background":false,
+					"Label":"",
+					"OptionCodesMask":""
+				}]
+		},
+		{
+			"Name":"CanValidatePartNumber",
+			"Description": "BCM Part Number",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"BCM_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"CanValidatePartNumber":
+				{
+					"BoardId": 1,
+					"TransmissionId":"14DA40F1",
+					"ReceiveId":"149AF140",
+					"TransmissionMessage":"0322F1CB55555555",
+					"TransmissionTimeoutMsec":500,
+					"ApplicationMask":"",
+					"BitId29":true,
+					"CanFD":false,
+					"CanFDFlags":0,
+					"BaseMask":"0762F1CB",
+					"PartId":"BCM",
+					"ValidatePartNumberScriptFileName":"PartNumberCheck-GM-GlobalB_v1.py",
+					"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"BCM No Response"
+						},
+					"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"BCM 7F Response"
+						},
+					"NoPartNumberBroadcastFault":
+						{
+							"Id":"",
+							"Description":"BCM No Part Number From Broadcast"
+						},
+					"TestDataDisplay":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						},
+					"TestDataReporting":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						}
+				},
+			"Fault":
+				{
+					"Id":"",
+					"Description":"BCM Part Number Incorrect"
+				},
+			"PromptLabels": [
+				{
+					"Background":false,
+					"Label":"",
+					"OptionCodesMask":""
+				}]
+		},
+		{
+			"Name":"CanValidatePartNumber",
+			"Description": "VCU Part Number",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"VCU_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 5000,
+			"CanValidatePartNumber":
+				{
+					"BoardId": 1,
+					"TransmissionId":"14DA80F1",
+					"ReceiveId":"145AF180",
+					"TransmissionMessage":"0322F1CB55555555",
+					"TransmissionTimeoutMsec":500,
+					"ApplicationMask":"",
+					"BitId29":true,
+					"CanFD":false,
+					"CanFDFlags":0,
+					"BaseMask":"0762F1CB",
+					"PartId":"VCU",
+					"ValidatePartNumberScriptFileName":"PartNumberCheck-GM-GlobalB_v1.py",
+					"NoResponseFault":
+						{
+							"Id":"",
+							"Description":"VCU No Response"
+						},
+					"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":"VCU 7F Response"
+						},
+					"NoPartNumberBroadcastFault":
+						{
+							"Id":"",
+							"Description":"VCU No Part Number From Broadcast"
+						},
+					"TestDataDisplay":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						},
+					"TestDataReporting":
+						{
+							"NumberOfMessagesSent":"",
+							"LastReceivedCanMessage":"",
+							"BroadcastedPartNumber":"",
+							"RawPartNumber":"",
+							"ProcessedPartNumber":""
+						}
+				},
+			"Fault":
+				{
+					"Id":"",
+					"Description":"VCU Part Number Incorrect"
+				},
+			"PromptLabels": [
+				{
+					"Background":false,
+					"Label":"",
+					"OptionCodesMask":""
+				}]
+		}]
+	}],
+	
+		
+	
+	[{
+		"GroupName":"LED Ambient Lighting Enable",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+			{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 9,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"H"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"VoltageRange",
+			"Description": "LED Ambient Lighting Enable",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"LED Ambient Lighting Enable"
+			},
+			"TimeoutMsec": 5000,
+			"VoltageRange": [
+			{
+				"BoardId": 1,
+				"Limits":[
+				{
+					"Description":"VoltageRange B1CH09",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"1",
+						"Description":"VoltageRange B1CH09"
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"VoltageRange B1CH09",
+						"OptionCodesMask":""
+					}],
+					"FailAtFirstOutOfRangeReading":false,
+					"Channel":9,
+					"PassWindowMsec":100,
+					"UpperLimitVolts":5,
+					"LowerLimitVolts":3,
+					"TestDataDisplay":
+					{
+						"Samples":"",
+						"ChannelVoltageVolts":"",
+						"MaxChannelVoltageVolts":"",
+						"MinChannelVoltageVolts":""
+					},
+					"TestDataReporting":
+					{
+						"UpperLimitVolts":"40",
+						"LowerLimitVolts":"41",
+						"Samples":"42",
+						"AvgChannelVoltageInRangeVolts":"43",
+						"MaxChannelVoltageVolts":"44",
+						"MinChannelVoltageVolts":"45",
+						"MaxTimeInPassWindowMsec":"46"
+					}
+				}]
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"LED Ambient Lighting Enable",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 9,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"P"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"KNEE BLOSTER LIGHTS ON",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		{
+			"Name":"Delay",
+			"Description": "Delay 1.0 Second",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 1000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Delay 1.0 second",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		{
+			"Name":"PromptOperator",
+			"Description": "LED Ambient Lighting Enable",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 1200000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"PromptOperator"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"--> OPERATOR <--",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"CHECK for BOTH KNEE BLOSTER LIGHTS ON",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"PRESS [PASS] WHEN BOTH LIGHTS ARE ON",
+				"OptionCodesMask":""
+			},
+			{
+				"Background":false,
+				"Label":"PRESS [FAIL] IF BOTH ARE NOT ON",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetBias",
+			"Description": "SetBias",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetBias":
+			{
+				"BoardId": 1,
+				"Channel": 9,
+				"BiasStateList":["NO","V","G","N","P","H"],
+				"BiasState":"NO"
+			},
+				"Fault":
+			{
+				"Id":"07801",
+				"Description":"SetBias"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Bias",
+				"OptionCodesMask":""
+			}]
+		}]
+		
+	}],		
+	
+
+	
+		
+		
+	[{
+		"GroupName":"Switch Testing",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"CanScheduleData",
+			"Description": "Board 1 Schedule CAN Messages",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CanScheduleData"
+			},
+			"CanScheduleData":[
+			{
+				"BoardId": 1,
+				"SlotId":5,
+				"Enable":true,
+				"Disable":false,
+				"TransmissionId":"10DBFEF1",
+				"TransmissionMessage":"023E005555555555",
+				"TransmissionRateMsec":1000,
+				"BitId29":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"MultiFrame":false,
+				"MultiFrameReceiveId":"",
+				"MultiFrameTimeBetweenFramesMsec":0
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Schedule CAN Messages",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		{
+			"Name":"CanSendReceiveValidate",
+			"Description": "BCM Body Control Module Extended Diagnostic",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"BCM_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 10000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"14DA40F1",
+				"ReceiveId":"149AF140",
+				"TransmissionMessage":"0210035555555555",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"Extended Diagnostic",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":"BCM Extended Diagnostic"
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":"BCM No Response"
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":"BCM 7F Response"
+					},
+					"PromptLabels": [
+					{
+						"Background":true,
+						"Label":"Body Control Module Ext Diag",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":"0?"
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"BCM Extended Diagnostic"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"BCM Communication",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"CanScheduleData",
+			"Description": "Board 1 Schedule CAN Messages",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CanScheduleData"
+			},
+			"CanScheduleData":[
+			{
+				"BoardId": 1,
+				"SlotId":5,
+				"Enable":true,
+				"Disable":false,
+				"TransmissionId":"14DA40F1",
+				"TransmissionMessage":"0322504655555555",
+				"TransmissionRateMsec":250,
+				"BitId29":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"MultiFrame":false,
+				"MultiFrameReceiveId":"149AF140",
+				"MultiFrameTimeBetweenFramesMsec":0
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Schedule CAN Messages",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+		{
+				"Name":"CanReceiveValidate",
+				"Description": "Switch Testing",
+				"Concurrent":false,
+				"FailureAbortsTestCycle":false,
+				"FailureAbortsTestCycle":false,
+				"OptionCodesMask":"BCM_COM",
+				"AddOptionCodeUponPass":"",
+				"AddOptionCodeUponFail":"",
+				"TimeoutMsec": 60000,
+				"CanReceiveValidate":
+				{
+					"CanDataEntities":[					
+					{
+						"Description":"LANE DEPARTURE WARNING SWITCH",
+						"OptionCodesMask":"BCM_COM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"LANE DEPARTURE WARNING SWITCH"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"---> OPERATOR <---",
+							"OptionCodesMask":""
+						},	
+						{
+							"Background":true,
+							"Label":"PRESS LANE DEPARTURE WARNING SWITCH",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"100B625046"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":11,
+							"Mask":"?????1??"
+						}]
+					},					
+									
+								
+					{
+						"Description":"FRONT WINDSHIELD WASH",
+						"OptionCodesMask":"BCM_COM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"FRONT WINDSHIELD WASH"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"FRONT WINDSHIELD WASH",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"100B625046"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":5,
+							"Mask":"??1?????"
+						}]
+					},
+					
+					
+					{
+						"Description":"LEFT MULTIFUNCTION STALK",
+						"OptionCodesMask":"BCM_COM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"LEFT MULTIFUNCTION STALK"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"FLASH TO PASS",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"100B625046"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":6,
+							"Mask":"?????1??"
+						}]
+					},
+					
+					{
+						"Description":"LEFT TURN SIGNAL",
+						"OptionCodesMask":"BCM_COM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"LEFT TURN SIGNAL"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"LEFT TURN SIGNAL",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"100B625046"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":7,
+							"Mask":"?????1??"
+						}]
+					},
+					
+					{
+						"Description":"RIGHT TURN SIGNAL",
+						"OptionCodesMask":"BCM_COM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"RIGHT TURN SIGNAL"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"RIGHT TURN SIGNAL",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"100B625046"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":7,
+							"Mask":"1???????"
+						}]
+					},
+					
+					
+					{
+						"Description":"AUTO_HOLD BUTTON",
+						"OptionCodesMask":"BCM_COM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"AUTO_HOLD BUTTON"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"AUTO_HOLD BUTTON",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"100B625046"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":5,
+							"Mask":"?1??????"
+						}]
+					},
+					
+					{
+						"Description":"LEFT MULTIFUNCTION STALK WITH HIGH BEAM ",
+						"OptionCodesMask":"BCM_COM",
+						"BoardId": 1,
+						"AddOptionCodeUponPass":"",
+						"ReceiveId":"149AF140",
+						"ApplicationMask":"",
+						"BitId29":true,
+						"FunctionalCan":false,
+						"CanFD":false,
+						"Allow7FResponse":false,
+						"BaseMask":"",
+						"ValidateCanMessageScriptFileName":"",
+						"ValidateCanMessageScriptInputs":[""],
+						"Fault":
+						{
+							"Id":"",
+							"Description":"LEFT MULTIFUNCTION STALK WITH HIGH BEAM"
+						},
+						"NoResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"Only7FResponseFault":
+						{
+							"Id":"",
+							"Description":""
+						},
+						"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"HIGH BEAM",
+							"OptionCodesMask":""
+						}],
+						"ByteMask":[
+						{
+							"BytePosition":0,
+							"Mask":"100B625046"
+						}],
+						"ByteRange":[
+						{
+							"BytePosition":0,
+							"Mask":""
+						}],
+						"BitMask":[
+						{
+							"BytePosition":6,
+							"Mask":"??????1?"
+						}]
+					}],
+					"TestDataDisplay":
+					{
+						"NumberOfMessagesReceived":"",
+						"LastReceivedCanMessage":""
+					},
+					"TestDataReporting":
+					{
+						"NumberOfMessagesReceived":"",
+						"LastReceivedCanMessage":""
+					}
+				},
+				"Fault":
+				{
+					"Id":"",
+					"Description":""
+				},
+				"PromptLabels": [
+				{
+					"Background":false,
+					"Label":"SWITCH TESTING",
+					"OptionCodesMask":""
+				}]
+		},
+		{
+			"Name":"CanScheduleData",
+			"Description": "Board 1 Schedule CAN Messages",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CanScheduleData"
+			},
+			"CanScheduleData":[
+			{
+				"BoardId": 1,
+				"SlotId":5,
+				"Enable":false,
+				"Disable":true,
+				"TransmissionId":"10DBFEF1",
+				"TransmissionMessage":"023E005555555555",
+				"TransmissionRateMsec":1000,
+				"BitId29":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"MultiFrame":false,
+				"MultiFrameReceiveId":"",
+				"MultiFrameTimeBetweenFramesMsec":0
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Schedule CAN Messages",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"CanScheduleData",
+			"Description": "Board 1 Schedule CAN Messages",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"",
+				"Description":"CanScheduleData"
+			},
+			"CanScheduleData":[
+			{
+				"BoardId": 1,
+				"SlotId":5,
+				"Enable":false,
+				"Disable":true,
+				"TransmissionId":"14DA40F1",
+				"TransmissionMessage":"0322504655555555",
+				"TransmissionRateMsec":250,
+				"BitId29":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"MultiFrame":false,
+				"MultiFrameReceiveId":"",
+				"MultiFrameTimeBetweenFramesMsec":0
+			}],
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 Schedule CAN Messages",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],	
+
+	
+		
+		
+	[{
+		"GroupName":"DTC Reads",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+            "Name": "CanSendReceiveSaveDtcData",
+            "Description": "DTC READ CGM",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CGM_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "CanSendReceiveSaveDtcData": {
+              "BoardId": 1,
+              "TransmissionId": "14DA45F1",
+              "ReceiveId": "14DAF145",
+              "TransmissionMessage": "0319020255555555",
+              "TransmissionTimeoutMsec": 1000,
+              "FunctionalCan": false,
+              "FunctionalCanLastFrameMask": "",
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "SingleFrameMask": "0?59",
+              "MultipleFrameMask": "",
+              "BitId29": true,
+              "IgnoreStatus": false,
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-GlobalB_v1.py",
+              "NoResponseFault": {
+                "Id": "",
+                "Description": "CGM NO RESPONSE"
+              },
+              "Only7FResponseFault": {
+                "Id": "",
+                "Description": ""
+              }
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "CGM READ DTC FAILURE"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Get specific DTC Data",
+                "OptionCodesMask": ""
+              }
+            ]
+        },
+    
+		{
+            "Name": "CanSendReceiveSaveDtcData",
+            "Description": "DTC READ HFP",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "HFP_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "CanSendReceiveSaveDtcData": {
+              "BoardId": 1,
+              "TransmissionId": "14DA68F1",
+              "ReceiveId": "145AF168",
+              "TransmissionMessage": "0319020255555555",
+              "TransmissionTimeoutMsec": 1000,
+              "FunctionalCan": false,
+              "FunctionalCanLastFrameMask": "",
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "SingleFrameMask": "0?59",
+              "MultipleFrameMask": "",
+              "BitId29": true,
+              "IgnoreStatus": false,
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-GlobalB_v1.py",
+              "NoResponseFault": {
+                "Id": "",
+                "Description": "HFP NO RESPONSE"
+              },
+              "Only7FResponseFault": {
+                "Id": "",
+                "Description": ""
+              }
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "HFP READ DTC FAILURE"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Get specific DTC Data",
+                "OptionCodesMask": ""
+              }
+            ]
+        },
+
+		{
+            "Name": "CanSendReceiveSaveDtcData",
+            "Description": "DTC READ BCM",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "BCM_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "CanSendReceiveSaveDtcData": {
+              "BoardId": 1,
+              "TransmissionId": "14DA40F1",
+              "ReceiveId": "149AF140",
+              "TransmissionMessage": "0319020255555555",
+              "TransmissionTimeoutMsec": 1000,
+              "FunctionalCan": false,
+              "FunctionalCanLastFrameMask": "",
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "SingleFrameMask": "0?59",
+              "MultipleFrameMask": "",
+              "BitId29": true,
+              "IgnoreStatus": false,
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-GlobalB_v1.py",
+              "NoResponseFault": {
+                "Id": "",
+                "Description": "BCM NO RESPONSE"
+              },
+              "Only7FResponseFault": {
+                "Id": "",
+                "Description": ""
+              }
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "BCM READ DTC FAILURE"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Get specific DTC Data",
+                "OptionCodesMask": ""
+              }
+            ]
+        },
+        {
+            "Name": "CanValidateSavedDtcData",
+            "Description": "Can Validate Saved Dtc Data",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "BCM_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "CanValidateSavedDtcData": {
+              "BoardId": 1,
+              "AllDtcsMustBePresent": false,
+              "Dtcs": [
+			   {
+                  "Id": "900D17",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X3 BLUE Connector"
+                  }
+                },
+                {
+                  "Id": "90239E",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X2 Pink Connector"
+                  }
+                },
+				{
+                  "Id": "9AA311",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X1 Black Connector"
+                  }
+                },
+				{
+                  "Id": "9B4200",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X2 Pink Connector"
+                  }
+                },
+				{
+                  "Id": "C65900",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X1 Black Connector or Lost Comm HVAC TEMP MOTOR-FRONT 1"
+                  }
+                },
+				{
+                  "Id": "C65A00",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X1 Black Connector or Lost Comm HVAC TEMP MOTOR-FRONT 2"
+                  }
+                },
+				{
+                  "Id": "C65B00",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X1 Black Connector or Lost Comm HVAC MODE MOTOR-FRONT"
+                  }
+                },
+				{
+                  "Id": "C65D00",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X1 Black Connector or Lost Comm HVAC AIR INLET MOTOR-FRONT"
+                  }
+                },
+				{
+                  "Id": "D52A00",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X1 Black Connector"
+                  }
+                },
+				{
+                  "Id": "F50500",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "BCM X1 Black Connector"
+                  }
+                }]
+            },
+            "Fault": {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validate Saved Dtc Data",
+                "OptionCodesMask": ""
+              }
+            ]
+        },
+		
+		{
+			"Name":"Delay",
+			"Description": "Delay 25.0 Second",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 25000,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+				"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"VCU Delay 25.0 second",
+				"OptionCodesMask":""
+			}]
+		},
+		
+		
+        {
+            "Name": "CanSendReceiveSaveDtcData",
+            "Description": "DTC READ VCU",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "VCU_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "CanSendReceiveSaveDtcData": {
+              "BoardId": 1,
+              "TransmissionId": "14DA80F1",
+              "ReceiveId": "145AF180",
+              "TransmissionMessage": "0319020255555555",
+              "TransmissionTimeoutMsec": 1000,
+              "FunctionalCan": false,
+              "FunctionalCanLastFrameMask": "",
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "SingleFrameMask": "0?59",
+              "MultipleFrameMask": "",
+              "BitId29": true,
+              "IgnoreStatus": false,
+              "ParseDtcDataScriptFileName": "ParseDtcData-GM-GlobalB_v1.py",
+              "NoResponseFault": {
+                "Id": "",
+                "Description": "VCU NO RESPONSE"
+              },
+              "Only7FResponseFault": {
+                "Id": "",
+                "Description": ""
+              }
+            },
+            "Fault": {
+              "Id": "",
+              "Description": "VCU READ DTC FAILURE"
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Get specific DTC Data",
+                "OptionCodesMask": ""
+              }
+            ]
+        },
+        {
+            "Name": "CanValidateSavedDtcData",
+            "Description": "Can Validate Saved Dtc Data",
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "VCU_COM",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "CanValidateSavedDtcData": {
+              "BoardId": 1,
+              "AllDtcsMustBePresent": false,
+              "Dtcs": [
+                {
+                  "Id": "9A1B13",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VCU X4 - Ethernet Bus 2+ Circuit Open"
+                  }
+                },
+                {
+                  "Id": "9C4D01",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VCU X6 OR I/P DISPLAY - VCD LVDS-LVDS SIGNAL+"
+                  }
+                },
+                {
+                  "Id": "9C9F01",
+                  "Fault": {
+                    "Id": "",
+                    "Description": "VCU X6 OR I/P DISPLAY - VCD LVDS-LVDS SIGNAL+ GENERAL ELEC FAIL"
+                  }
+                }]
+            },
+            "Fault": {
+              "Id": "",
+              "Description": ""
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Validate Saved Dtc Data",
+                "OptionCodesMask": ""
+              }
+            ]
+        },
+        {
+			"Name":"CanSendReceiveValidate",
+			"Description": "Clear All DTCs",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"CGM_COM",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"BoardId": 1,
+			"TimeoutMsec": 2000,
+			"CanSendReceiveValidate":
+			{
+				"BoardId": 1,
+				"TransmissionId":"10DBFEF1",
+				"ReceiveId":"14DAF145",
+				"TransmissionMessage":"0414FFFFFFAAAAAA",
+				"TransmissionTimeoutMsec":300,
+				"ApplicationMask":"",
+				"BitId29":true,
+				"MultiFrameTimeBetweenFramesMsec":0,
+				"FunctionalCan":true,
+				"CanFD":false,
+				"CanFDFlags":0,
+				"NoResponseRequired":false,
+				"Allow7FResponse":false,
+				"BaseMask":"",
+				"ValidateCanMessageScriptFileName":"",
+				"ValidateCanMessageScriptInputs":[""],
+				"CanDataEntities":[
+				{
+					"Description":"",
+					"OptionCodesMask":"",
+					"Fault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"NoResponseFault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"Only7FResponseFault":
+					{
+						"Id":"",
+						"Description":""
+					},
+					"PromptLabels": [
+					{
+						"Background":false,
+						"Label":"",
+						"OptionCodesMask":""
+					}],
+					"ByteMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"ByteRange":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}],
+					"BitMask":[
+					{
+						"BytePosition":0,
+						"Mask":""
+					}]
+				}],
+				"TestDataDisplay":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				},
+				"TestDataReporting":
+				{
+					"NumberOfMessagesSent":"",
+					"LastReceivedCanMessage":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Clear DTCs"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"",
+				"OptionCodesMask":""
+			}]
+		}]
+	}],
+		
+		
+		
+		
+	[{
+		"GroupName":"Power Down and Disconnect",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 1
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B1"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B2",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 2
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B2"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 2 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B3",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 3
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B3"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 3 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "IOBoard Turn Power Supply Off B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 1,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" IOBoardControlDigitalIO B1 Power Supply Off"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Power Supply Off",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardCanReset",
+			"Description": "RESET BOARD 1 CAN",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"07801",
+				"Description":"RESET BOARD 1 CAN"
+			},
+			"IOBoardCanReset":
+			{
+				"BoardId": 1,
+				"CanFD": false
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"RESET CAN BOARD 1",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardCanReset",
+			"Description": "RESET BOARD 2 CAN",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"07801",
+				"Description":"RESET BOARD 2 CAN"
+			},
+			"IOBoardCanReset":
+			{
+				"BoardId": 2,
+				"CanFD": false
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"RESET CAN BOARD 2",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardCanReset",
+			"Description": "RESET BOARD 3 CAN",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"07801",
+				"Description":"RESET BOARD 3 CAN"
+			},
+			"IOBoardCanReset":
+			{
+				"BoardId": 3,
+				"CanFD": false
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"RESET CAN BOARD 3",
+				"OptionCodesMask":""
+			}]
+		}]
+	}]],
+	"ChangeHistory":[
+	{
+		"Date":"08/03/2021",
+		"Version":1.0,
+		"ChangeBy":"PJC",
+		"Change":"Initial version MY23 L233"
+	}]
+}
