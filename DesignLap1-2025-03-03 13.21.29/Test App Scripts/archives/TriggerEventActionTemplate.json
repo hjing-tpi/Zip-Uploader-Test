@@ -1,0 +1,62 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"TriggerEventAction",
+					"Description": "Trigger Event Action Template",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"WaveFile": "",
+					"TriggerEventActionParameters":
+						{
+							"TriggerId": 0,
+							"BoardId": 0,
+							"TriggerChannel": 0,
+							"TriggerEventList":["1=RISING VOLTAGE", "2=FALLING VOLTAGE", "3=CLEAR SPECIFIED TRIGGER", "4=PENDANT BUTTON"],
+							"TriggerEvent":0,
+							"ActionCommandList":["SetBias","IOBoardControl"],
+							"ActionCommand":"",
+							"ActionBiasChannel": 0,
+							"ActionBiasStateList":["NO","V","G","N","P","H"],					
+							"ActionBiasState":"",
+							"ActionControlByte":0
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"04132019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
+				
