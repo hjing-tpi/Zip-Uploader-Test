@@ -1,0 +1,50 @@
+{	
+	"Name":"Product Test",
+	"Description":"Termination Script - Fatal Fault",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Termination Script - Fatal Fault",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"Delay",
+					"Description": "Fatal Fault",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 1000,
+					"Fault":
+						{
+							"Id":"07801",
+							"Description":"DELAY"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Termination Script",
+							"OptionCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"ChangeBy":"RMM",
+			"Change":"Initial version"
+		}
+	]
+}
