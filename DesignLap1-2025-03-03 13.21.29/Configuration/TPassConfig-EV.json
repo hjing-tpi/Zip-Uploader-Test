@@ -1,0 +1,611 @@
+{
+  "MainScreen": {
+    "Title": {
+      "Enabled": true,
+      "FontSize": 12,
+      "Label": "EV Charge Port Tester"
+    },
+    "PrimaryId": {
+      "Enabled": true,
+      "FontSize": 48,
+      "Label": "Primary ID"
+    },
+    "SecondaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Secondary ID"
+    },
+    "TertiaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Tertiary ID"
+    },
+    "QuaternaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Quaternary ID"
+    },
+    "QuinaryId": {
+      "Enabled": false,
+      "FontSize": 48,
+      "Label": "Quinary ID"
+    },
+    "MainButtons": [
+      {
+        "Enabled": true,
+        "Label": "EVCharging",
+        "FontSize": 32,
+        "Script": "GMEVCharging.py",
+        "TextColor": "#FFFFFFFF",
+        "BackgroundColor": "#FF00008B",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": false,
+        "Label": "ZipLogsDesktop",
+        "FontSize": 0,
+        "Script": "ZipLogFiles.py",
+        "TextColor": "",
+        "BackgroundColor": "",
+        "BitmapImage": "",
+        "Margin": 10
+      },
+      {
+        "Enabled": false,
+        "Label": "ZipLogsUSB",
+        "FontSize": 0,
+        "Script": "ZipLogFilesUsb.py",
+        "TextColor": "",
+        "BackgroundColor": "",
+        "BitmapImage": "",
+        "Margin": 0
+      }
+    ],
+    "Description": "Main Screen"
+  },
+  "OptionsScreen": {
+    "OptionTextColor": "Black",
+    "OptionFontSize": 18,
+    "OptionDescriptionFontSize": 18,
+    "ButtonFontSize": 32,
+    "ButtonMargin": 150,
+    "Description": "Option Screen"
+  },
+  "TestScreen": {
+    "DisplayTestData": true,
+    "DisplayTestFaults": true,
+    "DisplayTestGroups": true,
+    "DisplayTestSteps": true,
+    "AbortButtonFontSize": 32,
+    "AbortButtonMargin": 10,
+    "FailButtonFontSize": 32,
+    "FailButtonMargin": 10,
+    "PassButtonFontSize": 32,
+    "PassButtonMargin": 10,
+    "PromptFontSize": 0,
+    "PromptTextColor": null,
+    "BackgroundPromptMaxCount": 0,
+    "BackgroundPromptFontSize": 0,
+    "BackgroundPromptWidth": 0,
+    "Description": "Test Screen"
+  },
+  "ResultsScreen": {
+    "Display": true,
+    "UseCustomTextOnTestResultsScreen": true,
+    "DisplayTimeSec": 5,
+    "DisplayFailedItems": true,
+    "DisplayFaultItems": true,
+    "DisplayPassedItems": false,
+    "DisplayNotTestedItems": false,
+    "ButtonDisplayRetest": true,
+    "RetestButtonFontSize": 32,
+    "RetestButtonMargin": 1,
+    "ButtonDisplayExit": true,
+    "ExitButtonFontSize": 32,
+    "ExitButtonMargin": 100,
+    "FaultTextFontSize": 32,
+    "ResultButtons": [],
+    "Description": "Results Screen"
+  },
+  "ProductIdentification": {
+    "IncomingFileTrigger": false,
+    "IncomingFileName": "",
+    "IncomingFileSearchFrequencyMsec": 0,
+    "IncomingUdpTrigger": true,
+    "IncomingUdpLocalPort": 0,
+    "StartTestCycleScriptFileName": "StartTestCycle-GM_v3.py",
+    "TestAppRunContinuously": false,
+    "TestAppRunContinuouslyStopUponTestFailure": true,
+    "TestAppRunContinuouslyTimeSec": 15,
+    "TestAppRunContinuouslyProductId": "333333",
+    "Description": "Product Identification"
+  },
+  "ProductAttributes": {
+    "ForceOperatorToReviewOptions": false,
+    "ProductAttributeRetrievalScriptFileName": "OptionRetrieval-GM_v1.py",
+    "ProductAttributeParsingScriptFileName": "OptionParsing-GM_v6.py",
+    "ChangeTestApplicationScriptFileNameAfterOptionsSelected": "",
+    "Description": "Product Attributes"
+  },
+  "TestResults": {
+    "SendTestResults": true,
+    "TestResultsProcessingScriptFileName": "ResultsProcessing-GM_v7.py",
+    "SaveTestResultsToTpiDatabase": true,
+    "PrinterEnable": true,
+    "FormFeed": true,
+    "PrintLeftMargin": 0,
+    "PrintTopMargin": 9,
+    "PrintFontSize": 0,
+    "Description": "Test Results"
+  },
+  "PartnerInterfaces": {
+    "GmEdi": {
+      "Enabled": false,
+      "CreateMersReportingRecord": true,
+      "CreateGepicsShipRecord": true,
+      "CreateGsipQualityRecord": true
+    },
+    "GmTcpHandshake": {
+      "Enabled": false,
+      "LocalIP1": 0,
+      "LocalIP2": 0,
+      "LocalIP3": 0,
+      "LocalIP4": 0,
+      "LocalPort": 0,
+      "RemoteIP1": 0,
+      "RemoteIP2": 0,
+      "RemoteIP3": 0,
+      "RemoteIP4": 0,
+      "RemotePort": 0
+    },
+    "Description": "Partner Interfaces"
+  },
+  "Hardware": {
+    "Scanners": {
+      "USB": {
+        "Enabled": true,
+        "PrefixCharacterDecimal": 35,
+        "SuffixCharacterDecimal": 36,
+        "Description": "USB"
+      },
+      "Serial": {
+        "Enabled": false,
+        "PortNumber": 1,
+        "PrefixCharacterDecimal": 0,
+        "SuffixCharacterDecimal": 13,
+        "BaudRateBps": 9600,
+        "Parity": "None",
+        "DataBits": 8,
+        "StopBits": "One",
+        "Handshake": "None",
+        "DataTerminalReadyEnabled": true,
+        "RequestToSendEnabled": true,
+        "ReadTimeoutMsec": 5000,
+        "WriteTimeoutMsec": 5000,
+        "Description": "Serial"
+      },
+      "Description": "Scanner Settings"
+    },
+    "DigitalIO": {
+      "IOBoardEnabled": true,
+      "LogMessages": true,
+      "EchoTimeout": 1000,
+      "RetryCount": 4,
+      "IoDevices": [
+        {
+          "Device": 1,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 51,
+          "RemotePort": 10000,
+          "LocalPort": 10000,
+          "SkipVersionCheck": false,
+          "BufferMode": 0,
+          "Calibration": {
+            "Voltages": [
+              {
+                "Channel": 1,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 2,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 3,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 4,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 5,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 6,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 7,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 8,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 9,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 10,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 11,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 12,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 13,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 14,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 15,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 16,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 17,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 18,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 19,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 20,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 21,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 22,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 23,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 24,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 25,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 26,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 27,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 28,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 29,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 30,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 31,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              },
+              {
+                "Channel": 32,
+                "ScaleFactor": 0.0,
+                "Offset": 0,
+                "Units": "Volts"
+              }
+            ],
+            "ScaleFactors": {
+              "SinkCurrent": {
+                "Units": null,
+                "Scale": 0.0,
+                "Offset": 0
+              },
+              "SourceCurrent": {
+                "Units": null,
+                "Scale": 0.0,
+                "Offset": 0
+              },
+              "Ref33V": {
+                "Units": null,
+                "Scale": 0.0
+              },
+              "Ref5Av": {
+                "Units": null,
+                "Scale": 0.0
+              },
+              "Ref5Dc": {
+                "Units": null,
+                "Scale": 0.0
+              },
+              "Ref9V": {
+                "Units": null,
+                "Scale": 0.0
+              },
+              "Ref65V": {
+                "Units": null,
+                "Scale": 0.0
+              },
+              "AGnd": {
+                "Units": null,
+                "Scale": 0.0
+              },
+              "Io12V": {
+                "Units": null,
+                "Scale": 0.0
+              },
+              "Veh": {
+                "Units": null,
+                "Scale": 0.0
+              }
+            }
+          }
+        }
+      ],
+      "Description": "Digital IO Settings"
+    },
+    "Meter": {
+      "MeterEnabled": false,
+      "LogMessages": true,
+      "ConnectTimeout": 2000,
+      "CommandTimeout": 300,
+      "SetVoltageRangeCommandTimeout": 2000,
+      "RetryCount": 4,
+      "MeterDevices": [
+        {
+          "Device": 1,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 11,
+          "Port": 8100,
+          "Type": "KeysightDAQ970A"
+        }
+      ],
+      "Description": "Meter Settings"
+    },
+    "ModBus": {
+      "ModbusEnabled": true,
+      "LogMessages": true,
+      "ConnectTimeout": 2000,
+      "CommandTimeout": 300,
+      "SetVoltageRangeCommandTimeout": 2000,
+      "RetryCount": 4,
+      "ModBusDevices": [
+        {
+          "Device": 1,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 11,
+          "Port": 8100,
+          "Type": "989EN-4C16",
+          "962EN-4006Channels": null,
+          "XT-1221Channels": null,
+          "ADAM-6017Channels": null
+        },
+        {
+          "Device": 2,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 12,
+          "Port": 8100,
+          "Type": "989EN-4C16",
+          "962EN-4006Channels": null,
+          "XT-1221Channels": null,
+          "ADAM-6017Channels": null
+        },
+        {
+          "Device": 3,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 60,
+          "Port": 502,
+          "Type": "Micro870",
+          "962EN-4006Channels": null,
+          "XT-1221Channels": null,
+          "ADAM-6017Channels": null
+        },
+        {
+          "Device": 4,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 13,
+          "Port": 502,
+          "Type": "ADAM-6017",
+          "962EN-4006Channels": null,
+          "XT-1221Channels": null,
+          "ADAM-6017Channels": [
+            {
+              "Channel": 1,
+              "VoltageRangeMvolt": "0-10000"
+            },
+            {
+              "Channel": 2,
+              "VoltageRangeMvolt": "0-10000"
+            },
+            {
+              "Channel": 3,
+              "VoltageRangeMvolt": "0-10000"
+            },
+            {
+              "Channel": 4,
+              "VoltageRangeMvolt": "0-10000"
+            },
+            {
+              "Channel": 5,
+              "VoltageRangeMvolt": "0-10000"
+            },
+            {
+              "Channel": 6,
+              "VoltageRangeMvolt": "0-10000"
+            },
+            {
+              "Channel": 7,
+              "VoltageRangeMvolt": "0-10000"
+            },
+            {
+              "Channel": 8,
+              "VoltageRangeMvolt": "0-10000"
+            }
+          ]
+        }
+      ],
+      "Description": "ModBus Settings"
+    },
+    "WebServer": {
+      "WebServerEnabled": true,
+      "LogMessages": true,
+      "IP1": 192,
+      "IP2": 168,
+      "IP3": 0,
+      "IP4": 50,
+      "Port": 8084,
+      "EVChargerDevices": [
+        {
+          "Device": 1,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 55,
+          "Type": "Bender"
+        },
+        {
+          "Device": 2,
+          "IP1": 192,
+          "IP2": 168,
+          "IP3": 0,
+          "IP4": 56,
+          "Type": "InCharge"
+        }
+      ],
+      "Description": "EV Charger Settings"
+    },
+    "Description": "Tool Hardware"
+  },
+  "Logging": {
+    "SystemLogLevel": "Info",
+    "TestApplicationLogLevel": "Info",
+    "InterfaceLogLevel": "Info",
+    "TestApplicationSummaryLogOnlyTestsThatRan": false,
+    "PurgeDisabled": false,
+    "DailyPurgeTime": "10:10",
+    "GeneralLogKeepFileDays": 0,
+    "TestSummaryLogKeepFileDays": 0,
+    "DiskSpaceCheckDisabled": false,
+    "FreeDiskSpacePercentage": 5,
+    "Description": "Logging"
+  },
+  "Validation": {
+    "AddTimeToEachTestStep": false,
+    "AddTimeToEachTestStepSec": 0,
+    "Description": "Validation"
+  },
+  "Description": null
+}
