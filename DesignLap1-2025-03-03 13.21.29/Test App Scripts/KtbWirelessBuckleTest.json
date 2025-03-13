@@ -1,0 +1,882 @@
+{
+  "Name": "Magna Excelsior Springs Wireless Buckle App Code",
+  "Description": "Magna ESSS Wireless Buckle Test using Marquardt Ktb Hardware",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 7,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "MagnaEssHardwareMapping.json",
+  "TerminationScriptFileNamePass": "Pass.json",
+  "TerminationScriptFileNameFail": "Fail.json",
+  "TerminationScriptFileNameFatalFault": "Fail.json",
+  "TerminationScriptFileNameOperatorAbort": "Fail.json",
+  "GmReporting": {
+    "MersTestName": "xxxx",
+    "MersTestType": "xx",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "xxxx",
+    "MersEngineType": "xxxx",
+    "MersDeviceId": "xxxx",
+    "GepicsShipCode": "xxxx"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Reset All Outputs",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusControlDiscreteOutputs",
+            "Description": "Modbus 1 Outputs Off",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "Modbus 1 Outputs Off",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Modbus 1 Outputs Off",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusControlDiscreteOutputs": {
+              "DeviceId": 1,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Connect Antennas",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "REMOVE ANTENNAS FROM HOLDERS",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "!(KTB2S2B1|KTB2S2B2|KTB2S2B3)&!(KTB3S3B1|KTB3S3B2|KTB3S3B3)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "ANTENNAS NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PLACE ANTENNAS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "REMOVE FROM HOLDERS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "ANTENNA 1 ONLY",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 100,
+              "ByteMask": "",
+              "BitMask": "?????????????110",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "REMOVE FROM HOLDERS ANTENNA 1 ONLY"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "REMOVE ANTENNAS FROM HOLDERS",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "(KTB2S2B1|KTB2S2B2|KTB2S2B3)&!(KTB3S3B1|KTB3S3B2|KTB3S3B3)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "ANTENNAS NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PLACE ANTENNAS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "REMOVE FROM HOLDERS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "ANTENNAS 1 AND 2 ONLY",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 100,
+              "ByteMask": "",
+              "BitMask": "?????????????100",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "REMOVE FROM HOLDERS ANTENNAS 1 AND 2 ONLY"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "ModbusValidateDiscreteInputs",
+            "Description": "REMOVE ANTENNAS FROM HOLDERS",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": true,
+            "OptionCodesMask": "(KTB3S3B1|KTB3S3B2|KTB3S3B3)",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "ANTENNAS NOT CONNECTED",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "PLACE ANTENNAS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "REMOVE FROM HOLDERS",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "ANTENNAS 1, 2, AND 3",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "ModbusValidateDiscreteInputs": {
+              "DeviceId": 1,
+              "PassWindowMsec": 100,
+              "ByteMask": "",
+              "BitMask": "?????????????000",
+              "TestDataDisplay": {
+                "Samples": "",
+                "BitMask": "",
+                "DiscreteInputBits": "",
+                "ByteMask": "",
+                "DiscreteInputHex": ""
+              },
+              "IOTag": "REMOVE FROM HOLDERS ANTENNAS 1, 2, AND 3"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ],
+    [
+      {
+        "GroupName": "Test Wireless Buckles",
+        "Background": false,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "MarquardtKtbSeatBuckleTest",
+            "Description": "KTB1 Left Seat 1",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "KTB1S1B1|KTB1S1B2|KTB1S1B3",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Connection to KTB1 Antenna",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Attach KTB1 Antenna to Left Seat 1 Frame",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MarquardtKtbSeatBuckleTest": {
+              "DeviceId": 1,
+              "NumberOfBuckles": "KTB1BUCKLES",
+              "ParseKtbBuckleDataScriptFileName": "ParseKtbBuckleData-Magna_v1.py",
+              "TestData": {
+                "KeyIde": "",
+                "NumberOfMessagesSent": 0,
+                "Buckle1Results": 1,
+                "Buckle2Results": 1,
+                "Buckle3Results": 1,
+                "LastReceivedKtbMessage": ""
+              },
+              "TestDataDisplay": {
+                "KeyIde": "",
+                "NumberOfMessagesSent": "",
+                "LastReceivedKtbMessage": ""
+              },
+              "TestDataReporting": {
+                "KeyIde": ""
+              },
+              "KtbSequentialTestSteps": [
+                {
+                  "Description": "Left Seat 1 Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Left Seat 1 Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "LEFT SEAT 1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "LATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                },
+                {
+                  "Description": "Left Seat 1 Buckles Unlatched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": false,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Left Seat 1 Buckles not unlatched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "LEFT SEAT 1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "UNLATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                },
+                {
+                  "Description": "Left Seat 1 Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Left Seat 1 Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "LEFT SEAT 1",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "LATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MarquardtKtbSeatBuckleTest",
+            "Description": "KTB2 Middle Seat 2",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "KTB2S2B1|KTB2S2B2|KTB2S2B3",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Connection to KTB2 Antenna",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Attach KTB2 Antenna to Middle Seat 2 Frame",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MarquardtKtbSeatBuckleTest": {
+              "DeviceId": 2,
+              "NumberOfBuckles": "KTB2BUCKLES",
+              "ParseKtbBuckleDataScriptFileName": "ParseKtbBuckleData-Magna_v1.py",
+              "TestData": {
+                "KeyIde": "",
+                "NumberOfMessagesSent": 0,
+                "Buckle1Results": 1,
+                "Buckle2Results": 1,
+                "Buckle3Results": 1,
+                "LastReceivedKtbMessage": ""
+              },
+              "TestDataDisplay": {
+                "KeyIde": "",
+                "NumberOfMessagesSent": "",
+                "LastReceivedKtbMessage": ""
+              },
+              "TestDataReporting": {
+                "KeyIde": ""
+              },
+              "KtbSequentialTestSteps": [
+                {
+                  "Description": "Middle Seat 2 Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Middle Seat 2 Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MIDDLE SEAT 2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "LATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                },
+                {
+                  "Description": "Middle Seat 2 Buckles Unlatched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": false,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Middle Seat 2 Buckles not unlatched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MIDDLE SEAT 2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "UNLATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                },
+                {
+                  "Description": "Middle Seat 2 Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Middle Seat 2 Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "MIDDLE SEAT 2",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "LATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MarquardtKtbSeatBuckleTest",
+            "Description": "KTB3 Right Seat 3",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "KTB3S3B1|KTB3S3B2|KTB3S3B3",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 60000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "Connection to KTB3 Antenna",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Attach KTB3 Antenna to Right Seat 3 Frame",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MarquardtKtbSeatBuckleTest": {
+              "DeviceId": 3,
+              "NumberOfBuckles": "KTB3BUCKLES",
+              "ParseKtbBuckleDataScriptFileName": "ParseKtbBuckleData-Magna_v1.py",
+              "TestData": {
+                "KeyIde": "",
+                "NumberOfMessagesSent": 0,
+                "Buckle1Results": 1,
+                "Buckle2Results": 1,
+                "Buckle3Results": 1,
+                "LastReceivedKtbMessage": ""
+              },
+              "TestDataDisplay": {
+                "KeyIde": "",
+                "NumberOfMessagesSent": "",
+                "LastReceivedKtbMessage": ""
+              },
+              "TestDataReporting": {
+                "KeyIde": ""
+              },
+              "KtbSequentialTestSteps": [
+                {
+                  "Description": "Right Seat 3 Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Right Seat 3 Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "RIGHT SEAT 3",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "LATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                },
+                {
+                  "Description": "Right Seat 3 Buckles Unlatched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": false,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Right Seat 3 Buckles not unlatched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "RIGHT SEAT 3",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "UNLATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                },
+                {
+                  "Description": "Right Seat 3 Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Right Seat 3 Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "RIGHT SEAT 3",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    },
+                    {
+                      "Background": false,
+                      "Label": "LATCH BUCKLES",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "Buckle1Latched": false,
+                    "Buckle2Latched": false,
+                    "Buckle3Latched": false
+                  }
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "Initial"
+    },
+    {
+      "Date": "04202023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 2,
+      "ChangeBy": "RMM",
+      "Change": "Changed options"
+    },
+    {
+      "Date": "04262023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 3,
+      "ChangeBy": "B. Sullivan",
+      "Change": "added reset and connect antenna steps."
+    },
+    {
+      "Date": "04262023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 4,
+      "ChangeBy": "B. Sullivan",
+      "Change": "added pass/fail pointers"
+    },
+    {
+      "Date": "04262023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 5,
+      "ChangeBy": "B. Sullivan",
+      "Change": "renamed app code"
+    },
+    {
+      "Date": "04262023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 6,
+      "ChangeBy": "B. Sullivan",
+      "Change": "corrected app code"
+    },
+    {
+      "Date": "04222024",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 7,
+      "ChangeBy": "RMM",
+      "Change": "Added hardware mapping file"
+    }
+  ],
+  "FileName": "C:\\Users\\rmueller\\OneDrive - Test Products\\Desktop\\TPass\\Magna\\Wireless Buckle\\LineClearPIPLogic\\Test App Scripts\\KtbWirelessBuckleTest.json",
+  "DateLastModified": "2023-04-26T15:42:29-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
