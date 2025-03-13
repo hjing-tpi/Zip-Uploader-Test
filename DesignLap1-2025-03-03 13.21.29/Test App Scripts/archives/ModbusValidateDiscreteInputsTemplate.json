@@ -1,0 +1,54 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Modbus Validate Discrete Inputs Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"ModbusValidateDiscreteInputs",
+					"Description": "Modbus Validate Discrete Inputs",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"ModbusValidateDiscreteInputs":
+						{
+							"DeviceId":0,
+							"PassWindowMsec":0,
+							"ByteMask":"",
+							"BitMask":""
+						},
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"02132019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
