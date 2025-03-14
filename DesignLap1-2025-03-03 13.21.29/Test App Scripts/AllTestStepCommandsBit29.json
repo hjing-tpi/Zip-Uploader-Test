@@ -1,0 +1,697 @@
+{
+  "Name": "TPass Demo",
+  "Description": "All TPass Test Step Commands",
+  "Version": 0.0,
+  "VersionMajor": 3,
+  "VersionMinor": 2,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "Abort.json",
+  "GmReporting": {
+    "MersTestName": "TEST",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "ROCK",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "DEMO"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Can",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "CanFDConfigureCom",
+            "Description": "Can FD Configure Com",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "44343",
+              "Description": "CanFDConfigureCom",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanFDConfigureCom": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "NominalMode": "Kbs500",
+              "DataRate": "Mbs10",
+              "FlowControl": false,
+              "CanId": [
+                {
+                  "ReceiveId": "47F",
+                  "BitId29": true
+                },
+                {
+                  "ReceiveId": "801",
+                  "BitId29": true
+                },
+                {
+                  "ReceiveId": "4E9",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "4C2",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "800",
+                  "BitId29": true
+                },
+                {
+                  "ReceiveId": "0",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "ffffffff",
+                  "BitId29": true
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanConfigureCom",
+            "Description": "Can B2 Configure High Speed 500k",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "25",
+              "Description": "CanConfigureCom - CONFIGURE HS CAN BOARD 2",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CONFIGURE HS CAN BOARD 2",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanConfigureCom": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "CanMode": "HighSpeed500K",
+              "FlowControl": true,
+              "CanId": [
+                {
+                  "ReceiveId": "800",
+                  "BitId29": true
+                },
+                {
+                  "ReceiveId": "0",
+                  "BitId29": false
+                },
+                {
+                  "ReceiveId": "ffffffff",
+                  "BitId29": true
+                }
+              ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveValidate",
+            "Description": "Seat Belt",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "FLASH2PASSFAILED",
+            "TimeoutMsec": 10000,
+            "PromptImageFileName": "20220708_122705.JPG",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Cycle Switches",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveValidate": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "ffff",
+              "ReceiveId": "ffff",
+              "TransmissionMessage": "0322030300000000",
+              "TransmissionTimeoutMsec": 300,
+              "BitId29": true,
+              "FunctionalCan": false,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "ApplicationMask": "",
+              "MultiFrameTimeBetweenFramesMsec": 0,
+              "NoResponseRequired": false,
+              "Allow7FResponse": false,
+              "BaseMask": "????620303",
+              "ValidateCanMessageScriptFileName": "",
+              "ValidateCanMessageScriptInputs": [
+                ""
+              ],
+              "CanDataEntities": [
+                {
+                  "Description": "Flash 2 Pass",
+                  "OptionCodesMask": "FLASHPASS",
+                  "Fault": {
+                    "Id": "65534",
+                    "Description": "FLASH 2 Pass",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "34",
+                    "Description": "CanSendReceiveValidate FLASH 2 Pass - No Response Fault",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "344",
+                    "Description": "CanSendReceiveValidate FLASH 2 Pass - Only 7F Response Fault",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "Flash 2 Pass",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 7,
+                      "Mask": "??????1?"
+                    }
+                  ]
+                },
+                {
+                  "Description": "SEAT BELT",
+                  "OptionCodesMask": "",
+                  "Fault": {
+                    "Id": "23",
+                    "Description": "SEAT BELT Switch",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "sample-mp4-file.mp4",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "NoResponseFault": {
+                    "Id": "455",
+                    "Description": "CanSendReceiveValidate Hi Beam - No Response Fault",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "Only7FResponseFault": {
+                    "Id": "456",
+                    "Description": "CanSendReceiveValidate Hi Beam - Only 7F Response Fault",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "sample-mp4-file.mp4",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": true,
+                      "Label": "INSERT SEAT BELT",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "ByteMask": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "ByteRange": [
+                    {
+                      "BytePosition": 0,
+                      "Mask": ""
+                    }
+                  ],
+                  "BitMask": [
+                    {
+                      "BytePosition": 7,
+                      "Mask": "???????1"
+                    }
+                  ]
+                }
+              ],
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanScheduleData",
+            "Description": "SCHED 2 SLOTS B2 Command ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "07801",
+              "Description": "CanScheduleData SLOT5,6",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "SCHEDULE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "BOARD 1",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "SLOT 5,6",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              },
+              {
+                "Background": false,
+                "Label": "TESTER PRESENT MESSAGE",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanScheduleData": [
+              {
+                "BoardId": 2,
+                "UseWirelessBoardId": false,
+                "SlotId": 7,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "fff",
+                "TransmissionMessage": "0322030300000000",
+                "TransmissionRateMsec": 1000,
+                "BitId29": true,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              },
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 6,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "101",
+                "TransmissionMessage": "FE013E0000000000",
+                "TransmissionRateMsec": 1000,
+                "BitId29": false,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              },
+              {
+                "BoardId": 1,
+                "UseWirelessBoardId": false,
+                "SlotId": 2,
+                "Enable": true,
+                "Disable": false,
+                "TransmissionId": "fff",
+                "TransmissionMessage": "",
+                "TransmissionRateMsec": 0,
+                "BitId29": true,
+                "CanFD": false,
+                "CanFDFlags": 0,
+                "MultiFrame": false,
+                "MultiFrameReceiveId": "",
+                "MultiFrameTimeBetweenFramesMsec": 0
+              }
+            ],
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanSendReceiveSaveDtcData",
+            "Description": "DTC READ SEAT",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "13076",
+              "Description": "SEAT READ DTC FAILURE",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Get specific DTC Data",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanSendReceiveSaveDtcData": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "763",
+              "ReceiveId": "fff",
+              "TransmissionMessage": "02190A0000000000",
+              "TransmissionTimeoutMsec": 2000,
+              "FunctionalCan": false,
+              "FunctionalCanLastFrameMask": "",
+              "SingleFrameMask": "10",
+              "MultipleFrameMask": "",
+              "BitId29": true,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "IgnoreStatus": true,
+              "NoResponseFault": {
+                "Id": "13794",
+                "Description": "SEAT NO RESPONSE - CanSendReceiveSaveDtcData",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "13075",
+                "Description": "Only 7F Response",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ParseDtcDataScriptFileName": "ParseDtcData-GGDS-WithFailByte_v2.py"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "CanValidatePartNumber",
+            "Description": "SEAT Part Number",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "CAN",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 5000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "13080",
+              "Description": "SEAT Part Number Incorrect",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "CanValidatePartNumber": {
+              "BoardId": 2,
+              "UseWirelessBoardId": false,
+              "TransmissionId": "fff",
+              "ReceiveId": "fff",
+              "TransmissionMessage": "0322F13200000000",
+              "TransmissionTimeoutMsec": 500,
+              "PartId": "BCM",
+              "BitId29": true,
+              "CanFD": false,
+              "CanFDFlags": 0,
+              "NoResponseFault": {
+                "Id": "13794",
+                "Description": "BCM No Response",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "Only7FResponseFault": {
+                "Id": "13075",
+                "Description": "BCM 7F Response",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "NoPartNumberBroadcastFault": {
+                "Id": "36307",
+                "Description": "BCM No Part Number From Broadcast",
+                "Detail": "",
+                "RepairInstructions": {
+                  "Text": "",
+                  "MovieFileName": "",
+                  "ImageFileName": "",
+                  "PdfFileName": "",
+                  "HtmlFileName": ""
+                }
+              },
+              "ApplicationMask": "",
+              "BaseMask": "100D62",
+              "ValidatePartNumberScriptFileName": "PartNumberCheck-Ascii-NoRevision_v1.py",
+              "TestDataDisplay": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              },
+              "TestDataReporting": {
+                "NumberOfMessagesSent": "",
+                "LastReceivedCanMessage": "",
+                "BroadcastedPartNumber": "",
+                "RawPartNumber": "",
+                "ProcessedPartNumber": ""
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "08062021",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "03312022",
+      "Version": 0.0,
+      "VersionMajor": 2,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Final Pass Commands All"
+    },
+    {
+      "Date": "07072022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Seat demo"
+    },
+    {
+      "Date": "08192022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "added abort script"
+    },
+    {
+      "Date": "12082022",
+      "Version": 0.0,
+      "VersionMajor": 3,
+      "VersionMinor": 2,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\AllTestStepCommandsBit29.json",
+  "DateLastModified": "2022-12-08T14:58:29.7085532-05:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
