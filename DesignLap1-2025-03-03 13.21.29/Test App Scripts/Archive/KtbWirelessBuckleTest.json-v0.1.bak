@@ -1,0 +1,527 @@
+{
+  "Name": "Ktb Wireless Buckle Test",
+  "Description": "Magna ESSS Wireless Buckle Test using Marquardt Ktb Hardware",
+  "Version": 0.0,
+  "VersionMajor": 0,
+  "VersionMinor": 1,
+  "Production": false,
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "xxxx",
+    "MersTestType": "xx",
+    "MersTestPgmRev": 0,
+    "MersTestTableRev": 0,
+    "MersTCA": "xxxx",
+    "MersEngineType": "xxxx",
+    "MersDeviceId": "xxxx",
+    "GepicsShipCode": "xxxx"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "Test Wireless Buckles",
+        "Background": false,
+        "Picture": "",
+        "TestSteps": [
+          {
+            "Name": "MarquardtKtbSeatBuckleTest",
+            "Description": "Driver Seat",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "DRIVER",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "No Connection to KTB Antenna",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Place WBS Box on Driver Seat Frame",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MarquardtKtbSeatBuckleTest": {
+              "DeviceId": 1,
+              "ParseKtbBuckelDataScriptFileName": "ParseKtbBuckleData-Magna_v1.py",
+              "KtbSequentialTestSteps": [
+                {
+                  "Description": "Driver Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Driver Seat Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Driver Seat - Latch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                },
+                {
+                  "Description": "Driver Buckles Unlatched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": false,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Driver Seat Buckles not unlatched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Driver Seat - Unlatch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                },
+                {
+                  "Description": "Driver Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Driver Seat Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Driver Seat - Latch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                }
+            ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MarquardtKtbSeatBuckleTest",
+            "Description": "Middle Seat",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "MIDDLE",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "No Connection to KTB Antenna",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Place WBS Box on Middle Seat Frame",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MarquardtKtbSeatBuckleTest": {
+              "DeviceId": 2,
+              "ParseKtbBuckelDataScriptFileName": "ParseKtbBuckleData-Magna_v1.py",
+              "KtbSequentialTestSteps": [
+                {
+                  "Description": "Middle Seat Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Middle Seat Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Middle Seat - Latch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                },
+                {
+                  "Description": "Middle Buckles Unlatched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": false,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Middle Seat Buckles not unlatched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Middle Seat - Unlatch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                },
+                {
+                  "Description": "Middle Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Middle Seat Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Middle Seat - Latch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                }
+            ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "MarquardtKtbSeatBuckleTest",
+            "Description": "Passenger Seat",
+            "Validated": true,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "PASSENGER",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 20000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "",
+              "Description": "No Connection to KTB Antenna",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Place WBS Box on Passenger Seat Frame",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "MarquardtKtbSeatBuckleTest": {
+              "DeviceId": 3,
+              "ParseKtbBuckelDataScriptFileName": "ParseKtbBuckleData-Magna_v1.py",
+              "KtbSequentialTestSteps": [
+                {
+                  "Description": "Passenger Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Passenger Seat Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Passenger Seat - Latch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                },
+                {
+                  "Description": "Passenger Buckles Unlatched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": false,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Passenger Seat Buckles not unlatched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Passenger Seat - Unlatch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                },
+                {
+                  "Description": "Passenger Buckles Latched",
+                  "OptionCodesMask": "",
+                  "LatchSeatBuckles": true,
+                  "Fault": {
+                    "Id": "",
+                    "Description": "All Passenger Seat Buckles not latched",
+                    "Detail": "",
+                    "RepairInstructions": {
+                      "Text": "",
+                      "MovieFileName": "",
+                      "ImageFileName": "",
+                      "PdfFileName": "",
+                      "HtmlFileName": ""
+                    }
+                  },
+                  "PromptLabels": [
+                    {
+                      "Background": false,
+                      "Label": "Passenger Seat - Latch all Buckles",
+                      "OptionCodesMask": "",
+                      "IsDisplayed": false,
+                      "DisplayIndex": 0
+                    }
+                  ],
+                  "TestData": {
+                    "NumberOfMessagesSent": 0,
+                    "Buckel1Latched": false,
+                    "Buckel2Latched": false,
+                    "Buckel3Latched": false,
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataDisplay": {
+                    "LastReceivedKtbMessage": ""
+                  },
+                  "TestDataReporting": {
+                    "LastReceivedKtbMessage": ""
+                  }
+                }
+            ]
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04172023",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "Initial"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\KtbWirelessBuckleTest.json",
+  "DateLastModified": "2023-04-17T17:56:42.9394815-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
