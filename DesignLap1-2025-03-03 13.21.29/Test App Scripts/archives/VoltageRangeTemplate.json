@@ -1,0 +1,61 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"VoltageRange",
+					"Description": "Voltage Range Template",
+					"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"WaveFile": "",
+					"TimeoutMsec": 0,
+					"FailAtFirstOutOfRangeReading":false,
+					"VoltageRangeParameters":[
+						{
+							"BoardId": 0,
+							"VoltageRangeLimits":[
+								{
+									"Channel":0,
+									"PassWindowMsec":0,
+									"UpperLimitVolts":0,
+									"LowerLimitVolts":0
+								}]
+						}],
+					"PromptLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}],			
+					"BackgroundLabels": [
+						{
+							"Label":"",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
+				
