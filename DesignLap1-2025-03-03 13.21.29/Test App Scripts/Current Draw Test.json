@@ -1,0 +1,190 @@
+[
+  {
+    "Name": "SourceCurrentRangeBase",
+    "Description": "",
+    "Concurrent": false,
+    "FailureAbortsTestCycle": false,
+    "OptionCodesMask": "",
+    "AddOptionCodeUponPass": "",
+    "AddOptionCodeUponFail": "",
+    "Fault": {
+      "Id": "",
+      "Description": "Overall Fault BOARD 1 SOURCE CURRENT"
+    },
+    "PromptLabels": [
+      {
+        "Background": false,
+        "Label": "",
+        "OptionCodesMask": ""
+      }
+    ],
+    "TimeoutMsec": 2000,
+    "CurrentRange": [
+      {
+        "Description": "",
+        "OptionCodesMask": "",
+        "Fault": {
+          "Id": "",
+          "Description": ""
+        },
+        "PromptLabels": [
+          {
+            "Background": false,
+            "Label": "",
+            "OptionCodesMask": ""
+          }
+        ],
+        "FailAtFirstOutOfRangeReading": false,
+        "BoardId": 1,
+        "PassWindowMsec": 200,
+        "UpperLimitMamp": 500,
+        "LowerLimitMamp": 0,
+        "TestDataDisplay": {
+          "Samples": "",
+          "CurrentMamp": "",
+          "BaseCurrentMamp": "",
+          "MaxCurrentMamp": "",
+          "MinCurrentMamp": ""
+        },
+        "TestDataReporting": {
+          "UpperLimitMamp": "",
+          "LowerLimitMamp": "",
+          "Samples": "",
+          "AvgCurrentInRangeMamp": "",
+          "BaseCurrentMamp": "",
+          "MaxCurrentMamp": "",
+          "MinCurrentMamp": "",
+          "MaxTimeInPassWindowMsec": ""
+        }
+      }
+    ]
+  },
+  {
+    "Name": "SetBias",
+    "Description": "",
+    "Concurrent": false,
+    "TimeoutMsec": 0,
+    "FailureAbortsTestCycle": false,
+    "OptionCodesMask": "",
+    "AddOptionCodeUponPass": "",
+    "AddOptionCodeUponFail": "",
+    "SetBias": {
+      "BoardId": 1,
+      "Channel": 3,
+      "BiasStateList": [
+        "NO",
+        "V",
+        "G",
+        "N",
+        "P",
+        "H"
+      ],
+      "BiasState": "V"
+    },
+    "Fault": {
+      "Id": "",
+      "Description": "SetBias"
+    },
+    "PromptLabels": [
+      {
+        "Background": false,
+        "Label": "Set Bias",
+        "OptionCodesMask": ""
+      }
+    ]
+  },
+  {
+    "Name": "SourceCurrentRangeDelta",
+    "Description": "",
+    "Concurrent": false,
+    "FailureAbortsTestCycle": false,
+    "OptionCodesMask": "",
+    "AddOptionCodeUponPass": "",
+    "AddOptionCodeUponFail": "",
+    "Fault": {
+      "Id": "",
+      "Description": "Overall Fault BOARD 1 SOURCE CURRENT DELTA"
+    },
+    "PromptLabels": [
+      {
+        "Background": false,
+        "Label": "",
+        "OptionCodesMask": ""
+      }
+    ],
+    "TimeoutMsec": 3000,
+    "CurrentRange": [
+      {
+        "Description": "",
+        "OptionCodesMask": "",
+        "Fault": {
+          "Id": "",
+          "Description": ""
+        },
+        "PromptLabels": [
+          {
+            "Background": false,
+            "Label": "",
+            "OptionCodesMask": ""
+          }
+        ],
+        "FailAtFirstOutOfRangeReading": false,
+        "BoardId": 1,
+        "PassWindowMsec": 200,
+        "UpperLimitMamp": 7000,
+        "LowerLimitMamp": 3000,
+        "TestDataDisplay": {
+          "Samples": "",
+          "CurrentMamp": "",
+          "BaseCurrentMamp": "",
+          "MaxCurrentMamp": "",
+          "MinCurrentMamp": ""
+        },
+        "TestDataReporting": {
+          "UpperLimitMamp": "",
+          "LowerLimitMamp": "",
+          "Samples": "",
+          "AvgCurrentInRangeMamp": "",
+          "BaseCurrentMamp": "",
+          "MaxCurrentMamp": "",
+          "MinCurrentMamp": "",
+          "MaxTimeInPassWindowMsec": ""
+        }
+      }
+    ]
+  },
+  {
+    "Name": "SetBias",
+    "Description": "",
+    "Concurrent": false,
+    "TimeoutMsec": 0,
+    "FailureAbortsTestCycle": false,
+    "OptionCodesMask": "",
+    "AddOptionCodeUponPass": "",
+    "AddOptionCodeUponFail": "",
+    "SetBias": {
+      "BoardId": 1,
+      "Channel": 3,
+      "BiasStateList": [
+        "NO",
+        "V",
+        "G",
+        "N",
+        "P",
+        "H"
+      ],
+      "BiasState": "NO"
+    },
+    "Fault": {
+      "Id": "",
+      "Description": "SetBias"
+    },
+    "PromptLabels": [
+      {
+        "Background": false,
+        "Label": "Set Bias",
+        "OptionCodesMask": ""
+      }
+    ]
+  }
+]
