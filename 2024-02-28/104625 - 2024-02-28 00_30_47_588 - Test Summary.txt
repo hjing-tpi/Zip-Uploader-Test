@@ -1,0 +1,4029 @@
+*** TEST PASSED ***
+
+
+Tool
+  TPass Version: 1.5.0.14
+  TPass Common DLL (Tpi.TPass.Common.dll) Version: 1.5.0.14
+  TPI IOBoard DLL (IOBoard.dll) Version: 2.13.0.0
+  TPass WebSocket DLL (WebSocket.dll) Version: 1.0.15.0
+
+  Number of IO Boards Configured = 3, Echo Timeout = 2500
+  IO Board  1, Version = Oct 11 2021
+  IO Board  2, Version = Oct 11 2021
+  IO Board  3, Version = 
+
+
+  Host Name:   GM-LDT-EOT-1
+  IP Address:  10.25.41.184
+  IP Address:  192.168.0.50
+
+Product
+  PRIMARY ID:  104625
+  SECONDARY ID:  1GNERGKS8RJ143019
+  TERTIARY ID:  
+  QUATERNARY ID:  
+  QUINARY ID:  
+  Option Codes In Build Data: MY24,0ST,1LT,1NF,1SZ,2NF,2ST,3ST,4MB,4ST,5FC,5ST,6X1,7X1,8X2,9X2,A2X,A7E,ABE,AII,AKO,AL0,AQP,AR9,ARU,ASD,ASV,AT8,ATH,AVK,AWS,AWT,AXP,B6J,B96,BGP,BHO,BKG,BKL,BSV,BTV,C32,C69,CJ2,CTB,CWA,D31,D75,DLT,DVZ,DWK,EF7,ENL,EPH,FE2,FE9,FHO,FWD,GB8,HQB,HS1,IKP,ISA,IVE,J24,J61,JBP,K4C,KA1,KI3,KI6,KL9,KRV,KSG,KW7,LK0,MAH,MF8,N37,N53,NKG,NTB,PRF,Q8E,QO5,R9N,RSR,RTI,SBK,SGE,SLM,T8Z,TCP,TDA,TQ5,U2K,UBD,UBI,UCB,UD7,UE1,UE4,UEU,UFB,UGN,UH5,UH6,UIT,UJN,UKI,UKK,UKM,UKT,UOW,UQF,URF,UUA,UV2,UVX,UVZ,V59,V8D,VHM,VK3,VL2,VRF,VRG,VRH,VRK,VRL,VRM,VRN,VRR,VT7,VV4,WLM,WMY,X88,ZCD,ZL3,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,
+  Option Codes Selected By Operator: 
+  Option Codes De-selected By Operator: 
+  Option Codes Added By Test Application: WIRED,CGM_COM,VCU_COM,TCP_COM,WCM_COM,PAM_COM,ELM_COM,SDM_COM,HFPR_COM,BCM_COM,
+  Option Codes Active During Test Application: CONNECT,DISCONNECT,CGM,SDM,ELM,BCM,VCU,UD7,AL0,UGN,K4C,UE1,C69,X88,PN,DTC,WIRED,CGM_COM,VCU_COM,TCP_COM,WCM_COM,PAM_COM,ELM_COM,SDM_COM,HFPR_COM,BCM_COM,
+
+Total Test Cycle
+  Begin: 02/28/2024 00:30:48:459
+  Result: Pass
+  Duration mSec: 74418
+
+Test Application
+  File Name:          C:\TPass\Test App Scripts\GM_C1YC2_EoT_01.json
+  Version:            4.36
+  Production:         False
+  Date Last Modified: 2/23/2024 12:40:00 PM
+  Test Cycle: GM_C1YC2_EoT_01.json - Factory Zero LDT MY24 C1YC2
+  Begin: 02/28/2024 00:30:48:459
+  Result: Pass
+  Duration mSec: 51540
+
+Termination Test Application
+  File Name:          C:\TPass\Test App Scripts\Pass.json
+  Version:            0.6
+  Production:         False
+  Date Last Modified: 2/23/2024 8:48:00 AM
+  Termination Test Cycle: PASS.json - GM LDT C1YC2 MY24 Pass Script
+  Begin: 02/28/2024 00:31:39:999
+  Result: Pass
+  Duration mSec: 22878
+
+	Test Group: Set Outputs to OFF
+	  Begin: 02/28/2024 00:30:48:507
+	  Result: Pass
+	  DurationMsec: 78
+	  OptionCodesMask: 
+
+		Test Step: IOBoardControlDigitalIO - Board 1 turn power supply off / set output to 0
+		  Begin: 02/28/2024 00:30:48:533
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 1
+		  ControlByte: 0
+
+		Test Step: IOBoardControlDigitalIO - Board 2 set output to 0
+		  Begin: 02/28/2024 00:30:48:542
+		  Result: Pass
+		  DurationMsec: 5
+		  OptionCodesMask: 
+		  BoardId: 2
+		  ControlByte: 0
+
+		Test Step: SetNoBiasAllChannels - SetNoBiasAllChannels B1
+		  Begin: 02/28/2024 00:30:48:552
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 1
+
+		Test Step: SetNoBiasAllChannels - SetNoBiasAllChannels B2
+		  Begin: 02/28/2024 00:30:48:563
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 2
+
+		Test Step: SetCurrentLimits - Set IO Board 1 Current Limits
+		  Begin: 02/28/2024 00:30:48:572
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 1
+		  SinkLimitMamp: 25000
+		  SinkLimitCounts: 42998
+		  SourceLimitMamp: 25000
+		  SourceLimitCounts: 36279
+
+		Test Step: SetCurrentLimits - Set IO Board 2 Current Limits
+		  Begin: 02/28/2024 00:30:48:581
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 2
+		  SinkLimitMamp: 25000
+		  SinkLimitCounts: 41661
+		  SourceLimitMamp: 25000
+		  SourceLimitCounts: 36171
+
+
+	Test Group: Connect Test Connectors
+	  Begin: 02/28/2024 00:30:48:594
+	  Result: Pass
+	  DurationMsec: 28456
+	  OptionCodesMask: 
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 48 WAY X117 GREY HANDLE
+		  Begin: 02/28/2024 00:30:48:635
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 22781
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ???????????????1
+
+			Test Data: 
+			  Samples: 15302
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 8E6E00000005000202CF00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000011001111
+			  LastReceivedMessage: 8E6E00000005000202CF00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000011001111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 1/1/1 WAY POWER BLACK HANDLE
+TERMINAL 7
+		  Begin: 02/28/2024 00:31:11:423
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 3
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ??????????????1?
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 8E6F00000005000202CF00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000011001111
+			  LastReceivedMessage: 8E6F00000005000202CF00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000011001111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 1/1/1 WAY POWER BLACK HANDLE
+TERMINAL 8
+		  Begin: 02/28/2024 00:31:11:431
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 4
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ?????????????1??
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 8E7000000005000202CF00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000011001111
+			  LastReceivedMessage: 8E7000000005000202CF00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000011001111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 1/1/1 WAY POWER BLACK HANDLE
+TERMINAL 9
+		  Begin: 02/28/2024 00:31:11:440
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 4
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ????????????1???
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 8E7100000005000202CF00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000011001111
+			  LastReceivedMessage: 8E7100000005000202CF00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000011001111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 1 WAY GROUND WHITE HANDLE
+		  Begin: 02/28/2024 00:31:11:450
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 3074
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ??????????1?????
+
+			Test Data: 
+			  Samples: 2055
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 967800000005000202EF00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000011101111
+			  LastReceivedMessage: 967800000005000202EF00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000011101111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 55 WAY X317 RED HANDLE
+		  Begin: 02/28/2024 00:31:14:530
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 2460
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ????????0???????
+
+			Test Data: 
+			  Samples: 1653
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 9CED000000050002026F00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000001101111
+			  LastReceivedMessage: 9CED000000050002026F00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000001101111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 55 WAY X319 YELLOW HANDLE
+		  Begin: 02/28/2024 00:31:16:997
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 3
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ???????0????????
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 9CEE000000050002026F00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000001101111
+			  LastReceivedMessage: 9CEE000000050002026F00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000001101111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 20 WAY X407 GREEN HANDLE
+		  Begin: 02/28/2024 00:31:17:005
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 4
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ??????0?????????
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 9CEF000000050002026F00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000001101111
+			  LastReceivedMessage: 9CEF000000050002026F00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000001101111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 30 WAY X105 PURPLE HANDLE
+		  Begin: 02/28/2024 00:31:17:015
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 4
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ?????0??????????
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 9CF0000000050002026F00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000001101111
+			  LastReceivedMessage: 9CF0000000050002026F00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000001101111
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT 30 WAY X105 PURPLE HANDLE
+		  Begin: 02/28/2024 00:31:17:027
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 23
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ????0???????????
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 9CF1000000050002026F00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000001101111
+			  LastReceivedMessage: 9CF1000000050002026F00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000001101111
+
+
+	Test Group: Engage Dual Action Connectors Copy
+	  Begin: 02/28/2024 00:31:17:052
+	  Result: Pass
+	  DurationMsec: 466
+	  OptionCodesMask: 
+
+		Test Step: ModbusControlDiscreteOutputs - Latch Dual Actions
+		  Begin: 02/28/2024 00:31:17:076
+		  Result: Pass
+		  DurationMsec: 5
+		  OptionCodesMask: 
+		  DeviceId: 2
+		  ControlOutputWordHex: 003D
+		  ControlOutputWordBit: 
+
+			Test Data: 
+			  Samples: 1
+			  ReceivedControlWordHex: 003D
+
+		Test Step: Delay - Delay 200 MS For Latch Engagement
+		  Begin: 02/28/2024 00:31:17:085
+		  Result: Pass
+		  DurationMsec: 202
+		  OptionCodesMask: 
+		  TimeoutMsec: 200
+
+		Test Step: IOBoardControlDigitalIO - Turn On Relay to Disable PIP
+		  Begin: 02/28/2024 00:31:17:292
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 2
+		  ControlByte: 3
+
+		Test Step: ModbusControlDiscreteOutputs - Draw Down Dual Actions
+		  Begin: 02/28/2024 00:31:17:300
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  DeviceId: 2
+		  ControlOutputWordHex: 003F
+		  ControlOutputWordBit: 
+
+			Test Data: 
+			  Samples: 1
+			  ReceivedControlWordHex: 003F
+
+		Test Step: Delay - Delay 200 MS For Contact Engagement
+		  Begin: 02/28/2024 00:31:17:308
+		  Result: Pass
+		  DurationMsec: 202
+		  OptionCodesMask: 
+		  TimeoutMsec: 200
+
+		Test Step: IOBoardControlDigitalIO - IOBoard Turn Power Supply On B1
+		  Begin: 02/28/2024 00:31:17:514
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 1
+		  ControlByte: 2
+
+
+	Test Group: X404_X1 REAR DEFOG
+	  Begin: 02/28/2024 00:31:17:519
+	  Result: Pass
+	  DurationMsec: 88
+	  OptionCodesMask: 
+
+		Test Step: SetBias - Set Bias B1CH15
+		  Begin: 02/28/2024 00:31:17:535
+		  Result: Pass
+		  DurationMsec: 3
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 15
+		  BiasState: H
+
+		Test Step: VoltageRange - Read Voltage On B1CH15
+REAR DEFOG PULL LOW (CONNECTOR-Inline-To Body X404 X11X404_X1)
+		  Begin: 02/28/2024 00:31:17:541
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 61
+		  OptionCodesMask: 
+
+			Description: B1CH15
+			Test Result: Pass
+			Test DurationMsec: 55
+
+				TestParameters: 
+				TimeoutMsec: 3000
+				FailAtFirstOutOfRangeReading: False
+				BoardId: 1
+				Channel: 15
+				PassWindowMsec: 45
+				UpperLimitVolts: 5
+				LowerLimitVolts: -1
+
+				Test Data: 
+				# Samples: 13
+				AvgChannelVoltageInRangeVolts: 0.707995538461539
+				MaxChannelVoltageVolts: 0.799862
+				MinChannelVoltageVolts: 0.68191
+				MaxTimeInPassWindowMsec: 48
+
+		Test Step: SetBias - Set Bias B1CH15
+		  Begin: 02/28/2024 00:31:17:605
+		  Result: Pass
+		  DurationMsec: 2
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 15
+		  BiasState: NO
+
+
+	Test Group: X409_X1 Defog
+	  Begin: 02/28/2024 00:31:17:609
+	  Result: OptionCodeNotTested
+	  DurationMsec: 20
+	  OptionCodesMask: 
+
+		Test Step: SetBias - Set Bias B1CH09
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: CMO_out
+		  BoardId: 1
+		  Channel: 9
+		  BiasState: H
+
+		Test Step: VoltageRange - DE-ICE ELEMENT PULL LOW (CONNECTOR-Inline-To PigTail X409 X604X409_X1)
+requires chasis inline connection not made at time of test
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  AlwaysPass: False
+		  DurationMsec: 0
+		  OptionCodesMask: CMO_OUT
+
+			Description: B1CH09
+			Test Result: NotTested
+			Test DurationMsec: 0
+
+				TestParameters: 
+				TimeoutMsec: 3000
+				FailAtFirstOutOfRangeReading: False
+				BoardId: 1
+				Channel: 9
+				PassWindowMsec: 100
+				UpperLimitVolts: 3
+				LowerLimitVolts: -1
+
+				Test Data: 
+				# Samples: 0
+				AvgChannelVoltageInRangeVolts: 0
+				MaxChannelVoltageVolts: 0
+				MinChannelVoltageVolts: 0
+				MaxTimeInPassWindowMsec: 0
+
+		Test Step: SetBias - Set Bias B1CH09
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: CMO_out
+		  BoardId: 1
+		  Channel: 9
+		  BiasState: NO
+
+
+	Test Group: DC TO DC CONVERTER
+	  Begin: 02/28/2024 00:31:17:631
+	  Result: Pass
+	  DurationMsec: 703
+	  OptionCodesMask: 
+
+		Test Step: SetBias - Set Bias B1CH01
+		  Begin: 02/28/2024 00:31:17:650
+		  Result: Pass
+		  DurationMsec: 3
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 1
+		  BiasState: H
+
+		Test Step: Delay - DC TO DC DELAY
+		  Begin: 02/28/2024 00:31:17:656
+		  Result: Pass
+		  DurationMsec: 501
+		  OptionCodesMask: 
+		  TimeoutMsec: 500
+
+		Test Step: SetBias - Set Bias B1CH1
+		  Begin: 02/28/2024 00:31:18:159
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 1
+		  BiasState: NO
+
+		Test Step: Delay - DC TO DC DELAY
+		  Begin: 02/28/2024 00:31:18:165
+		  Result: Pass
+		  DurationMsec: 51
+		  OptionCodesMask: 
+		  TimeoutMsec: 50
+
+		Test Step: VoltageRange - DC TO DC CONVERTER
+		  Begin: 02/28/2024 00:31:18:218
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 116
+		  OptionCodesMask: 
+
+			Description: B1CH01
+			Test Result: Pass
+			Test DurationMsec: 109
+
+				TestParameters: 
+				TimeoutMsec: 3000
+				FailAtFirstOutOfRangeReading: False
+				BoardId: 1
+				Channel: 1
+				PassWindowMsec: 100
+				UpperLimitVolts: 10
+				LowerLimitVolts: 3
+
+				Test Data: 
+				# Samples: 25
+				AvgChannelVoltageInRangeVolts: 3.56102129166667
+				MaxChannelVoltageVolts: 3.614491
+				MinChannelVoltageVolts: 0.106633
+				MaxTimeInPassWindowMsec: 100
+
+
+	Test Group: M17FRONT_X1 WIPER MOTOR
+	  Begin: 02/28/2024 00:31:18:336
+	  Result: Pass
+	  DurationMsec: 195
+	  OptionCodesMask: 
+
+		Test Step: SetBias - Set Bias B1CH12
+		  Begin: 02/28/2024 00:31:18:362
+		  Result: Pass
+		  DurationMsec: 2
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 12
+		  BiasState: N
+
+		Test Step: SetBias - Set Bias B1CH14
+		  Begin: 02/28/2024 00:31:18:367
+		  Result: Pass
+		  DurationMsec: 2
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 14
+		  BiasState: H
+
+		Test Step: VoltageRange - Read Voltage On B2CH10
+MOTOR HIGH SPEED CONTROL PULL LOW (MOTOR-Wiper FRONT M17FRONT_X1)
+		  Begin: 02/28/2024 00:31:18:371
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 115
+		  OptionCodesMask: 
+
+			Description: read ch B1CH14
+			Test Result: Pass
+			Test DurationMsec: 107
+
+				TestParameters: 
+				TimeoutMsec: 3000
+				FailAtFirstOutOfRangeReading: False
+				BoardId: 1
+				Channel: 14
+				PassWindowMsec: 100
+				UpperLimitVolts: 3
+				LowerLimitVolts: -1
+
+				Test Data: 
+				# Samples: 27
+				AvgChannelVoltageInRangeVolts: 0.172649074074074
+				MaxChannelVoltageVolts: 0.17688
+				MinChannelVoltageVolts: 0.062645
+				MaxTimeInPassWindowMsec: 102
+
+		Test Step: SetBias - Set Bias B1CH14
+		  Begin: 02/28/2024 00:31:18:519
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 14
+		  BiasState: NO
+
+		Test Step: SetBias - Set Bias B1CH12
+		  Begin: 02/28/2024 00:31:18:526
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 12
+		  BiasState: NO
+
+
+	Test Group: M17REAR_X1 WIPER MOTOR
+	  Begin: 02/28/2024 00:31:18:532
+	  Result: Pass
+	  DurationMsec: 143
+	  OptionCodesMask: 
+
+		Test Step: SetBias - Set Bias B1CH13
+		  Begin: 02/28/2024 00:31:18:547
+		  Result: Pass
+		  DurationMsec: 3
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 13
+		  BiasState: H
+
+		Test Step: VoltageRange - Read Voltage On B1CH13
+REAR WINDOW MOTOR CONTROL PULL LOW (MOTOR-Wiper REAR M17REAR_X1)
+		  Begin: 02/28/2024 00:31:18:552
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 117
+		  OptionCodesMask: 
+
+			Description: B1CH13
+			Test Result: Pass
+			Test DurationMsec: 109
+
+				TestParameters: 
+				TimeoutMsec: 3000
+				FailAtFirstOutOfRangeReading: False
+				BoardId: 1
+				Channel: 13
+				PassWindowMsec: 100
+				UpperLimitVolts: 3
+				LowerLimitVolts: -1
+
+				Test Data: 
+				# Samples: 26
+				AvgChannelVoltageInRangeVolts: 0.701518615384615
+				MaxChannelVoltageVolts: 0.729432
+				MinChannelVoltageVolts: 0.106836
+				MaxTimeInPassWindowMsec: 103
+
+		Test Step: SetBias - Set Bias B1CH13
+		  Begin: 02/28/2024 00:31:18:672
+		  Result: Pass
+		  DurationMsec: 3
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 13
+		  BiasState: NO
+
+
+	Test Group: A756_X1 Steering Column Position Module
+	  Begin: 02/28/2024 00:31:18:677
+	  Result: OptionCodeNotTested
+	  DurationMsec: 32
+	  OptionCodesMask: 
+
+		Test Step: SetBias - Set Bias B1CH03
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: N38_OUT
+		  BoardId: 1
+		  Channel: 3
+		  BiasState: V
+
+		Test Step: Delay - 500ms delay
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: N38_OUT
+		  TimeoutMsec: 500
+
+		Test Step: SourceCurrentRangeBase - A756_X1 Steering Column Position Module CURRENT BASELINE
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: N38_OUT
+
+			Description: 
+			Test Result: NotTested
+			Test DurationMsec: 0
+
+				TestParameters: 
+				TimeoutMsec: 2000
+				FailAtFirstOutOfRangeReading: False
+				BoardId: 1
+				*Source Base Test
+				PassWindowMsec: 200
+				UpperLimitMamp: 5000
+				LowerLimitMamp: 0
+
+				Test Data: 
+				# Samples: 0
+				BaseCurrentMamp: 0
+				AvgCurrentInRangeMamp: 0
+				MaxCurrentMamp: 0
+				MinCurrentMamp: 0
+				MaxTimeInPassWindowMsec: 0
+
+		Test Step: SourceCurrentRangeDelta - CURRENT TEST A756_X1 Steering Column Position Module
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: N38_OUT
+
+			Description: 
+			Test Result: NotTested
+			Test DurationMsec: 0
+
+				TestParameters: 
+				TimeoutMsec: 30000
+				FailAtFirstOutOfRangeReading: False
+				BoardId: 1
+				*Source Delta Test
+				PassWindowMsec: 400
+				UpperLimitMamp: 5000
+				LowerLimitMamp: 1500
+
+				Test Data: 
+				# Samples: 0
+				BaseCurrentMamp: 0
+				AvgCurrentInRangeMamp: 0
+				MaxCurrentMamp: 0
+				MinCurrentMamp: 0
+				MaxTimeInPassWindowMsec: 0
+
+		Test Step: SetBias - Set Bias B1CH03
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: N38_OUT
+		  BoardId: 1
+		  Channel: 3
+		  BiasState: NO
+
+
+	Test Group: Power Up Vehicle
+	  Begin: 02/28/2024 00:31:18:715
+	  Result: Pass
+	  DurationMsec: 12784
+	  OptionCodesMask: 
+
+		Test Step: TriggerEventAction - TRIGGER 1 BOARD 1
+		  Begin: 02/28/2024 00:31:18:767
+		  Result: Pass
+		  DurationMsec: 9
+		  OptionCodesMask: 
+		  BoardId: 1
+		  TriggerId: 1
+		  TriggerChannel: 32
+		  Trigger Event: Rising Voltage
+		  ActionCommand: SetBias
+		  ActionBiasChannel: 1
+		  ActionBiasState: V
+		  ActionControlByte: 0
+
+		Test Step: TriggerEventAction - TRIGGER 2 BOARD 1
+		  Begin: 02/28/2024 00:31:18:785
+		  Result: Pass
+		  DurationMsec: 15
+		  OptionCodesMask: 
+		  BoardId: 1
+		  TriggerId: 2
+		  TriggerChannel: 32
+		  Trigger Event: Rising Voltage
+		  ActionCommand: SetBias
+		  ActionBiasChannel: 2
+		  ActionBiasState: V
+		  ActionControlByte: 0
+
+		Test Step: TriggerEventAction - TRIGGER 3 BOARD 1
+		  Begin: 02/28/2024 00:31:18:808
+		  Result: Pass
+		  DurationMsec: 9
+		  OptionCodesMask: 
+		  BoardId: 1
+		  TriggerId: 3
+		  TriggerChannel: 32
+		  Trigger Event: Rising Voltage
+		  ActionCommand: SetBias
+		  ActionBiasChannel: 3
+		  ActionBiasState: V
+		  ActionControlByte: 0
+
+		Test Step: TriggerEventAction - TRIGGER 2 BOARD 2
+		  Begin: 02/28/2024 00:31:18:825
+		  Result: Pass
+		  DurationMsec: 7
+		  OptionCodesMask: 
+		  BoardId: 2
+		  TriggerId: 1
+		  TriggerChannel: 32
+		  Trigger Event: Rising Voltage
+		  ActionCommand: SetBias
+		  ActionBiasChannel: 1
+		  ActionBiasState: V
+		  ActionControlByte: 0
+
+		Test Step: TriggerEventAction - TRIGGER 3 BOARD 2
+		  Begin: 02/28/2024 00:31:18:840
+		  Result: Pass
+		  DurationMsec: 8
+		  OptionCodesMask: 
+		  BoardId: 2
+		  TriggerId: 2
+		  TriggerChannel: 32
+		  Trigger Event: Rising Voltage
+		  ActionCommand: SetBias
+		  ActionBiasChannel: 2
+		  ActionBiasState: V
+		  ActionControlByte: 0
+
+		Test Step: TriggerEventAction - TRIGGER 4 BOARD 2
+		  Begin: 02/28/2024 00:31:18:856
+		  Result: Pass
+		  DurationMsec: 8
+		  OptionCodesMask: 
+		  BoardId: 2
+		  TriggerId: 3
+		  TriggerChannel: 32
+		  Trigger Event: Rising Voltage
+		  ActionCommand: SetBias
+		  ActionBiasChannel: 3
+		  ActionBiasState: V
+		  ActionControlByte: 0
+
+		Test Step: SetBias - SetBias
+		  Begin: 02/28/2024 00:31:18:892
+		  Result: Pass
+		  DurationMsec: 9
+		  OptionCodesMask: 
+		  BoardId: 1
+		  Channel: 32
+		  BiasState: P
+
+		Test Step: BeginTimer - Begin Timer
+		  Begin: 02/28/2024 00:31:18:909
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  TimerName: DTC TIMER
+
+		Test Step: SetBias - Set Bias B2CH02
+		  Begin: 02/28/2024 00:31:18:921
+		  Result: Pass
+		  DurationMsec: 9
+		  OptionCodesMask: 
+		  BoardId: 2
+		  Channel: 2
+		  BiasState: V
+
+		Test Step: SetBias - Set Bias B2CH03
+		  Begin: 02/28/2024 00:31:18:938
+		  Result: Pass
+		  DurationMsec: 8
+		  OptionCodesMask: 
+		  BoardId: 2
+		  Channel: 3
+		  BiasState: V
+
+		Test Step: Delay - DEBUG TIMER
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: DEBUG
+		  TimeoutMsec: 999999
+
+		Test Step: ModbusValidateDiscreteInputs - CONNECT ALDL HOLDER BLUE HANDLE
+		  Begin: 02/28/2024 00:31:18:962
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 7505
+		  OptionCodesMask: CONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ?????????0??????
+
+			Test Data: 
+			  Samples: 4996
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: B079000000050002022F00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000000101111
+			  LastReceivedMessage: B079000000050002022F00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000000101111
+
+		Test Step: DetectWirelessTool - CONNECT 16 WAY OBDII/ALDL BLUE HANDLE
+		  Begin: 02/28/2024 00:31:26:486
+		  Result: Pass
+		  DurationMsec: 5013
+		  OptionCodesMask: 
+		  Test Step Comments: 
+			Wired Tool Detected 
+			
+		  TimeoutMsec: 0
+		  WirelessBoardId: 3
+		  AddOptionCodeUponWireless: WIRELESS
+		  AddOptionCodeUponWired: WIRED
+		  ModbusDeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ???????????1????
+
+			Test Data: 
+			  WirelessToolDetected: False
+			  Samples: 3
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: B07C000000050002023F00
+			  LastReceivedMessage: B07C000000050002023F00
+
+
+	Test Group: Set Up CAN Testing
+	  Begin: 02/28/2024 00:31:31:501
+	  Result: Pass
+	  DurationMsec: 400
+	  OptionCodesMask: 
+
+		Test Step: CanConfigureCom - CONFIGURE B1 HS CAN
+		  Begin: 02/28/2024 00:31:31:535
+		  Result: Pass
+		  DurationMsec: 88
+		  OptionCodesMask: 
+		  BoardId: 1
+		  CanMode: HighSpeed500K
+		  FlowControl: True
+			  ReceiveId: 141AF1BF
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 14DAF145
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 144AF1A4
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 145AF180
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 145AF197
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 145AF1BE
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 145AF19A
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 145AF181
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 148AF1EA
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 149AF158
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 149AF140
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 149AF141
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 148AF16C
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 148AF164
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 14DAF1A0
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 148AF1BD
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 145AF194
+			  BitId29: True
+			  OptionCodesMask: 
+			  ReceiveId: 145AF168
+			  BitId29: True
+			  OptionCodesMask: 
+
+		Test Step: CanSendReceiveValidate - CGM Central Gateway Module Tester Present
+		  Begin: 02/28/2024 00:31:31:631
+		  Result: Pass
+		  DurationMsec: 72
+		  OptionCodesMask: 
+		  OptionCodeAdded: CGM_COM
+		  Test Step Comments: 
+			Added Option Code Upon Pass - CGM_COM 
+			
+		  BoardId: 1
+		  TimeoutMsec: 10000
+		  FunctionalCan: True
+		  CanFD: False
+		  TransmissionId: 14DA45F1
+		  ReceiveId: 14DAF145
+		  TransmissionMessage: 023E005555555555
+		  TransmissionTimeoutMsec: 300
+		  ApplicationMask: 
+		  BitId29: True
+		  MultiFrameTimeBetweenFramesMsec: 0
+		  OnlyOnePassRequired: False
+		  NoResponseRequired: False
+		  Allow7FResponse: False
+		  BaseMask: 
+		  ValidateCanDataScriptFileName: 
+		  ValidateCanDataScriptInput: 
+
+			  Description: CGM Com Fault
+			  BeginDateTime: 2/28/2024 12:31:31 AM
+			  Result: Pass
+			  DurationMsec: 38
+			  OptionCodesMask: 
+				BytePosition: 0
+				ByteMask: 0?
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Sent: 1
+				LastReceivedMessage: 027E000000000000
+				PassReceivedMessage: 027E000000000000
+
+
+			Test Data:
+			# Messages Sent: 1
+			LastReceivedMessage: 027E000000000000
+
+		Test Step: CanSendReceiveValidate - CGM Central Gateway Module Extended Diagnostic
+		  Begin: 02/28/2024 00:31:31:718
+		  Result: Pass
+		  DurationMsec: 59
+		  OptionCodesMask: CGM_COM
+		  BoardId: 1
+		  TimeoutMsec: 10000
+		  FunctionalCan: True
+		  CanFD: False
+		  TransmissionId: 14DA45F1
+		  ReceiveId: 14DAF145
+		  TransmissionMessage: 0210035555555555
+		  TransmissionTimeoutMsec: 300
+		  ApplicationMask: 
+		  BitId29: True
+		  MultiFrameTimeBetweenFramesMsec: 0
+		  OnlyOnePassRequired: False
+		  NoResponseRequired: False
+		  Allow7FResponse: False
+		  BaseMask: 
+		  ValidateCanDataScriptFileName: 
+		  ValidateCanDataScriptInput: 
+
+			  Description: Extended Diagnostic
+			  BeginDateTime: 2/28/2024 12:31:31 AM
+			  Result: Pass
+			  DurationMsec: 31
+			  OptionCodesMask: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Sent: 1
+				LastReceivedMessage: 0650030032006400
+				PassReceivedMessage: 0650030032006400
+
+
+			Test Data:
+			# Messages Sent: 1
+			LastReceivedMessage: 0650030032006400
+
+		Test Step: CanSendReceiveValidate - CGM Wake Up All Vehicle Networks
+		  Begin: 02/28/2024 00:31:31:786
+		  Result: Pass
+		  DurationMsec: 51
+		  OptionCodesMask: CGM_COM
+		  BoardId: 1
+		  TimeoutMsec: 10000
+		  FunctionalCan: True
+		  CanFD: False
+		  TransmissionId: 14DA45F1
+		  ReceiveId: 14DAF145
+		  TransmissionMessage: 073101020EFF0000
+		  TransmissionTimeoutMsec: 300
+		  ApplicationMask: 
+		  BitId29: True
+		  MultiFrameTimeBetweenFramesMsec: 0
+		  OnlyOnePassRequired: False
+		  NoResponseRequired: False
+		  Allow7FResponse: False
+		  BaseMask: 
+		  ValidateCanDataScriptFileName: 
+		  ValidateCanDataScriptInput: 
+
+			  Description: Wake Up All Vehicle Networks
+			  BeginDateTime: 2/28/2024 12:31:31 AM
+			  Result: Pass
+			  DurationMsec: 32
+			  OptionCodesMask: 
+				BytePosition: 0
+				ByteMask: 077101020EFF0000
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Sent: 1
+				LastReceivedMessage: 077101020EFF0000
+				PassReceivedMessage: 077101020EFF0000
+
+
+			Test Data:
+			# Messages Sent: 1
+			LastReceivedMessage: 077101020EFF0000
+
+		Test Step: CanScheduleData - Board 1 Schedule CAN Messages
+		  Begin: 02/28/2024 00:31:31:863
+		  Result: Pass
+		  DurationMsec: 14
+		  OptionCodesMask: 
+
+			  BoardId: 1
+			  SlotId: 3
+			  Enable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 023E805555555555
+			  TransmissionRateMsec: 1000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+		Test Step: CanSendReceiveValidate - Clear All DTCs
+		  Begin: 02/28/2024 00:31:31:881
+		  Result: Pass
+		  DurationMsec: 12
+		  OptionCodesMask: CGM_COM
+		  BoardId: 1
+		  TimeoutMsec: 2000
+		  FunctionalCan: True
+		  CanFD: False
+		  TransmissionId: 10DBFEF1
+		  ReceiveId: 14DAF145
+		  TransmissionMessage: 0414FFFFFFAAAAAA
+		  TransmissionTimeoutMsec: 300
+		  ApplicationMask: 
+		  BitId29: True
+		  MultiFrameTimeBetweenFramesMsec: 0
+		  OnlyOnePassRequired: False
+		  NoResponseRequired: False
+		  Allow7FResponse: False
+		  BaseMask: 
+		  ValidateCanDataScriptFileName: 
+		  ValidateCanDataScriptInput: 
+
+			  Description: CGM Setup
+			  BeginDateTime: 2/28/2024 12:31:31 AM
+			  Result: Pass
+			  DurationMsec: 12
+			  OptionCodesMask: 
+				BytePosition: 0
+				ByteMask: 
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Sent: 1
+				LastReceivedMessage: 037F142200000000
+				PassReceivedMessage: 037F142200000000
+
+
+			Test Data:
+			# Messages Sent: 1
+			LastReceivedMessage: 037F142200000000
+
+		Test Step: CanScheduleData - BCM Schedule Extended Diagnostic
+		  Begin: 02/28/2024 00:31:31:896
+		  Result: Pass
+		  DurationMsec: 5
+		  OptionCodesMask: 
+
+			  BoardId: 1
+			  SlotId: 6
+			  Enable: True
+			  TransmissionId: 14DA40F1
+			  TransmissionMessage: 0210030000000000
+			  TransmissionRateMsec: 2000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+
+	Test Group: MEC Read Counter, abort if 0 Copy
+	  Begin: 02/28/2024 00:31:31:903
+	  Result: OptionCodeNotTested
+	  DurationMsec: 29
+	  OptionCodesMask: 
+
+		Test Step: CanScheduleData - Schedule MEC Counter Global
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+
+			  BoardId: 1
+			  SlotId: 6
+			  Enable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 042EF1A0
+			  TransmissionRateMsec: 1000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+		Test Step: CanReceiveValidate - CAN Module Communication
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: ME#C
+		  TimeoutMsec: 7000
+
+			  Description: PAM CAN 1
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: AL0
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 141AF1BF
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: AMP
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UQG|UQA|UQP
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF181
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: TCP
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: (UE1|UER|UDA)
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF197
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: WCM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: K4C
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF1BE
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: FCM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UKL
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF1BD
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: ELM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: 
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF141
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: SDM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: 
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF158
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: VCU
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: 
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF180
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: Read BCM MEC Counter
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: 
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: Read CGM MEC Counter
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: 
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 14DAF145
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: Rear HVAC MEC CAN Read
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: C69&(X88|Z88)
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF19A
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: PTM Read MEC
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: TB5|TC2
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 144AF1A4
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: PAM CAN 8
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UKL&UKZ
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF1BF
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 4
+				ByteRangeMask: 01-FF
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			Test Data:
+			# Messages Received: 0
+			LastReceivedMessage: 
+
+		Test Step: CanScheduleData - Schedule MEC Counter
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+
+			  BoardId: 1
+			  SlotId: 6
+			  Disable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 0322F1A0
+			  TransmissionRateMsec: 300
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+			  BoardId: 1
+			  SlotId: 3
+			  Disable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 023E805555555555
+			  TransmissionRateMsec: 2000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+
+	Test Group: CAN Module Communication
+	  Begin: 02/28/2024 00:31:31:934
+	  Result: Pass
+	  DurationMsec: 2050
+	  OptionCodesMask: 
+
+		Test Step: CanScheduleData - Board 1 Schedule CAN Messages
+		  Begin: 02/28/2024 00:31:31:989
+		  Result: Pass
+		  DurationMsec: 10
+		  OptionCodesMask: 
+
+			  BoardId: 1
+			  SlotId: 4
+			  Enable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 023E005555555555
+			  TransmissionRateMsec: 250
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+		Test Step: CanSendReceiveValidate - Start Button Test
+		  Begin: 02/28/2024 00:31:32:002
+		  Result: Pass
+		  DurationMsec: 1862
+		  OptionCodesMask: 
+		  BoardId: 1
+		  TimeoutMsec: 20000
+		  FunctionalCan: False
+		  CanFD: False
+		  TransmissionId: 14DA40F1
+		  ReceiveId: 149AF140
+		  TransmissionMessage: 0322F08555555555
+		  TransmissionTimeoutMsec: 300
+		  ApplicationMask: 
+		  BitId29: True
+		  MultiFrameTimeBetweenFramesMsec: 0
+		  OnlyOnePassRequired: False
+		  NoResponseRequired: False
+		  Allow7FResponse: False
+		  BaseMask: 
+		  ValidateCanDataScriptFileName: 
+		  ValidateCanDataScriptInput: 
+
+			  Description: START BUTTON
+			  BeginDateTime: 2/28/2024 12:31:32 AM
+			  Result: Pass
+			  DurationMsec: 1857
+			  OptionCodesMask: 
+				BytePosition: 0
+				ByteMask: 0462F085
+				BytePosition: 4
+				BitMask: ??????1?
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Sent: 7
+				LastReceivedMessage: 0462F08502000000
+				PassReceivedMessage: 0462F08502000000
+
+
+			Test Data:
+			# Messages Sent: 7
+			LastReceivedMessage: 0462F08502000000
+
+		Test Step: CanReceiveValidate - CAN Module Communication
+		  Begin: 02/28/2024 00:31:33:876
+		  Result: Pass
+		  DurationMsec: 80
+		  OptionCodesMask: 
+		  OptionCodeAdded: VCU_COM,TCP_COM,WCM_COM,PAM_COM,ELM_COM,SDM_COM,HFPR_COM,BCM_COM,
+		  Test Step Comments: 
+			Added Option Code Upon Pass - VCU_COM 
+			Added Option Code Upon Pass - TCP_COM 
+			Added Option Code Upon Pass - WCM_COM 
+			Added Option Code Upon Pass - PAM_COM 
+			Added Option Code Upon Pass - ELM_COM 
+			Added Option Code Upon Pass - SDM_COM 
+			Added Option Code Upon Pass - HFPR_COM 
+			Added Option Code Upon Pass - BCM_COM 
+			
+		  TimeoutMsec: 10000
+
+			  Description: PAM (PARK ASSIST MODULE) CAN 1
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 28
+			  OptionCodesMask: UD7
+			  OptionCodeAdded: PAM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 141AF1BF
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 0154000000000000
+				PassReceivedMessage: 0154000000000000
+
+
+			  Description: PTM (POWER TAILGATE MODULE)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: TB5|TC2
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 144AF1A4
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: AMP (AMPLIFIER)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UQG|UQA|UQP
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF181
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: VCU (VIRTUAL COCKPIT UNIT)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 10
+			  OptionCodesMask: VCU
+			  OptionCodeAdded: VCU_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF180
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 027E000000000000
+				PassReceivedMessage: 027E000000000000
+
+
+			  Description: TCP (TELEMATIC CONTROL PLATFORM)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 10
+			  OptionCodesMask: UE1|UER|UDA
+			  OptionCodeAdded: TCP_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF197
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 0154000000000000
+				PassReceivedMessage: 0154000000000000
+
+
+			  Description: WCM (WIRELESS CHARGER MODULE)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 10
+			  OptionCodesMask: K4C
+			  OptionCodeAdded: WCM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF1BE
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+				BytePosition: 0
+				BitMask: 
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 0154000000000000
+				PassReceivedMessage: 0154000000000000
+
+
+			  Description: ACP2 (ADAS MAP MODULE)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UGN_OUT&!UKL_OUT
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF1A2
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: BCM (BODY CONTROL MODULE)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 49
+			  OptionCodesMask: BCM
+			  OptionCodeAdded: BCM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 065003006401F400
+				PassReceivedMessage: 065003006401F400
+
+
+			  Description: ELM (ELECTRONIC LIGHT MODULE)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 28
+			  OptionCodesMask: ELM
+			  OptionCodeAdded: ELM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF141
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 027E000000000000
+				PassReceivedMessage: 027E000000000000
+
+
+			  Description: SDM (SENSING & DIAGNOSTICS MODULE)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 28
+			  OptionCodesMask: SDM
+			  OptionCodeAdded: SDM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF158
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 0154000000000000
+				PassReceivedMessage: 0154000000000000
+
+
+			  Description: CGM (CENTRAL GATEWAY MODULE)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 9
+			  OptionCodesMask: CGM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 14DAF145
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 027E000000000000
+				PassReceivedMessage: 027E000000000000
+
+
+			  Description: FCM (FRONT CAMERA MODULE)
+(turned off as not giving a response, connection can be caught with CAN 8 com to ACP3 & PAM_
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: U#KL
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF1BD
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: HFPR (HVAC REAR DISPLAY)
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: Pass
+			  DurationMsec: 28
+			  OptionCodesMask: (C69&(X88|Z88)&!MY25)|(!MY24&C69)
+			  OptionCodeAdded: HFPR_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF19A
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 1
+				LastReceivedMessage: 0154000000000000
+				PassReceivedMessage: 0154000000000000
+
+
+			  Description: ACP3 CAN 8
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UKL&UKZ
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF164
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: PAM CAN 8
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UKZ
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF1EA
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: Virtual Key Module
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: BOY&W49
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF194
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: HVAC FACEPLATE FRONT P612 F
+			  BeginDateTime: 2/28/2024 12:31:33 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: W49
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF168
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 0?
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			Test Data:
+			# Messages Received: 17
+			LastReceivedMessage: 027E000000000000
+
+		Test Step: CanScheduleData - Board 1 Schedule CAN Messages
+		  Begin: 02/28/2024 00:31:33:964
+		  Result: Pass
+		  DurationMsec: 9
+		  OptionCodesMask: 
+
+			  BoardId: 1
+			  SlotId: 4
+			  Disable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 023E005555555555
+			  TransmissionRateMsec: 250
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+		Test Step: Delay - DEBUG TIMER
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: DEBUG
+		  TimeoutMsec: 999999
+
+
+	Test Group: Part Number Checks
+	  Begin: 02/28/2024 00:31:33:985
+	  Result: Pass
+	  DurationMsec: 608
+	  OptionCodesMask: 
+
+		Test Step: CanValidatePartNumber - CGM Part Number
+		  Begin: 02/28/2024 00:31:34:086
+		  Result: Pass
+		  DurationMsec: 35
+		  OptionCodesMask: CGM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA45F1
+		  ReceiveId: 14DAF145
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: CGM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB00CEEAAE
+			BroadcastedPartNumber: 13560494
+			RawPartNumber: 00CEEAAE
+			ProcessedPartNumber: 13560494
+
+		Test Step: CanValidatePartNumber - VCU Part Number
+		  Begin: 02/28/2024 00:31:34:132
+		  Result: Pass
+		  DurationMsec: 90
+		  OptionCodesMask: VCU_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA80F1
+		  ReceiveId: 145AF180
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: VCU
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB05121D5E
+			BroadcastedPartNumber: 85073246
+			RawPartNumber: 05121D5E
+			ProcessedPartNumber: 85073246
+
+		Test Step: CanValidatePartNumber - PA Part Number
+		  Begin: 02/28/2024 00:31:34:232
+		  Result: Pass
+		  DurationMsec: 31
+		  OptionCodesMask: PAM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DABFF1
+		  ReceiveId: 141AF1BF
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: UPA
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB05290215
+			BroadcastedPartNumber: 86573589
+			RawPartNumber: 05290215
+			ProcessedPartNumber: 86573589
+
+		Test Step: CanValidatePartNumber - AMP Part Number
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: AMP_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA81F1
+		  ReceiveId: 145AF181
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: AMP
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 0
+			LastReceivedCanMessage: 
+			BroadcastedPartNumber: 
+			RawPartNumber: 
+			ProcessedPartNumber: 
+
+		Test Step: CanValidatePartNumber - TCP Part Number
+		  Begin: 02/28/2024 00:31:34:286
+		  Result: Pass
+		  DurationMsec: 62
+		  OptionCodesMask: TCP_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA97F1
+		  ReceiveId: 145AF197
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: TCP
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB05116CFD
+			BroadcastedPartNumber: 85028093
+			RawPartNumber: 05116CFD
+			ProcessedPartNumber: 85028093
+
+		Test Step: CanValidatePartNumber - WCM Part Number
+		  Begin: 02/28/2024 00:31:34:381
+		  Result: Pass
+		  DurationMsec: 35
+		  OptionCodesMask: WCM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DABEF1
+		  ReceiveId: 145AF1BE
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: WCM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB00CEE11B
+			BroadcastedPartNumber: 13558043
+			RawPartNumber: 00CEE11B
+			ProcessedPartNumber: 13558043
+
+		Test Step: CanValidatePartNumber - FCM Part Number
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: FCM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DABDF1
+		  ReceiveId: 148AF1BD
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: FCM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 0
+			LastReceivedCanMessage: 
+			BroadcastedPartNumber: 
+			RawPartNumber: 
+			ProcessedPartNumber: 
+
+		Test Step: CanValidatePartNumber - BCM Part Number
+		  Begin: 02/28/2024 00:31:34:431
+		  Result: Pass
+		  DurationMsec: 26
+		  OptionCodesMask: BCM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA40F1
+		  ReceiveId: 149AF140
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: BCM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB00CEE6BB
+			BroadcastedPartNumber: 13559483
+			RawPartNumber: 00CEE6BB
+			ProcessedPartNumber: 13559483
+
+		Test Step: CanValidatePartNumber - ELM Part Number
+		  Begin: 02/28/2024 00:31:34:467
+		  Result: Pass
+		  DurationMsec: 28
+		  OptionCodesMask: ELM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA41F1
+		  ReceiveId: 149AF141
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: ELM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB00CEBFBC
+			BroadcastedPartNumber: 13549500
+			RawPartNumber: 00CEBFBC
+			ProcessedPartNumber: 13549500
+
+		Test Step: CanValidatePartNumber - SDM Part Number
+		  Begin: 02/28/2024 00:31:34:505
+		  Result: Pass
+		  DurationMsec: 45
+		  OptionCodesMask: SDM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA58F1
+		  ReceiveId: 149AF158
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: SDM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB00CEC10C
+			BroadcastedPartNumber: 13549836
+			RawPartNumber: 00CEC10C
+			ProcessedPartNumber: 13549836
+
+		Test Step: CanValidatePartNumber - PTM Part Number
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: PTM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DAA4F1
+		  ReceiveId: 144AF1A4
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: LGM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 0
+			LastReceivedCanMessage: 
+			BroadcastedPartNumber: 
+			RawPartNumber: 
+			ProcessedPartNumber: 
+
+		Test Step: CanValidatePartNumber - ACP2 Part Number
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: ACP2_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA9A6C
+		  ReceiveId: 148AF16C
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: ACP
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 0
+			LastReceivedCanMessage: 
+			BroadcastedPartNumber: 
+			RawPartNumber: 
+			ProcessedPartNumber: 
+
+		Test Step: CanValidatePartNumber - ACP3 Part Number
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: ACP3_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA64F1
+		  ReceiveId: 148AF164
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: ACPS1
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 0
+			LastReceivedCanMessage: 
+			BroadcastedPartNumber: 
+			RawPartNumber: 
+			ProcessedPartNumber: 
+
+		Test Step: CanValidatePartNumber - HFPR Part number
+		  Begin: 02/28/2024 00:31:34:564
+		  Result: Pass
+		  DurationMsec: 23
+		  OptionCodesMask: HFPR_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA9AF1
+		  ReceiveId: 145AF19A
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: HFPR
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 1
+			LastReceivedCanMessage: 0762F1CB0528B699
+			BroadcastedPartNumber: 86554265
+			RawPartNumber: 0528B699
+			ProcessedPartNumber: 86554265
+
+		Test Step: CanValidatePartNumber - HFPF Part number
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: HFPF_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA68F1
+		  ReceiveId: 145AF168
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: HFPF
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 0
+			LastReceivedCanMessage: 
+			BroadcastedPartNumber: 
+			RawPartNumber: 
+			ProcessedPartNumber: 
+
+		Test Step: CanValidatePartNumber - VKM Part number
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: VKM_COM&PN
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA94F1
+		  ReceiveId: 145AF194
+		  TransmissionMessage: 0322F1CB55555555
+		  TransmissionTimeoutMsec: 500
+		  ApplicationMask: 
+		  BitId29: True
+		  CanFD: False
+		  BaseMask: 0762F1CB
+		  PartId: VKM
+		  ValidatePartNumberScriptFileName: PartNumberCheck-GM-GlobalB_v1.py
+
+			Test Data:
+			NumberOfMessagesSent: 0
+			LastReceivedCanMessage: 
+			BroadcastedPartNumber: 
+			RawPartNumber: 
+			ProcessedPartNumber: 
+
+
+	Test Group: Switch Testing
+	  Begin: 02/28/2024 00:31:34:596
+	  Result: OptionCodeNotTested
+	  DurationMsec: 25
+	  OptionCodesMask: 
+
+		Test Step: CanScheduleData - Board 1 Schedule CAN Messages
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: _OUT
+
+			  BoardId: 1
+			  SlotId: 5
+			  Enable: True
+			  TransmissionId: 14DA40F1
+			  TransmissionMessage: 0322504655555555
+			  TransmissionRateMsec: 250
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 149AF140
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+		Test Step: CanReceiveValidate - Switch Testing
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: BCM_COM_OUT
+		  TimeoutMsec: 15000
+
+			  Description: RIGHT MULTIFUNCTION STALK -- WINDSHIELD WASHER SIGNAL
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: BCM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 046241FF
+				BytePosition: 4
+				BitMask: ???????1
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: LEFT MULTIFUNCTION STALK  --  HEADLAMP SWITCH FLASH TO PASS SIGNAL
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: BCM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 04624DA3
+				BytePosition: 4
+				BitMask: ???????1
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: HAZARD SWITCH SIGNAL
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: BCM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0462433B
+				BytePosition: 4
+				BitMask: ???????1
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: LANE DEPARTURE WARNING DISABLE SWITCH SIGNAL
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: BCM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 0462420C
+				BytePosition: 4
+				BitMask: ???????1
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: LEFT MULTIFUNCTION STALK WITH AUTO HIGH BEAM OPTION
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: BCM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 04624E86
+				BytePosition: 4
+				BitMask: ???????1
+				BytePosition: 0
+				ByteRangeMask: 
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			Test Data:
+			# Messages Received: 0
+			LastReceivedMessage: 
+
+		Test Step: CanScheduleData - Board 1 Schedule CAN Messages
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: _OUT
+
+			  BoardId: 1
+			  SlotId: 5
+			  Disable: True
+			  TransmissionId: 14DA40F1
+			  TransmissionMessage: 0322504655555555
+			  TransmissionRateMsec: 250
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 149AF140
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+
+	Test Group: DTC Reads
+	  Begin: 02/28/2024 00:31:34:623
+	  Result: Pass
+	  DurationMsec: 5043
+	  OptionCodesMask: 
+
+		Test Step: WaitForTimerToExpire - DTC TIMER
+		  Begin: 02/28/2024 00:31:34:734
+		  Result: Pass
+		  DurationMsec: 4184
+		  OptionCodesMask: DTC
+		  TimerName: DTC TIMER
+		  TimerExpireLimitMsec: 20000
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ CGM
+		  Begin: 02/28/2024 00:31:38:929
+		  Result: Pass
+		  DurationMsec: 23
+		  OptionCodesMask: CGM_COM
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA45F1
+		  ReceiveId: 14DAF145
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 1
+			ReceivedMessage: 12:31:38.935 - 075902FFEC910027
+			Saved DTCs with Fail Byte and Status Byte: EC910027,
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ PA
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: PA_COM
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DABFF1
+		  ReceiveId: 141AF1BF
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 0
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ PTM
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: PTM_COM
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DAA4F1
+		  ReceiveId: 144AF1A4
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 0
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanValidateSavedDtcData - PTM DTCS
+
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: PTM_COM
+		  BoardId: 1
+		  AllDtcsMustBePresent: False
+		  Dtcs to compare: 958613, 
+
+		Test Data:
+		  Failed Dtcs: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ AMP
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: AMP_COM
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA81F1
+		  ReceiveId: 145AF181
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 0
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanValidateSavedDtcData - AMP DTC
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: AMP_COM
+		  BoardId: 1
+		  AllDtcsMustBePresent: False
+		  Dtcs to compare: 9B0213, 9B0113, 9A9613, 9A9513, 9A9113, 937B13, 937C13, 937D13, 927413, 
+
+		Test Data:
+		  Failed Dtcs: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ WCM
+		  Begin: 02/28/2024 00:31:38:996
+		  Result: Pass
+		  DurationMsec: 53
+		  OptionCodesMask: WCM_COM
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DABEF1
+		  ReceiveId: 145AF1BE
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 1
+			ReceivedMessage: 12:31:39.006 - 100B5902FFD64E00
+			ReceivedMessage: 12:31:39.026 - 212FD611002F0000
+			Saved DTCs with Fail Byte and Status Byte: D64E002F,D611002F,
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ HFPR
+		  Begin: 02/28/2024 00:31:39:061
+		  Result: Pass
+		  DurationMsec: 25
+		  OptionCodesMask: HFPR_COM
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA9AF1
+		  ReceiveId: 145AF19A
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 1
+			ReceivedMessage: 12:31:39.069 - 035902FF00000000
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ BCM
+		  Begin: 02/28/2024 00:31:39:097
+		  Result: Pass
+		  DurationMsec: 31
+		  OptionCodesMask: BCM_COM&DTC
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA40F1
+		  ReceiveId: 149AF140
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 1
+			ReceivedMessage: 12:31:39.105 - 035902FF00000000
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanValidateSavedDtcData - Can Validate Saved Dtc Data
+		  Begin: 02/28/2024 00:31:39:139
+		  Result: Pass
+		  DurationMsec: 8
+		  OptionCodesMask: BCM_COM
+		  BoardId: 1
+		  AllDtcsMustBePresent: False
+		  Dtcs to compare: 05D200, 50DA84, 90239E, 908E00, 9B4200, 997D00, 998100, 94BB15, C65F00, C66300, 
+
+		Test Data:
+		  Failed Dtcs: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ ELM
+		  Begin: 02/28/2024 00:31:39:159
+		  Result: Pass
+		  DurationMsec: 32
+		  OptionCodesMask: ELM_COM&DTC
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA41F1
+		  ReceiveId: 149AF141
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 1
+			ReceivedMessage: 12:31:39.169 - 035902FF00000000
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ SDM
+		  Begin: 02/28/2024 00:31:39:202
+		  Result: Pass
+		  DurationMsec: 346
+		  OptionCodesMask: SDM_COM&DTC
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA58F1
+		  ReceiveId: 149AF158
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 1
+			ReceivedMessage: 12:31:39.223 - 106B5902FB960713
+			ReceivedMessage: 12:31:39.243 - 212B9608132B8030
+			ReceivedMessage: 12:31:39.262 - 2213AB803813AB80
+			ReceivedMessage: 12:31:39.282 - 237013AB9922132B
+			ReceivedMessage: 12:31:39.304 - 249AD2132B9AD313
+			ReceivedMessage: 12:31:39.323 - 252B90BD138B92D4
+			ReceivedMessage: 12:31:39.343 - 2615AB92D5158B94
+			ReceivedMessage: 12:31:39.364 - 27B3152B94B4152B
+			ReceivedMessage: 12:31:39.384 - 2894DC138B95AE13
+			ReceivedMessage: 12:31:39.404 - 290B95DB138B95DD
+			ReceivedMessage: 12:31:39.424 - 2A138B97EF15AB97
+			ReceivedMessage: 12:31:39.444 - 2BF015AB97F115AB
+			ReceivedMessage: 12:31:39.466 - 2C97F215AB98FF13
+			ReceivedMessage: 12:31:39.485 - 2D0B807E138BD610
+			ReceivedMessage: 12:31:39.505 - 2E000BD611000BD6
+			ReceivedMessage: 12:31:39.526 - 2F43000B00000000
+			Saved DTCs with Fail Byte and Status Byte: 9607132B,9608132B,803013AB,803813AB,807013AB,9922132B,9AD2132B,9AD3132B,90BD138B,92D415AB,92D5158B,94B3152B,94B4152B,94DC138B,95AE130B,95DB138B,95DD138B,97EF15AB,97F015AB,97F115AB,97F215AB,98FF130B,807E138B,D610000B,D611000B,D643000B,
+
+		Test Step: CanValidateSavedDtcData - Can Validate Saved Dtc Data
+		  Begin: 02/28/2024 00:31:39:559
+		  Result: Pass
+		  DurationMsec: 7
+		  OptionCodesMask: SDM_COM
+		  BoardId: 1
+		  AllDtcsMustBePresent: False
+		  Dtcs to compare: 807F13, 807213, 95DF13, 95E313, 802913, 802113, 961913, 97F1##15, 98FD13, 961A13, 802213, 802A13, 
+
+		Test Data:
+		  Failed Dtcs: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ TCP
+		  Begin: 02/28/2024 00:31:39:577
+		  Result: Pass
+		  DurationMsec: 54
+		  OptionCodesMask: TCP_COM
+		  BoardId: 1
+		  TimeoutMsec: 30000
+		  TransmissionId: 14DA97F1
+		  ReceiveId: 145AF197
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: True
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 1
+			ReceivedMessage: 12:31:39.609 - 035902F900000000
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ VCU
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: #OUT#VCU_COM&DTC
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA80F1
+		  ReceiveId: 145AF180
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 0
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanValidateSavedDtcData - VCU DTC
+		  Begin: 02/28/2024 00:31:39:644
+		  Result: Pass
+		  DurationMsec: 9
+		  OptionCodesMask: VCU_COM&DTC
+		  BoardId: 1
+		  AllDtcsMustBePresent: False
+		  Dtcs to compare: 973713, 9A1B00, 
+
+		Test Data:
+		  Failed Dtcs: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ ACP2
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: ACP2_COM&DTC
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA6CF1
+		  ReceiveId: 148AF16C
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 0
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanSendReceiveSaveDtcData - DTC READ ACP3
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: ACP3_COM&DTC
+		  BoardId: 1
+		  TimeoutMsec: 5000
+		  TransmissionId: 14DA64F1
+		  ReceiveId: 148AF164
+		  TransmissionMessage: 0319020255555555
+		  TransmissionTimeoutMsec: 1000
+		  FunctionCan: False
+		  FunctionCanLastFrameMask: 
+		  SingleFrameMask: 0?59
+		  MultipleFrameMask: 10??59
+		  BitId29: True
+		  CanFD: False
+		  IgnoreStatus: False
+		  ParseDtcDataScriptFileName: ParseDtcData-GM-GlobalB_v1.py
+
+			Test Data:
+			# Messages Sent: 0
+			Saved DTCs with Fail Byte and Status Byte: 
+
+		Test Step: CanValidateSavedDtcData - ACP3 DTCS
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: ACP3_COM&DTC
+		  BoardId: 1
+		  AllDtcsMustBePresent: False
+		  Dtcs to compare: F0#00F0, C12500, 
+
+		Test Data:
+		  Failed Dtcs: 
+
+
+	Test Group: MEC Counter Reset Command global
+	  Begin: 02/28/2024 00:31:39:667
+	  Result: OptionCodeNotTested
+	  DurationMsec: 36
+	  OptionCodesMask: 
+
+		Test Step: CanScheduleData - Schedule MEC Reset
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+
+			  BoardId: 1
+			  SlotId: 6
+			  Enable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 042EF1A050
+			  TransmissionRateMsec: 300
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+			  BoardId: 1
+			  SlotId: 3
+			  Enable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 023E805555555555
+			  TransmissionRateMsec: 2000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+		Test Step: CanReceiveValidate - CAN Module Communication
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+		  TimeoutMsec: 7000
+
+			  Description: PAM CAN 1
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UD7
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 141AF1BF
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: AMP
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UQA
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF181
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: TCP
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: (UE1|UER|UDA)
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF197
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: WCM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: K4C
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF1BE
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: FCM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: UHY
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF1BD
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: ELM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: ELM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF141
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: SDM
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: SDM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF158
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: VCU
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: (IVA|IVD)
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF180
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+			  ValidateCanDataScriptInput: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: Read BCM MEC Counter
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: 
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 149AF140
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: Reset CGM MEC Counter
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: CG#M_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 14DAF145
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: Rear HVAC MEC CAN Reset
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: C69&(X88|Z88)
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 145AF19A
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: PTM Reset MEC
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: T#B5|T#C2
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 144AF1A4
+			  ApplicationMask: 
+			  BaseMask: 0462F1A0
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			  Description: PAM CAN 8
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: U#KL&UK#Z
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 148AF1BF
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			Test Data:
+			# Messages Received: 0
+			LastReceivedMessage: 
+
+		Test Step: CanScheduleData - Schedule MEC Counter
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+
+			  BoardId: 1
+			  SlotId: 6
+			  Disable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 042EF1A050
+			  TransmissionRateMsec: 300
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+			  BoardId: 1
+			  SlotId: 3
+			  Disable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 023E805555555555
+			  TransmissionRateMsec: 2000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+
+	Test Group: MEC Counter Reset CGM Command 
+	  Begin: 02/28/2024 00:31:39:705
+	  Result: OptionCodeNotTested
+	  DurationMsec: 25
+	  OptionCodesMask: 
+
+		Test Step: CanScheduleData - Schedule MEC Reset
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+
+			  BoardId: 1
+			  SlotId: 6
+			  Enable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 042EF1A050
+			  TransmissionRateMsec: 300
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+			  BoardId: 1
+			  SlotId: 3
+			  Enable: True
+			  TransmissionId: 14DA45F1
+			  TransmissionMessage: 042EF1A0FE000000
+			  TransmissionRateMsec: 2000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+		Test Step: CanReceiveValidate - CAN Module Communication
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+		  TimeoutMsec: 7000
+
+			  Description: Reset CGM MEC Counter
+			  BeginDateTime: 1/1/0001 12:00:00 AM
+			  Result: OptionCodeNotTested
+			  DurationMsec: 0
+			  OptionCodesMask: CGM_COM
+			  BoardId: 1
+			  FunctionalCan: False
+			  CanFD: False
+			  Allow7FResponse: False
+			  ReceiveId: 14DAF145
+			  ApplicationMask: 
+			  BaseMask: 
+			  ValidateCanDataScriptFileName: 
+				BytePosition: 0
+				ByteMask: 036E
+
+				Test Data:
+				# Messages Received: 0
+				LastReceivedMessage: 
+				PassReceivedMessage: 
+
+
+			Test Data:
+			# Messages Received: 0
+			LastReceivedMessage: 
+
+		Test Step: CanScheduleData - Schedule MEC Counter
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  DurationMsec: 0
+		  OptionCodesMask: MEC
+
+			  BoardId: 1
+			  SlotId: 6
+			  Disable: True
+			  TransmissionId: 10DBFEF1
+			  TransmissionMessage: 042EF1A050
+			  TransmissionRateMsec: 300
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+			  BoardId: 1
+			  SlotId: 3
+			  Disable: True
+			  TransmissionId: 14DA45F1
+			  TransmissionMessage: 042EF1A0FE000000
+			  TransmissionRateMsec: 2000
+			  BitId29: True
+			  CanFd: False
+			  MultiFrameReceiveId: 
+			  MultiFrameTimeBetweenFramesMsec: 0
+
+
+	Test Group: Power Down
+	  Begin: 02/28/2024 00:31:39:733
+	  Result: Pass
+	  DurationMsec: 265
+	  OptionCodesMask: 
+
+		Test Step: SetNoBiasAllChannels - SetNoBiasAllChannels B1
+		  Begin: 02/28/2024 00:31:39:787
+		  Result: Pass
+		  DurationMsec: 10
+		  OptionCodesMask: 
+		  BoardId: 1
+
+		Test Step: SetNoBiasAllChannels - SetNoBiasAllChannels B2
+		  Begin: 02/28/2024 00:31:39:809
+		  Result: Pass
+		  DurationMsec: 12
+		  OptionCodesMask: 
+		  BoardId: 2
+
+		Test Step: IOBoardControlDigitalIO - IOBoard Turn Power Supply Off B1
+		  Begin: 02/28/2024 00:31:39:848
+		  Result: Pass
+		  DurationMsec: 11
+		  OptionCodesMask: 
+		  BoardId: 1
+		  ControlByte: 0
+
+		Test Step: IOBoardControlDigitalIO - IOBoard Turn Power Supply Off B2
+		  Begin: 02/28/2024 00:31:39:873
+		  Result: Pass
+		  DurationMsec: 12
+		  OptionCodesMask: 
+		  BoardId: 2
+		  ControlByte: 0
+
+		Test Step: IOBoardCanReset - RESET BOARD 1 CAN
+		  Begin: 02/28/2024 00:31:39:897
+		  Result: Pass
+		  DurationMsec: 41
+		  OptionCodesMask: 
+		  BoardId: 1
+		  CanFD: False
+
+		Test Step: IOBoardCanReset - RESET BOARD 2 CAN
+		  Begin: 02/28/2024 00:31:39:957
+		  Result: Pass
+		  DurationMsec: 42
+		  OptionCodesMask: 
+		  BoardId: 2
+		  CanFD: False
+
+
+*** Termination Application Begin ***
+
+	Test Group: Disconnect Test Connectors
+	  Begin: 02/28/2024 00:31:40:054
+	  Result: Pass
+	  DurationMsec: 22060
+	  OptionCodesMask: 
+
+		Test Step: IOBoardCanReset - RESET BOARD 1 CAN
+		  Begin: 02/28/2024 00:31:40:194
+		  Result: Pass
+		  DurationMsec: 51
+		  OptionCodesMask: 
+		  BoardId: 1
+		  CanFD: False
+
+		Test Step: IOBoardCanReset - RESET BOARD 2 CAN
+		  Begin: 02/28/2024 00:31:40:260
+		  Result: Pass
+		  DurationMsec: 44
+		  OptionCodesMask: 
+		  BoardId: 2
+		  CanFD: False
+
+		Test Step: IOBoardControlDigitalIO - IOBoard Turn Power Supply Off B1
+		  Begin: 02/28/2024 00:31:40:330
+		  Result: Pass
+		  DurationMsec: 28
+		  OptionCodesMask: 
+		  BoardId: 1
+		  ControlByte: 0
+
+		Test Step: IOBoardControlDigitalIO - IOBoard Turn Power Supply Off B2
+		  Begin: 02/28/2024 00:31:40:371
+		  Result: Pass
+		  DurationMsec: 15
+		  OptionCodesMask: 
+		  BoardId: 2
+		  ControlByte: 3
+
+		Test Step: SetNoBiasAllChannels - SetNoBiasAllChannels B1
+		  Begin: 02/28/2024 00:31:40:398
+		  Result: Pass
+		  DurationMsec: 29
+		  OptionCodesMask: 
+		  BoardId: 1
+
+		Test Step: SetNoBiasAllChannels - SetNoBiasAllChannels B2
+		  Begin: 02/28/2024 00:31:40:441
+		  Result: Pass
+		  DurationMsec: 14
+		  OptionCodesMask: 
+		  BoardId: 2
+
+		Test Step: ModbusControlDiscreteOutputs - PUSH UP Dual Actions
+		  Begin: 02/28/2024 00:31:40:468
+		  Result: Pass
+		  DurationMsec: 15
+		  OptionCodesMask: 
+		  DeviceId: 2
+		  ControlOutputWordHex: 003D
+		  ControlOutputWordBit: 
+
+			Test Data: 
+			  Samples: 1
+			  ReceivedControlWordHex: 003D
+
+		Test Step: Delay - Delay 200 MS For Push UP
+		  Begin: 02/28/2024 00:31:40:504
+		  Result: Pass
+		  DurationMsec: 214
+		  OptionCodesMask: 
+		  TimeoutMsec: 200
+
+		Test Step: ModbusControlDiscreteOutputs - Eject Connectors and Release Latched Connectors
+		  Begin: 02/28/2024 00:31:40:732
+		  Result: Pass
+		  DurationMsec: 12
+		  OptionCodesMask: DISCONNECT
+		  DeviceId: 2
+		  ControlOutputWordHex: 0040
+		  ControlOutputWordBit: 
+
+			Test Data: 
+			  Samples: 1
+			  ReceivedControlWordHex: 0040
+
+		Test Step: ModbusValidateDiscreteInputs - DISCONNECT 48 WAY X117 GREY HANDLE
+		  Begin: 02/28/2024 00:31:40:767
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 283
+		  OptionCodesMask: DISCONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ???????????????0
+
+			Test Data: 
+			  Samples: 156
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: B11C000000050002023E00
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000000000111110
+			  LastReceivedMessage: B11C000000050002023E00
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000000000111110
+
+		Test Step: ModbusValidateDiscreteInputs - DISCONNECT 1/1/1 WAY POWER BLACK HANDLE
+		  Begin: 02/28/2024 00:31:41:074
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 14343
+		  OptionCodesMask: DISCONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ????????????000?
+
+			Test Data: 
+			  Samples: 9240
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: D53400000005000202200D
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000110100100000
+			  LastReceivedMessage: D53400000005000202200D
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000110100100000
+
+		Test Step: ModbusValidateDiscreteInputs - DISCONNECT 16 WAY OBDII/ALDL BLUE HANDLE
+		  Begin: 02/28/2024 00:31:55:440
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 18
+		  OptionCodesMask: DISCONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ???????????0????
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: D53500000005000202200D
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000110100100000
+			  LastReceivedMessage: D53500000005000202200D
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000110100100000
+
+		Test Step: ModbusValidateDiscreteInputs - DISCONNECT 1 WAY GROUND WHITE HANDLE
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  AlwaysPass: False
+		  DurationMsec: 0
+		  OptionCodesMask: DISCONNECT-OUT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ??????????0?????
+
+			Test Data: 
+			  Samples: 0
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 
+			  LastReceivedMessage: 
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 
+
+		Test Step: ModbusValidateDiscreteInputs - RETURN ALDL HOLDER BLUE HANDLE TO HOLDER
+		  Begin: 02/28/2024 00:31:55:499
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 600
+		  OptionCodesMask: DISCONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ?????????1??????
+
+			Test Data: 
+			  Samples: 373
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: D6AA00000005000202600D
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000110101100000
+			  LastReceivedMessage: D6AA00000005000202600D
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000110101100000
+
+		Test Step: ModbusValidateDiscreteInputs - DISCONNECT WIRED ALDL
+		  Begin: 02/28/2024 00:31:56:113
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 10
+		  OptionCodesMask: DISCONNECT&WIRED
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ???????????0????
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: D6AB00000005000202600D
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000110101100000
+			  LastReceivedMessage: D6AB00000005000202600D
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000110101100000
+
+		Test Step: ModbusValidateDiscreteInputs - RETURN 55 WAY X317 RED HANDLE TO HOLDER
+		  Begin: 02/28/2024 00:31:56:164
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 3792
+		  OptionCodesMask: DISCONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ????????1???????
+
+			Test Data: 
+			  Samples: 2457
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: E04400000005000202E00D
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000110111100000
+			  LastReceivedMessage: E04400000005000202E00D
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000110111100000
+
+		Test Step: ModbusValidateDiscreteInputs - RETURN 55 WAY X319 YELLOW HANDLE TO HOLDER
+		  Begin: 02/28/2024 00:31:59:981
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 20
+		  OptionCodesMask: DISCONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ???????1????????
+
+			Test Data: 
+			  Samples: 1
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: E04500000005000202E00D
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000110111100000
+			  LastReceivedMessage: E04500000005000202E00D
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000110111100000
+
+		Test Step: ModbusValidateDiscreteInputs - RETURN 20 WAY X407 GREEN HANDLE TO HOLDER
+		  Begin: 02/28/2024 00:32:00:044
+		  Result: Pass
+		  AlwaysPass: False
+		  DurationMsec: 2003
+		  OptionCodesMask: DISCONNECT
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ??????1?????????
+
+			Test Data: 
+			  Samples: 1271
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: E53C00000005000202E00F
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 0000111111100000
+			  LastReceivedMessage: E53C00000005000202E00F
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 0000111111100000
+
+		Test Step: ModbusValidateDiscreteInputs - RETURN 55 WAY X105 PURPLE HANDLE TO HOLDER
+		  Begin: 01/01/0001 00:00:00:000
+		  Result: OptionCodeNotTested
+		  AlwaysPass: False
+		  DurationMsec: 0
+		  OptionCodesMask: DISCONNECT&NOOP
+		  TimeoutMsec: 0
+		  DeviceId: 1
+		  PassWindowMsec: 0
+		  ByteMask: 
+		  BitMask: ?????1??????????
+
+			Test Data: 
+			  Samples: 0
+			  MaxTimeInPassWindowMsec: 0
+			  PassReceivedMessage: 
+			  PassReceivedWordHex: 
+			  PassReceivedWordBin: 
+			  LastReceivedMessage: 
+			  LastReceivedWordHex: 
+			  LastReceivedWordBin: 
+
+		Test Step: IOBoardControlDigitalIO - Disable PIP relay
+		  Begin: 02/28/2024 00:32:02:064
+		  Result: Pass
+		  DurationMsec: 14
+		  OptionCodesMask: 
+		  BoardId: 2
+		  ControlByte: 0
+
+		Test Step: ModbusControlDiscreteOutputs - Reaet Modbus 2
+		  Begin: 02/28/2024 00:32:02:092
+		  Result: Pass
+		  DurationMsec: 23
+		  OptionCodesMask: 
+		  DeviceId: 2
+		  ControlOutputWordHex: 0000
+		  ControlOutputWordBit: 
+
+			Test Data: 
+			  Samples: 1
+			  ReceivedControlWordHex: 0000
+
+
+	Test Group: Line Interface Pass Bit
+	  Begin: 02/28/2024 00:32:02:118
+	  Result: Pass
+	  DurationMsec: 757
+	  OptionCodesMask: 
+
+		Test Step: IOBoardControlDigitalIO - Turn on relay to send pass bit
+		  Begin: 02/28/2024 00:32:02:139
+		  Result: Pass
+		  DurationMsec: 4
+		  OptionCodesMask: 
+		  BoardId: 2
+		  ControlByte: 4
+
+		Test Step: Delay - Delay to send pass bit
+		  Begin: 02/28/2024 00:32:02:157
+		  Result: Pass
+		  DurationMsec: 710
+		  OptionCodesMask: 
+		  TimeoutMsec: 700
+
+		Test Step: IOBoardControlDigitalIO - Turning off relay from sending fail data
+		  Begin: 02/28/2024 00:32:02:872
+		  Result: Pass
+		  DurationMsec: 3
+		  OptionCodesMask: 
+		  BoardId: 2
+		  ControlByte: 0
+
