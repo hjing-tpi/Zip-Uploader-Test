@@ -1,0 +1,75 @@
+{	
+	"Name":"Product Test",
+	"Description":"POST",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+		{
+			"MersTestName":"TEST",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"WRES",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"XXXX"
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Power Down",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"PromptOperator",
+					"Description": "Hit P or F",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 10000,
+					"Fault":
+						{
+							"Id":"4",
+							"Description":"POST PASS HS BG",
+                            "RepairInstructions":
+                            {
+                                "Text":"",
+                                "MovieFileName":"",
+                                "ImageFileName":"",
+                                "PdfFileName":"",
+                                "HtmlFileName":"",
+                            }
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"POST PASS - P or F",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":true,
+							"Label":"POST PASS",
+							"OptionCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"03112019",
+			"Version":1.0,
+			"ChangeBy":"RMM",
+			"Change":"Initial version"
+		}
+	]
+}
