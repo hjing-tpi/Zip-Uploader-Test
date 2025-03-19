@@ -1,0 +1,269 @@
+{	
+	"Name":"2020 PAPR Test",
+	"Description":"Test the PAPR",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"TerminationPass.json",
+	"TerminationScriptFileNameFail":"TerminationFail.json",
+	"TerminationScriptFileNameFatalFault":"TerminationFatalFault.json",
+	"TerminationScriptFileNameOperatorAbort":"TerminationOperatorAbort.json",
+	"GmReporting":
+		{
+			"MersTestName":"0TSL",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"ROCK",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"CPIT"
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Meter Commands",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"Delay",
+					"Description": "Delay",
+		    	    "Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"WIRED",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 10000,
+					"Fault":
+						{
+							"Id":"4343",
+							"Description":"Delay"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						},
+						{
+							"Background":false,
+							"Label":"Delay 10 seconds",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"MeterValidateVoltageRange",
+					"Description": "Voltage Range Slot 1 Channels 1 - 3",
+			    	"Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"PROMPT",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"METERFAILED",
+					"TimeoutMsec": 10000,
+					"MeterValidateVoltageRange":
+						{
+							"DeviceId":1,
+							"AC":false,
+							"Range":"AUTO",
+							"Resolution":"MAX",
+							"Channels":[
+							{
+								"Description":"S1CH1",
+								"OptionCodesMask":"S1CH1",
+								"Fault":
+									{
+										"Id":"1",
+										"Description":"MeterValidateVoltageRange S1CH1"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateVoltageRange S1CH1",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":1,
+								"PassWindowMsec":5000,
+								"UpperLimitVolt":10000,
+								"LowerLimitVolt":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"# MSG",
+										"ChannelVoltageVolts":"S1C1",
+										"MaxChannelVoltageVolts":"S1C1 Max",
+										"MinChannelVoltageVolts":"S1C1 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitVolt":"100",
+										"LowerLimitVolt":"101",
+										"Samples":"102",
+										"MaxTimeInPassWindowMsec":"103",
+										"MaxChannelVoltageVolts":"104",
+										"MinChannelVoltageVolts":"105",
+										"AvgChannelVoltageInRangeVolt":"106",
+										"LastReceivedMessage":"107",
+										"PassReceivedMessage":"108"
+									}
+							},
+							{
+								"Description":"S1CH2",
+								"OptionCodesMask":"S1CH2",
+								"Fault":
+									{
+										"Id":"2",
+										"Description":"MeterValidateVoltageRange S1CH2"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateVoltageRange S1CH2",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":2,
+								"PassWindowMsec":5000,
+								"UpperLimitVolt":10000,
+								"LowerLimitVolt":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"",
+										"ChannelVoltageVolts":"S1C2",
+										"MaxChannelVoltageVolts":"S1C2 Max",
+										"MinChannelVoltageVolts":"S1C2 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitVolt":"200",
+										"LowerLimitVolt":"201",
+										"Samples":"202",
+										"MaxTimeInPassWindowMsec":"203",
+										"MaxChannelVoltageVolts":"204",
+										"MinChannelVoltageVolts":"205",
+										"AvgChannelVoltageInRangeVolt":"206",
+										"LastReceivedMessage":"207",
+										"PassReceivedMessage":"208"
+									}
+							},
+							{
+								"Description":"S1CH3",
+								"OptionCodesMask":"S1CH3",
+								"Fault":
+									{
+										"Id":"3",
+										"Description":"MeterValidateVoltageRange S1CH3"
+									},
+								"PromptLabels": [
+									{
+										"Background":false,
+										"Label":"MeterValidateVoltageRange S1CH3",
+										"OptionCodesMask":""
+									}],
+								"Slot":1,
+								"Channel":3,
+								"PassWindowMsec":5000,
+								"UpperLimitVolt":10000,
+								"LowerLimitVolt":-10000,
+								"TestDataDisplay":
+									{
+										"Samples":"",
+										"ChannelVoltageVolts":"S1C3",
+										"MaxChannelVoltageVolts":"S1C3 Max",
+										"MinChannelVoltageVolts":"S1C3 Min"
+									},
+								"TestDataReporting":
+									{
+										"UpperLimitVolt":"300",
+										"LowerLimitVolt":"301",
+										"Samples":"302",
+										"MaxTimeInPassWindowMsec":"303",
+										"MaxChannelVoltageVolts":"304",
+										"MinChannelVoltageVolts":"305",
+										"AvgChannelVoltageInRangeVolt":"306",
+										"LastReceivedMessage":"307",
+										"PassReceivedMessage":"308"
+									}
+							}]
+						},
+					"Fault":
+						{
+							"Id":"32777",
+							"Description":"MeterValidateVoltageRange Failed"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Validating METER Slot 1 Channels 1-3",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"Delay",
+					"Description": "Delay",
+		    	    "Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"WIRED",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 5000,
+					"Fault":
+						{
+							"Id":"4343",
+							"Description":"Delay"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Delay 5 seconds",
+							"OptionCodesMask":""
+						}]
+				}]	
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"11032020",
+			"Version":1.0,
+			"ChangeBy":"RMM",
+			"Change":"Initial version"
+		}
+	]
+}
