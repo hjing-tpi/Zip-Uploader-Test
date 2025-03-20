@@ -1,0 +1,1305 @@
+{
+  "Name": "Digital IO",
+  "Description": "Test new functionallity",
+  "Version": 0.0,
+  "VersionMajor": 1,
+  "VersionMinor": 79,
+  "Production": false,
+  "CANTagMapScriptFileName": "",
+  "HardwareIOMapFileName": "",
+  "TerminationScriptFileNamePass": "",
+  "TerminationScriptFileNameFail": "",
+  "TerminationScriptFileNameFatalFault": "",
+  "TerminationScriptFileNameOperatorAbort": "",
+  "GmReporting": {
+    "MersTestName": "0TSL",
+    "MersTestType": "ME",
+    "MersTestPgmRev": 1,
+    "MersTestTableRev": 1,
+    "MersTCA": "A001",
+    "MersEngineType": "ROCK",
+    "MersDeviceId": "0x4000",
+    "GepicsShipCode": "CPIT"
+  },
+  "TestCycleGroups": [
+    [
+      {
+        "GroupName": "CONNECTOR MONITOR START",
+        "Background": true,
+        "Picture": "",
+        "OptionCodesMask": "",
+        "TestSteps": [
+          {
+            "Name": "IoBoardControlDiscreteOutputs",
+            "Description": "All OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "All OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "All OFF",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardControlDiscreteOutputs": {
+              "BoardId": 1,
+              "ControlOutputWordHex": "0000",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "Validate all OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "Validate all OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IO Board Validate all OFF",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 5000,
+              "ByteMask": "",
+              "BitMask": "0000000000000000",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardControlDiscreteOutputs",
+            "Description": "All ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "All ON",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "All ON",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardControlDiscreteOutputs": {
+              "BoardId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": "1111111111111111"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "Validate all ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "Validate all ON",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IO Board Validate all ON",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 5000,
+              "ByteMask": "FFFF",
+              "BitMask": "",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardControlDiscreteOutputs",
+            "Description": "Every Other OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "Every Other OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "Every Other OFF",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardControlDiscreteOutputs": {
+              "BoardId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": "0101010101010101"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "Validate Every Other OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "Validate Every Other OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IO Board Validate Every Other OFF",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 5000,
+              "ByteMask": "",
+              "BitMask": "0101010101010101",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardControlDiscreteOutputs",
+            "Description": "CH16 8 1 OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "All OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CH16 8 1 OFF",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardControlDiscreteOutputs": {
+              "BoardId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": "0111111101111110"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "Validate CH16 8 1 OFF",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "Validate CH16 8 1 OFF",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "IO Board Validate CH16 8 1 OFF",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 5000,
+              "ByteMask": "",
+              "BitMask": "0???????0??????0",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardControlDiscreteOutputs",
+            "Description": "All ON",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "All ON",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "All ON",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardControlDiscreteOutputs": {
+              "BoardId": 1,
+              "ControlOutputWordHex": "FFFF",
+              "ControlOutputWordBit": ""
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardControlDiscreteOutputs",
+            "Description": "CH 16 8 1 off with ?",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "1",
+              "Description": "CH 16 8 1 off with ?",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CH 16 8 1 off with ?",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardControlDiscreteOutputs": {
+              "BoardId": 1,
+              "ControlOutputWordHex": "",
+              "ControlOutputWordBit": "0???????0??????0"
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "CH 16 8 1 off with ?",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "CH 16 8 1 off with ?",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "CH 16 8 1 off with ?",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 5000,
+              "ByteMask": "",
+              "BitMask": "0???????0??????0",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "FAIL CH 16 8 1 off with ?",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 8000,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "FAIL CH 16 8 1 off with ?",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "FAIL CH 16 8 1 off with ?",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 5000,
+              "ByteMask": "F??F",
+              "BitMask": "0???????0??????0",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          },
+          {
+            "Name": "IoBoardValidateDiscreteInputs",
+            "Description": "DUP CH 16 8 1 off with ?",
+            "Validated": false,
+            "Concurrent": false,
+            "FailureAbortsTestCycle": false,
+            "OptionCodesMask": "",
+            "AddOptionCodeUponPass": "",
+            "AddOptionCodeUponFail": "",
+            "TimeoutMsec": 0,
+            "PromptImageFileName": "",
+            "AlwaysPass": false,
+            "Fault": {
+              "Id": "3",
+              "Description": "CH 16 8 1 off with ?",
+              "Detail": "",
+              "RepairInstructions": {
+                "Text": "",
+                "MovieFileName": "",
+                "ImageFileName": "",
+                "PdfFileName": "",
+                "HtmlFileName": ""
+              }
+            },
+            "PromptLabels": [
+              {
+                "Background": false,
+                "Label": "DUP CH 16 8 1 off with ?",
+                "OptionCodesMask": "",
+                "IsDisplayed": false,
+                "DisplayIndex": 0
+              }
+            ],
+            "IoBoardValidateDiscreteInputs": {
+              "BoardId": 1,
+              "StopActiveValidateDiscreteInputsTestStep": false,
+              "MonitorOverTime": false,
+              "PassWindowMsec": 5000,
+              "ByteMask": "????",
+              "BitMask": "0???????0??????0",
+              "TestDataDisplay": {
+                "Samples": "#",
+                "BitMask": "Bit Mask",
+                "DiscreteInputBits": "Bits",
+                "ByteMask": "Byte Mask",
+                "DiscreteInputHex": "Bytes"
+              }
+            },
+            "TestGroupPk": 0,
+            "TestStepPk": 0
+          }
+        ],
+        "TerminationGroup": false,
+        "TestCyclePk": 0,
+        "TestGroupPk": 0,
+        "MonitorOnly": false
+      }
+    ]
+  ],
+  "ChangeHistory": [
+    {
+      "Date": "04082021",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "04082021",
+      "Version": 0.0,
+      "VersionMajor": 0,
+      "VersionMinor": 1,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "04082021",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 0,
+      "ChangeBy": "RMM",
+      "Change": "Initial version"
+    },
+    {
+      "Date": "08152023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 1,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "08152023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 2,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "08172023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 3,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 4,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 5,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 6,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 7,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 8,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 9,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09212023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 10,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "09222023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 11,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "10112023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 12,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 13,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 14,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 15,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11022023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 16,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11032023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 17,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11032023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 18,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "11062023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 19,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "12012023",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 20,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 21,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 22,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 23,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04242024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 24,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 25,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 26,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 27,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 28,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 29,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 30,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 31,
+      "ChangeBy": "aa",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 32,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 33,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "04302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 34,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05012024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 35,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05022024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 36,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05022024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 37,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "05302024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 38,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 39,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 40,
+      "ChangeBy": "s",
+      "Change": "s"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 41,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 42,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 43,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 44,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 45,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 46,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 47,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 48,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 49,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 50,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 51,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 52,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 53,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07102024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 54,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 55,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 56,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 57,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 58,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07112024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 59,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07182024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 60,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 61,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 62,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 63,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "07292024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 64,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 65,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 66,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 67,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 68,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08152024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 69,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08192024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 70,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08192024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 71,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08202024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 72,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08202024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 73,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08202024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 74,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08212024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 75,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08212024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 76,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 77,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 78,
+      "ChangeBy": "a",
+      "Change": "a"
+    },
+    {
+      "Date": "08222024",
+      "Version": 0.0,
+      "VersionMajor": 1,
+      "VersionMinor": 79,
+      "ChangeBy": "a",
+      "Change": "a"
+    }
+  ],
+  "FileName": "C:\\TPass\\Test App Scripts\\DigitalIO.json",
+  "DateLastModified": "2024-08-21T11:11:12.1908888-04:00",
+  "ProductPk": 0,
+  "TestCyclePk": 0
+}
