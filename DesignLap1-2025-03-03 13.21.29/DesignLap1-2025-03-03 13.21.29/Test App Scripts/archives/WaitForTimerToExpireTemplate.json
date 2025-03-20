@@ -1,0 +1,46 @@
+{	
+	"Name":"Product Test",
+	"Description":"Test Product Application",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Wait for Timer to Expire Template",
+			"Background":false,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":0,
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"WaitForTimerToExpire",
+					"Description": "Wait for ONSTARCOM Timer to Expire",
+			    	"Concurrent":false,
+					"SaleCodesMask":"",
+					"AddSaleCodeUponPass":"",
+					"AddSaleCodeUponFail":"",
+					"WaitForTimerToExpire":
+						{
+							"TimerName":"ONSTARCOM",
+							"TimerExpireLimitMsec": 0
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Wait for ONSTARCOM Timer to Expire",
+							"SaleCodesMask":""
+						}]
+				}]
+		}]	],
+	"ChangeHistory":[
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}]
+}
