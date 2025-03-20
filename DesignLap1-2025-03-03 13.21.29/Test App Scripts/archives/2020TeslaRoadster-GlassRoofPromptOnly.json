@@ -1,0 +1,116 @@
+{	
+	"Name":"2020 Tesla Roadster Glass Roof Test",
+	"Description":"Test the Can based Tesla Roadster Glass Roof and Electrical wiring",
+	"Version":1.3,
+	"Production":false,
+	"TerminationScriptFileNameNormal":"TerminationNormal.json",
+	"TerminationScriptFileNameFatalFault":"TerminationFatalFault.json",
+	"TerminationScriptFileNameOperatorAbort":"TerminationOperatorAbort.json",
+	"GmReporting":
+		{
+			"MersTestName":"0TSL",
+			"MersTestType":"ME",
+			"MersTestPgmRev":1,
+			"MersTestTableRev":1,
+			"MersTCA":"A001",
+			"MersEngineType":"ROCK",
+			"MersDeviceId":"0x4000",
+			"GepicsShipCode":"CPIT"
+		},
+	"TestCycleGroups":  [ [
+		{
+			"GroupName":"Begin/Wait Timer",
+			"Background":true,
+			"Picture":"",
+			"RepairPictures":[
+				{
+					"Fault":"",
+					"Picture":""
+				}],	
+			"TestSteps":[
+				{
+					"Name":"PromptOperator",
+					"Description": "Hit P or F",
+			    	"Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"PROMPT",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"PROMPTFAILED",
+					"TimeoutMsec": 5000,
+					"Fault":
+						{
+							"Id":"123ABC",
+							"Description":"PromptOperator"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Hit FAIL to fatally fail",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"BeginTimer",
+					"Description": "Begin Timer",
+			    	"Concurrent":true,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"TESLATIMER",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"BeginTimer":
+						{
+							"TimerName":"TESLA"
+						},
+					"Fault":
+						{
+							"Id":"222",
+							"Description":"BeginTimer TESLA"
+						},
+					"PromptLabels": [
+						{
+							"Background":false,
+							"Label":"Start TESLA Timer",
+							"OptionCodesMask":""
+						}]
+				},
+				{
+					"Name":"WaitForTimerToExpire",
+					"Description": "Wait for Timer to Expire",
+		    	    "Concurrent":false,
+					"FailureAbortsTestCycle":false,
+					"OptionCodesMask":"",
+					"AddOptionCodeUponPass":"",
+					"AddOptionCodeUponFail":"",
+					"TimeoutMsec": 0,
+					"WaitForTimerToExpire":
+						{
+							"TimerName":"TESLA",
+							"TimerExpireLimitMsec": 10000
+						},
+					"Fault":
+						{
+							"Id":"333",
+							"Description":"WaitForTimerToExpire TESLA"
+						},
+					"PromptLabels": [
+						{
+							"Background":true,
+							"Label":"TESLA TIMER",
+							"OptionCodesMask":""
+						}]
+				}]
+		}] ],
+	"ChangeHistory":[
+		{
+			"Date":"01012019",
+			"Version":1.1,
+			"Change":"Fix issue where the air bag deployed when powering the Glass Roof"
+		},
+		{
+			"Date":"12312018",
+			"Version":1.0,
+			"Change":"Initial version"
+		}
+	]
+}
