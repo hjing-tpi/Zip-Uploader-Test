@@ -1,0 +1,377 @@
+{
+	"Name":"Abort.json",
+	"Description":"GM Standard Abort Script",
+	"Version":1.0,
+	"Production":false,
+	"TerminationScriptFileNamePass":"",
+	"TerminationScriptFileNameFail":"",
+	"TerminationScriptFileNameFatalFault":"",
+	"TerminationScriptFileNameOperatorAbort":"",
+	"GmReporting":
+	{
+		"MersTestName":"TEST",
+		"MersTestType":"ME",
+		"MersTestPgmRev":1,
+		"MersTestTableRev":1,
+		"MersTCA":"A001",
+		"MersEngineType":"WRES",
+		"MersDeviceId":"0x4000",
+		"GepicsShipCode":"XXXX"
+	},
+	"TestCycleGroups":
+	[[{
+		"GroupName":"Abort Script Procedure",
+		"Background":false,
+		"Picture":"",
+		"RepairPictures":[
+		{
+			"Fault":"",
+			"Picture":""
+		}],
+		"TestSteps":[
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "IOBoard Turn Power Supply Off B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 1,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":" IOBoardControlDigitalIO B1 Power Supply Off"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Power Supply Off",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B1",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 1
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B1"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 1 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"SetNoBiasAllChannels",
+			"Description": "SetNoBiasAllChannels B2",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"SetNoBiasAllChannels":
+			{
+				"BoardId": 2
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"SetNoBiasAllChannels B2"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Board 2 - Set No Bias All Channels",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardControlDigitalIO",
+			"Description": "Board 2 set output to 0 to Enable PIP",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"IOBoardControlDigitalIO":
+			{
+				"BoardId": 2,
+				"ControlByte": 0
+			},
+			"Fault":
+			{
+				"Id":"",
+				"Description":"IOBoardControlDigitalIO B2"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"Set Output to 0",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardCanReset",
+			"Description": "RESET BOARD 1 CAN",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"07801",
+				"Description":"RESET BOARD 1 CAN"
+			},
+			"IOBoardCanReset":
+			{
+				"BoardId": 1,
+				"CanFD": false
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"RESET CAN BOARD 1",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"IOBoardCanReset",
+			"Description": "RESET BOARD 2 CAN",
+			"Concurrent":false,
+			"TimeoutMsec": 0,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"Fault":
+			{
+				"Id":"07801",
+				"Description":"RESET BOARD 2 CAN"
+			},
+			"IOBoardCanReset":
+			{
+				"BoardId": 1,
+				"CanFD": false
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"RESET CAN BOARD 2",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "PUSH UP Dual Actions",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"00E3",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		},
+		{
+			"Name":"Delay",
+			"Description": "Delay 200 MS For Push UP",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec": 200,
+			"Fault":
+			{
+				"Id":"",
+				"Description":"Delay"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PUSH UP DUAL ACTIONS",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusControlDiscreteOutputs",
+			"Description": "Eject Connectors and Release Latched Connectors",
+			"Concurrent":false,
+			"FailureAbortsTestCycle": false,
+			"OptionCodesMask": "DISCONNECT",
+			"AddOptionCodeUponPass": "",
+			"AddOptionCodeUponFail": "",
+			"TimeoutMsec": 0,
+			"ModbusControlDiscreteOutputs":
+			{
+				"DeviceId":2,
+				"ControlOutputWordHex":"0000",
+				"ControlOutputWordBit":""
+			},
+			"Fault":
+			{
+				"Id": "",
+				"Description": "ModbusControlDiscreteOutputs"
+			},
+			"PromptLabels": [
+			{
+				"Label":"Dev 2 -Modbus Output Control",
+				"OptionCodesMask":"",
+				"Background":false
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "ALDL HOLSTER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"DISCONNECT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"????????1???????",
+ 				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16326",
+				"Description":"ALDL NOT PLACED IN HOLSTER"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PLACE ALDL TOOL IN HOLSTER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "30 WAY JUMPER HOLSTER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"DISCONNECT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"???????1????????",
+ 				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16327",
+				"Description":"30 WAY JUMPER NOT PLACED IN HOLSTER"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PLACE 30 WAY JUMPER IN HOLSTER",
+				"OptionCodesMask":""
+			}]
+		},
+		{
+			"Name":"ModbusValidateDiscreteInputs",
+			"Description": "80/80 WAY JUMPER HOLSTER",
+			"Concurrent":false,
+			"FailureAbortsTestCycle":false,
+			"OptionCodesMask":"DISCONNECT",
+			"AddOptionCodeUponPass":"",
+			"AddOptionCodeUponFail":"",
+			"TimeoutMsec":0,
+			"ModbusValidateDiscreteInputs":
+			{
+				"DeviceId":1,
+				"PassWindowMsec":0,
+				"ByteMask":"",
+				"BitMask":"??????1?????????",
+ 				"TestDataDisplay":
+				{
+					"Samples":"",
+					"BitMask":"",
+					"DiscreteInputBits":"",
+					"ByteMask":"",
+					"DiscreteInputHex":""
+				}
+			},
+			"Fault":
+			{
+				"Id":"16328",
+				"Description":"80/80 WAY JUMPER NOT PLACED IN HOLSTER"
+			},
+			"PromptLabels": [
+			{
+				"Background":false,
+				"Label":"PLACE 80/80 WAY JUMPER IN HOLSTER",
+				"OptionCodesMask":""
+			}]
+		}]
+	}]],
+	"ChangeHistory":[
+	{
+		"Date":"06/07/21",
+		"Version":1.0,
+		"ChangeBy":"J. Horan",
+		"Change":"Initial Version"
+	}]
+}
