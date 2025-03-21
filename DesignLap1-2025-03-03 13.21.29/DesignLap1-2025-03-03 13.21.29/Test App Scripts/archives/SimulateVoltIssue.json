@@ -1,0 +1,50 @@
+{	
+	"TestCycle":  [ [
+		{
+			"GroupName":"B1 - Test Packet",
+			"Background":false,
+			"TestSteps":[
+				{
+					"Name":"StartTestPacket",
+					"Description": "Display B1 Test Packets over time",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 10000,
+					"TimeIntervalMsec": 10,
+					"BoardId": 1,
+					"PromptLabels": [
+						{
+							"Label":"Board 1 - Test Packets being displayed for 35 seconds",
+							"SalesCodeMask":[""]
+						}]
+				},				
+				{
+					"Name":"SetBias",
+					"Description": "SetBias B2",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 500,
+					"BoardId": 2,
+					"Channel":32,
+					"BiasState":"H",					
+					"PromptLabels": [
+						{
+							"Label":"Board 2 - Set Bias",
+							"SalesCodeMask":[""]
+						}]
+				},
+				{
+					"Name":"StopTestPacket",
+					"Description": "Stop Test Packet B1",
+			    	    "Concurrent":false,
+					"SalesCodeMask":[""],
+					"TimeoutMsec": 500,
+					"BoardId": 1,
+					"PromptLabels": [
+						{
+							"Label":"Board 1 - Stop Test Packet",
+							"SalesCodeMask":[""]
+						}]
+				}]
+		}]	]
+}
